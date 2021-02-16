@@ -32,9 +32,29 @@
 
 /*!< Field macros */
 
-#define POS_MASK(BLOCK, REGISTER, FIELD, OFFSET, VALUE) \
-	#define BLOCK##_##REGISTER##_##FIELD##_OFFSET OFFSET \
-	#define BLOCK##_##REGISTER##_##FIELD##_MASK (VALUE << PREFIX##_##REGISTER##_##FIELD##_OFFSET)
+#define REGISTER_FIELD_MACRO_NAME(BLOCK, REGISTER, FIELD, SUFFIX) \
+	BLOCK##_##REGISTER##_##FIELD##_##SUFFIX
+
+#define REGISTER_FIELD_OFFSET(BLOCK, REGISTER, FIELD) \
+	REGISTER_FIELD_MACRO_NAME(BLOCK, REGISTER, FIELD, OFFSET)
+
+#define REGISTER_FIELD_GLOBAL_MASK(BLOCK, REGISTER, FIELD) \
+	REGISTER_FIELD_MACRO_NAME(BLOCK, REGISTER, FIELD, MASK)
+
+/*!< Register bit mask macro is only provided if:
+     - register is multibit
+     - its value have no particular meaning.
+     If register values have a well defined meaning, please use REGISTER_FIELD_VALUE_MASK instead
+*/
+#define REGISTER_FIELD_BIT_MASK(BLOCK, REGISTER, FIELD, BIT) \
+	REGISTER_FIELD_MACRO_NAME(BLOCK, REGISTER, FIELD, BIT)
+
+/*!< Some field values have a specific meaning hence a macro is created for it
+     For example value 0 of HSIDIV RCC register means division by 1 hence RCC_CR_HSIDIV_1 is present instead of the bit mask
+     In Such case, no bit mask is provided
+*/
+#define REGISTER_FIELD_VALUE_MASK(BLOCK, REGISTER, FIELD, VALUE) \
+	REGISTER_FIELD_MACRO_NAME(BLOCK, REGISTER, FIELD, VALUE)
 
 // New value is:
 // - clear bits of the field (ptr & ~field_mask)
