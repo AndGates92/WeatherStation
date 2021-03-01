@@ -1,0 +1,278 @@
+#ifndef FPU_REGISTERS_H
+#define FPU_REGISTERS_H
+/**
+ * @copyright
+ * @file fpu.h
+ * @author Andrea Gianarda
+ * @date 15th of April 2021
+ * @brief Floating point unit (FPU) extension of system control block (SCB) register
+*/
+
+#include <stdint.h>
+
+/**
+ *  @defgroup RegisterGroup Register global macros, structure and functions
+ *  @brief Registers global macros, structure and functions
+ *  @{
+ */
+
+/**
+ *  @ingroup RegisterGroup
+ *  @defgroup FPU Floating point unit (FPU) extension of system control block (SCB) register
+ *  @brief Floating point unit (FPU) extension of system control block (SCB) registers macros and structures
+ *  @{
+ */
+
+typedef struct {
+	RW uint32_t FPCCR;   /*!< Floating point context control register         (Offset 0x00) */
+	RW uint32_t FPCAR;   /*!< Floating point context address register         (Offset 0x04) */
+	RW uint32_t FPDSCR;  /*!< Floating point default status control register  (Offset 0x08) */
+	RO uint32_t MVFR0;   /*!< Media and floating point feature 0 register     (Offset 0x0C) */
+	RO uint32_t MVFR1;   /*!< Media and floating point feature 1 register     (Offset 0x10) */
+	RO uint32_t MVFR2;   /*!< Media and floating point feature 2 register     (Offset 0x14) */
+} scb_fpu_regs;
+
+/*!< Floating point unit (FPU) extension of system control block (SCB) registers */
+/*!< Floating point context control register */
+#define FPU_FPCCR_ASPEN_OFFSET   (31U)
+#define FPU_FPCCR_ASPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, ASPEN))   /*!< Mask  0x80000000 */
+
+#define FPU_FPCCR_LSPEN_OFFSET   (30U)
+#define FPU_FPCCR_LSPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, LSPEN))   /*!< Mask  0x40000000 */
+
+#define FPU_FPCCR_MONRDY_OFFSET  (8U)
+#define FPU_FPCCR_MONRDY_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, MONRDY))  /*!< Mask  0x00000100 */
+
+#define FPU_FPCCR_BFRDY_OFFSET   (6U)
+#define FPU_FPCCR_BFRDY_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, BFRDY))   /*!< Mask  0x00000040 */
+
+#define FPU_FPCCR_MMRDY_OFFSET   (5U)
+#define FPU_FPCCR_MMRDY_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, MMRDY))   /*!< Mask  0x00000020 */
+
+#define FPU_FPCCR_HFRDY_OFFSET   (4U)
+#define FPU_FPCCR_HFRDY_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, HFRDY))   /*!< Mask  0x00000010 */
+
+#define FPU_FPCCR_THREAD_OFFSET  (3U)
+#define FPU_FPCCR_THREAD_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, THREAD))  /*!< Mask  0x00000008 */
+
+#define FPU_FPCCR_USER_OFFSET    (1U)
+#define FPU_FPCCR_USER_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, USER))    /*!< Mask  0x00000002 */
+
+#define FPU_FPCCR_LSPACT_OFFSET  (0U)
+#define FPU_FPCCR_LSPACT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPCCR, LSPACT))  /*!< Mask  0x00000001 */
+
+// Values of address state preservation (ASP) context enable bit
+#define FPU_ASP_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_ASP_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of automatic lazy state preservation (LSP) context save enable bit
+#define FPU_LSP_DISABLEAUTOMATICSAVE  (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_LSP_ENABLEAUTOMATICSAVE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of exception ready bit
+#define FPU_EXCEPTIONRDY_NOTPENDING  (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_EXCEPTIONRDY_PENDING     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of processor mode bit
+#define FPU_PROCMODE_HANDLER  (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_PROCMODE_THREAD   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of user privilege level bit
+#define FPU_USER_PRIVILEGED    (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_USER_UNPRIVILEGED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of lazy state preservation (LSP) active bit
+#define FPU_LSP_INACTIVE  (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_LSP_ACTIVE    (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Floating point context address register */
+#define FPU_FPCAR_ADDRESS_OFFSET   (3U)
+#define FPU_FPCAR_ADDRESS_MASK     (0x1FFFFFFFUL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0xFFFFFFF8 */
+#define FPU_FPCAR_ADDRESS_0        (0x00000008UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000008 */
+#define FPU_FPCAR_ADDRESS_1        (0x00000010UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000010 */
+#define FPU_FPCAR_ADDRESS_2        (0x00000020UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000020 */
+#define FPU_FPCAR_ADDRESS_3        (0x00000040UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000040 */
+#define FPU_FPCAR_ADDRESS_4        (0x00000080UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000080 */
+#define FPU_FPCAR_ADDRESS_5        (0x00000100UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000100 */
+#define FPU_FPCAR_ADDRESS_6        (0x00000200UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000200 */
+#define FPU_FPCAR_ADDRESS_7        (0x00000400UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000400 */
+#define FPU_FPCAR_ADDRESS_8        (0x00000800UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00000800 */
+#define FPU_FPCAR_ADDRESS_9        (0x00001000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00001000 */
+#define FPU_FPCAR_ADDRESS_10       (0x00002000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00002000 */
+#define FPU_FPCAR_ADDRESS_11       (0x00004000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00004000 */
+#define FPU_FPCAR_ADDRESS_12       (0x00008000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00008000 */
+#define FPU_FPCAR_ADDRESS_13       (0x00010000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00010000 */
+#define FPU_FPCAR_ADDRESS_14       (0x00020000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00020000 */
+#define FPU_FPCAR_ADDRESS_15       (0x00040000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00040000 */
+#define FPU_FPCAR_ADDRESS_16       (0x00080000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00080000 */
+#define FPU_FPCAR_ADDRESS_17       (0x00100000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00100000 */
+#define FPU_FPCAR_ADDRESS_18       (0x00200000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00200000 */
+#define FPU_FPCAR_ADDRESS_19       (0x00400000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00400000 */
+#define FPU_FPCAR_ADDRESS_20       (0x00800000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x00800000 */
+#define FPU_FPCAR_ADDRESS_21       (0x01000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x01000000 */
+#define FPU_FPCAR_ADDRESS_22       (0x02000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x02000000 */
+#define FPU_FPCAR_ADDRESS_23       (0x04000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x04000000 */
+#define FPU_FPCAR_ADDRESS_24       (0x08000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x08000000 */
+#define FPU_FPCAR_ADDRESS_25       (0x10000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x10000000 */
+#define FPU_FPCAR_ADDRESS_26       (0x20000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x20000000 */
+#define FPU_FPCAR_ADDRESS_27       (0x40000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x40000000 */
+#define FPU_FPCAR_ADDRESS_28       (0x80000000UL << REGISTER_FIELD_OFFSET(FPU, FPCAR, ADDRESS))   /*!< Mask  0x80000000 */
+
+/*!< Floating point default status control register */
+#define FPU_FPDSCR_AHP_OFFSET    (26U)
+#define FPU_FPDSCR_AHP_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPDSCR, AHP))    /*!< Mask  0x04000000 */
+
+#define FPU_FPDSCR_DN_OFFSET     (25U)
+#define FPU_FPDSCR_DN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPDSCR, DN))     /*!< Mask  0x02000000 */
+
+#define FPU_FPDSCR_FZ_OFFSET     (24U)
+#define FPU_FPDSCR_FZ_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FPU, FPDSCR, FZ))     /*!< Mask  0x01000000 */
+
+#define FPU_FPDSCR_RMODE_OFFSET  (22U)
+#define FPU_FPDSCR_RMODE_MASK    (0x3UL << REGISTER_FIELD_OFFSET(FPU, FPDSCR, RMODE))  /*!< Mask  0x00C00000 */
+
+/*!< Media and floating point feature 0 register */
+#define FPU_MVFR0_ROUNDINGMODES_OFFSET      (28U)
+#define FPU_MVFR0_ROUNDINGMODES_MASK        (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, ROUNDINGMODES))      /*!< Mask  0xF0000000 */
+#define FPU_MVFR0_ROUNDINGMODES_0           (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, ROUNDINGMODES))      /*!< Value 0x10000000 */
+#define FPU_MVFR0_ROUNDINGMODES_1           (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, ROUNDINGMODES))      /*!< Value 0x20000000 */
+#define FPU_MVFR0_ROUNDINGMODES_2           (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, ROUNDINGMODES))      /*!< Value 0x40000000 */
+#define FPU_MVFR0_ROUNDINGMODES_3           (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, ROUNDINGMODES))      /*!< Value 0x80000000 */
+
+#define FPU_MVFR0_SHORTVECTOR_OFFSET        (24U)
+#define FPU_MVFR0_SHORTVECTOR_MASK          (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SHORTVECTOR))        /*!< Mask  0x0F000000 */
+#define FPU_MVFR0_SHORTVECTOR_0             (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SHORTVECTOR))        /*!< Value 0x01000000 */
+#define FPU_MVFR0_SHORTVECTOR_1             (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SHORTVECTOR))        /*!< Value 0x02000000 */
+#define FPU_MVFR0_SHORTVECTOR_2             (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SHORTVECTOR))        /*!< Value 0x04000000 */
+#define FPU_MVFR0_SHORTVECTOR_3             (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SHORTVECTOR))        /*!< Value 0x08000000 */
+
+#define FPU_MVFR0_SQUAREROOT_OFFSET         (20U)
+#define FPU_MVFR0_SQUAREROOT_MASK           (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SQUAREROOT))         /*!< Mask  0x00F00000 */
+#define FPU_MVFR0_SQUAREROOT_0              (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SQUAREROOT))         /*!< Value 0x00100000 */
+#define FPU_MVFR0_SQUAREROOT_1              (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SQUAREROOT))         /*!< Value 0x00200000 */
+#define FPU_MVFR0_SQUAREROOT_2              (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SQUAREROOT))         /*!< Value 0x00400000 */
+#define FPU_MVFR0_SQUAREROOT_3              (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SQUAREROOT))         /*!< Value 0x00800000 */
+
+#define FPU_MVFR0_DIVIDE_OFFSET             (16U)
+#define FPU_MVFR0_DIVIDE_MASK               (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DIVIDE))             /*!< Mask  0x000F0000 */
+#define FPU_MVFR0_DIVIDE_0                  (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DIVIDE))             /*!< Value 0x00010000 */
+#define FPU_MVFR0_DIVIDE_1                  (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DIVIDE))             /*!< Value 0x00020000 */
+#define FPU_MVFR0_DIVIDE_2                  (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DIVIDE))             /*!< Value 0x00040000 */
+#define FPU_MVFR0_DIVIDE_3                  (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DIVIDE))             /*!< Value 0x00080000 */
+
+#define FPU_MVFR0_EXCEPTIONTRAPPING_OFFSET  (12U)
+#define FPU_MVFR0_EXCEPTIONTRAPPING_MASK    (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, EXCEPTIONTRAPPING))  /*!< Mask  0x0000F000 */
+#define FPU_MVFR0_EXCEPTIONTRAPPING_0       (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, EXCEPTIONTRAPPING))  /*!< Value 0x00001000 */
+#define FPU_MVFR0_EXCEPTIONTRAPPING_1       (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, EXCEPTIONTRAPPING))  /*!< Value 0x00002000 */
+#define FPU_MVFR0_EXCEPTIONTRAPPING_2       (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, EXCEPTIONTRAPPING))  /*!< Value 0x00004000 */
+#define FPU_MVFR0_EXCEPTIONTRAPPING_3       (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, EXCEPTIONTRAPPING))  /*!< Value 0x00008000 */
+
+#define FPU_MVFR0_DOUBLEPRECISION_OFFSET    (8U)
+#define FPU_MVFR0_DOUBLEPRECISION_MASK      (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DOUBLEPRECISION))    /*!< Mask  0x00000F00 */
+#define FPU_MVFR0_DOUBLEPRECISION_0         (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DOUBLEPRECISION))    /*!< Value 0x00000100 */
+#define FPU_MVFR0_DOUBLEPRECISION_1         (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DOUBLEPRECISION))    /*!< Value 0x00000200 */
+#define FPU_MVFR0_DOUBLEPRECISION_2         (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DOUBLEPRECISION))    /*!< Value 0x00000400 */
+#define FPU_MVFR0_DOUBLEPRECISION_3         (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, DOUBLEPRECISION))    /*!< Value 0x00000800 */
+
+#define FPU_MVFR0_SINGLEPRECISION_OFFSET    (4U)
+#define FPU_MVFR0_SINGLEPRECISION_MASK      (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SINGLEPRECISION))    /*!< Mask  0x000000F0 */
+#define FPU_MVFR0_SINGLEPRECISION_0         (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SINGLEPRECISION))    /*!< Value 0x00000010 */
+#define FPU_MVFR0_SINGLEPRECISION_1         (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SINGLEPRECISION))    /*!< Value 0x00000020 */
+#define FPU_MVFR0_SINGLEPRECISION_2         (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SINGLEPRECISION))    /*!< Value 0x00000040 */
+#define FPU_MVFR0_SINGLEPRECISION_3         (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, SINGLEPRECISION))    /*!< Value 0x00000080 */
+
+#define FPU_MVFR0_REGISTERBANKSIZE_OFFSET   (0U)
+#define FPU_MVFR0_REGISTERBANKSIZE_MASK     (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR0, REGISTERBANKSIZE))   /*!< Mask  0x0000000F */
+#define FPU_MVFR0_REGISTERBANKSIZE_0        (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, REGISTERBANKSIZE))   /*!< Value 0x00000001 */
+#define FPU_MVFR0_REGISTERBANKSIZE_1        (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, REGISTERBANKSIZE))   /*!< Value 0x00000002 */
+#define FPU_MVFR0_REGISTERBANKSIZE_2        (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, REGISTERBANKSIZE))   /*!< Value 0x00000004 */
+#define FPU_MVFR0_REGISTERBANKSIZE_3        (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR0, REGISTERBANKSIZE))   /*!< Value 0x00000008 */
+
+// Values of rounding modes support register
+#define FPU_ROUNDINGMODES_ALLSUPPORTED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of short vectors support register
+#define FPU_SHORTVECTOR_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+
+// Values of square root support register
+#define FPU_SQUAREROOT_SUPPORTED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of divide support register
+#define FPU_DIVIDE_SUPPORTED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of exception trapping support register
+#define FPU_EXCEPTIONTRAPPING_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_EXCEPTIONTRAPPING_SUPPORTED     (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of double precision support register
+#define FPU_DOUBLEPRECISION_SUPPORTED     (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of single precision support register
+#define FPU_SINGLEPRECISION_SUPPORTED     (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of register bank size register
+#define FPU_REGISTERBANK_16REGS  (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Media and floating point feature 1 register */
+#define FPU_MVFR1_FUSEDMAC_OFFSET             (28U)
+#define FPU_MVFR1_FUSEDMAC_MASK               (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FUSEDMAC))      /*!< Mask  0xF0000000 */
+#define FPU_MVFR1_FUSEDMAC_0                  (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FUSEDMAC))      /*!< Value 0x10000000 */
+#define FPU_MVFR1_FUSEDMAC_1                  (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FUSEDMAC))      /*!< Value 0x20000000 */
+#define FPU_MVFR1_FUSEDMAC_2                  (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FUSEDMAC))      /*!< Value 0x40000000 */
+#define FPU_MVFR1_FUSEDMAC_3                  (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FUSEDMAC))      /*!< Value 0x80000000 */
+
+#define FPU_MVFR1_HALFPRECDBLPRECCONV_OFFSET  (24U)
+#define FPU_MVFR1_HALFPRECDBLPRECCONV_MASK    (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR1, HALFPRECDBLPRECCONV))        /*!< Mask  0x0F000000 */
+#define FPU_MVFR1_HALFPRECDBLPRECCONV_0       (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, HALFPRECDBLPRECCONV))        /*!< Value 0x01000000 */
+#define FPU_MVFR1_HALFPRECDBLPRECCONV_1       (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, HALFPRECDBLPRECCONV))        /*!< Value 0x02000000 */
+#define FPU_MVFR1_HALFPRECDBLPRECCONV_2       (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, HALFPRECDBLPRECCONV))        /*!< Value 0x04000000 */
+#define FPU_MVFR1_HALFPRECDBLPRECCONV_3       (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, HALFPRECDBLPRECCONV))        /*!< Value 0x08000000 */
+
+#define FPU_MVFR1_NANMODE_OFFSET              (4U)
+#define FPU_MVFR1_NANMODE_MASK                (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR1, NANMODE))    /*!< Mask  0x000000F0 */
+#define FPU_MVFR1_NANMODE_0                   (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, NANMODE))    /*!< Value 0x00000010 */
+#define FPU_MVFR1_NANMODE_1                   (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, NANMODE))    /*!< Value 0x00000020 */
+#define FPU_MVFR1_NANMODE_2                   (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, NANMODE))    /*!< Value 0x00000040 */
+#define FPU_MVFR1_NANMODE_3                   (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, NANMODE))    /*!< Value 0x00000080 */
+
+#define FPU_MVFR1_FLUSHTOZEROMODE_OFFSET      (0U)
+#define FPU_MVFR1_FLUSHTOZEROMODE_MASK        (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FLUSHTOZEROMODE))   /*!< Mask  0x0000000F */
+#define FPU_MVFR1_FLUSHTOZEROMODE_0           (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FLUSHTOZEROMODE))   /*!< Value 0x00000001 */
+#define FPU_MVFR1_FLUSHTOZEROMODE_1           (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FLUSHTOZEROMODE))   /*!< Value 0x00000002 */
+#define FPU_MVFR1_FLUSHTOZEROMODE_2           (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FLUSHTOZEROMODE))   /*!< Value 0x00000004 */
+#define FPU_MVFR1_FLUSHTOZEROMODE_3           (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR1, FLUSHTOZEROMODE))   /*!< Value 0x00000008 */
+
+// Values of fused MAC support register
+#define FPU_FUSEDMAC_SUPPORTED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of half precision to double precision conversion support register
+#define FPU_HALFPRECDBLPRECCONV_HALFTOSGL           (0x1UL)  /*!< Value 0x00000001 */
+#define FPU_HALFPRECDBLPRECCONV_DBLTOHALFHALFTOSGL  (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of NaN mode register
+#define FPU_NANMODE_PROPAGATION  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of flush to zero mode register
+#define FPU_FLUSHTOZEROMODE_FULLDENORMALIZEDARITHMETICS  (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Media and floating point feature 2 register */
+#define FPU_MVFR2_MISCFEATURES_OFFSET  (4U)
+#define FPU_MVFR2_MISCFEATURES_MASK    (0xFUL << REGISTER_FIELD_OFFSET(FPU, MVFR2, MISCFEATURES))    /*!< Mask  0x000000F0 */
+#define FPU_MVFR2_MISCFEATURES_0       (0x1UL << REGISTER_FIELD_OFFSET(FPU, MVFR2, MISCFEATURES))    /*!< Value 0x00000010 */
+#define FPU_MVFR2_MISCFEATURES_1       (0x2UL << REGISTER_FIELD_OFFSET(FPU, MVFR2, MISCFEATURES))    /*!< Value 0x00000020 */
+#define FPU_MVFR2_MISCFEATURES_2       (0x4UL << REGISTER_FIELD_OFFSET(FPU, MVFR2, MISCFEATURES))    /*!< Value 0x00000040 */
+#define FPU_MVFR2_MISCFEATURES_3       (0x8UL << REGISTER_FIELD_OFFSET(FPU, MVFR2, MISCFEATURES))    /*!< Value 0x00000080 */
+
+// Values of floating point miscellaneous feature support register
+#define FPU_MISCFEATURES_NONE                (0x0UL)  /*!< Value 0x00000000 */
+#define FPU_MISCFEATURES_FPSELINTCONVMAXMIN  (0x4UL)  /*!< Value 0x00000004 */
+
+#define FPU_OFFSET 0xF34UL
+#define FPU_BASE OFFSET_ADDRESS(SCS_BASE, FPU_OFFSET)
+#define FPU REGISTER_PTR(scb_fpu_regs, FPU_BASE)
+
+/** @} */ // End of FPU group
+
+/** @} */ // End of RegisterGroup group
+
+#endif // FPU_REGISTERS_H

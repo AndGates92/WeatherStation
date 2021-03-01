@@ -1,0 +1,594 @@
+#ifndef CSTF_H
+#define CSTF_H
+/**
+ * @copyright
+ * @file cstf.h
+ * @author Andrea Gianarda
+ * @date 29th of July 2021
+ * @brief CoreSight Trace Funnel (CSTF) global definitions
+*/
+
+/**
+ *  @defgroup RegisterGroup Register global macros, structure and functions
+ *  @brief Registers global macros, structure and functions
+ *  @{
+ */
+
+/**
+ *  @ingroup RegisterGroup
+ *  @defgroup CSTF CoreSight Trace Funnel (CSTF) macros
+ *  @brief CoreSight Trace Funnel (CSTF) macros
+ *  @{
+ */
+
+typedef struct {
+	RW uint32_t CTRL;              /*!< Funnel control register                                   (Offset 0x0)            */
+	RW uint32_t PRIORITY;          /*!< Priority control register                                 (Offset 0x4)            */
+	   uint32_t reserved0[3812U];  /*!< Reserved                                                  (Offset 0x8 to 0xEE8) */
+	RW uint32_t ITATBDATA0;        /*!< Integration test AMBA Trace Bus (ATB) data 0 register     (Offset 0xEEC)          */
+	RW uint32_t ITATBCTR2;         /*!< Integration test AMBA Trace Bus (ATB) control 2 register  (Offset 0xEF0)          */
+	RW uint32_t ITATBCTR1;         /*!< Integration test AMBA Trace Bus (ATB) control 1 register  (Offset 0xEF4)          */
+	RW uint32_t ITATBCTR0;         /*!< Integration test AMBA Trace Bus (ATB) control 0 register  (Offset 0xEF8)          */
+	   uint32_t reserved1;         /*!< Reserved                                                  (Offset 0xEFC)          */
+	RW uint32_t ITCTRL;            /*!< Integration mode control register                         (Offset 0xF00)          */
+	   uint32_t reserved2[39U];    /*!< Reserved                                                  (Offset 0xF04 to 0xF9C) */
+	RW uint32_t CLAIMSET;          /*!< Claim tag set register                                    (Offset 0xFA0)          */
+	RW uint32_t CLAIMCLR;          /*!< Claim tag clear register                                  (Offset 0xFA4)          */
+	   uint32_t reserved3[2U];     /*!< Reserved                                                  (Offset 0xFA8 to 0xFAC) */
+	WO uint32_t LAR;               /*!< CoreSight lock access register                            (Offset 0xFB0)          */
+	RO uint32_t LSR;               /*!< CoreSight lock status register                            (Offset 0xFB4)          */
+	RO uint32_t AUTHSTAT;          /*!< Authentication status register                            (Offset 0xFB8)          */
+	   uint32_t reserved4[3U];     /*!< Reserved                                                  (Offset 0xFBC to 0xFC4) */
+	RO uint32_t DEVID;             /*!< Device ID register                                        (Offset 0xFC8)          */
+	RO uint32_t DEVTYPE;           /*!< Device type register                                      (Offset 0xFCC)          */
+	RO uint32_t PIDR4;             /*!< Peripheral identification 4 register                      (Offset 0xFD0)          */
+	RO uint32_t PIDR5;             /*!< Peripheral identification 5 register                      (Offset 0xFD4)          */
+	RO uint32_t PIDR6;             /*!< Peripheral identification 6 register                      (Offset 0xFD8)          */
+	RO uint32_t PIDR7;             /*!< Peripheral identification 7 register                      (Offset 0xFDC)          */
+	RO uint32_t PIDR0;             /*!< Peripheral identification 0 register                      (Offset 0xFE0)          */
+	RO uint32_t PIDR1;             /*!< Peripheral identification 1 register                      (Offset 0xFE4)          */
+	RO uint32_t PIDR2;             /*!< Peripheral identification 2 register                      (Offset 0xFE8)          */
+	RO uint32_t PIDR3;             /*!< Peripheral identification 3 register                      (Offset 0xFEC)          */
+	RO uint32_t CIDR0;             /*!< Component identification 0 register                       (Offset 0xFF0)          */
+	RO uint32_t CIDR1;             /*!< Component identification 1 register                       (Offset 0xFF4)          */
+	RO uint32_t CIDR2;             /*!< Component identification 2 register                       (Offset 0xFF8)          */
+	RO uint32_t CIDR3;             /*!< Component identification 3 register                       (Offset 0xFFC)          */
+} cstf_regs;
+
+/*!< CoreSight Trace Funnel (CSTF) registers in private peripheral bus (PPB) registers */
+/*!< Funnel control register */
+#define CSTF_CTRL_HT_OFFSET    (8U)
+#define CSTF_CTRL_HT_MASK      (0xFUL << REGISTER_FIELD_OFFSET(CSTF, CTRL, HT))    /*!< Mask  0x00000F00 */
+
+#define CSTF_CTRL_ENS7_OFFSET  (7U)
+#define CSTF_CTRL_ENS7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS7))  /*!< Mask  0x00000080 */
+
+#define CSTF_CTRL_ENS6_OFFSET  (6U)
+#define CSTF_CTRL_ENS6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS6))  /*!< Mask  0x00000040 */
+
+#define CSTF_CTRL_ENS5_OFFSET  (5U)
+#define CSTF_CTRL_ENS5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS5))  /*!< Mask  0x00000020 */
+
+#define CSTF_CTRL_ENS4_OFFSET  (4U)
+#define CSTF_CTRL_ENS4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS4))  /*!< Mask  0x00000010 */
+
+#define CSTF_CTRL_ENS3_OFFSET  (3U)
+#define CSTF_CTRL_ENS3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS3))  /*!< Mask  0x00000008 */
+
+#define CSTF_CTRL_ENS2_OFFSET  (2U)
+#define CSTF_CTRL_ENS2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS2))  /*!< Mask  0x00000004 */
+
+#define CSTF_CTRL_ENS1_OFFSET  (1U)
+#define CSTF_CTRL_ENS1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS1))  /*!< Mask  0x00000002 */
+
+#define CSTF_CTRL_ENS0_OFFSET  (0U)
+#define CSTF_CTRL_ENS0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CTRL, ENS0))  /*!< Mask  0x00000001 */
+
+// Values of the CoreSight trace funnel minimum hold time
+#define CSTF_MINHOLDTIME_1   (0x0UL)  /*!< Value 0x00000000 */
+#define CSTF_MINHOLDTIME_2   (0x1UL)  /*!< Value 0x00000001 */
+#define CSTF_MINHOLDTIME_3   (0x2UL)  /*!< Value 0x00000002 */
+#define CSTF_MINHOLDTIME_4   (0x3UL)  /*!< Value 0x00000003 */
+#define CSTF_MINHOLDTIME_5   (0x4UL)  /*!< Value 0x00000004 */
+#define CSTF_MINHOLDTIME_6   (0x5UL)  /*!< Value 0x00000005 */
+#define CSTF_MINHOLDTIME_7   (0x6UL)  /*!< Value 0x00000006 */
+#define CSTF_MINHOLDTIME_8   (0x7UL)  /*!< Value 0x00000007 */
+#define CSTF_MINHOLDTIME_9   (0x8UL)  /*!< Value 0x00000008 */
+#define CSTF_MINHOLDTIME_10  (0x9UL)  /*!< Value 0x00000009 */
+#define CSTF_MINHOLDTIME_11  (0xAUL)  /*!< Value 0x0000000A */
+#define CSTF_MINHOLDTIME_12  (0xBUL)  /*!< Value 0x0000000B */
+#define CSTF_MINHOLDTIME_13  (0xCUL)  /*!< Value 0x0000000C */
+#define CSTF_MINHOLDTIME_14  (0xDUL)  /*!< Value 0x0000000D */
+#define CSTF_MINHOLDTIME_15  (0xEUL)  /*!< Value 0x0000000E */
+
+// Values of trace sampling and exception tracing support bit
+#define CSTF_PORT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define CSTF_PORT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Priority control register */
+#define CSTF_PRIORITY_PRIPORT7_OFFSET  (21U)
+#define CSTF_PRIORITY_PRIPORT7_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT7))  /*!< Mask  0x00E00000 */
+
+#define CSTF_PRIORITY_PRIPORT6_OFFSET  (18U)
+#define CSTF_PRIORITY_PRIPORT6_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT6))  /*!< Mask  0x001C0000 */
+
+#define CSTF_PRIORITY_PRIPORT5_OFFSET  (15U)
+#define CSTF_PRIORITY_PRIPORT5_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT5))  /*!< Mask  0x00031000 */
+
+#define CSTF_PRIORITY_PRIPORT4_OFFSET  (12U)
+#define CSTF_PRIORITY_PRIPORT4_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT4))  /*!< Mask  0x00007000 */
+
+#define CSTF_PRIORITY_PRIPORT3_OFFSET  (9U)
+#define CSTF_PRIORITY_PRIPORT3_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT3))  /*!< Mask  0x00000E00 */
+
+#define CSTF_PRIORITY_PRIPORT2_OFFSET  (6U)
+#define CSTF_PRIORITY_PRIPORT2_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT2))  /*!< Mask  0x000001C0 */
+
+#define CSTF_PRIORITY_PRIPORT1_OFFSET  (3U)
+#define CSTF_PRIORITY_PRIPORT1_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT1))  /*!< Mask  0x00000031 */
+
+#define CSTF_PRIORITY_PRIPORT0_OFFSET  (0U)
+#define CSTF_PRIORITY_PRIPORT0_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PRIORITY, PRIPORT0))  /*!< Mask  0x00000007 */
+
+// Values of the CoreSight trace funnel port priority
+#define CSTF_PRIORITY_0  (0x0UL)  /*!< Value 0x00000000 */
+#define CSTF_PRIORITY_1  (0x1UL)  /*!< Value 0x00000001 */
+#define CSTF_PRIORITY_2  (0x2UL)  /*!< Value 0x00000002 */
+#define CSTF_PRIORITY_3  (0x3UL)  /*!< Value 0x00000003 */
+#define CSTF_PRIORITY_4  (0x4UL)  /*!< Value 0x00000004 */
+#define CSTF_PRIORITY_5  (0x5UL)  /*!< Value 0x00000005 */
+#define CSTF_PRIORITY_6  (0x6UL)  /*!< Value 0x00000006 */
+#define CSTF_PRIORITY_7  (0x7UL)  /*!< Value 0x00000006 */
+
+/*!< Integration test AMBA Trace Bus (ATB) data 0 register */
+#define CSTF_ITATBDATA0_ATDATA31_OFFSET  (4U)
+#define CSTF_ITATBDATA0_ATDATA31_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBDATA0, ATDATA31))  /*!< Mask  0x00000010 */
+
+#define CSTF_ITATBDATA0_ATDATA23_OFFSET  (3U)
+#define CSTF_ITATBDATA0_ATDATA23_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBDATA0, ATDATA23))  /*!< Mask  0x00000008 */
+
+#define CSTF_ITATBDATA0_ATDATA15_OFFSET  (2U)
+#define CSTF_ITATBDATA0_ATDATA15_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBDATA0, ATDATA15))  /*!< Mask  0x00000004 */
+
+#define CSTF_ITATBDATA0_ATDATA7_OFFSET   (1U)
+#define CSTF_ITATBDATA0_ATDATA7_MASK     (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBDATA0, ATDATA7))   /*!< Mask  0x00000002 */
+
+#define CSTF_ITATBDATA0_ATDATA0_OFFSET   (0U)
+#define CSTF_ITATBDATA0_ATDATA0_MASK     (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBDATA0, ATDATA0))   /*!< Mask  0x00000001 */
+
+/*!< Integration test AMBA Trace Bus (ATB) control 2 register */
+#define CSTF_ITATBCTR2_AFVALIDS_OFFSET  (1U)
+#define CSTF_ITATBCTR2_AFVALIDS_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR2, AFVALIDS))  /*!< Mask  0x00000002 */
+
+#define CSTF_ITATBCTR2_ATREADYS_OFFSET  (0U)
+#define CSTF_ITATBCTR2_ATREADYS_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR2, ATREADYS))  /*!< Mask  0x00000001 */
+
+/*!< Integration test AMBA Trace Bus (ATB) control 1 register */
+#define CSTF_ITATBCTR1_ATID_OFFSET  (0U)
+#define CSTF_ITATBCTR1_ATID_MASK    (0x3FUL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Mask  0x0000003F */
+#define CSTF_ITATBCTR1_ATID_0       (0x01UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000001 */
+#define CSTF_ITATBCTR1_ATID_1       (0x02UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000002 */
+#define CSTF_ITATBCTR1_ATID_2       (0x04UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000004 */
+#define CSTF_ITATBCTR1_ATID_3       (0x08UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000008 */
+#define CSTF_ITATBCTR1_ATID_4       (0x10UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000010 */
+#define CSTF_ITATBCTR1_ATID_5       (0x20UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000020 */
+#define CSTF_ITATBCTR1_ATID_6       (0x80UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR1, ATID))  /*!< Value 0x00000040 */
+
+/*!< Integration test AMBA Trace Bus (ATB) control 0 register */
+#define CSTF_ITATBCTR0_ATBYTES_OFFSET  (8U)
+#define CSTF_ITATBCTR0_ATBYTES_MASK    (0x3UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR0, ATBYTES))  /*!< Mask  0x00000300 */
+
+#define CSTF_ITATBCTR0_AFREADY_OFFSET  (1U)
+#define CSTF_ITATBCTR0_AFREADY_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR0, ATREADY))  /*!< Mask  0x00000002 */
+
+#define CSTF_ITATBCTR0_ATVALID_OFFSET  (0U)
+#define CSTF_ITATBCTR0_ATVALID_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITATBCTR0, AFVALID))  /*!< Mask  0x00000001 */
+
+/*!< Integration mode control register */
+#define CSTF_ITCTRL_IME_OFFSET  (0U)
+#define CSTF_ITCTRL_IME_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, ITCTRL, IME))  /*!< Mask  0x00000001 */
+
+/*!< Claim tag set register */
+#define CSTF_CLAIMSET_CLAIMSET_OFFSET  (0U)
+#define CSTF_CLAIMSET_CLAIMSET_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, CLAIMSET))  /*!< Mask  0x0000000F */
+
+// Values of claim tag set register bits
+#define CSTF_CLAIMSET_BIT3_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, CLAIMSET) + CSTF_CLAIM_BIT3)
+#define CSTF_CLAIMSET_BIT3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, BIT3))  /*!< Mask  0x00000008 */
+
+#define CSTF_CLAIMSET_BIT2_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, CLAIMSET) + CSTF_CLAIM_BIT2)
+#define CSTF_CLAIMSET_BIT2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, BIT2))  /*!< Mask  0x00000004 */
+
+#define CSTF_CLAIMSET_BIT1_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, CLAIMSET) + CSTF_CLAIM_BIT1)
+#define CSTF_CLAIMSET_BIT1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, BIT1))  /*!< Mask  0x00000002 */
+
+#define CSTF_CLAIMSET_BIT0_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, CLAIMSET) + CSTF_CLAIM_BIT0)
+#define CSTF_CLAIMSET_BIT0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMSET, BIT0))  /*!< Mask  0x00000001 */
+
+/*!< Claim tag clear register */
+#define CSTF_CLAIMCLR_CLAIMCLR_OFFSET  (0U)
+#define CSTF_CLAIMCLR_CLAIMCLR_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, CLAIMCLR))  /*!< Mask  0x0000000F */
+
+// Values of claim tag clear register bits
+#define CSTF_CLAIMCLR_BIT3_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, CLAIMCLR) + CSTF_CLAIM_BIT3)
+#define CSTF_CLAIMCLR_BIT3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, BIT3))  /*!< Mask  0x00000008 */
+
+#define CSTF_CLAIMCLR_BIT2_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, CLAIMCLR) + CSTF_CLAIM_BIT2)
+#define CSTF_CLAIMCLR_BIT2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, BIT2))  /*!< Mask  0x00000004 */
+
+#define CSTF_CLAIMCLR_BIT1_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, CLAIMCLR) + CSTF_CLAIM_BIT1)
+#define CSTF_CLAIMCLR_BIT1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, BIT1))  /*!< Mask  0x00000002 */
+
+#define CSTF_CLAIMCLR_BIT0_OFFSET  (REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, CLAIMCLR) + CSTF_CLAIM_BIT0)
+#define CSTF_CLAIMCLR_BIT0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CLAIMCLR, BIT0))  /*!< Mask  0x00000001 */
+
+/*!< CoreSight lock access register */
+#define CSTF_LAR_KEY_OFFSET  (0U)
+#define CSTF_LAR_KEY_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Mask  0xFFFFFFFF */
+#define CSTF_LAR_KEY_0       (0x00000001UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000001 */
+#define CSTF_LAR_KEY_1       (0x00000002UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000002 */
+#define CSTF_LAR_KEY_2       (0x00000004UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000004 */
+#define CSTF_LAR_KEY_3       (0x00000008UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000008 */
+#define CSTF_LAR_KEY_4       (0x00000010UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000010 */
+#define CSTF_LAR_KEY_5       (0x00000020UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000020 */
+#define CSTF_LAR_KEY_6       (0x00000040UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000040 */
+#define CSTF_LAR_KEY_7       (0x00000080UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000080 */
+#define CSTF_LAR_KEY_8       (0x00000100UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000100 */
+#define CSTF_LAR_KEY_9       (0x00000200UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000200 */
+#define CSTF_LAR_KEY_10      (0x00000400UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000400 */
+#define CSTF_LAR_KEY_11      (0x00000800UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00000800 */
+#define CSTF_LAR_KEY_12      (0x00001000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00001000 */
+#define CSTF_LAR_KEY_13      (0x00002000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00002000 */
+#define CSTF_LAR_KEY_14      (0x00004000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00004000 */
+#define CSTF_LAR_KEY_15      (0x00008000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00008000 */
+#define CSTF_LAR_KEY_16      (0x00010000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00010000 */
+#define CSTF_LAR_KEY_17      (0x00020000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00020000 */
+#define CSTF_LAR_KEY_18      (0x00040000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00040000 */
+#define CSTF_LAR_KEY_19      (0x00080000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00080000 */
+#define CSTF_LAR_KEY_20      (0x00100000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00100000 */
+#define CSTF_LAR_KEY_21      (0x00200000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00200000 */
+#define CSTF_LAR_KEY_22      (0x00400000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00400000 */
+#define CSTF_LAR_KEY_23      (0x00800000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x00800000 */
+#define CSTF_LAR_KEY_24      (0x01000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x01000000 */
+#define CSTF_LAR_KEY_25      (0x02000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x02000000 */
+#define CSTF_LAR_KEY_26      (0x04000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x04000000 */
+#define CSTF_LAR_KEY_27      (0x08000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x08000000 */
+#define CSTF_LAR_KEY_28      (0x10000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x10000000 */
+#define CSTF_LAR_KEY_29      (0x20000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x20000000 */
+#define CSTF_LAR_KEY_30      (0x40000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x40000000 */
+#define CSTF_LAR_KEY_31      (0x80000000UL << REGISTER_FIELD_OFFSET(CSTF, LAR, KEY))  /*!< Value 0x80000000 */
+
+/*!< CoreSight lock status register */
+#define CSTF_LSR_NTT_OFFSET  (2U)
+#define CSTF_LSR_NTT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, LSR, NTT))  /*!< Mask  0x00000004 */
+
+#define CSTF_LSR_SLK_OFFSET  (1U)
+#define CSTF_LSR_SLK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, LSR, SLK))  /*!< Mask  0x00000002 */
+
+#define CSTF_LSR_SLI_OFFSET  (0U)
+#define CSTF_LSR_SLI_MASK    (0x1UL << REGISTER_FIELD_OFFSET(CSTF, LSR, SLI))  /*!< Mask  0x00000001 */
+
+/*!< Authentication status register */
+#define CSTF_AUTHSTAT_SNID_OFFSET   (6U)
+#define CSTF_AUTHSTAT_SNID_MASK     (0x3UL << REGISTER_FIELD_OFFSET(CSTF, AUTHSTAT, SNID))   /*!< Mask  0x000000C0 - security level for secure non-invasive debug */
+
+#define CSTF_AUTHSTAT_SID_OFFSET    (4U)
+#define CSTF_AUTHSTAT_SID_MASK      (0x3UL << REGISTER_FIELD_OFFSET(CSTF, AUTHSTAT, SID))    /*!< Mask  0x00000030 - security level for secure invasive debug */
+
+#define CSTF_AUTHSTAT_NSNID_OFFSET  (2U)
+#define CSTF_AUTHSTAT_NSNID_MASK    (0x3UL << REGISTER_FIELD_OFFSET(CSTF, AUTHSTAT, NSNID))  /*!< Mask  0x0000000C - security level for non secure non-invasive debug */
+
+#define CSTF_AUTHSTAT_NSID_OFFSET   (0U)
+#define CSTF_AUTHSTAT_NSID_MASK     (0x3UL << REGISTER_FIELD_OFFSET(CSTF, AUTHSTAT, NSID))   /*!< Mask  0x00000003 - security level for non secure invasive debug */
+
+/*!< Device configuration register */
+#define CSTF_DEVID_PRIORITY_OFFSET   (4U)
+#define CSTF_DEVID_PRIORITY_MASK     (0xFUL << REGISTER_FIELD_OFFSET(CSTF, DEVID, PRIORITY))   /*!< Mask  0x000000F0 */
+
+#define CSTF_DEVID_PORTCOUNT_OFFSET  (0U)
+#define CSTF_DEVID_PORTCOUNT_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, DEVID, PORTCOUNT))  /*!< Mask  0x0000000F */
+
+// Values of the device ID static priority scheme
+#define CSTF_STATICPRIORITY_2  (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of the device ID port count
+#define CSTF_PORTCOUNT_2  (0x2UL)  /*!< Value 0x00000002 */
+#define CSTF_PORTCOUNT_3  (0x3UL)  /*!< Value 0x00000003 */
+#define CSTF_PORTCOUNT_4  (0x4UL)  /*!< Value 0x00000004 */
+#define CSTF_PORTCOUNT_5  (0x5UL)  /*!< Value 0x00000005 */
+#define CSTF_PORTCOUNT_6  (0x6UL)  /*!< Value 0x00000006 */
+#define CSTF_PORTCOUNT_7  (0x7UL)  /*!< Value 0x00000006 */
+
+/*!< Device type register */
+#define CSTF_DEVTYPE_SUBTYPE_OFFSET    (4U)
+#define CSTF_DEVTYPE_SUBTYPE_MASK      (0xFUL << REGISTER_FIELD_OFFSET(CSTF, DEVTYPE, SUBTYPE))    /*!< Mask  0x000000F0 */
+
+#define CSTF_DEVTYPE_MAJORTYPE_OFFSET  (0U)
+#define CSTF_DEVTYPE_MAJORTYPE_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, DEVTYPE, MAJORTYPE))  /*!< Mask  0x0000000F */
+
+// Values of the sub-classification register
+#define CSTF_SUBTYPE_ROUTER  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the major classification register
+#define CSTF_MAJORTYPE_TRACEPORT  (0x2UL)  /*!< Value 0x00000002 */
+
+/*!< Peripheral identitication 4 register */
+#define CSTF_PIDR4_4KCOUNT_OFFSET    (4U)
+#define CSTF_PIDR4_4KCOUNT_MASK      (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, 4KCOUNT))    /*!< Mask  0x000000F0 */
+#define CSTF_PIDR4_4KCOUNT_0         (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, 4KCOUNT))    /*!< Value 0x00000010 */
+#define CSTF_PIDR4_4KCOUNT_1         (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, 4KCOUNT))    /*!< Value 0x00000020 */
+#define CSTF_PIDR4_4KCOUNT_2         (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, 4KCOUNT))    /*!< Value 0x00000040 */
+#define CSTF_PIDR4_4KCOUNT_3         (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, 4KCOUNT))    /*!< Value 0x00000080 */
+
+#define CSTF_PIDR4_JEP106CON_OFFSET  (0U)
+#define CSTF_PIDR4_JEP106CON_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, JEP106CON))  /*!< Mask  0x0000000F */
+#define CSTF_PIDR4_JEP106CON_0       (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, JEP106CON))  /*!< Value 0x00000001 */
+#define CSTF_PIDR4_JEP106CON_1       (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, JEP106CON))  /*!< Value 0x00000002 */
+#define CSTF_PIDR4_JEP106CON_2       (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, JEP106CON))  /*!< Value 0x00000004 */
+#define CSTF_PIDR4_JEP106CON_3       (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR4, JEP106CON))  /*!< Value 0x00000008 */
+
+// Values of JEDEC JEP 106 continuation code in peripheral identification 4 register
+#define CSTF_PIDR4JEP106_VALUE  (0x4UL)  /*!< Value 0x00000004 */
+
+/*!< Peripheral identitication 5 register */
+#define CSTF_PIDR5_RSVD_OFFSET  (0U)
+#define CSTF_PIDR5_RSVD_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Mask  0xFFFFFFFF */
+#define CSTF_PIDR5_RSVD_0       (0x00000001UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000001 */
+#define CSTF_PIDR5_RSVD_1       (0x00000002UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000002 */
+#define CSTF_PIDR5_RSVD_2       (0x00000004UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000004 */
+#define CSTF_PIDR5_RSVD_3       (0x00000008UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000008 */
+#define CSTF_PIDR5_RSVD_4       (0x00000010UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000010 */
+#define CSTF_PIDR5_RSVD_5       (0x00000020UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000020 */
+#define CSTF_PIDR5_RSVD_6       (0x00000040UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000040 */
+#define CSTF_PIDR5_RSVD_7       (0x00000080UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000080 */
+#define CSTF_PIDR5_RSVD_8       (0x00000100UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000100 */
+#define CSTF_PIDR5_RSVD_9       (0x00000200UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000200 */
+#define CSTF_PIDR5_RSVD_10      (0x00000400UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000400 */
+#define CSTF_PIDR5_RSVD_11      (0x00000800UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00000800 */
+#define CSTF_PIDR5_RSVD_12      (0x00001000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00001000 */
+#define CSTF_PIDR5_RSVD_13      (0x00002000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00002000 */
+#define CSTF_PIDR5_RSVD_14      (0x00004000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00004000 */
+#define CSTF_PIDR5_RSVD_15      (0x00008000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00008000 */
+#define CSTF_PIDR5_RSVD_16      (0x00010000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00010000 */
+#define CSTF_PIDR5_RSVD_17      (0x00020000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00020000 */
+#define CSTF_PIDR5_RSVD_18      (0x00040000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00040000 */
+#define CSTF_PIDR5_RSVD_19      (0x00080000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00080000 */
+#define CSTF_PIDR5_RSVD_20      (0x00100000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00100000 */
+#define CSTF_PIDR5_RSVD_21      (0x00200000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00200000 */
+#define CSTF_PIDR5_RSVD_22      (0x00400000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00400000 */
+#define CSTF_PIDR5_RSVD_23      (0x00800000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x00800000 */
+#define CSTF_PIDR5_RSVD_24      (0x01000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x01000000 */
+#define CSTF_PIDR5_RSVD_25      (0x02000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x02000000 */
+#define CSTF_PIDR5_RSVD_26      (0x04000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x04000000 */
+#define CSTF_PIDR5_RSVD_27      (0x08000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x08000000 */
+#define CSTF_PIDR5_RSVD_28      (0x10000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x10000000 */
+#define CSTF_PIDR5_RSVD_29      (0x20000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x20000000 */
+#define CSTF_PIDR5_RSVD_30      (0x40000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x40000000 */
+#define CSTF_PIDR5_RSVD_31      (0x80000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR5, RSVD))  /*!< Value 0x80000000 */
+
+/*!< Peripheral identitication 6 register */
+#define CSTF_PIDR6_RSVD_OFFSET  (0U)
+#define CSTF_PIDR6_RSVD_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Mask  0xFFFFFFFF */
+#define CSTF_PIDR6_RSVD_0       (0x00000001UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000001 */
+#define CSTF_PIDR6_RSVD_1       (0x00000002UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000002 */
+#define CSTF_PIDR6_RSVD_2       (0x00000004UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000004 */
+#define CSTF_PIDR6_RSVD_3       (0x00000008UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000008 */
+#define CSTF_PIDR6_RSVD_4       (0x00000010UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000010 */
+#define CSTF_PIDR6_RSVD_5       (0x00000020UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000020 */
+#define CSTF_PIDR6_RSVD_6       (0x00000040UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000040 */
+#define CSTF_PIDR6_RSVD_7       (0x00000080UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000080 */
+#define CSTF_PIDR6_RSVD_8       (0x00000100UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000100 */
+#define CSTF_PIDR6_RSVD_9       (0x00000200UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000200 */
+#define CSTF_PIDR6_RSVD_10      (0x00000400UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000400 */
+#define CSTF_PIDR6_RSVD_11      (0x00000800UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00000800 */
+#define CSTF_PIDR6_RSVD_12      (0x00001000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00001000 */
+#define CSTF_PIDR6_RSVD_13      (0x00002000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00002000 */
+#define CSTF_PIDR6_RSVD_14      (0x00004000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00004000 */
+#define CSTF_PIDR6_RSVD_15      (0x00008000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00008000 */
+#define CSTF_PIDR6_RSVD_16      (0x00010000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00010000 */
+#define CSTF_PIDR6_RSVD_17      (0x00020000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00020000 */
+#define CSTF_PIDR6_RSVD_18      (0x00040000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00040000 */
+#define CSTF_PIDR6_RSVD_19      (0x00080000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00080000 */
+#define CSTF_PIDR6_RSVD_20      (0x00100000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00100000 */
+#define CSTF_PIDR6_RSVD_21      (0x00200000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00200000 */
+#define CSTF_PIDR6_RSVD_22      (0x00400000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00400000 */
+#define CSTF_PIDR6_RSVD_23      (0x00800000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x00800000 */
+#define CSTF_PIDR6_RSVD_24      (0x01000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x01000000 */
+#define CSTF_PIDR6_RSVD_25      (0x02000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x02000000 */
+#define CSTF_PIDR6_RSVD_26      (0x04000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x04000000 */
+#define CSTF_PIDR6_RSVD_27      (0x08000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x08000000 */
+#define CSTF_PIDR6_RSVD_28      (0x10000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x10000000 */
+#define CSTF_PIDR6_RSVD_29      (0x20000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x20000000 */
+#define CSTF_PIDR6_RSVD_30      (0x40000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x40000000 */
+#define CSTF_PIDR6_RSVD_31      (0x80000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR6, RSVD))  /*!< Value 0x80000000 */
+
+/*!< Peripheral identitication 7 register */
+#define CSTF_PIDR7_RSVD_OFFSET  (0U)
+#define CSTF_PIDR7_RSVD_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Mask  0xFFFFFFFF */
+#define CSTF_PIDR7_RSVD_0       (0x00000001UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000001 */
+#define CSTF_PIDR7_RSVD_1       (0x00000002UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000002 */
+#define CSTF_PIDR7_RSVD_2       (0x00000004UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000004 */
+#define CSTF_PIDR7_RSVD_3       (0x00000008UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000008 */
+#define CSTF_PIDR7_RSVD_4       (0x00000010UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000010 */
+#define CSTF_PIDR7_RSVD_5       (0x00000020UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000020 */
+#define CSTF_PIDR7_RSVD_6       (0x00000040UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000040 */
+#define CSTF_PIDR7_RSVD_7       (0x00000080UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000080 */
+#define CSTF_PIDR7_RSVD_8       (0x00000100UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000100 */
+#define CSTF_PIDR7_RSVD_9       (0x00000200UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000200 */
+#define CSTF_PIDR7_RSVD_10      (0x00000400UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000400 */
+#define CSTF_PIDR7_RSVD_11      (0x00000800UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00000800 */
+#define CSTF_PIDR7_RSVD_12      (0x00001000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00001000 */
+#define CSTF_PIDR7_RSVD_13      (0x00002000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00002000 */
+#define CSTF_PIDR7_RSVD_14      (0x00004000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00004000 */
+#define CSTF_PIDR7_RSVD_15      (0x00008000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00008000 */
+#define CSTF_PIDR7_RSVD_16      (0x00010000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00010000 */
+#define CSTF_PIDR7_RSVD_17      (0x00020000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00020000 */
+#define CSTF_PIDR7_RSVD_18      (0x00040000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00040000 */
+#define CSTF_PIDR7_RSVD_19      (0x00080000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00080000 */
+#define CSTF_PIDR7_RSVD_20      (0x00100000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00100000 */
+#define CSTF_PIDR7_RSVD_21      (0x00200000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00200000 */
+#define CSTF_PIDR7_RSVD_22      (0x00400000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00400000 */
+#define CSTF_PIDR7_RSVD_23      (0x00800000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x00800000 */
+#define CSTF_PIDR7_RSVD_24      (0x01000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x01000000 */
+#define CSTF_PIDR7_RSVD_25      (0x02000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x02000000 */
+#define CSTF_PIDR7_RSVD_26      (0x04000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x04000000 */
+#define CSTF_PIDR7_RSVD_27      (0x08000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x08000000 */
+#define CSTF_PIDR7_RSVD_28      (0x10000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x10000000 */
+#define CSTF_PIDR7_RSVD_29      (0x20000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x20000000 */
+#define CSTF_PIDR7_RSVD_30      (0x40000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x40000000 */
+#define CSTF_PIDR7_RSVD_31      (0x80000000UL << REGISTER_FIELD_OFFSET(CSTF, PIDR7, RSVD))  /*!< Value 0x80000000 */
+
+/*!< Peripheral identitication 0 register */
+#define CSTF_PIDR0_PARTNUM_OFFSET  (0U)
+#define CSTF_PIDR0_PARTNUM_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Mask  0x000000FF */
+#define CSTF_PIDR0_PARTNUM_0       (0x01UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000001 */
+#define CSTF_PIDR0_PARTNUM_1       (0x02UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000002 */
+#define CSTF_PIDR0_PARTNUM_2       (0x04UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000004 */
+#define CSTF_PIDR0_PARTNUM_3       (0x08UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000008 */
+#define CSTF_PIDR0_PARTNUM_4       (0x10UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000010 */
+#define CSTF_PIDR0_PARTNUM_5       (0x20UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000020 */
+#define CSTF_PIDR0_PARTNUM_6       (0x40UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000040 */
+#define CSTF_PIDR0_PARTNUM_7       (0x80UL << REGISTER_FIELD_OFFSET(CSTF, PIDR0, PARTNUM))  /*!< Value 0x00000080 */
+
+// Values of part number register
+#define CSTF_PIDR0PARTNUM_ARM  (0x08UL)  /*!< Value 0x00000008 */
+
+/*!< Peripheral identitication 1 register */
+#define CSTF_PIDR1_JEP106ID_OFFSET  (4U)
+#define CSTF_PIDR1_JEP106ID_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, JEP106ID))  /*!< Mask  0x000000F0 */
+#define CSTF_PIDR1_JEP106ID_0       (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, JEP106ID))  /*!< Value 0x00000010 */
+#define CSTF_PIDR1_JEP106ID_1       (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, JEP106ID))  /*!< Value 0x00000020 */
+#define CSTF_PIDR1_JEP106ID_2       (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, JEP106ID))  /*!< Value 0x00000040 */
+#define CSTF_PIDR1_JEP106ID_3       (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, JEP106ID))  /*!< Value 0x00000080 */
+
+#define CSTF_PIDR1_PARTNUM_OFFSET   (0U)
+#define CSTF_PIDR1_PARTNUM_MASK     (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, PARTNUM))   /*!< Mask  0x0000000F */
+#define CSTF_PIDR1_PARTNUM_0        (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, PARTNUM))   /*!< Value 0x00000001 */
+#define CSTF_PIDR1_PARTNUM_1        (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, PARTNUM))   /*!< Value 0x00000002 */
+#define CSTF_PIDR1_PARTNUM_2        (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, PARTNUM))   /*!< Value 0x00000004 */
+#define CSTF_PIDR1_PARTNUM_3        (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR1, PARTNUM))   /*!< Value 0x00000008 */
+
+// Values of part number register
+#define CSTF_PIDR1PARTNUM_ARM  (0x9UL)  /*!< Value 0x00000009 */
+
+// Values of JEDEC JEP 106 ID code in peripheral identification 1 register
+#define CSTF_PIDR1JEP106ID_VALUE  (0xBUL)  /*!< Value 0x0000000B */
+
+/*!< Peripheral identitication 2 register */
+#define CSTF_PIDR2_REVISION_OFFSET    (4U)
+#define CSTF_PIDR2_REVISION_MASK      (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, REVISION))    /*!< Mask  0x000000F0 */
+#define CSTF_PIDR2_REVISION_0         (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, REVISION))    /*!< Value 0x00000010 */
+#define CSTF_PIDR2_REVISION_1         (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, REVISION))    /*!< Value 0x00000020 */
+#define CSTF_PIDR2_REVISION_2         (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, REVISION))    /*!< Value 0x00000040 */
+#define CSTF_PIDR2_REVISION_3         (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, REVISION))    /*!< Value 0x00000080 */
+
+#define CSTF_PIDR2_JEDEC_OFFSET       (3U)
+#define CSTF_PIDR2_JEDEC_MASK         (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, JEDEC))       /*!< Mask  0x00000008 */
+
+#define CSTF_PIDR2_JEDEC106ID_OFFSET  (0U)
+#define CSTF_PIDR2_JEDEC106ID_MASK    (0x7UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, JEDEC106ID))  /*!< Mask  0x00000007 */
+#define CSTF_PIDR2_JEDEC106ID_0       (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, JEDEC106ID))  /*!< Value 0x00000001 */
+#define CSTF_PIDR2_JEDEC106ID_1       (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, JEDEC106ID))  /*!< Value 0x00000002 */
+#define CSTF_PIDR2_JEDEC106ID_2       (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR2, JEDEC106ID))  /*!< Value 0x00000004 */
+
+// Values of revision number register
+#define CSTF_REVISION_VALUE  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of JEDEC assigned value select bit
+#define CSTF_JEDEC_VALUE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of JEDEC JEP 106 ID code in peripheral identification 2 register
+#define CSTF_PIDR2JEP106ID_VALUE  (0x3UL)  /*!< Value 0x00000003 */
+
+/*!< Peripheral identitication 3 register */
+#define CSTF_PIDR3_REVAND_OFFSET  (4U)
+#define CSTF_PIDR3_REVAND_MASK    (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, REVAND))  /*!< Mask  0x000000F0 */
+#define CSTF_PIDR3_REVAND_0       (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, REVAND))  /*!< Value 0x00000010 */
+#define CSTF_PIDR3_REVAND_1       (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, REVAND))  /*!< Value 0x00000020 */
+#define CSTF_PIDR3_REVAND_2       (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, REVAND))  /*!< Value 0x00000040 */
+#define CSTF_PIDR3_REVAND_3       (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, REVAND))  /*!< Value 0x00000080 */
+
+#define CSTF_PIDR3_CMOD_OFFSET    (0U)
+#define CSTF_PIDR3_CMOD_MASK      (0xFUL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, CMOD))    /*!< Mask  0x0000000F */
+#define CSTF_PIDR3_CMOD_0         (0x1UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, CMOD))    /*!< Value 0x00000001 */
+#define CSTF_PIDR3_CMOD_1         (0x2UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, CMOD))    /*!< Value 0x00000002 */
+#define CSTF_PIDR3_CMOD_2         (0x4UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, CMOD))    /*!< Value 0x00000004 */
+#define CSTF_PIDR3_CMOD_3         (0x8UL << REGISTER_FIELD_OFFSET(CSTF, PIDR3, CMOD))    /*!< Value 0x00000008 */
+
+// Values of manifacturer revision number register
+#define CSTF_REVAND_VALUE  (0x0UL)  /*!< Value 0x00000000 */
+
+// Values of JEDEC JEP 106 ID code in peripheral identification 2 register
+#define CSTF_CMOD_ARM  (0x0UL)  /*!< Value 0x00000000 */
+
+/*!< Component identitication 0 register */
+#define CSTF_CIDR0_PREAMBLE_OFFSET  (0U)
+#define CSTF_CIDR0_PREAMBLE_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Mask  0x000000FF */
+#define CSTF_CIDR0_PREAMBLE_0       (0x01UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000001 */
+#define CSTF_CIDR0_PREAMBLE_1       (0x02UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000002 */
+#define CSTF_CIDR0_PREAMBLE_2       (0x04UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000004 */
+#define CSTF_CIDR0_PREAMBLE_3       (0x08UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000008 */
+#define CSTF_CIDR0_PREAMBLE_4       (0x10UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000010 */
+#define CSTF_CIDR0_PREAMBLE_5       (0x20UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000020 */
+#define CSTF_CIDR0_PREAMBLE_6       (0x40UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000040 */
+#define CSTF_CIDR0_PREAMBLE_7       (0x80UL << REGISTER_FIELD_OFFSET(CSTF, CIDR0, PREAMBLE))  /*!< Value 0x00000080 */
+
+// Values of component identifier in component identification 0 register
+#define CSTF_CIDR0PREAMBLE_VALUE  (0x0DUL)  /*!< Value 0x0000000D */
+
+/*!< Component identitication 1 register */
+#define CSTF_CIDR1_CLASS_OFFSET      (4U)
+#define CSTF_CIDR1_CLASS_MASK        (0xFUL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, CLASS))      /*!< Mask  0x000000F0 */
+#define CSTF_CIDR1_CLASS_0           (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, CLASS))      /*!< Value 0x00000010 */
+#define CSTF_CIDR1_CLASS_1           (0x2UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, CLASS))      /*!< Value 0x00000020 */
+#define CSTF_CIDR1_CLASS_2           (0x4UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, CLASS))      /*!< Value 0x00000040 */
+#define CSTF_CIDR1_CLASS_3           (0x8UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, CLASS))      /*!< Value 0x00000080 */
+
+#define CSTF_CIDR1_PREAMBLE_OFFSET   (0U)
+#define CSTF_CIDR1_PREAMBLE_MASK     (0xFUL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, PREAMBLE))   /*!< Mask  0x0000000F */
+#define CSTF_CIDR1_PREAMBLE_0        (0x1UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, PREAMBLE))   /*!< Value 0x00000001 */
+#define CSTF_CIDR1_PREAMBLE_1        (0x2UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, PREAMBLE))   /*!< Value 0x00000002 */
+#define CSTF_CIDR1_PREAMBLE_2        (0x4UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, PREAMBLE))   /*!< Value 0x00000004 */
+#define CSTF_CIDR1_PREAMBLE_3        (0x8UL << REGISTER_FIELD_OFFSET(CSTF, CIDR1, PREAMBLE))   /*!< Value 0x00000008 */
+
+// Values of component identifier in component identification 1 register
+#define CSTF_CIDR1PREAMBLE_VALUE  (0x0UL)  /*!< Value 0x00000000 */
+
+// Values of debug component with CoreSight-compatible registers
+#define CSTF_CLASS_ARM  (0x9UL)  /*!< Value 0x00000009 */
+
+/*!< Component identitication 2 register */
+#define CSTF_CIDR2_PREAMBLE_OFFSET  (0U)
+#define CSTF_CIDR2_PREAMBLE_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Mask  0x000000FF */
+#define CSTF_CIDR2_PREAMBLE_0       (0x01UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000001 */
+#define CSTF_CIDR2_PREAMBLE_1       (0x02UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000002 */
+#define CSTF_CIDR2_PREAMBLE_2       (0x04UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000004 */
+#define CSTF_CIDR2_PREAMBLE_3       (0x08UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000008 */
+#define CSTF_CIDR2_PREAMBLE_4       (0x10UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000010 */
+#define CSTF_CIDR2_PREAMBLE_5       (0x20UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000020 */
+#define CSTF_CIDR2_PREAMBLE_6       (0x40UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000040 */
+#define CSTF_CIDR2_PREAMBLE_7       (0x80UL << REGISTER_FIELD_OFFSET(CSTF, CIDR2, PREAMBLE))  /*!< Value 0x00000080 */
+
+// Values of component identifier in component identification 2 register
+#define CSTF_CIDR2PREAMBLE_VALUE  (0x05UL)  /*!< Value 0x00000005 */
+
+/*!< Component identitication 3 register */
+#define CSTF_CIDR3_PREAMBLE_OFFSET  (0U)
+#define CSTF_CIDR3_PREAMBLE_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Mask  0x000000FF */
+#define CSTF_CIDR3_PREAMBLE_0       (0x01UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000001 */
+#define CSTF_CIDR3_PREAMBLE_1       (0x02UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000002 */
+#define CSTF_CIDR3_PREAMBLE_2       (0x04UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000004 */
+#define CSTF_CIDR3_PREAMBLE_3       (0x08UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000008 */
+#define CSTF_CIDR3_PREAMBLE_4       (0x10UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000010 */
+#define CSTF_CIDR3_PREAMBLE_5       (0x20UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000020 */
+#define CSTF_CIDR3_PREAMBLE_6       (0x40UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000040 */
+#define CSTF_CIDR3_PREAMBLE_7       (0x80UL << REGISTER_FIELD_OFFSET(CSTF, CIDR3, PREAMBLE))  /*!< Value 0x00000080 */
+
+// Values of component identifier in component identification 3 register
+#define CSTF_CIDR3PREAMBLE_VALUE  (0xB1UL)  /*!< Value 0x000000B1 */
+
+/** @} */ // End of CSTF group
+
+/** @} */ // End of RegisterGroup group
+
+#endif // CSTF_H
