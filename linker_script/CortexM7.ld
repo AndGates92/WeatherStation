@@ -15,30 +15,30 @@ _min_heap_size = 0x400
 _min_stack_size = 0x200 
 
 /* highest address of the stack pointer (highest address of SRAM on domain 1) */
-_min_stack_size = 0x2408000
+_max_stack_address = 0x2408000
 
 /* Define Cortex M7 memory map */
 MEMORY {
-	ITCM		(rx)	: ORIGIN = 0x00000000,	LENGTH = 64K	/* Address range 0x00000000 - 0x0000FFFF */
+	ITCM		(wrx)	: ORIGIN = 0x00000000,	LENGTH = 64K	/* Address range 0x00000000 - 0x0000FFFF */
 	FLASH		(rx)	: ORIGIN = 0x08000000,	LENGTH = 1024K	/* Address range 0x08000000 - 0x080FFFFF */
-	AXI_SRAM_D1	(rx)	: ORIGIN = 0x24000000,	LENGTH = 512K	/* Address range 0x24000000 - 0x0007FFFF */
-	AHB_SRAM1_D2	(rx)	: ORIGIN = 0x30000000,	LENGTH = 128K	/* Address range 0x30000000 - 0x3001FFFF */
-	AHB_SRAM2_D2	(rx)	: ORIGIN = 0x30020000,	LENGTH = 128K	/* Address range 0x30020000 - 0x3003FFFF */
-	AHB_SRAM3_D2	(rx)	: ORIGIN = 0x30040000,	LENGTH = 32K	/* Address range 0x30040000 - 0x30047FFF */
-	AHB_SRAM4_D3	(rx)	: ORIGIN = 0x38000000,	LENGTH = 64K	/* Address range 0x38000000 - 0x3800FFFF */
-	BCK_SRAM4_D3	(rx)	: ORIGIN = 0x38800000,	LENGTH = 4K	/* Address range 0x38800000 - 0x38800FFF */
+	AXI_SRAM_D1	(wrx)	: ORIGIN = 0x24000000,	LENGTH = 512K	/* Address range 0x24000000 - 0x0007FFFF */
+	AHB_SRAM1_D2	(wrx)	: ORIGIN = 0x30000000,	LENGTH = 128K	/* Address range 0x30000000 - 0x3001FFFF */
+	AHB_SRAM2_D2	(wrx)	: ORIGIN = 0x30020000,	LENGTH = 128K	/* Address range 0x30020000 - 0x3003FFFF */
+	AHB_SRAM3_D2	(wrx)	: ORIGIN = 0x30040000,	LENGTH = 32K	/* Address range 0x30040000 - 0x30047FFF */
+	AHB_SRAM4_D3	(wrx)	: ORIGIN = 0x38000000,	LENGTH = 64K	/* Address range 0x38000000 - 0x3800FFFF */
+	BCK_SRAM4_D3	(wrx)	: ORIGIN = 0x38800000,	LENGTH = 4K	/* Address range 0x38800000 - 0x38800FFF */
 }
 
 /* Define sections */
 SECTIONS {
 
 	/* Return the absolute address of section .text */
-	_astext = LOADADDR(.text);	/* Global symbol to the start adddress of the code section */
+	_astext = LOADADDR(.text);	/* Global symbol to the start address of the code section */
 
 	/* Put program code and ARM glue code into FLASH */
 	.text : {
 		. = ALIGN(4);
-		_stext = .;	/* Global symbol to the start adddress of the code */
+		_stext = .;	/* Global symbol to the start address of the code */
 		*(.text)	/* code (.text section) */
 		*(.text*)	/* code (.text* sections) */
 		*(.glue_7t)	/* glue code for thumb ARM mode */
@@ -55,7 +55,7 @@ SECTIONS {
 	/* Put constant data into FLASH */
 	.rodata : {
 		. = ALIGN(4);
-		_srodata = .;	/* Global symbol to the start adddress of the constant data */
+		_srodata = .;	/* Global symbol to the start address of the constant data */
 		*(.rodata)	/* constant data such as constant strings or constant variables (.rodata section) */
 		*(.rodata*)	/* constant data such as constant strings or constant variables (.rodata* sections) */
 		. = ALIGN(4);
@@ -70,7 +70,7 @@ SECTIONS {
 
 	/* Put exception index into FLASH */
 	.ARM.exidx : {
-		_sexidx = .;	/* Global symbol to the start adddress of the exception index */
+		_sexidx = .;	/* Global symbol to the start address of the exception index */
 		*(.ARM.exidx*)	/* constant data such as constant strings or constant variables (.rodata* sections) */
 		_eexidx = .;	/* Global symbol to the end of the exception index */
 	} > FLASH
@@ -100,13 +100,13 @@ SECTIONS {
 	} > FLASH
 
 	/* Return the absolute address of section .data */
-	_asdata = LOADADDR(.data);	/* Global symbol to the start adddress of the data section (Address in RAM) */
+	_asdata = LOADADDR(.data);	/* Global symbol to the start address of the data section (Address in RAM) */
 
 	/* Put the data section into the RAM. The data is initially stored into FLASH memory and copied to the RAM at startup */
 	/* The FLASH is therefore the local address and the RAM is the virtual address */
 	.data : {
 		. = ALIGN(4);
-		_sdata = .;	/* Global symbol to the start adddress of data section at startup (Address in FLASH) */
+		_sdata = .;	/* Global symbol to the start address of data section at startup (Address in FLASH) */
 		*(.data)	/* code (.text section) */
 		*(.data*)	/* code (.text* sections) */
 
@@ -117,8 +117,8 @@ SECTIONS {
 	/* Put the uninitialized data section into the RAM. It will be initialized to 0 at startup */
 	.bss : {
 		. = ALIGN(4);
-		_sbss = .;		/* Global symbol to the start adddress of uninitialized data section */
-		__start_bss__ = _sbss;	/* Global symbol to the end of the uninitialized data section  */
+		_sbss = .;		/* Global symbol to the start address of uninitialized data section */
+		__start_bss__ = _sbss;	/* Global symbol to the start address of the uninitialized data section  */
 		*(.bss)			/* code (.text section) */
 		*(.bss*)		/* code (.text* sections) */
 
@@ -127,4 +127,11 @@ SECTIONS {
 		__end_bss__ = _ebss;	/* Global symbol to the end of the uninitialized data section  */
 	} > AXI_SRAM_D1
 
+	/* Check that RAM is big enough to fit stack and heap */
+	.heap_stack_size_check : {
+		. = ALIGN(8);			/* Align to bytes as the smaller size of the data that the AXI can access the RAM is the byte (8 bits) */
+		. = . + _min_stack_size;	/* move current location by the minimum stack size */
+		. = . + _min_heap_size;1	/* move current location by the minimum heap size */
+		. = ALIGN(8);			/* Align end address to bytes because the smaller size of the data that the AXI can access the RAM is the byte (8 bits) */
+	} > AXI_SRAM_D1
 }
