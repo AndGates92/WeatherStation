@@ -8,6 +8,9 @@
  *        Set heap size as well as stack size and location
  */
 
+/* Choose entry point of the program, i.e. the symbol towards the first instruction in the program to execute after a reset event */
+ENTRY(rst_event_handler)
+
 /* minimum heap size */
 _min_heap_size = 0x400 
 
