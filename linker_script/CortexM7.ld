@@ -68,13 +68,13 @@ SECTIONS {
 	/* C++ only sections */
 	/* Put exception tables into FLASH */
 	.ARM.extab : {
-		*(.ARM.extab*)	/* constant data such as constant strings or constant variables (.rodata* sections) */
+		*(.ARM.extab*)	/* constant data such as constant strings or constant variables (.ARM.extab* sections) */
 	} > FLASH
 
 	/* Put exception index into FLASH */
 	.ARM.exidx : {
 		_sexidx = .;	/* Global symbol to the start address of the exception index */
-		*(.ARM.exidx*)	/* constant data such as constant strings or constant variables (.rodata* sections) */
+		*(.ARM.exidx*)	/* constant data such as constant strings or constant variables (.ARM.exidx* sections) */
 		_eexidx = .;	/* Global symbol to the end of the exception index */
 	} > FLASH
 
@@ -103,18 +103,18 @@ SECTIONS {
 	} > FLASH
 
 	/* Return the absolute address of section .data */
-	_asdata = LOADADDR(.data);	/* Global symbol to the start address of the data section (Address in RAM) */
+	_asdata = LOADADDR(.data);	/* Global symbol to the start address of the data section (Address in FLASH) */
 
 	/* Put the data section into the RAM. The data is initially stored into FLASH memory and copied to the RAM at startup */
 	/* The FLASH is therefore the local address and the RAM is the virtual address */
 	.data : {
 		. = ALIGN(4);
-		_sdata = .;	/* Global symbol to the start address of data section at startup (Address in FLASH) */
+		_sdata = .;	/* Global symbol to the start address of data section at startup (Address in RAM) */
 		*(.data)	/* code (.text section) */
 		*(.data*)	/* code (.text* sections) */
 
 		. = ALIGN(4);
-		_edata = .;	/* Global symbol to the end of the data section at startup (Address in FLASH)  */
+		_edata = .;	/* Global symbol to the end of the data section at startup (Address in RAM)  */
 	} > AXI_SRAM_D1 AT > FLASH
 
 	/* Put the uninitialized data section into the RAM. It will be initialized to 0 at startup */

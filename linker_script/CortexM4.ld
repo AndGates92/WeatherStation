@@ -66,13 +66,13 @@ SECTIONS {
 	/* C++ only sections */
 	/* Put exception tables into FLASH */
 	.ARM.extab : {
-		*(.ARM.extab*)	/* constant data such as constant strings or constant variables (.rodata* sections) */
+		*(.ARM.extab*)	/* constant data such as constant strings or constant variables (.ARM.extab* sections) */
 	} > FLASH
 
 	/* Put exception index into FLASH */
 	.ARM.exidx : {
 		_sexidx = .;	/* Global symbol to the start address of the exception index */
-		*(.ARM.exidx*)	/* constant data such as constant strings or constant variables (.rodata* sections) */
+		*(.ARM.exidx*)	/* constant data such as constant strings or constant variables (.ARM.exidx* sections) */
 		_eexidx = .;	/* Global symbol to the end of the exception index */
 	} > FLASH
 
