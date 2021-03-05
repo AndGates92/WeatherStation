@@ -45,6 +45,7 @@
 rst_event_handler:
 	ldr sp, =_max_stack_address	/* Initialize the stack pointer (R13) using LDR pseudo instruction */
 
+	/* This C function sets the reset and clock control to the desired reset state as well as a few other registers */
 	bl systemClockInit		/* Branch with link (i.e. call with the link register R14 being set to the next instruction) to the function to initialize system clocks
 					   It is a C function as we can leverage register macros hence have more readable code and easier to mantain */
 
