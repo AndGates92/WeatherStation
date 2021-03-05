@@ -1,5 +1,5 @@
-#ifndef GPIO_H
-#define GPIO_H
+#ifndef GPIO_REGISTERS_H
+#define GPIO_REGISTERS_H
 /**
  * @copyright
  * @file gpio.h
@@ -26,15 +26,15 @@
  */
 
 typedef struct {
-	RW uint32_t MODE;        /*!< Mode register (Offset 0x0) */
-	RW uint32_t OTYPE;       /*!< Output type register (Offset 0x4) */
-	RW uint32_t OSPEED;      /*!< Output speed register (Offset 0x8) */
-	RW uint32_t PUPD;        /*!< Pull up/pull down register (Offset 0xC) */
-	RO uint32_t IDATA;       /*!< Input data register (Offset 0x10) */
-	RW uint32_t ODATA;       /*!< Output data register (Offset 0x14) */
-	WO uint32_t BSR;         /*!< Bit set/reset register (Offset 0x18) */
-	RW uint32_t PORTCFGLOCK; /*!< Port configuration lock register (Offset 0x1C) */
-	RW uint32_t ALTFUNC[2];  /*!< Alternate function register (Offset 0x20 - 0x24) */
+	RW uint32_t MODE;        /*!< Mode register                    (Offset 0x0)         */
+	RW uint32_t OTYPE;       /*!< Output type register             (Offset 0x4)         */
+	RW uint32_t OSPEED;      /*!< Output speed register            (Offset 0x8)         */
+	RW uint32_t PUPD;        /*!< Pull up/pull down register       (Offset 0xC)         */
+	RO uint32_t IDATA;       /*!< Input data register              (Offset 0x10)        */
+	RW uint32_t ODATA;       /*!< Output data register             (Offset 0x14)        */
+	WO uint32_t BSR;         /*!< Bit set/reset register           (Offset 0x18)        */
+	RW uint32_t PORTCFGLOCK; /*!< Port configuration lock register (Offset 0x1C)        */
+	RW uint32_t ALTFUNC[2];  /*!< Alternate function register      (Offset 0x20 - 0x24) */
 } gpio_regs;
 
 /*!< GPIO registers */
@@ -753,4 +753,4 @@ typedef struct {
 
 /** @} */ // End of RegisterGroup group
 
-#endif // GPIO_H
+#endif // GPIO_REGISTERS_H

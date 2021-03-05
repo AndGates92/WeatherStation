@@ -1,5 +1,5 @@
-#ifndef POWER_H
-#define POWER_H
+#ifndef POWER_REGISTERS_H
+#define POWER_REGISTERS_H
 /**
  * @copyright
  * @file power.h
@@ -21,20 +21,20 @@
 /**
  *  @ingroup RegisterGroup
  *  @defgroup Power Power control
- *  @brief Power control
+ *  @brief Power control macros and structures
  *  @{
  */
 
 typedef struct {
-	RW uint32_t CTRL1;        /*!< Power control 1 register (Offset 0x0) */
-	RO uint32_t CS1;          /*!< Control status 1 register (Offset 0x4) */
-	RW uint32_t CTRL2;        /*!< Power control 2 register (Offset 0x8) */
-	RW uint32_t CTRL3;        /*!< Power control 3 register (Offset 0xC) */
-	RW uint32_t CPU1CTRL;     /*!< CPU1 control register (Offset 0x10) */
-	RW uint32_t CPU2CTRL;     /*!< CPU2 control register (Offset 0x14) */
-	RW uint32_t D3CTRL;       /*!< Domain 3 control register (Offset 0x18) */
-	RW uint32_t WAKEUPCLR;    /*!< Wakeup clear register (Offset 0x1C) */
-	RO uint32_t WAKEUPFLAG;   /*!< Wakeup flag register (Offset 0x20) */
+	RW uint32_t CTRL1;        /*!< Power control 1 register            (Offset 0x0)  */
+	RO uint32_t CS1;          /*!< Control status 1 register           (Offset 0x4)  */
+	RW uint32_t CTRL2;        /*!< Power control 2 register            (Offset 0x8)  */
+	RW uint32_t CTRL3;        /*!< Power control 3 register            (Offset 0xC)  */
+	RW uint32_t CPU1CTRL;     /*!< CPU1 control register               (Offset 0x10) */
+	RW uint32_t CPU2CTRL;     /*!< CPU2 control register               (Offset 0x14) */
+	RW uint32_t D3CTRL;       /*!< Domain 3 control register           (Offset 0x18) */
+	RW uint32_t WAKEUPCLR;    /*!< Wakeup clear register               (Offset 0x1C) */
+	RO uint32_t WAKEUPFLAG;   /*!< Wakeup flag register                (Offset 0x20) */
 	RW uint32_t WAKEUPENPLR;  /*!< Wakeup enable and polarity register (Offset 0x24) */
 } power_regs;
 
@@ -466,8 +466,8 @@ typedef struct {
 #define PWR_BASE OFFSET_ADDRESS(D3_AHB4_BASE, PWR_OFFSET)
 #define PWR REGISTER_PTR(power_regs, PWR_BASE)
 
-/** @} */ // End of Powr control group
+/** @} */ // End of Power control group
 
 /** @} */ // End of RegisterGroup group
 
-#endif // POWER_H
+#endif // POWER_REGISTERS_H
