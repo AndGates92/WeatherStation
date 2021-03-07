@@ -691,8 +691,8 @@ typedef struct {
 #define GPIO_ALTFUNC_FUNC0_3       (0x8UL)                                                  /*!< Value 0x00000008 */
 
 #define GPIO_OFFSET 0x0
-#define GPIO_BASE (D3_AHB4_BASE + RCC_OFFSET)
-#define GPIO_GPIO_ADDRESS_RANGE 0x3FF
+#define GPIO_BASE (D3_AHB4_BASE + GPIO_OFFSET)
+#define GPIO_ADDRESS_RANGE 0x3FF
 
 /*!< GPIO registers for GPIO A */
 #define GPIO_GPIOA_OFFSET (0*GPIO_ADDRESS_RANGE)

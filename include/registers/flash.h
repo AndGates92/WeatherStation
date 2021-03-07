@@ -51,7 +51,7 @@ typedef struct {
 	RW uint32_t BANKCRCENDADDR;      /*!< Bank CRC end address register                             (Offset 0x58) */
 	RO uint32_t BANKCRCDATA;         /*!< Bank CRC data register                                    (Offset 0x5C) */
 	RO uint32_t BANKERRFAILADDR;     /*!< Bank ECC fail address register                            (Offset 0x60) */
-} bank_regs;
+} flash_bank_regs;
 
 /*!< Embedded Flash memory registers */
 /*!< Access control register */
@@ -775,6 +775,20 @@ typedef struct {
 /*!< Bank ECC fail address register */
 #define FLASH_BANKERRFAILADDR_ADDR_OFFSET  (0U)
 #define FLASH_BANKERRFAILADDR_ADDR_MASK    (0x00007FFFUL << REGISTER_FIELD_OFFSET(FLASH, BANKERRFAILADDR, ADDR))  /*!< Mask  0x00007FFF */
+
+#define FLASH_OFFSET 0x1004000
+#define FLASH_BASE (D1_AHB3_BASE + FLASH_OFFSET)
+#define FLASH_ADDRESS_RANGE 0x100
+
+/*!< FLASH registers for bank 1 */
+#define FLASH_BANK1_OFFSET (0*FLASH_ADDRESS_RANGE)
+#define FLASH_BANK1_BASE OFFSET_ADDRESS(FLASH_BASE, FLASH_BANK1_OFFSET)
+#define FLASH_BANK1 REGISTER_PTR(flash_bank_regs, FLASH_BANK1_BASE)
+
+/*!< FLASH registers for bank 2 */
+#define FLASH_BANK2_OFFSET (1*FLASH_ADDRESS_RANGE)
+#define FLASH_BANK2_BASE OFFSET_ADDRESS(FLASH_BASE, FLASH_BANK2_OFFSET)
+#define FLASH_BANK2 REGISTER_PTR(flash_bank_regs, FLASH_BANK2_BASE)
 
 /** @} */ // End of FlashMemory group
 
