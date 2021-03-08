@@ -20,7 +20,7 @@
 
 /**
  *  @ingroup RegisterGroup
- *  @defgroup FlashMemory Embedded Flash Memory
+ *  @defgroup EmbeddedFlashMemory Embedded Flash Memory
  *  @brief Embedded Flash memory macros and structures
  *  @{
  */
@@ -1166,7 +1166,7 @@ typedef struct {
 #define FLASH_BANK2_BASE OFFSET_ADDRESS(FLASH_BASE, FLASH_BANK2_OFFSET)
 #define FLASH_BANK2 REGISTER_PTR(flash_bank_regs, FLASH_BANK2_BASE)
 
-/** @} */ // End of FlashMemory group
+/** @} */ // End of EmbeddedFlashMemory group
 
 /** @} */ // End of RegisterGroup group
 
