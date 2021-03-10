@@ -2742,15 +2742,15 @@ typedef struct {
 #define RCC_RSTSTATUS_SYSWINWATCHDOGC1FLAG_ILLEGAL  (0x0UL)                                                                 /*!< Value 0x00000000 */
 #define RCC_RSTSTATUS_SYSWINWATCHDOGC1FLAG_VALID    (0x1UL)                                                                 /*!< Value 0x00000001 */
 
-#define RCC_RSTSTATUS_INDWINWATCHDOGC2FLAG_OFFSET   (27U)
-#define RCC_RSTSTATUS_INDWINWATCHDOGC2FLAG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, INDWINWATCHDOGC2FLAG))  /*!< Mask  0x08000000 */
-#define RCC_RSTSTATUS_INDWINWATCHDOGC2FLAG_ILLEGAL  (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define RCC_RSTSTATUS_INDWINWATCHDOGC2FLAG_VALID    (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define RCC_RSTSTATUS_INDWATCHDOGC2FLAG_OFFSET      (27U)
+#define RCC_RSTSTATUS_INDWATCHDOGC2FLAG_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, INDWATCHDOGC2FLAG))     /*!< Mask  0x08000000 */
+#define RCC_RSTSTATUS_INDWATCHDOGC2FLAG_ILLEGAL     (0x0UL)                                                                 /*!< Value 0x00000000 */
+#define RCC_RSTSTATUS_INDWATCHDOGC2FLAG_VALID       (0x1UL)                                                                 /*!< Value 0x00000001 */
 
-#define RCC_RSTSTATUS_INDWINWATCHDOGC1FLAG_OFFSET   (26U)
-#define RCC_RSTSTATUS_INDWINWATCHDOGC1FLAG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, INDWINWATCHDOGC1FLAG))  /*!< Mask  0x04000000 */
-#define RCC_RSTSTATUS_INDWINWATCHDOGC1FLAG_ILLEGAL  (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define RCC_RSTSTATUS_INDWINWATCHDOGC1FLAG_VALID    (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define RCC_RSTSTATUS_INDWATCHDOGC1FLAG_OFFSET      (26U)
+#define RCC_RSTSTATUS_INDWATCHDOGC1FLAG_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, INDWATCHDOGC1FLAG))     /*!< Mask  0x04000000 */
+#define RCC_RSTSTATUS_INDWATCHDOGC1FLAG_ILLEGAL     (0x0UL)                                                                 /*!< Value 0x00000000 */
+#define RCC_RSTSTATUS_INDWATCHDOGC1FLAG_VALID       (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define RCC_RSTSTATUS_SYSRSTC2FLAG_OFFSET           (25U)
 #define RCC_RSTSTATUS_SYSRSTC2FLAG_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, SYSRSTC2FLAG))          /*!< Mask  0x02000000 */
