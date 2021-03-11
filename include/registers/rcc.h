@@ -306,7 +306,7 @@ typedef struct {
 
 #define RCC_CLKCFG_MSO2PRE_OFFSET        (25U)
 #define RCC_CLKCFG_MSO2PRE_MASK          (0xFUL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MSO2PRE))       /*!< Mask  0x1E000000 */
-#define RCC_CLKCFG_MSO2PRE_DISABLED      (0x0UL)                                                      /*!< Value 0x00000000 */
+#define RCC_CLKCFG_MSO2PRE_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
 #define RCC_CLKCFG_MSO2PRE_BYPASS        (0x1UL)                                                      /*!< Value 0x00000001 */
 #define RCC_CLKCFG_MSO2PRE_DIV2          (0x2UL)                                                      /*!< Value 0x00000002 */
 #define RCC_CLKCFG_MSO2PRE_DIV3          (0x3UL)                                                      /*!< Value 0x00000003 */
@@ -333,7 +333,7 @@ typedef struct {
 
 #define RCC_CLKCFG_MSO1PRE_OFFSET        (18U)
 #define RCC_CLKCFG_MSO1PRE_MASK          (0xFUL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MSO1PRE))       /*!< Mask  0x003C0000 */
-#define RCC_CLKCFG_MSO1PRE_DISABLED      (0x0UL)                                                      /*!< Value 0x00000000 */
+#define RCC_CLKCFG_MSO1PRE_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
 #define RCC_CLKCFG_MSO1PRE_BYPASS        (0x1UL)                                                      /*!< Value 0x00000001 */
 #define RCC_CLKCFG_MSO1PRE_DIV2          (0x2UL)                                                      /*!< Value 0x00000002 */
 #define RCC_CLKCFG_MSO1PRE_DIV3          (0x3UL)                                                      /*!< Value 0x00000003 */

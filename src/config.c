@@ -7,6 +7,7 @@
  */
 
 #include "registers/rcc.h"
+#include "config/config.h"
 
 void clk_config() {
 

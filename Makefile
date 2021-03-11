@@ -80,7 +80,7 @@ CLDFLAGS = -nostdlib -nostartfiles
 LIB_LIST = $(COVLIBS)
 LDFLAGS := $(foreach LIB, ${LIB_LIST}, -l${LIB}) $(CLDFLAGS)
 
-SPECFILE ?= ./experiment/STM32H7ZI.ld
+SPECFILE ?= ./linker_script/CortexM7.ld
 
 # Coverage
 COVSEARCHDIR := $(foreach DIR, ${OBJS_DIR}, --object-directory ${DIR})
@@ -116,8 +116,8 @@ ASSRCS := $(wildcard $(foreach DIR, $(SRC_PATH), $(DIR)*.$(AS_EXT)))
 
 # Object files
 OBJ_DIR = obj
-COBJS = $(patsubst $(SRC_DIR)/%.$(C_EXT),$(OBJ_DIR)/%.$(OBJ_EXT), $(CSRCS))
-ASOBJS = $(patsubst $(SRC_DIR)/%.$(AS_EXT),$(OBJ_DIR)/%.$(OBJ_EXT), $(ASSRCS))
+COBJS = $(patsubst $(SRC_DIR)/%.$(C_EXT),$(OBJ_DIR)/%.$(C_EXT).$(OBJ_EXT), $(CSRCS))
+ASOBJS = $(patsubst $(SRC_DIR)/%.$(AS_EXT),$(OBJ_DIR)/%.$(AS_EXT).$(OBJ_EXT), $(ASSRCS))
 OBJS = $(COBJS) \
        $(ASOBJS)
 
@@ -148,13 +148,14 @@ $(BIN) : $(ELF)
 $(ELF) : $(OBJS)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating elf file $@ from object files $^"
 	$(MKDIR) $(@D)
-	$(LD) -T$(SPECFILE)  -o $@ $^ $(LDFLAGS)
+	$(LD) -T$(SPECFILE)  -o $@ $^
 
-$(OBJ_DIR)/%.$(OBJ_EXT) : $(SRC_DIR)/%.$(AS_EXT)
+$(OBJ_DIR)/%.$(AS_EXT).$(OBJ_EXT) : $(SRC_DIR)/%.$(AS_EXT)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiling $(<F) and creating object $@"
+	$(MKDIR) $(@D)
 	$(AS) $(ARMFLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJ_DIR)/%.$(OBJ_EXT) : $(SRC_DIR)/%.$(C_EXT)
+$(OBJ_DIR)/%.$(C_EXT).$(OBJ_EXT) : $(SRC_DIR)/%.$(C_EXT)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiling $(<F) and creating object $@"
 	$(MKDIR) $(dir $(DEPFILE))
 	$(MKDIR) $(@D)
@@ -190,6 +191,13 @@ compile : $(BIN)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating binary file $^"
 
 all : program
+
+clean :
+	rm -rf $(OBJ_DIR)
+	rm -rf $(DEP_DIR)
+	rm -rf $(BIN_DIR)
+	rm -rf $(COVERAGE_DIR)
+	rm -rf $(PROFILE_DIR)
 
 debug :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Language: $(PROG_LANG)"

@@ -6,8 +6,12 @@
  * @brief Main function
  */
 
+#include "config/config.h"
+
 int main(int argc, char * argv[]) {
 
 	clk_config();
+
+	return 0;
 
 }
