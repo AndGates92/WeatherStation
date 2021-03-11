@@ -799,22 +799,22 @@ typedef struct {
 #define RCC_PLLCFG_PLL2FRACEN_DISABLE     (0x0UL)                                                       /*!< Value 0x00000000 */
 #define RCC_PLLCFG_PLL2FRACEN_ENABLE      (0x1UL)                                                       /*!< Value 0x00000001 */
 
-#define RCC_PLLCFG_PLL3FREQRANGE_OFFSET   (2U)
-#define RCC_PLLCFG_PLL3FREQRANGE_MASK     (0x3UL << REGISTER_FIELD_OFFSET(RCC, PLLCFG, PLL3FREQRANGE))  /*!< Mask  0x0000000C */
-#define RCC_PLLCFG_PLL3FREQRANGE_1_2MHZ   (0x0UL)                                                       /*!< Value 0x00000000 */
-#define RCC_PLLCFG_PLL3FREQRANGE_2_4MHZ   (0x1UL)                                                       /*!< Value 0x00000001 */
-#define RCC_PLLCFG_PLL3FREQRANGE_4_8MHZ   (0x2UL)                                                       /*!< Value 0x00000002 */
-#define RCC_PLLCFG_PLL3FREQRANGE_8_16MHZ  (0x3UL)                                                       /*!< Value 0x00000003 */
+#define RCC_PLLCFG_PLL1FREQRANGE_OFFSET   (2U)
+#define RCC_PLLCFG_PLL1FREQRANGE_MASK     (0x3UL << REGISTER_FIELD_OFFSET(RCC, PLLCFG, PLL1FREQRANGE))  /*!< Mask  0x0000000C */
+#define RCC_PLLCFG_PLL1FREQRANGE_1_2MHZ   (0x0UL)                                                       /*!< Value 0x00000000 */
+#define RCC_PLLCFG_PLL1FREQRANGE_2_4MHZ   (0x1UL)                                                       /*!< Value 0x00000001 */
+#define RCC_PLLCFG_PLL1FREQRANGE_4_8MHZ   (0x2UL)                                                       /*!< Value 0x00000002 */
+#define RCC_PLLCFG_PLL1FREQRANGE_8_16MHZ  (0x3UL)                                                       /*!< Value 0x00000003 */
 
-#define RCC_PLLCFG_PLL3VCOSEL_OFFSET      (1U)
-#define RCC_PLLCFG_PLL3VCOSEL_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, PLLCFG, PLL3VCOSEL))     /*!< Mask  0x00000002 */
-#define RCC_PLLCFG_PLL3VCOSEL_WIDE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define RCC_PLLCFG_PLL3VCOSEL_MEDIUM      (0x1UL)                                                       /*!< Value 0x00000001 */
+#define RCC_PLLCFG_PLL1VCOSEL_OFFSET      (1U)
+#define RCC_PLLCFG_PLL1VCOSEL_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, PLLCFG, PLL1VCOSEL))     /*!< Mask  0x00000002 */
+#define RCC_PLLCFG_PLL1VCOSEL_WIDE        (0x0UL)                                                       /*!< Value 0x00000000 */
+#define RCC_PLLCFG_PLL1VCOSEL_MEDIUM      (0x1UL)                                                       /*!< Value 0x00000001 */
 
-#define RCC_PLLCFG_PLL3FRACEN_OFFSET      (0U)
-#define RCC_PLLCFG_PLL3FRACEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, PLLCFG, PLL3FRACEN))     /*!< Mask  0x00000001 */
-#define RCC_PLLCFG_PLL3FRACEN_DISABLE     (0x0UL)                                                       /*!< Value 0x00000000 */
-#define RCC_PLLCFG_PLL3FRACEN_ENABLE      (0x1UL)                                                       /*!< Value 0x00000001 */
+#define RCC_PLLCFG_PLL1FRACEN_OFFSET      (0U)
+#define RCC_PLLCFG_PLL1FRACEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, PLLCFG, PLL1FRACEN))     /*!< Mask  0x00000001 */
+#define RCC_PLLCFG_PLL1FRACEN_DISABLE     (0x0UL)                                                       /*!< Value 0x00000000 */
+#define RCC_PLLCFG_PLL1FRACEN_ENABLE      (0x1UL)                                                       /*!< Value 0x00000001 */
 
 /*!< RCC PLL divider configuration register (Macros valid for registers PLL1DIV, PLL2DIV and PLL3DIV) */
 #define RCC_PLLDIV_DIVR_OFFSET  (24U)

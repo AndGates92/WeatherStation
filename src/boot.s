@@ -11,7 +11,7 @@
 .syntax unified	/* Use unified syntax for ARM and THUMB instruction */
 .arch armv7e-m	/* STM32H7 processor implements an ARMv7-M instruction set and an ARMv7E-M architecture profile */
 .cpu cortex-m7	/* STM32H7 is a Cortex-M7 core */
-.fpu sotfvfp	/* Prevents the compiler from using hardware based floating point function.
+.fpu softvfp	/* Prevents the compiler from using hardware based floating point function.
 		   If the compiler finds floating point types int he source code, it uses software based floating point library functions */
 .thumb		/* Cortex-M7 only supports Thumb instruction set. Directive .thumb is the same as .code 16 */
 

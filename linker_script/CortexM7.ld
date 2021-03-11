@@ -12,13 +12,13 @@
 ENTRY(rst_event_handler)
 
 /* minimum heap size */
-_min_heap_size = 0x400 
+_min_heap_size = 0x400;
 
 /* minimum stack size */
-_min_stack_size = 0x200 
+_min_stack_size = 0x200;
 
 /* highest address of the stack pointer (highest address of SRAM on domain 1) */
-_max_stack_address = 0x2408000
+_max_stack_address = 0x2408000;
 
 /* Define Cortex M7 memory map */
 MEMORY {
@@ -89,7 +89,7 @@ SECTIONS {
 	/* Put table of functions for constructors of static objects into FLASH */
 	.init_array : {
 		PROVIDE_HIDDEN(_sinitarray = .);		/* Define _sinitarray only if it is referenced and do not export it */
-		KEEP(SORT_BY_INIT_PRIORITY(*(.init_array*)))	/* Table of pointers to constructors of static objects (.init_array* section). It is sorted by init_priority to list them in order of creation */
+		KEEP(*(SORT_BY_INIT_PRIORITY(.init_array*)))	/* Table of pointers to constructors of static objects (.init_array* section). It is sorted by init_priority to list them in order of creation */
 		KEEP(*(.init_array*))				/* Table of pointers to constructors of static objects (.init_array* section) */
 		PROVIDE_HIDDEN(_einitarray = .);		/* Define _einitarray only if it is referenced and do not export it */
 	} > FLASH
@@ -97,7 +97,7 @@ SECTIONS {
 	/* Put table of functions for destructors of static objects into FLASH */
 	.fini_array : {
 		PROVIDE_HIDDEN(_sfiniarray = .);		/* Define _sfiniarray only if it is referenced and do not export it */
-		KEEP(SORT_BY_INIT_PRIORITY(*(.fini_array*)))	/* Table of pointers to destructors of static objects (.fini_array* section). It is sorted by init_priority to list them in order of destruction */
+		KEEP(*(SORT_BY_INIT_PRIORITY(.fini_array*)))	/* Table of pointers to destructors of static objects (.fini_array* section). It is sorted by init_priority to list them in order of destruction */
 		KEEP(*(.fini_array*))				/* Table of pointers to destructors of static objects (.fini_array* section) */
 		PROVIDE_HIDDEN(_efiniarray = .);		/* Define _efiniarray only if it is referenced and do not export it */
 	} > FLASH
@@ -134,7 +134,7 @@ SECTIONS {
 	.heap_stack_size_check : {
 		. = ALIGN(8);			/* Align to bytes as the smaller size of the data that the AXI can access the RAM is the byte (8 bits) */
 		. = . + _min_stack_size;	/* move current location by the minimum stack size */
-		. = . + _min_heap_size;1	/* move current location by the minimum heap size */
+		. = . + _min_heap_size;		/* move current location by the minimum heap size */
 		. = ALIGN(8);			/* Align end address to bytes because the smaller size of the data that the AXI can access the RAM is the byte (8 bits) */
 	} > AXI_SRAM_D1
 }
