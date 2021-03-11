@@ -1,0 +1,7 @@
+obj/
+bin/
+doc/
+log/*.*
+dep/
+profile/
+coverage/
