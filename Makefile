@@ -18,7 +18,8 @@ PROG_LANG ?= C
 
 # SOurce files
 SRC_DIR = src
-SRC_EXT = c
+C_EXT = c
+AS_EXT = s
 
 # Header files
 INCLUDE_DIR = include
@@ -44,6 +45,7 @@ PROFILE_DIR ?= profile
 TOOLCHAIN ?= arm-none-eabi
 CC = $(TOOLCHAIN)-gcc
 LD = $(TOOLCHAIN)-ld
+AS = $(TOOLCHAIN)-as
 OBJCOPY = $(TOOLCHAIN)-objcopy
 COV = $(TOOLCHAIN)-gcov
 PROFILER = $(TOOLCHAIN)-gprof
@@ -69,7 +71,6 @@ else
   PROFILERFLAGS =
 endif
 
-
 # Compile flags
 CFLAGS = -std=gnu99 -g -O2 -Wall -fsingle-precision-constant -Wdouble-promotion 
 ARMFLAGS = -mlittle-endian -mthumb -mthumb-interwork -mcpu=cortex-m7
@@ -78,7 +79,6 @@ ARMFLAGS = -mlittle-endian -mthumb -mthumb-interwork -mcpu=cortex-m7
 CLDFLAGS = -nostdlib -nostartfiles
 LIB_LIST = $(COVLIBS)
 LDFLAGS := $(foreach LIB, ${LIB_LIST}, -l${LIB}) $(CLDFLAGS)
-
 
 SPECFILE ?= ./experiment/STM32H7ZI.ld
 
@@ -111,11 +111,16 @@ ELF = $(OBJ_DIR)/$(PROJECT_NAME).elf
 SRC_DIR = src
 SRC_DIR_LIST = $(SRC_DIR)
 SRC_PATH := $(foreach DIR, ${SRC_DIR_LIST}, $(DIR)/)
-SRCS := $(wildcard $(foreach DIR, $(SRC_PATH), $(DIR)*.$(SRC_EXT)))
+CSRCS := $(wildcard $(foreach DIR, $(SRC_PATH), $(DIR)*.$(C_EXT)))
+ASSRCS := $(wildcard $(foreach DIR, $(SRC_PATH), $(DIR)*.$(AS_EXT)))
 
 # Object files
 OBJ_DIR = obj
-OBJS = $(patsubst $(SRC_DIR)/%.$(SRC_EXT),$(OBJ_DIR)/%.$(OBJ_EXT), $(SRCS))
+COBJS = $(patsubst $(SRC_DIR)/%.$(C_EXT),$(OBJ_DIR)/%.$(OBJ_EXT), $(CSRCS))
+ASOBJS = $(patsubst $(SRC_DIR)/%.$(AS_EXT),$(OBJ_DIR)/%.$(OBJ_EXT), $(ASSRCS))
+OBJS = $(COBJS) \
+       $(ASOBJS)
+
 DEPS := $(patsubst %.$(OBJ_EXT), $(DEP_DIR)/%.$(DEP_EXT), $(subst $(OBJ_DIR)/,,$(OBJS)))
 
 # Header files
@@ -143,9 +148,13 @@ $(BIN) : $(ELF)
 $(ELF) : $(OBJS)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating elf file $@ from object files $^"
 	$(MKDIR) $(@D)
-	$(CC) $(LFPAGS) -T$(SPECFILE)  -o $@ $^ $(LDFLAGS)
+	$(LD) -T$(SPECFILE)  -o $@ $^ $(LDFLAGS)
 
-$(OBJ_DIR)/%.$(OBJ_EXT) : $(SRC_DIR)/%.$(SRC_EXT)
+$(OBJ_DIR)/%.$(OBJ_EXT) : $(SRC_DIR)/%.$(AS_EXT)
+	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiling $(<F) and creating object $@"
+	$(AS) $(ARMFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_DIR)/%.$(OBJ_EXT) : $(SRC_DIR)/%.$(C_EXT)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiling $(<F) and creating object $@"
 	$(MKDIR) $(dir $(DEPFILE))
 	$(MKDIR) $(@D)
@@ -157,7 +166,7 @@ coverage :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Coverage extra options $(COVEXTRAOPTS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Coverage search directory options $(COVSEARCHDIR)"
 	$(MKDIR) $(COVERAGE_DIR)
-	$(COV) $(COVOPTS) $(COVEXTRAOPTS) $(COVSEARCHDIR) $(SRCS)
+	$(COV) $(COVOPTS) $(COVEXTRAOPTS) $(COVSEARCHDIR) $(CSRCS)
 	$(MV) *$(COV_FILES)* $(COVERAGE_DIR)
 
 profiling :
@@ -207,7 +216,8 @@ debug :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Profiler options: $(PROFOPTS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Profiler extra options: $(PROFEXTRAOPTS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Files lists:"
-	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Source files: $(notdir $(SRCS))"
+	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Assembly Source files: $(notdir $(ASSRCS))"
+	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> C Source files: $(notdir $(CSRCS))"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Header files: $(notdir $(HEADERS))"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Dependency files: $(DEPS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Object files: $(notdir $(OBJS))"
