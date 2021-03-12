@@ -75,7 +75,7 @@
 
 // Masks register value to keep only bits of interest to 1
 #define GET_FIELD(PTR, BLOCK, REGISTER, FIELD) \
-	(((PTR) & (REGISTER_FIELD_GLOBAL_MASK(BLOCK, REGISTER, FIELD)))
+	((PTR) & (REGISTER_FIELD_GLOBAL_MASK(BLOCK, REGISTER, FIELD)))
 
 // Shift bits of interest to get the actual value of the field
 #define GET_FIELD_VALUE(PTR, BLOCK, REGISTER, FIELD) \

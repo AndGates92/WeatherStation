@@ -11,6 +11,11 @@
 
 void systemInit(void) {
 
+	// Reset value of flash read latency is 7, hence start the procedure to increase the clock frequency if too low
+	if (GET_FIELD_VALUE(FLASH_BANK1->ACCESSCTRL, FLASH, ACCESSCTRL, LATENCY) < FLASH_ACCESSCTRL_LATENCY_7WAITSTATE) {
+		MODIFY_FIELD(FLASH_BANK1->ACCESSCTRL, FLASH, ACCESSCTRL, LATENCY, FLASH_ACCESSCTRL_LATENCY_7WAITSTATE);
+	}
+
 	// Enable HSI only
 	//MODIFY_REG(RCC_COMMON->SRCCTRL, REGISTER_FIELD_SETTER(RCC, SRCCTRL, HSIEN, RCC_SRCCTRL_HSIEN_ENABLE))
 	MODIFY_FIELD(RCC_COMMON->SRCCTRL, RCC, SRCCTRL, HSIEN, RCC_SRCCTRL_HSIEN_ENABLE);
@@ -42,8 +47,7 @@ void systemInit(void) {
 		REGISTER_FIELD_SETTER(RCC, CLKCFG, SYSCLKSEL,     RCC_CLKCFG_SYSCLKSEL_HSI        ) )
 	);
 
-	// RCC registers can be accesses with 0 to 7 wait states
-	// Hence if the number of wait states is higher than 7, bring it down to 7 which is the reset value
+	// Reset value of flash read latency is 7, hence conclude the procedure to decrease the clock frequency if too high
 	if (GET_FIELD_VALUE(FLASH_BANK1->ACCESSCTRL, FLASH, ACCESSCTRL, LATENCY) > FLASH_ACCESSCTRL_LATENCY_7WAITSTATE) {
 		MODIFY_FIELD(FLASH_BANK1->ACCESSCTRL, FLASH, ACCESSCTRL, LATENCY, FLASH_ACCESSCTRL_LATENCY_7WAITSTATE);
 	}
