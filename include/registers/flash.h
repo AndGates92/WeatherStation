@@ -69,7 +69,7 @@ typedef struct {
 #define FLASH_ACCESSCTRL_LATENCY_2WAITSTATE  (0x2UL)                                                       /*!< Value 0x00000002 */
 #define FLASH_ACCESSCTRL_LATENCY_3WAITSTATE  (0x3UL)                                                       /*!< Value 0x00000003 */
 #define FLASH_ACCESSCTRL_LATENCY_4WAITSTATE  (0x4UL)                                                       /*!< Value 0x00000004 */
-#define FLASH_ACCESSCTRL_LATENCY_3WAITSTATE  (0x7UL)                                                       /*!< Value 0x00000007 */
+#define FLASH_ACCESSCTRL_LATENCY_7WAITSTATE  (0x7UL)                                                       /*!< Value 0x00000007 */
 
 /*!< Bank key register register  */
 #define FLASH_BANKKEY_ACCESSKEY_OFFSET  (0U)
