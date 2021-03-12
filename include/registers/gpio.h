@@ -39,85 +39,59 @@ typedef struct {
 
 /*!< GPIO registers */
 /*!< Mode register */
-#define GPIO_MODE_MODE15_OFFSET (30U)
-#define GPIO_MODE_MODE15_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE15))  /*!< Mask  0x40000000 */
-#define GPIO_MODE_MODE15_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE15_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN15_OFFSET (30U)
+#define GPIO_MODE_PIN15_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN15))  /*!< Mask  0xC0000000 */
 
-#define GPIO_MODE_MODE14_OFFSET (28U)
-#define GPIO_MODE_MODE14_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE14))  /*!< Mask  0x10000000 */
-#define GPIO_MODE_MODE14_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE14_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN14_OFFSET (28U)
+#define GPIO_MODE_PIN14_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN14))  /*!< Mask  0x30000000 */
 
-#define GPIO_MODE_MODE13_OFFSET (26U)
-#define GPIO_MODE_MODE13_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE13))  /*!< Mask  0x04000000 */
-#define GPIO_MODE_MODE13_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE13_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN13_OFFSET (26U)
+#define GPIO_MODE_PIN13_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN13))  /*!< Mask  0x0C000000 */
 
-#define GPIO_MODE_MODE12_OFFSET (24U)
-#define GPIO_MODE_MODE12_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE12))  /*!< Mask  0x01000000 */
-#define GPIO_MODE_MODE12_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE12_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN12_OFFSET (24U)
+#define GPIO_MODE_PIN12_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN12))  /*!< Mask  0x03000000 */
 
-#define GPIO_MODE_MODE11_OFFSET (22U)
-#define GPIO_MODE_MODE11_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE11))  /*!< Mask  0x00400000 */
-#define GPIO_MODE_MODE11_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE11_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN11_OFFSET (22U)
+#define GPIO_MODE_PIN11_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN11))  /*!< Mask  0x00C00000 */
 
-#define GPIO_MODE_MODE10_OFFSET (20U)
-#define GPIO_MODE_MODE10_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE10))  /*!< Mask  0x00100000 */
-#define GPIO_MODE_MODE10_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE10_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN10_OFFSET (20U)
+#define GPIO_MODE_PIN10_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN10))  /*!< Mask  0x00300000 */
 
-#define GPIO_MODE_MODE9_OFFSET  (18U)
-#define GPIO_MODE_MODE9_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE9))   /*!< Mask  0x00040000 */
-#define GPIO_MODE_MODE9_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE9_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN9_OFFSET  (18U)
+#define GPIO_MODE_PIN9_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN9))   /*!< Mask  0x000C0000 */
 
-#define GPIO_MODE_MODE8_OFFSET  (16U)
-#define GPIO_MODE_MODE8_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE8))   /*!< Mask  0x00010000 */
-#define GPIO_MODE_MODE8_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE8_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN8_OFFSET  (16U)
+#define GPIO_MODE_PIN8_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN8))   /*!< Mask  0x00030000 */
 
-#define GPIO_MODE_MODE7_OFFSET  (14U)
-#define GPIO_MODE_MODE7_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE7))   /*!< Mask  0x00004000 */
-#define GPIO_MODE_MODE7_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE7_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN7_OFFSET  (14U)
+#define GPIO_MODE_PIN7_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN7))   /*!< Mask  0x0000C000 */
 
-#define GPIO_MODE_MODE6_OFFSET  (12U)
-#define GPIO_MODE_MODE6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE6))   /*!< Mask  0x00001000 */
-#define GPIO_MODE_MODE6_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE6_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN6_OFFSET  (12U)
+#define GPIO_MODE_PIN6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN6))   /*!< Mask  0x00003000 */
 
-#define GPIO_MODE_MODE5_OFFSET  (10U)
-#define GPIO_MODE_MODE5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE5))   /*!< Mask  0x00000400 */
-#define GPIO_MODE_MODE5_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE5_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN5_OFFSET  (10U)
+#define GPIO_MODE_PIN5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN5))   /*!< Mask  0x00000C00 */
 
-#define GPIO_MODE_MODE4_OFFSET  (8U)
-#define GPIO_MODE_MODE4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE4))   /*!< Mask  0x00000100 */
-#define GPIO_MODE_MODE4_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE4_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN4_OFFSET  (8U)
+#define GPIO_MODE_PIN4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN4))   /*!< Mask  0x00000300 */
 
-#define GPIO_MODE_MODE3_OFFSET  (6U)
-#define GPIO_MODE_MODE3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE3))   /*!< Mask  0x00000040 */
-#define GPIO_MODE_MODE3_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE3_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN3_OFFSET  (6U)
+#define GPIO_MODE_PIN3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN3))   /*!< Mask  0x000000C0 */
 
-#define GPIO_MODE_MODE2_OFFSET  (4U)
-#define GPIO_MODE_MODE2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE2))   /*!< Mask  0x00000010 */
-#define GPIO_MODE_MODE2_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE2_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN2_OFFSET  (4U)
+#define GPIO_MODE_PIN2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN2))   /*!< Mask  0x00000030 */
 
-#define GPIO_MODE_MODE1_OFFSET  (2U)
-#define GPIO_MODE_MODE1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE1))   /*!< Mask  0x00000004 */
-#define GPIO_MODE_MODE1_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE1_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN1_OFFSET  (2U)
+#define GPIO_MODE_PIN1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN1))   /*!< Mask  0x0000000C */
 
-#define GPIO_MODE_MODE0_OFFSET  (0U)
-#define GPIO_MODE_MODE0_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, MODE0))   /*!< Mask  0x00000001 */
-#define GPIO_MODE_MODE0_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_MODE_MODE0_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_MODE_PIN0_OFFSET  (0U)
+#define GPIO_MODE_PIN0_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, MODE, PIN0))   /*!< Mask  0x00000003 */
+
+// Value of the GPIO mode for each GPIO pin
+#define GPIO_MODE_INPUT        (0x0UL)                                              /*!< Value 0x00000000 */
+#define GPIO_MODE_OUTPUT       (0x1UL)                                              /*!< Value 0x00000001 */
+#define GPIO_MODE_ALTFUNC      (0x2UL)                                              /*!< Value 0x00000002 */
+#define GPIO_MODE_ANALOG       (0x3UL)                                              /*!< Value 0x00000003 */
 
 /*!< Output type register */
 #define GPIO_OTYPE_OTYPE15_OFFSET (15U)
@@ -168,265 +142,220 @@ typedef struct {
 #define GPIO_OTYPE_OTYPE0_OFFSET  (0U)
 #define GPIO_OTYPE_OTYPE0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, OTYPE, OTYPE0))   /*!< Mask  0x00000001 */
 
+// Value of output type registers for each GPIO pin
+#define GPIO_OTYPE_PUSHPULL       (0x0UL)                                                 /*!< Value 0x00000000 */
+#define GPIO_OTYPE_OPENDRAIN      (0x1UL)                                                 /*!< Value 0x00000001 */
+
 /*!< Output speed register */
-#define GPIO_OSPEED_SPEED15_OFFSET (30U)
-#define GPIO_OSPEED_SPEED15_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED15))  /*!< Mask  0x40000000 */
-#define GPIO_OSPEED_SPEED15_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED15_1      (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN15_OFFSET (30U)
+#define GPIO_OSPEED_PIN15_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN15))  /*!< Mask  0xC0000000 */
 
-#define GPIO_OSPEED_SPEED14_OFFSET (28U)
-#define GPIO_OSPEED_SPEED14_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED14))  /*!< Mask  0x10000000 */
-#define GPIO_OSPEED_SPEED14_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED14_1      (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN14_OFFSET (28U)
+#define GPIO_OSPEED_PIN14_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN14))  /*!< Mask  0x30000000 */
 
-#define GPIO_OSPEED_SPEED13_OFFSET (26U)
-#define GPIO_OSPEED_SPEED13_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED13))  /*!< Mask  0x04000000 */
-#define GPIO_OSPEED_SPEED13_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED13_1      (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN13_OFFSET (26U)
+#define GPIO_OSPEED_PIN13_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN13))  /*!< Mask  0x0C000000 */
 
-#define GPIO_OSPEED_SPEED12_OFFSET (24U)
-#define GPIO_OSPEED_SPEED12_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED12))  /*!< Mask  0x01000000 */
-#define GPIO_OSPEED_SPEED12_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED12_1      (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN12_OFFSET (24U)
+#define GPIO_OSPEED_PIN12_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN12))  /*!< Mask  0x03000000 */
 
-#define GPIO_OSPEED_SPEED11_OFFSET (22U)
-#define GPIO_OSPEED_SPEED11_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED11))  /*!< Mask  0x00400000 */
-#define GPIO_OSPEED_SPEED11_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED11_1      (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN11_OFFSET (22U)
+#define GPIO_OSPEED_PIN11_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN11))  /*!< Mask  0x00C00000 */
 
-#define GPIO_OSPEED_SPEED10_OFFSET (20U)
-#define GPIO_OSPEED_SPEED10_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED10))  /*!< Mask  0x00100000 */
-#define GPIO_OSPEED_SPEED10_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED10_1      (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN10_OFFSET (20U)
+#define GPIO_OSPEED_PIN10_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN10))  /*!< Mask  0x00300000 */
 
-#define GPIO_OSPEED_SPEED9_OFFSET  (18U)
-#define GPIO_OSPEED_SPEED9_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED9))   /*!< Mask  0x00040000 */
-#define GPIO_OSPEED_SPEED9_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED9_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN9_OFFSET  (18U)
+#define GPIO_OSPEED_PIN9_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN9))   /*!< Mask  0x000C0000 */
 
-#define GPIO_OSPEED_SPEED8_OFFSET  (16U)
-#define GPIO_OSPEED_SPEED8_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED8))   /*!< Mask  0x00010000 */
-#define GPIO_OSPEED_SPEED8_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED8_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN8_OFFSET  (16U)
+#define GPIO_OSPEED_PIN8_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN8))   /*!< Mask  0x00030000 */
 
-#define GPIO_OSPEED_SPEED7_OFFSET  (14U)
-#define GPIO_OSPEED_SPEED7_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED7))   /*!< Mask  0x00004000 */
-#define GPIO_OSPEED_SPEED7_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED7_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN7_OFFSET  (14U)
+#define GPIO_OSPEED_PIN7_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN7))   /*!< Mask  0x0000C000 */
 
-#define GPIO_OSPEED_SPEED6_OFFSET  (12U)
-#define GPIO_OSPEED_SPEED6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED6))   /*!< Mask  0x00001000 */
-#define GPIO_OSPEED_SPEED6_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED6_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN6_OFFSET  (12U)
+#define GPIO_OSPEED_PIN6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN6))   /*!< Mask  0x00003000 */
 
-#define GPIO_OSPEED_SPEED5_OFFSET  (10U)
-#define GPIO_OSPEED_SPEED5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED5))   /*!< Mask  0x00000400 */
-#define GPIO_OSPEED_SPEED5_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED5_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN5_OFFSET  (10U)
+#define GPIO_OSPEED_PIN5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN5))   /*!< Mask  0x00000C00 */
 
-#define GPIO_OSPEED_SPEED4_OFFSET  (8U)
-#define GPIO_OSPEED_SPEED4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED4))   /*!< Mask  0x00000100 */
-#define GPIO_OSPEED_SPEED4_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED4_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN4_OFFSET  (8U)
+#define GPIO_OSPEED_PIN4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN4))   /*!< Mask  0x00000300 */
 
-#define GPIO_OSPEED_SPEED3_OFFSET  (6U)
-#define GPIO_OSPEED_SPEED3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED3))   /*!< Mask  0x00000040 */
-#define GPIO_OSPEED_SPEED3_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED3_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN3_OFFSET  (6U)
+#define GPIO_OSPEED_PIN3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN3))   /*!< Mask  0x000000C0 */
 
-#define GPIO_OSPEED_SPEED2_OFFSET  (4U)
-#define GPIO_OSPEED_SPEED2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED2))   /*!< Mask  0x00000020 */
-#define GPIO_OSPEED_SPEED2_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED2_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN2_OFFSET  (4U)
+#define GPIO_OSPEED_PIN2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN2))   /*!< Mask  0x00000020 */
 
-#define GPIO_OSPEED_SPEED1_OFFSET  (2U)
-#define GPIO_OSPEED_SPEED1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED1))   /*!< Mask  0x00000004 */
-#define GPIO_OSPEED_SPEED1_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED1_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN1_OFFSET  (2U)
+#define GPIO_OSPEED_PIN1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN1))   /*!< Mask  0x0000000C */
 
-#define GPIO_OSPEED_SPEED0_OFFSET  (0U)
-#define GPIO_OSPEED_SPEED0_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, SPEED0))   /*!< Mask  0x00000001 */
-#define GPIO_OSPEED_SPEED0_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_OSPEED_SPEED0_1       (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_OSPEED_PIN0_OFFSET  (0U)
+#define GPIO_OSPEED_PIN0_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, OSPEED, PIN0))   /*!< Mask  0x00000003 */
+
+// Value of speed registers for each GPIO pin
+#define GPIO_SPEED_LOW           (0x0UL)                                                /*!< Value 0x00000000 */
+#define GPIO_SPEED_MEDIUM        (0x1UL)                                                /*!< Value 0x00000001 */
+#define GPIO_SPEED_HIGH          (0x2UL)                                                /*!< Value 0x00000002 */
+#define GPIO_SPEED_VERYHIGH      (0x3UL)                                                  /*!< Value 0x00000003 */
 
 /*!< Pull up/pull down register */
-#define GPIO_PUPD_PUPD15_OFFSET (30U)
-#define GPIO_PUPD_PUPD15_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD15))  /*!< Mask  0x40000000 */
-#define GPIO_PUPD_PUPD15_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD15_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN15_OFFSET (30U)
+#define GPIO_PUPD_PIN15_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN15))  /*!< Mask  0xC0000000 */
 
-#define GPIO_PUPD_PUPD14_OFFSET (28U)
-#define GPIO_PUPD_PUPD14_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD14))  /*!< Mask  0x10000000 */
-#define GPIO_PUPD_PUPD14_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD14_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN14_OFFSET (28U)
+#define GPIO_PUPD_PIN14_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN14))  /*!< Mask  0x30000000 */
 
-#define GPIO_PUPD_PUPD13_OFFSET (26U)
-#define GPIO_PUPD_PUPD13_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD13))  /*!< Mask  0x04000000 */
-#define GPIO_PUPD_PUPD13_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD13_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN13_OFFSET (26U)
+#define GPIO_PUPD_PIN13_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN13))  /*!< Mask  0x0C000000 */
 
-#define GPIO_PUPD_PUPD12_OFFSET (24U)
-#define GPIO_PUPD_PUPD12_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD12))  /*!< Mask  0x01000000 */
-#define GPIO_PUPD_PUPD12_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD12_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN12_OFFSET (24U)
+#define GPIO_PUPD_PIN12_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN12))  /*!< Mask  0x03000000 */
 
-#define GPIO_PUPD_PUPD11_OFFSET (22U)
-#define GPIO_PUPD_PUPD11_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD11))  /*!< Mask  0x00400000 */
-#define GPIO_PUPD_PUPD11_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD11_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN11_OFFSET (22U)
+#define GPIO_PUPD_PIN11_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN11))  /*!< Mask  0x00C00000 */
 
-#define GPIO_PUPD_PUPD10_OFFSET (20U)
-#define GPIO_PUPD_PUPD10_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD10))  /*!< Mask  0x00100000 */
-#define GPIO_PUPD_PUPD10_0      (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD10_1      (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN10_OFFSET (20U)
+#define GPIO_PUPD_PIN10_MASK   (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN10))  /*!< Mask  0x00300000 */
 
-#define GPIO_PUPD_PUPD9_OFFSET  (18U)
-#define GPIO_PUPD_PUPD9_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD9))   /*!< Mask  0x00040000 */
-#define GPIO_PUPD_PUPD9_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD9_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN9_OFFSET  (18U)
+#define GPIO_PUPD_PIN9_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN9))   /*!< Mask  0x000C0000 */
 
-#define GPIO_PUPD_PUPD8_OFFSET  (16U)
-#define GPIO_PUPD_PUPD8_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD8))   /*!< Mask  0x00010000 */
-#define GPIO_PUPD_PUPD8_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD8_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN8_OFFSET  (16U)
+#define GPIO_PUPD_PIN8_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN8))   /*!< Mask  0x00030000 */
 
-#define GPIO_PUPD_PUPD7_OFFSET  (14U)
-#define GPIO_PUPD_PUPD7_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD7))   /*!< Mask  0x00004000 */
-#define GPIO_PUPD_PUPD7_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD7_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN7_OFFSET  (14U)
+#define GPIO_PUPD_PIN7_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN7))   /*!< Mask  0x0000C000 */
 
-#define GPIO_PUPD_PUPD6_OFFSET  (12U)
-#define GPIO_PUPD_PUPD6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD6))   /*!< Mask  0x00001000 */
-#define GPIO_PUPD_PUPD6_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD6_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN6_OFFSET  (12U)
+#define GPIO_PUPD_PIN6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN6))   /*!< Mask  0x00003000 */
 
-#define GPIO_PUPD_PUPD5_OFFSET  (10U)
-#define GPIO_PUPD_PUPD5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD5))   /*!< Mask  0x00000400 */
-#define GPIO_PUPD_PUPD5_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD5_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN5_OFFSET  (10U)
+#define GPIO_PUPD_PIN5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN5))   /*!< Mask  0x00000C00 */
 
-#define GPIO_PUPD_PUPD4_OFFSET  (8U)
-#define GPIO_PUPD_PUPD4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD4))   /*!< Mask  0x00000100 */
-#define GPIO_PUPD_PUPD4_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD4_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN4_OFFSET  (8U)
+#define GPIO_PUPD_PIN4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN4))   /*!< Mask  0x00000300 */
 
-#define GPIO_PUPD_PUPD3_OFFSET  (6U)
-#define GPIO_PUPD_PUPD3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD3))   /*!< Mask  0x00000040 */
-#define GPIO_PUPD_PUPD3_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD3_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN3_OFFSET  (6U)
+#define GPIO_PUPD_PIN3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN3))   /*!< Mask  0x000000C0 */
 
-#define GPIO_PUPD_PUPD2_OFFSET  (4U)
-#define GPIO_PUPD_PUPD2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD2))   /*!< Mask  0x00000020 */
-#define GPIO_PUPD_PUPD2_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD2_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN2_OFFSET  (4U)
+#define GPIO_PUPD_PIN2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN2))   /*!< Mask  0x00000020 */
 
-#define GPIO_PUPD_PUPD1_OFFSET  (2U)
-#define GPIO_PUPD_PUPD1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD1))   /*!< Mask  0x00000004 */
-#define GPIO_PUPD_PUPD1_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD1_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN1_OFFSET  (2U)
+#define GPIO_PUPD_PIN1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN1))   /*!< Mask  0x0000000C */
 
-#define GPIO_PUPD_PUPD0_OFFSET  (0U)
-#define GPIO_PUPD_PUPD0_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PUPD0))   /*!< Mask  0x00000001 */
-#define GPIO_PUPD_PUPD0_0       (0x1UL)                                               /*!< Value 0x00000001 */
-#define GPIO_PUPD_PUPD0_1       (0x2UL)                                               /*!< Value 0x00000002 */
+#define GPIO_PUPD_PIN0_OFFSET  (0U)
+#define GPIO_PUPD_PIN0_MASK    (0x3UL << REGISTER_FIELD_OFFSET(GPIO, PUPD, PIN0))   /*!< Mask  0x00000003 */
+
+// Value of pull up or pull down for each GPIO pin
+#define GPIO_NOPUPD            (0x0UL)                                              /*!< Value 0x00000000 */
+#define GPIO_PU                (0x1UL)                                              /*!< Value 0x00000001 */
+#define GPIO_PD                (0x2UL)                                              /*!< Value 0x00000002 */
 
 /*!< Input data register */
-#define GPIO_IDATA_DATA15_OFFSET (15U)
-#define GPIO_IDATA_DATA15_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA15))  /*!< Mask  0x00008000 */
+#define GPIO_IDATA_PIN15_OFFSET (15U)
+#define GPIO_IDATA_PIN15_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN15))  /*!< Mask  0x00008000 */
 
-#define GPIO_IDATA_DATA14_OFFSET (14U)
-#define GPIO_IDATA_DATA14_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA14))  /*!< Mask  0x00004000 */
+#define GPIO_IDATA_PIN14_OFFSET (14U)
+#define GPIO_IDATA_PIN14_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN14))  /*!< Mask  0x00004000 */
 
-#define GPIO_IDATA_DATA13_OFFSET (13U)
-#define GPIO_IDATA_DATA13_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA13))  /*!< Mask  0x00002000 */
+#define GPIO_IDATA_PIN13_OFFSET (13U)
+#define GPIO_IDATA_PIN13_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN13))  /*!< Mask  0x00002000 */
 
-#define GPIO_IDATA_DATA12_OFFSET (12U)
-#define GPIO_IDATA_DATA12_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA12))  /*!< Mask  0x00001000 */
+#define GPIO_IDATA_PIN12_OFFSET (12U)
+#define GPIO_IDATA_PIN12_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN12))  /*!< Mask  0x00001000 */
 
-#define GPIO_IDATA_DATA11_OFFSET (11U)
-#define GPIO_IDATA_DATA11_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA11))  /*!< Mask  0x00000800 */
+#define GPIO_IDATA_PIN11_OFFSET (11U)
+#define GPIO_IDATA_PIN11_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN11))  /*!< Mask  0x00000800 */
 
-#define GPIO_IDATA_DATA10_OFFSET (10U)
-#define GPIO_IDATA_DATA10_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA10))  /*!< Mask  0x00000400 */
+#define GPIO_IDATA_PIN10_OFFSET (10U)
+#define GPIO_IDATA_PIN10_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN10))  /*!< Mask  0x00000400 */
 
-#define GPIO_IDATA_DATA9_OFFSET  (9U)
-#define GPIO_IDATA_DATA9_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA9))   /*!< Mask  0x00000200 */
+#define GPIO_IDATA_PIN9_OFFSET  (9U)
+#define GPIO_IDATA_PIN9_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN9))   /*!< Mask  0x00000200 */
 
-#define GPIO_IDATA_DATA8_OFFSET  (8U)
-#define GPIO_IDATA_DATA8_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA8))   /*!< Mask  0x00000100 */
+#define GPIO_IDATA_PIN8_OFFSET  (8U)
+#define GPIO_IDATA_PIN8_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN8))   /*!< Mask  0x00000100 */
 
-#define GPIO_IDATA_DATA7_OFFSET  (7U)
-#define GPIO_IDATA_DATA7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA7))   /*!< Mask  0x00000080 */
+#define GPIO_IDATA_PIN7_OFFSET  (7U)
+#define GPIO_IDATA_PIN7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN7))   /*!< Mask  0x00000080 */
 
-#define GPIO_IDATA_DATA6_OFFSET  (6U)
-#define GPIO_IDATA_DATA6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA6))   /*!< Mask  0x00000040 */
+#define GPIO_IDATA_PIN6_OFFSET  (6U)
+#define GPIO_IDATA_PIN6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN6))   /*!< Mask  0x00000040 */
 
-#define GPIO_IDATA_DATA5_OFFSET  (5U)
-#define GPIO_IDATA_DATA5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA5))   /*!< Mask  0x00000020 */
+#define GPIO_IDATA_PIN5_OFFSET  (5U)
+#define GPIO_IDATA_PIN5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN5))   /*!< Mask  0x00000020 */
 
-#define GPIO_IDATA_DATA4_OFFSET  (4U)
-#define GPIO_IDATA_DATA4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA4))   /*!< Mask  0x00000010 */
+#define GPIO_IDATA_PIN4_OFFSET  (4U)
+#define GPIO_IDATA_PIN4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN4))   /*!< Mask  0x00000010 */
 
-#define GPIO_IDATA_DATA3_OFFSET  (3U)
-#define GPIO_IDATA_DATA3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA3))   /*!< Mask  0x00000008 */
+#define GPIO_IDATA_PIN3_OFFSET  (3U)
+#define GPIO_IDATA_PIN3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN3))   /*!< Mask  0x00000008 */
 
-#define GPIO_IDATA_DATA2_OFFSET  (2U)
-#define GPIO_IDATA_DATA2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA2))   /*!< Mask  0x00000004 */
+#define GPIO_IDATA_PIN2_OFFSET  (2U)
+#define GPIO_IDATA_PIN2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN2))   /*!< Mask  0x00000004 */
 
-#define GPIO_IDATA_DATA1_OFFSET  (1U)
-#define GPIO_IDATA_DATA1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA1))   /*!< Mask  0x00000002 */
+#define GPIO_IDATA_PIN1_OFFSET  (1U)
+#define GPIO_IDATA_PIN1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN1))   /*!< Mask  0x00000002 */
 
-#define GPIO_IDATA_DATA0_OFFSET  (0U)
-#define GPIO_IDATA_DATA0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, DATA0))   /*!< Mask  0x00000001 */
+#define GPIO_IDATA_PIN0_OFFSET  (0U)
+#define GPIO_IDATA_PIN0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, IDATA, PIN0))   /*!< Mask  0x00000001 */
 
 /*!< Output data register */
-#define GPIO_ODATA_DATA15_OFFSET (15U)
-#define GPIO_ODATA_DATA15_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA15))  /*!< Mask  0x00008000 */
+#define GPIO_ODATA_PIN15_OFFSET (15U)
+#define GPIO_ODATA_PIN15_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN15))  /*!< Mask  0x00008000 */
 
-#define GPIO_ODATA_DATA14_OFFSET (14U)
-#define GPIO_ODATA_DATA14_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA14))  /*!< Mask  0x00004000 */
+#define GPIO_ODATA_PIN14_OFFSET (14U)
+#define GPIO_ODATA_PIN14_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN14))  /*!< Mask  0x00004000 */
 
-#define GPIO_ODATA_DATA13_OFFSET (13U)
-#define GPIO_ODATA_DATA13_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA13))  /*!< Mask  0x00002000 */
+#define GPIO_ODATA_PIN13_OFFSET (13U)
+#define GPIO_ODATA_PIN13_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN13))  /*!< Mask  0x00002000 */
 
-#define GPIO_ODATA_DATA12_OFFSET (12U)
-#define GPIO_ODATA_DATA12_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA12))  /*!< Mask  0x00001000 */
+#define GPIO_ODATA_PIN12_OFFSET (12U)
+#define GPIO_ODATA_PIN12_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN12))  /*!< Mask  0x00001000 */
 
-#define GPIO_ODATA_DATA11_OFFSET (11U)
-#define GPIO_ODATA_DATA11_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA11))  /*!< Mask  0x00000800 */
+#define GPIO_ODATA_PIN11_OFFSET (11U)
+#define GPIO_ODATA_PIN11_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN11))  /*!< Mask  0x00000800 */
 
-#define GPIO_ODATA_DATA10_OFFSET (10U)
-#define GPIO_ODATA_DATA10_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA10))  /*!< Mask  0x00000400 */
+#define GPIO_ODATA_PIN10_OFFSET (10U)
+#define GPIO_ODATA_PIN10_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN10))  /*!< Mask  0x00000400 */
 
-#define GPIO_ODATA_DATA9_OFFSET  (9U)
-#define GPIO_ODATA_DATA9_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA9))   /*!< Mask  0x00000200 */
+#define GPIO_ODATA_PIN9_OFFSET  (9U)
+#define GPIO_ODATA_PIN9_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN9))   /*!< Mask  0x00000200 */
 
-#define GPIO_ODATA_DATA8_OFFSET  (8U)
-#define GPIO_ODATA_DATA8_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA8))   /*!< Mask  0x00000100 */
+#define GPIO_ODATA_PIN8_OFFSET  (8U)
+#define GPIO_ODATA_PIN8_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN8))   /*!< Mask  0x00000100 */
 
-#define GPIO_ODATA_DATA7_OFFSET  (7U)
-#define GPIO_ODATA_DATA7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA7))   /*!< Mask  0x00000080 */
+#define GPIO_ODATA_PIN7_OFFSET  (7U)
+#define GPIO_ODATA_PIN7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN7))   /*!< Mask  0x00000080 */
 
-#define GPIO_ODATA_DATA6_OFFSET  (6U)
-#define GPIO_ODATA_DATA6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA6))   /*!< Mask  0x00000040 */
+#define GPIO_ODATA_PIN6_OFFSET  (6U)
+#define GPIO_ODATA_PIN6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN6))   /*!< Mask  0x00000040 */
 
-#define GPIO_ODATA_DATA5_OFFSET  (5U)
-#define GPIO_ODATA_DATA5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA5))   /*!< Mask  0x00000020 */
+#define GPIO_ODATA_PIN5_OFFSET  (5U)
+#define GPIO_ODATA_PIN5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN5))   /*!< Mask  0x00000020 */
 
-#define GPIO_ODATA_DATA4_OFFSET  (4U)
-#define GPIO_ODATA_DATA4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA4))   /*!< Mask  0x00000010 */
+#define GPIO_ODATA_PIN4_OFFSET  (4U)
+#define GPIO_ODATA_PIN4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN4))   /*!< Mask  0x00000010 */
 
-#define GPIO_ODATA_DATA3_OFFSET  (3U)
-#define GPIO_ODATA_DATA3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA3))   /*!< Mask  0x00000008 */
+#define GPIO_ODATA_PIN3_OFFSET  (3U)
+#define GPIO_ODATA_PIN3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN3))   /*!< Mask  0x00000008 */
 
-#define GPIO_ODATA_DATA2_OFFSET  (2U)
-#define GPIO_ODATA_DATA2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA2))   /*!< Mask  0x00000004 */
+#define GPIO_ODATA_PIN2_OFFSET  (2U)
+#define GPIO_ODATA_PIN2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN2))   /*!< Mask  0x00000004 */
 
-#define GPIO_ODATA_DATA1_OFFSET  (1U)
-#define GPIO_ODATA_DATA1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA1))   /*!< Mask  0x00000002 */
+#define GPIO_ODATA_PIN1_OFFSET  (1U)
+#define GPIO_ODATA_PIN1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN1))   /*!< Mask  0x00000002 */
 
-#define GPIO_ODATA_DATA0_OFFSET  (0U)
-#define GPIO_ODATA_DATA0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, DATA0))   /*!< Mask  0x00000001 */
+#define GPIO_ODATA_PIN0_OFFSET  (0U)
+#define GPIO_ODATA_PIN0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, ODATA, PIN0))   /*!< Mask  0x00000001 */
+
+// Value of each GPIO pin
+#define GPIO_0                  (0x0UL)                                               /*!< Value 0x00000000 */
+#define GPIO_1                  (0x1UL)                                               /*!< Value 0x00000001 */
 
 /*!< Bit set/reset register */
 #define GPIO_BSR_RESET15_OFFSET (31U)
@@ -477,6 +406,10 @@ typedef struct {
 #define GPIO_BSR_RESET0_OFFSET  (16U)
 #define GPIO_BSR_RESET0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, BSR, RESET0))   /*!< Mask  0x00010000 */
 
+// Value of reset triggering for each GPIO pin
+#define GPIO_NORESETODAATA      (0x0UL)                                               /*!< Value 0x00000000 */
+#define GPIO_RESETODAATA        (0x1UL)                                               /*!< Value 0x00000001 */
+
 #define GPIO_BSR_SET15_OFFSET (15U)
 #define GPIO_BSR_SET15_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, BSR, SET15))  /*!< Mask  0x00008000 */
 
@@ -525,170 +458,134 @@ typedef struct {
 #define GPIO_BSR_SET0_OFFSET  (0U)
 #define GPIO_BSR_SET0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, BSR, SET0))   /*!< Mask  0x00000001 */
 
+// Value of set triggering for each GPIO pin
+#define GPIO_NOSETODAATA      (0x0UL)                                            /*!< Value 0x00000000 */
+#define GPIO_SETODAATA        (0x1UL)                                             /*!< Value 0x00000001 */
+
 /*!< Port configuration lock register */
-#define GPIO_PORTCFGLOCK_LOCKKEY_OFFSET (16U)
-#define GPIO_PORTCFGLOCK_LOCKKEY_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCKKEY))  /*!< Mask  0x00010000 */
+#define GPIO_CFGLOCK_LOCKKEY_OFFSET    (16U)
+#define GPIO_CFGLOCK_LOCKKEY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, LOCKKEY))  /*!< Mask  0x00010000 */
+#define GPIO_CFGLOCK_LOCKKEY_NOTACTIVE (0x0UL)                                                   /*!< Mask  0x00000000 */
+#define GPIO_CFGLOCK_LOCKKEY_ACTIVE    (0x1UL)                                                   /*!< Mask  0x00000001 */
 
-#define GPIO_PORTCFGLOCK_LOCK15_OFFSET (15U)
-#define GPIO_PORTCFGLOCK_LOCK15_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK15))  /*!< Mask  0x00008000 */
+#define GPIO_CFGLOCK_PIN15_OFFSET      (15U)
+#define GPIO_CFGLOCK_PIN15_MASK        (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN15))    /*!< Mask  0x00008000 */
 
-#define GPIO_PORTCFGLOCK_LOCK14_OFFSET (14U)
-#define GPIO_PORTCFGLOCK_LOCK14_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK14))  /*!< Mask  0x00004000 */
+#define GPIO_CFGLOCK_PIN14_OFFSET      (14U)
+#define GPIO_CFGLOCK_PIN14_MASK        (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN14))    /*!< Mask  0x00004000 */
 
-#define GPIO_PORTCFGLOCK_LOCK13_OFFSET (13U)
-#define GPIO_PORTCFGLOCK_LOCK13_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK13))  /*!< Mask  0x00002000 */
+#define GPIO_CFGLOCK_PIN13_OFFSET      (13U)
+#define GPIO_CFGLOCK_PIN13_MASK        (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN13))    /*!< Mask  0x00002000 */
 
-#define GPIO_PORTCFGLOCK_LOCK12_OFFSET (12U)
-#define GPIO_PORTCFGLOCK_LOCK12_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK12))  /*!< Mask  0x00001000 */
+#define GPIO_CFGLOCK_PIN12_OFFSET      (12U)
+#define GPIO_CFGLOCK_PIN12_MASK        (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN12))    /*!< Mask  0x00001000 */
 
-#define GPIO_PORTCFGLOCK_LOCK11_OFFSET (11U)
-#define GPIO_PORTCFGLOCK_LOCK11_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK11))  /*!< Mask  0x00000800 */
+#define GPIO_CFGLOCK_PIN11_OFFSET      (11U)
+#define GPIO_CFGLOCK_PIN11_MASK        (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN11))    /*!< Mask  0x00000800 */
 
-#define GPIO_PORTCFGLOCK_LOCK10_OFFSET (10U)
-#define GPIO_PORTCFGLOCK_LOCK10_MASK   (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK10))  /*!< Mask  0x00000400 */
+#define GPIO_CFGLOCK_PIN10_OFFSET      (10U)
+#define GPIO_CFGLOCK_PIN10_MASK        (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN10))    /*!< Mask  0x00000400 */
 
-#define GPIO_PORTCFGLOCK_LOCK9_OFFSET  (9U)
-#define GPIO_PORTCFGLOCK_LOCK9_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK9))   /*!< Mask  0x00000200 */
+#define GPIO_CFGLOCK_PIN9_OFFSET       (9U)
+#define GPIO_CFGLOCK_PIN9_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN9))     /*!< Mask  0x00000200 */
 
-#define GPIO_PORTCFGLOCK_LOCK8_OFFSET  (8U)
-#define GPIO_PORTCFGLOCK_LOCK8_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK8))   /*!< Mask  0x00000100 */
+#define GPIO_CFGLOCK_PIN8_OFFSET       (8U)
+#define GPIO_CFGLOCK_PIN8_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN8))     /*!< Mask  0x00000100 */
 
-#define GPIO_PORTCFGLOCK_LOCK7_OFFSET  (7U)
-#define GPIO_PORTCFGLOCK_LOCK7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK7))   /*!< Mask  0x00000080 */
+#define GPIO_CFGLOCK_PIN7_OFFSET       (7U)
+#define GPIO_CFGLOCK_PIN7_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN7))     /*!< Mask  0x00000080 */
 
-#define GPIO_PORTCFGLOCK_LOCK6_OFFSET  (6U)
-#define GPIO_PORTCFGLOCK_LOCK6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK6))   /*!< Mask  0x00000040 */
+#define GPIO_CFGLOCK_PIN6_OFFSET       (6U)
+#define GPIO_CFGLOCK_PIN6_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN6))     /*!< Mask  0x00000040 */
 
-#define GPIO_PORTCFGLOCK_LOCK5_OFFSET  (5U)
-#define GPIO_PORTCFGLOCK_LOCK5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK5))   /*!< Mask  0x00000020 */
+#define GPIO_CFGLOCK_PIN5_OFFSET       (5U)
+#define GPIO_CFGLOCK_PIN5_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN5))     /*!< Mask  0x00000020 */
 
-#define GPIO_PORTCFGLOCK_LOCK4_OFFSET  (4U)
-#define GPIO_PORTCFGLOCK_LOCK4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK4))   /*!< Mask  0x00000010 */
+#define GPIO_CFGLOCK_PIN4_OFFSET       (4U)
+#define GPIO_CFGLOCK_PIN4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN4))     /*!< Mask  0x00000010 */
 
-#define GPIO_PORTCFGLOCK_LOCK3_OFFSET  (3U)
-#define GPIO_PORTCFGLOCK_LOCK3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK3))   /*!< Mask  0x00000008 */
+#define GPIO_CFGLOCK_PIN3_OFFSET       (3U)
+#define GPIO_CFGLOCK_PIN3_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN3))     /*!< Mask  0x00000008 */
 
-#define GPIO_PORTCFGLOCK_LOCK2_OFFSET  (2U)
-#define GPIO_PORTCFGLOCK_LOCK2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK2))   /*!< Mask  0x00000004 */
+#define GPIO_CFGLOCK_PIN2_OFFSET       (2U)
+#define GPIO_CFGLOCK_PIN2_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN2))     /*!< Mask  0x00000004 */
 
-#define GPIO_PORTCFGLOCK_LOCK1_OFFSET  (1U)
-#define GPIO_PORTCFGLOCK_LOCK1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK1))   /*!< Mask  0x00000002 */
+#define GPIO_CFGLOCK_PIN1_OFFSET       (1U)
+#define GPIO_CFGLOCK_PIN1_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN1))     /*!< Mask  0x00000002 */
 
-#define GPIO_PORTCFGLOCK_LOCK0_OFFSET  (0U)
-#define GPIO_PORTCFGLOCK_LOCK0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(GPIO, PORTCFGLOCK, LOCK0))   /*!< Mask  0x00000001 */
+#define GPIO_CFGLOCK_PIN0_OFFSET       (0U)
+#define GPIO_CFGLOCK_PIN0_MASK         (0x1UL << REGISTER_FIELD_OFFSET(GPIO, CFGLOCK, PIN0))     /*!< Mask  0x00000001 */
+
+// Value of lock configuration for each GPIO pin
+#define GPIO_LOCKCFG_UNLOCKED          (0x0UL)                                                   /*!< Mask  0x00000000 */
+#define GPIO_LOCKCFG_LOCKED            (0x1UL)                                                   /*!< Mask  0x00000001 */
 
 /*!< Alternate function register */
-#define GPIO_ALTFUNC_FUNC15_OFFSET (28U)
-#define GPIO_ALTFUNC_FUNC15_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC15))  /*!< Mask  0xF0000000 */
-#define GPIO_ALTFUNC_FUNC15_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC15_1      (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC15_2      (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC15_3      (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN15_OFFSET (28U)
+#define GPIO_ALTFUNC_PIN15_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN15))  /*!< Mask  0xF0000000 */
 
-#define GPIO_ALTFUNC_FUNC14_OFFSET (24U)
-#define GPIO_ALTFUNC_FUNC14_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC14))  /*!< Mask  0x0F000000 */
-#define GPIO_ALTFUNC_FUNC14_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC14_1      (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC14_2      (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC14_3      (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN14_OFFSET (24U)
+#define GPIO_ALTFUNC_PIN14_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN14))  /*!< Mask  0x0F000000 */
 
-#define GPIO_ALTFUNC_FUNC13_OFFSET (20U)
-#define GPIO_ALTFUNC_FUNC13_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC13))  /*!< Mask  0x00F00000 */
-#define GPIO_ALTFUNC_FUNC13_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC13_1      (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC13_2      (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC13_3      (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN13_OFFSET (20U)
+#define GPIO_ALTFUNC_PIN13_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN13))  /*!< Mask  0x00F00000 */
 
-#define GPIO_ALTFUNC_FUNC12_OFFSET (16U)
-#define GPIO_ALTFUNC_FUNC12_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC12))  /*!< Mask  0x000F0000 */
-#define GPIO_ALTFUNC_FUNC12_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC12_1      (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC12_2      (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC12_3      (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN12_OFFSET (16U)
+#define GPIO_ALTFUNC_PIN12_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN12))  /*!< Mask  0x000F0000 */
 
-#define GPIO_ALTFUNC_FUNC11_OFFSET (12U)
-#define GPIO_ALTFUNC_FUNC11_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC11))  /*!< Mask  0x0000F000 */
-#define GPIO_ALTFUNC_FUNC11_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC11_1      (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC11_2      (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC11_3      (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN11_OFFSET (12U)
+#define GPIO_ALTFUNC_PIN11_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN11))  /*!< Mask  0x0000F000 */
 
-#define GPIO_ALTFUNC_FUNC10_OFFSET (8U)
-#define GPIO_ALTFUNC_FUNC10_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC10))  /*!< Mask  0x00000F00 */
-#define GPIO_ALTFUNC_FUNC10_0      (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC10_1      (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC10_2      (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC10_3      (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN10_OFFSET (8U)
+#define GPIO_ALTFUNC_PIN10_MASK   (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN10))  /*!< Mask  0x00000F00 */
 
-#define GPIO_ALTFUNC_FUNC9_OFFSET  (4U)
-#define GPIO_ALTFUNC_FUNC9_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC9))   /*!< Mask  0x000000F0 */
-#define GPIO_ALTFUNC_FUNC9_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC9_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC9_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC9_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN9_OFFSET  (4U)
+#define GPIO_ALTFUNC_PIN9_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN9))   /*!< Mask  0x000000F0 */
 
-#define GPIO_ALTFUNC_FUNC8_OFFSET  (0U)
-#define GPIO_ALTFUNC_FUNC8_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC8))   /*!< Mask  0x0000000F */
-#define GPIO_ALTFUNC_FUNC8_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC8_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC8_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC8_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN8_OFFSET  (0U)
+#define GPIO_ALTFUNC_PIN8_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN8))   /*!< Mask  0x0000000F */
 
-#define GPIO_ALTFUNC_FUNC7_OFFSET  (28U)
-#define GPIO_ALTFUNC_FUNC7_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC7))   /*!< Mask  0xF0000000 */
-#define GPIO_ALTFUNC_FUNC7_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC7_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC7_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC7_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN7_OFFSET  (28U)
+#define GPIO_ALTFUNC_PIN7_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN7))   /*!< Mask  0xF0000000 */
 
-#define GPIO_ALTFUNC_FUNC6_OFFSET  (24U)
-#define GPIO_ALTFUNC_FUNC6_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC6))   /*!< Mask  0x0F000000 */
-#define GPIO_ALTFUNC_FUNC6_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC6_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC6_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC6_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN6_OFFSET  (24U)
+#define GPIO_ALTFUNC_PIN6_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN6))   /*!< Mask  0x0F000000 */
 
-#define GPIO_ALTFUNC_FUNC5_OFFSET  (20U)
-#define GPIO_ALTFUNC_FUNC5_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC5))   /*!< Mask  0x00F00000 */
-#define GPIO_ALTFUNC_FUNC5_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC5_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC5_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC5_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN5_OFFSET  (20U)
+#define GPIO_ALTFUNC_PIN5_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN5))   /*!< Mask  0x00F00000 */
 
-#define GPIO_ALTFUNC_FUNC4_OFFSET  (16U)
-#define GPIO_ALTFUNC_FUNC4_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC4))   /*!< Mask  0x000F0000 */
-#define GPIO_ALTFUNC_FUNC4_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC4_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC4_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC4_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN4_OFFSET  (16U)
+#define GPIO_ALTFUNC_PIN4_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN4))   /*!< Mask  0x000F0000 */
 
-#define GPIO_ALTFUNC_FUNC3_OFFSET  (12U)
-#define GPIO_ALTFUNC_FUNC3_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC3))   /*!< Mask  0x0000F000 */
-#define GPIO_ALTFUNC_FUNC3_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC3_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC3_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC3_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN3_OFFSET  (12U)
+#define GPIO_ALTFUNC_PIN3_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN3))   /*!< Mask  0x0000F000 */
 
-#define GPIO_ALTFUNC_FUNC2_OFFSET  (8U)
-#define GPIO_ALTFUNC_FUNC2_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC2))   /*!< Mask  0x00000F00 */
-#define GPIO_ALTFUNC_FUNC2_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC2_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC2_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC2_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN2_OFFSET  (8U)
+#define GPIO_ALTFUNC_PIN2_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN2))   /*!< Mask  0x00000F00 */
 
-#define GPIO_ALTFUNC_FUNC1_OFFSET  (4U)
-#define GPIO_ALTFUNC_FUNC1_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC1))   /*!< Mask  0x000000F0 */
-#define GPIO_ALTFUNC_FUNC1_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC1_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC1_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC1_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN1_OFFSET  (4U)
+#define GPIO_ALTFUNC_PIN1_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN1))   /*!< Mask  0x000000F0 */
 
-#define GPIO_ALTFUNC_FUNC0_OFFSET  (0U)
-#define GPIO_ALTFUNC_FUNC0_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, FUNC0))   /*!< Mask  0x0000000F */
-#define GPIO_ALTFUNC_FUNC0_0       (0x1UL)                                                  /*!< Value 0x00000001 */
-#define GPIO_ALTFUNC_FUNC0_1       (0x2UL)                                                  /*!< Value 0x00000002 */
-#define GPIO_ALTFUNC_FUNC0_2       (0x4UL)                                                  /*!< Value 0x00000004 */
-#define GPIO_ALTFUNC_FUNC0_3       (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC_PIN0_OFFSET  (0U)
+#define GPIO_ALTFUNC_PIN0_MASK    (0xFUL << REGISTER_FIELD_OFFSET(GPIO, ALTFUNC, PIN0))   /*!< Mask  0x0000000F */
+
+// Value of alternative function for each GPIO pin
+#define GPIO_ALTFUNC0            (0x0UL)                                                  /*!< Value 0x00000000 */
+#define GPIO_ALTFUNC1            (0x1UL)                                                  /*!< Value 0x00000001 */
+#define GPIO_ALTFUNC2            (0x2UL)                                                  /*!< Value 0x00000002 */
+#define GPIO_ALTFUNC3            (0x3UL)                                                  /*!< Value 0x00000003 */
+#define GPIO_ALTFUNC4            (0x4UL)                                                  /*!< Value 0x00000004 */
+#define GPIO_ALTFUNC5            (0x5UL)                                                  /*!< Value 0x00000005 */
+#define GPIO_ALTFUNC6            (0x6UL)                                                  /*!< Value 0x00000006 */
+#define GPIO_ALTFUNC7            (0x7UL)                                                  /*!< Value 0x00000007 */
+#define GPIO_ALTFUNC8            (0x8UL)                                                  /*!< Value 0x00000008 */
+#define GPIO_ALTFUNC9            (0x9UL)                                                  /*!< Value 0x00000009 */
+#define GPIO_ALTFUNC10           (0xAUL)                                                  /*!< Value 0x0000000A */
+#define GPIO_ALTFUNC11           (0xBUL)                                                  /*!< Value 0x0000000B */
+#define GPIO_ALTFUNC12           (0xCUL)                                                  /*!< Value 0x0000000C */
+#define GPIO_ALTFUNC13           (0xDUL)                                                  /*!< Value 0x0000000D */
+#define GPIO_ALTFUNC14           (0xEUL)                                                  /*!< Value 0x0000000E */
+#define GPIO_ALTFUNC15           (0xFUL)                                                  /*!< Value 0x0000000F */
 
 #define GPIO_OFFSET 0x0
 #define GPIO_BASE (D3_AHB4_BASE + GPIO_OFFSET)

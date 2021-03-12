@@ -767,86 +767,86 @@ typedef struct {
 #define FLASH_BANKPROGSECADDR_STARTADDR_11      (0x800UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGSECADDR, STARTADDR))  /*!< Value 0x00000800 */
 
 /*!< Bank current write sector protection register */
-#define FLASH_BANKCURWRSECPROT_SEC7PROT_OFFSET    (7U)
-#define FLASH_BANKCURWRSECPROT_SEC7PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC7PROT))  /*!< Mask  0x00000080 */
-#define FLASH_BANKCURWRSECPROT_SEC7PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC7PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC7_OFFSET        (7U)
+#define FLASH_BANKCURWRSECPROT_SEC7_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC7))  /*!< Mask  0x00000080 */
+#define FLASH_BANKCURWRSECPROT_SEC7_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC7_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC6PROT_OFFSET    (6U)
-#define FLASH_BANKCURWRSECPROT_SEC6PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC6PROT))  /*!< Mask  0x00000040 */
-#define FLASH_BANKCURWRSECPROT_SEC6PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC6PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC6_OFFSET        (6U)
+#define FLASH_BANKCURWRSECPROT_SEC6_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC6))  /*!< Mask  0x00000040 */
+#define FLASH_BANKCURWRSECPROT_SEC6_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC6_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC5PROT_OFFSET    (5U)
-#define FLASH_BANKCURWRSECPROT_SEC5PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC5PROT))  /*!< Mask  0x00000020 */
-#define FLASH_BANKCURWRSECPROT_SEC5PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC5PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC5_OFFSET        (5U)
+#define FLASH_BANKCURWRSECPROT_SEC5_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC5))  /*!< Mask  0x00000020 */
+#define FLASH_BANKCURWRSECPROT_SEC5_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC5_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC4PROT_OFFSET    (4U)
-#define FLASH_BANKCURWRSECPROT_SEC4PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC4PROT))  /*!< Mask  0x00000010 */
-#define FLASH_BANKCURWRSECPROT_SEC4PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC4PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC4_OFFSET        (4U)
+#define FLASH_BANKCURWRSECPROT_SEC4_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC4))  /*!< Mask  0x00000010 */
+#define FLASH_BANKCURWRSECPROT_SEC4_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC4_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC3PROT_OFFSET    (3U)
-#define FLASH_BANKCURWRSECPROT_SEC3PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC3PROT))  /*!< Mask  0x00000008 */
-#define FLASH_BANKCURWRSECPROT_SEC3PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC3PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC3_OFFSET        (3U)
+#define FLASH_BANKCURWRSECPROT_SEC3_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC3))  /*!< Mask  0x00000008 */
+#define FLASH_BANKCURWRSECPROT_SEC3_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC3_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC2PROT_OFFSET    (2U)
-#define FLASH_BANKCURWRSECPROT_SEC2PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC2PROT))  /*!< Mask  0x00000004 */
-#define FLASH_BANKCURWRSECPROT_SEC2PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC2PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC2_OFFSET        (2U)
+#define FLASH_BANKCURWRSECPROT_SEC2_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC2))  /*!< Mask  0x00000004 */
+#define FLASH_BANKCURWRSECPROT_SEC2_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC2_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC1PROT_OFFSET    (1U)
-#define FLASH_BANKCURWRSECPROT_SEC1PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC1PROT))  /*!< Mask  0x00000002 */
-#define FLASH_BANKCURWRSECPROT_SEC1PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC1PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC1_OFFSET        (1U)
+#define FLASH_BANKCURWRSECPROT_SEC1_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC1))  /*!< Mask  0x00000002 */
+#define FLASH_BANKCURWRSECPROT_SEC1_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC1_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
-#define FLASH_BANKCURWRSECPROT_SEC0PROT_OFFSET    (0U)
-#define FLASH_BANKCURWRSECPROT_SEC0PROT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC0PROT))  /*!< Mask  0x00000001 */
-#define FLASH_BANKCURWRSECPROT_SEC0PROT_ENABLED   (0x0UL)                                                              /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC0PROT_DISABLED  (0x1UL)                                                              /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC0_OFFSET        (0U)
+#define FLASH_BANKCURWRSECPROT_SEC0_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC0))  /*!< Mask  0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC0_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
+#define FLASH_BANKCURWRSECPROT_SEC0_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
 
 /*!< Bank programmatic write sector protection register */
-#define FLASH_BANKPROGWRSECPROT_SEC7PROT_OFFSET   (7U)
-#define FLASH_BANKPROGWRSECPROT_SEC7PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC7PROT))  /*!< Mask  0x00000080 */
-#define FLASH_BANKPROGWRSECPROT_SEC7PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC7PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC7_OFFSET     (7U)
+#define FLASH_BANKPROGWRSECPROT_SEC7_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC7))  /*!< Mask  0x00000080 */
+#define FLASH_BANKPROGWRSECPROT_SEC7_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC7_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC6PROT_OFFSET   (6U)
-#define FLASH_BANKPROGWRSECPROT_SEC6PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC6PROT))  /*!< Mask  0x00000040 */
-#define FLASH_BANKPROGWRSECPROT_SEC6PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC6PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC6_OFFSET     (6U)
+#define FLASH_BANKPROGWRSECPROT_SEC6_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC6))  /*!< Mask  0x00000040 */
+#define FLASH_BANKPROGWRSECPROT_SEC6_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC6_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC5PROT_OFFSET   (5U)
-#define FLASH_BANKPROGWRSECPROT_SEC5PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC5PROT))  /*!< Mask  0x00000020 */
-#define FLASH_BANKPROGWRSECPROT_SEC5PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC5PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC5_OFFSET     (5U)
+#define FLASH_BANKPROGWRSECPROT_SEC5_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC5))  /*!< Mask  0x00000020 */
+#define FLASH_BANKPROGWRSECPROT_SEC5_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC5_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC4PROT_OFFSET   (4U)
-#define FLASH_BANKPROGWRSECPROT_SEC4PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC4PROT))  /*!< Mask  0x00000010 */
-#define FLASH_BANKPROGWRSECPROT_SEC4PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC4PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC4_OFFSET     (4U)
+#define FLASH_BANKPROGWRSECPROT_SEC4_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC4))  /*!< Mask  0x00000010 */
+#define FLASH_BANKPROGWRSECPROT_SEC4_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC4_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC3PROT_OFFSET   (3U)
-#define FLASH_BANKPROGWRSECPROT_SEC3PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC3PROT))  /*!< Mask  0x00000008 */
-#define FLASH_BANKPROGWRSECPROT_SEC3PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC3PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC3_OFFSET     (3U)
+#define FLASH_BANKPROGWRSECPROT_SEC3_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC3))  /*!< Mask  0x00000008 */
+#define FLASH_BANKPROGWRSECPROT_SEC3_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC3_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC2PROT_OFFSET   (2U)
-#define FLASH_BANKPROGWRSECPROT_SEC2PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC2PROT))  /*!< Mask  0x00000004 */
-#define FLASH_BANKPROGWRSECPROT_SEC2PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC2PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC2_OFFSET     (2U)
+#define FLASH_BANKPROGWRSECPROT_SEC2_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC2))  /*!< Mask  0x00000004 */
+#define FLASH_BANKPROGWRSECPROT_SEC2_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC2_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC1PROT_OFFSET   (1U)
-#define FLASH_BANKPROGWRSECPROT_SEC1PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC1PROT))  /*!< Mask  0x00000002 */
-#define FLASH_BANKPROGWRSECPROT_SEC1PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC1PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC1_OFFSET     (1U)
+#define FLASH_BANKPROGWRSECPROT_SEC1_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC1))  /*!< Mask  0x00000002 */
+#define FLASH_BANKPROGWRSECPROT_SEC1_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC1_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC0PROT_OFFSET   (0U)
-#define FLASH_BANKPROGWRSECPROT_SEC0PROT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC0PROT))  /*!< Mask  0x00000001 */
-#define FLASH_BANKPROGWRSECPROT_SEC0PROT_ENABLE   (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC0PROT_DISABLE  (0x1UL)                                                               /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC0_OFFSET     (0U)
+#define FLASH_BANKPROGWRSECPROT_SEC0_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC0))  /*!< Mask  0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC0_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
+#define FLASH_BANKPROGWRSECPROT_SEC0_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
 
 /*!< Current boot address register for ARM Cortex M7 core */
 #define FLASH_CURBOOTADDRM7_ADDR1_OFFSET  (16U)
