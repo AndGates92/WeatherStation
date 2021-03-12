@@ -209,12 +209,12 @@ typedef struct {
 #define RCC_SRCCTRL_HSIDIVFLAG_UPDATING  (0x0UL)                                                     /*!< Value 0x00000000 */
 #define RCC_SRCCTRL_HSIDIVFLAG_UPDATED   (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_SRCCTRL_HSIPRE_OFFSET        (3U)
-#define RCC_SRCCTRL_HSIPRE_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIPRE))      /*!< Mask  0x00000018 */
-#define RCC_SRCCTRL_HSIPRE_BYPASS        (0x0UL)                                                     /*!< Value 0x00000000 */
-#define RCC_SRCCTRL_HSIPRE_DIV2          (0x1UL)                                                     /*!< Value 0x00000001 */
-#define RCC_SRCCTRL_HSIPRE_DIV4          (0x2UL)                                                     /*!< Value 0x00000002 */
-#define RCC_SRCCTRL_HSIPRE_DIV8          (0x3UL)                                                     /*!< Value 0x00000003 */
+#define RCC_SRCCTRL_HSIDIV_OFFSET        (3U)
+#define RCC_SRCCTRL_HSIDIV_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIDIV))      /*!< Mask  0x00000018 */
+#define RCC_SRCCTRL_HSIDIV_BYPASS        (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSIDIV_DIV2          (0x1UL)                                                     /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSIDIV_DIV4          (0x2UL)                                                     /*!< Value 0x00000002 */
+#define RCC_SRCCTRL_HSIDIV_DIV8          (0x3UL)                                                     /*!< Value 0x00000003 */
 
 #define RCC_SRCCTRL_HSIRDY_OFFSET        (2U)
 #define RCC_SRCCTRL_HSIRDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIRDY))      /*!< Mask  0x00000004 */
