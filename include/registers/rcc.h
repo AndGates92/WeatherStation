@@ -26,7 +26,7 @@
  */
 
 typedef struct {
-	RW uint32_t CR;              /*!< source control register                                     (Offset 0x0)            */
+	RW uint32_t SRCCTRL;         /*!< Source control register                                     (Offset 0x0)            */
 	RW uint32_t HSICFG;          /*!< HSI (High speed internal oscillator) configuration register (Offset 0x4)            */
 	RO uint32_t CRRC;            /*!< Clock recovery RC register                                  (Offset 0x8)            */
 	RW uint32_t CSICFG;          /*!< CSI (Low power internal oscillator) configuration register  (Offset 0xC)            */
@@ -118,118 +118,118 @@ typedef struct {
 } rcc_core_regs;
 
 /*!< RCC common registers */
-/*!< Control register */
-#define RCC_CR_PLL3RDY_OFFSET       (29U)
-#define RCC_CR_PLL3RDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, PLL3RDY))     /*!< Mask  0x20000000 */
-#define RCC_CR_PLL3RDY_UNLOCKED     (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_PLL3RDY_LOCKED       (0x1UL)                                                /*!< Value 0x00000001 */
+/*!< Source control register */
+#define RCC_SRCCTRL_PLL3RDY_OFFSET       (29U)
+#define RCC_SRCCTRL_PLL3RDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, PLL3RDY))     /*!< Mask  0x20000000 */
+#define RCC_SRCCTRL_PLL3RDY_UNLOCKED     (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_PLL3RDY_LOCKED       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_PLL3EN_OFFSET        (28U)
-#define RCC_CR_PLL3EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, PLL3EN))      /*!< Mask  0x10000000 */
-#define RCC_CR_PLL3EN_DISABLE       (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_PLL3EN_ENABLE        (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_PLL3EN_OFFSET        (28U)
+#define RCC_SRCCTRL_PLL3EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, PLL3EN))      /*!< Mask  0x10000000 */
+#define RCC_SRCCTRL_PLL3EN_DISABLE       (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_PLL3EN_ENABLE        (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_PLL2RDY_OFFSET       (27U)
-#define RCC_CR_PLL2RDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, PLL2RDY))     /*!< Mask  0x08000000 */
-#define RCC_CR_PLL2RDY_UNLOCKED     (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_PLL2RDY_LOCKED       (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_PLL2RDY_OFFSET       (27U)
+#define RCC_SRCCTRL_PLL2RDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, PLL2RDY))     /*!< Mask  0x08000000 */
+#define RCC_SRCCTRL_PLL2RDY_UNLOCKED     (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_PLL2RDY_LOCKED       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_PLL2EN_OFFSET        (26U)
-#define RCC_CR_PLL2EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, PLL2EN))      /*!< Mask  0x04000000 */
-#define RCC_CR_PLL2EN_DISABLE       (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_PLL2EN_ENABLE        (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_PLL2EN_OFFSET        (26U)
+#define RCC_SRCCTRL_PLL2EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, PLL2EN))      /*!< Mask  0x04000000 */
+#define RCC_SRCCTRL_PLL2EN_DISABLE       (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_PLL2EN_ENABLE        (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_PLL1RDY_OFFSET       (25U)
-#define RCC_CR_PLL1RDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, PLL1RDY))     /*!< Mask  0x02000000 */
-#define RCC_CR_PLL1RDY_UNLOCKED     (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_PLL1RDY_LOCKED       (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_PLL1RDY_OFFSET       (25U)
+#define RCC_SRCCTRL_PLL1RDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, PLL1RDY))     /*!< Mask  0x02000000 */
+#define RCC_SRCCTRL_PLL1RDY_UNLOCKED     (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_PLL1RDY_LOCKED       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_PLL1EN_OFFSET        (24U)
-#define RCC_CR_PLL1EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, PLL1EN))      /*!< Mask  0x01000000 */
-#define RCC_CR_PLL1EN_DISABLE       (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_PLL1EN_ENABLE        (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_PLL1EN_OFFSET        (24U)
+#define RCC_SRCCTRL_PLL1EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, PLL1EN))      /*!< Mask  0x01000000 */
+#define RCC_SRCCTRL_PLL1EN_DISABLE       (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_PLL1EN_ENABLE        (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSECSSEN_OFFSET      (19U)
-#define RCC_CR_HSECSSEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSECSSEN))    /*!< Mask  0x00080000 */
-#define RCC_CR_HSECSSEN_DISABLE     (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSECSSEN_ENABLE      (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSECSSEN_OFFSET      (19U)
+#define RCC_SRCCTRL_HSECSSEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSECSSEN))    /*!< Mask  0x00080000 */
+#define RCC_SRCCTRL_HSECSSEN_DISABLE     (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSECSSEN_ENABLE      (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSEBYPASS_OFFSET     (18U)
-#define RCC_CR_HSEBYPASS_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSEBYPASS))   /*!< Mask  0x00040000 */
-#define RCC_CR_HSEBYPASS_DISABLE    (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSEBYPASS_ENABLE     (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSEBYPASS_OFFSET     (18U)
+#define RCC_SRCCTRL_HSEBYPASS_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSEBYPASS))   /*!< Mask  0x00040000 */
+#define RCC_SRCCTRL_HSEBYPASS_DISABLE    (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSEBYPASS_ENABLE     (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSERDY_OFFSET        (17U)
-#define RCC_CR_HSERDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSERDY))      /*!< Mask  0x00020000 */
-#define RCC_CR_HSERDY_NOTREADY      (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSERDY_READY         (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSERDY_OFFSET        (17U)
+#define RCC_SRCCTRL_HSERDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSERDY))      /*!< Mask  0x00020000 */
+#define RCC_SRCCTRL_HSERDY_NOTREADY      (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSERDY_READY         (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSEEN_OFFSET         (16U)
-#define RCC_CR_HSEEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSEEN))       /*!< Mask  0x00010000 */
-#define RCC_CR_HSEEN_DISABLE        (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSEEN_ENABLE         (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSEEN_OFFSET         (16U)
+#define RCC_SRCCTRL_HSEEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSEEN))       /*!< Mask  0x00010000 */
+#define RCC_SRCCTRL_HSEEN_DISABLE        (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSEEN_ENABLE         (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_D2RDY_OFFSET         (15U)
-#define RCC_CR_D2RDY_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, D2RDY))       /*!< Mask  0x00008000 */
-#define RCC_CR_D2RDY_NOTREADY       (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_D2RDY_READY          (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_D2RDY_OFFSET         (15U)
+#define RCC_SRCCTRL_D2RDY_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, D2RDY))       /*!< Mask  0x00008000 */
+#define RCC_SRCCTRL_D2RDY_NOTREADY       (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_D2RDY_READY          (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_D1RDY_OFFSET         (14U)
-#define RCC_CR_D1RDY_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, D1RDY))       /*!< Mask  0x00004000 */
-#define RCC_CR_D1RDY_NOTREADY       (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_D1RDY_READY          (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_D1RDY_OFFSET         (14U)
+#define RCC_SRCCTRL_D1RDY_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, D1RDY))       /*!< Mask  0x00004000 */
+#define RCC_SRCCTRL_D1RDY_NOTREADY       (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_D1RDY_READY          (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSI48RDY_OFFSET      (13U)
-#define RCC_CR_HSI48RDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSI48RDY))    /*!< Mask  0x00002000 */
-#define RCC_CR_HSI48RDY_NOTREADY    (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSI48RDY_READY       (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSI48RDY_OFFSET      (13U)
+#define RCC_SRCCTRL_HSI48RDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSI48RDY))    /*!< Mask  0x00002000 */
+#define RCC_SRCCTRL_HSI48RDY_NOTREADY    (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSI48RDY_READY       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSI48EN_OFFSET       (12U)
-#define RCC_CR_HSI48EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSI48EN))     /*!< Mask  0x00001000 */
-#define RCC_CR_HSI48EN_DISABLE      (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSI48EN_ENABLE       (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSI48EN_OFFSET       (12U)
+#define RCC_SRCCTRL_HSI48EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSI48EN))     /*!< Mask  0x00001000 */
+#define RCC_SRCCTRL_HSI48EN_DISABLE      (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSI48EN_ENABLE       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_CSISMEN_OFFSET       (9U)
-#define RCC_CR_CSISMEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, CSISMEN))     /*!< Mask  0x00000200 */
-#define RCC_CR_CSISMEN_DISABLE      (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_CSISMEN_ENABLE       (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_CSISMEN_OFFSET       (9U)
+#define RCC_SRCCTRL_CSISMEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, CSISMEN))     /*!< Mask  0x00000200 */
+#define RCC_SRCCTRL_CSISMEN_DISABLE      (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_CSISMEN_ENABLE       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_CSIRDY_OFFSET        (8U)
-#define RCC_CR_CSIRDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, CSIRDY))      /*!< Mask  0x00000100 */
-#define RCC_CR_CSIRDY_NOTREADY      (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_CSIRDY_READY         (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_CSIRDY_OFFSET        (8U)
+#define RCC_SRCCTRL_CSIRDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, CSIRDY))      /*!< Mask  0x00000100 */
+#define RCC_SRCCTRL_CSIRDY_NOTREADY      (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_CSIRDY_READY         (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_CSIEN_OFFSET         (7U)
-#define RCC_CR_CSIEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, CSIEN))       /*!< Mask  0x00000080 */
-#define RCC_CR_CSIEN_DISABLE        (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_CSIEN_ENABLE         (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_CSIEN_OFFSET         (7U)
+#define RCC_SRCCTRL_CSIEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, CSIEN))       /*!< Mask  0x00000080 */
+#define RCC_SRCCTRL_CSIEN_DISABLE        (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_CSIEN_ENABLE         (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSIDIVFLAG_OFFSET    (5U)
-#define RCC_CR_HSIDIVFLAG_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSIDIVFLAG))  /*!< Mask  0x00000020 */
-#define RCC_CR_HSIDIVFLAG_UPDATING  (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSIDIVFLAG_UPDATED   (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSIDIVFLAG_OFFSET    (5U)
+#define RCC_SRCCTRL_HSIDIVFLAG_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIDIVFLAG))  /*!< Mask  0x00000020 */
+#define RCC_SRCCTRL_HSIDIVFLAG_UPDATING  (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSIDIVFLAG_UPDATED   (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSIPRE_OFFSET        (3U)
-#define RCC_CR_HSIPRE_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, CR, HSIPRE))      /*!< Mask  0x00000018 */
-#define RCC_CR_HSIPRE_BYPASS        (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSIPRE_DIV2          (0x1UL)                                                /*!< Value 0x00000001 */
-#define RCC_CR_HSIPRE_DIV4          (0x2UL)                                                /*!< Value 0x00000002 */
-#define RCC_CR_HSIPRE_DIV8          (0x3UL)                                                /*!< Value 0x00000003 */
+#define RCC_SRCCTRL_HSIPRE_OFFSET        (3U)
+#define RCC_SRCCTRL_HSIPRE_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIPRE))      /*!< Mask  0x00000018 */
+#define RCC_SRCCTRL_HSIPRE_BYPASS        (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSIPRE_DIV2          (0x1UL)                                                     /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSIPRE_DIV4          (0x2UL)                                                     /*!< Value 0x00000002 */
+#define RCC_SRCCTRL_HSIPRE_DIV8          (0x3UL)                                                     /*!< Value 0x00000003 */
 
-#define RCC_CR_HSIRDY_OFFSET        (2U)
-#define RCC_CR_HSIRDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSIRDY))      /*!< Mask  0x00000004 */
-#define RCC_CR_HSIRDY_NOTREADY      (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSIRDY_READY         (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSIRDY_OFFSET        (2U)
+#define RCC_SRCCTRL_HSIRDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIRDY))      /*!< Mask  0x00000004 */
+#define RCC_SRCCTRL_HSIRDY_NOTREADY      (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSIRDY_READY         (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSISMEN_OFFSET       (1U)
-#define RCC_CR_HSISMEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSISMEN))     /*!< Mask  0x00000002 */
-#define RCC_CR_HSISMEN_DISABLE      (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSISMEN_ENABLE       (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSISMEN_OFFSET       (1U)
+#define RCC_SRCCTRL_HSISMEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSISMEN))     /*!< Mask  0x00000002 */
+#define RCC_SRCCTRL_HSISMEN_DISABLE      (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSISMEN_ENABLE       (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define RCC_CR_HSIEN_OFFSET         (0U)
-#define RCC_CR_HSIEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, CR, HSIEN))       /*!< Mask  0x00000001 */
-#define RCC_CR_HSIEN_DISABLE        (0x0UL)                                                /*!< Value 0x00000000 */
-#define RCC_CR_HSIEN_ENABLE         (0x1UL)                                                /*!< Value 0x00000001 */
+#define RCC_SRCCTRL_HSIEN_OFFSET         (0U)
+#define RCC_SRCCTRL_HSIEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, SRCCTRL, HSIEN))       /*!< Mask  0x00000001 */
+#define RCC_SRCCTRL_HSIEN_DISABLE        (0x0UL)                                                     /*!< Value 0x00000000 */
+#define RCC_SRCCTRL_HSIEN_ENABLE         (0x1UL)                                                     /*!< Value 0x00000001 */
 
 /*!< HSI (High speed internal oscillator) configuration register */
 #define RCC_HSICFG_HSITRIM_OFFSET  (24U)
@@ -295,60 +295,60 @@ typedef struct {
 #define RCC_CSICFG_CSICAL_9       (0x200UL)                                                /*!< Value 0x00000200 */
 
 /*!< Clock configuration register */
-#define RCC_CLKCFG_MSO2SEL_OFFSET        (29U)
-#define RCC_CLKCFG_MSO2SEL_MASK          (0x7UL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MSO2SEL))       /*!< Mask  0xE0000000 */
-#define RCC_CLKCFG_MSO2SEL_SYSCLK        (0x0UL)                                                      /*!< Value 0x00000000 */
-#define RCC_CLKCFG_MSO2SEL_PLL2          (0x1UL)                                                      /*!< Value 0x00000001 */
-#define RCC_CLKCFG_MSO2SEL_HSE           (0x2UL)                                                      /*!< Value 0x00000002 */
-#define RCC_CLKCFG_MSO2SEL_PLL1          (0x3UL)                                                      /*!< Value 0x00000003 */
-#define RCC_CLKCFG_MSO2SEL_CSI           (0x4UL)                                                      /*!< Value 0x00000004 */
-#define RCC_CLKCFG_MSO2SEL_LSI           (0x5UL)                                                      /*!< Value 0x00000005 */
+#define RCC_CLKCFG_MCO2SEL_OFFSET        (29U)
+#define RCC_CLKCFG_MCO2SEL_MASK          (0x7UL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MCO2SEL))       /*!< Mask  0xE0000000 */
+#define RCC_CLKCFG_MCO2SEL_SYSCLK        (0x0UL)                                                      /*!< Value 0x00000000 */
+#define RCC_CLKCFG_MCO2SEL_PLL2          (0x1UL)                                                      /*!< Value 0x00000001 */
+#define RCC_CLKCFG_MCO2SEL_HSE           (0x2UL)                                                      /*!< Value 0x00000002 */
+#define RCC_CLKCFG_MCO2SEL_PLL1          (0x3UL)                                                      /*!< Value 0x00000003 */
+#define RCC_CLKCFG_MCO2SEL_CSI           (0x4UL)                                                      /*!< Value 0x00000004 */
+#define RCC_CLKCFG_MCO2SEL_LSI           (0x5UL)                                                      /*!< Value 0x00000005 */
 
-#define RCC_CLKCFG_MSO2PRE_OFFSET        (25U)
-#define RCC_CLKCFG_MSO2PRE_MASK          (0xFUL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MSO2PRE))       /*!< Mask  0x1E000000 */
-#define RCC_CLKCFG_MSO2PRE_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define RCC_CLKCFG_MSO2PRE_BYPASS        (0x1UL)                                                      /*!< Value 0x00000001 */
-#define RCC_CLKCFG_MSO2PRE_DIV2          (0x2UL)                                                      /*!< Value 0x00000002 */
-#define RCC_CLKCFG_MSO2PRE_DIV3          (0x3UL)                                                      /*!< Value 0x00000003 */
-#define RCC_CLKCFG_MSO2PRE_DIV4          (0x4UL)                                                      /*!< Value 0x00000004 */
-#define RCC_CLKCFG_MSO2PRE_DIV5          (0x5UL)                                                      /*!< Value 0x00000005 */
-#define RCC_CLKCFG_MSO2PRE_DIV6          (0x6UL)                                                      /*!< Value 0x00000006 */
-#define RCC_CLKCFG_MSO2PRE_DIV7          (0x7UL)                                                      /*!< Value 0x00000007 */
-#define RCC_CLKCFG_MSO2PRE_DIV8          (0x8UL)                                                      /*!< Value 0x00000008 */
-#define RCC_CLKCFG_MSO2PRE_DIV9          (0x9UL)                                                      /*!< Value 0x00000009 */
-#define RCC_CLKCFG_MSO2PRE_DIV10         (0xAUL)                                                      /*!< Value 0x0000000A */
-#define RCC_CLKCFG_MSO2PRE_DIV11         (0xBUL)                                                      /*!< Value 0x0000000B */
-#define RCC_CLKCFG_MSO2PRE_DIV12         (0xCUL)                                                      /*!< Value 0x0000000C */
-#define RCC_CLKCFG_MSO2PRE_DIV13         (0xDUL)                                                      /*!< Value 0x0000000D */
-#define RCC_CLKCFG_MSO2PRE_DIV14         (0xEUL)                                                      /*!< Value 0x0000000E */
-#define RCC_CLKCFG_MSO2PRE_DIV15         (0xFUL)                                                      /*!< Value 0x0000000F */
+#define RCC_CLKCFG_MCO2PRE_OFFSET        (25U)
+#define RCC_CLKCFG_MCO2PRE_MASK          (0xFUL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MCO2PRE))       /*!< Mask  0x1E000000 */
+#define RCC_CLKCFG_MCO2PRE_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
+#define RCC_CLKCFG_MCO2PRE_BYPASS        (0x1UL)                                                      /*!< Value 0x00000001 */
+#define RCC_CLKCFG_MCO2PRE_DIV2          (0x2UL)                                                      /*!< Value 0x00000002 */
+#define RCC_CLKCFG_MCO2PRE_DIV3          (0x3UL)                                                      /*!< Value 0x00000003 */
+#define RCC_CLKCFG_MCO2PRE_DIV4          (0x4UL)                                                      /*!< Value 0x00000004 */
+#define RCC_CLKCFG_MCO2PRE_DIV5          (0x5UL)                                                      /*!< Value 0x00000005 */
+#define RCC_CLKCFG_MCO2PRE_DIV6          (0x6UL)                                                      /*!< Value 0x00000006 */
+#define RCC_CLKCFG_MCO2PRE_DIV7          (0x7UL)                                                      /*!< Value 0x00000007 */
+#define RCC_CLKCFG_MCO2PRE_DIV8          (0x8UL)                                                      /*!< Value 0x00000008 */
+#define RCC_CLKCFG_MCO2PRE_DIV9          (0x9UL)                                                      /*!< Value 0x00000009 */
+#define RCC_CLKCFG_MCO2PRE_DIV10         (0xAUL)                                                      /*!< Value 0x0000000A */
+#define RCC_CLKCFG_MCO2PRE_DIV11         (0xBUL)                                                      /*!< Value 0x0000000B */
+#define RCC_CLKCFG_MCO2PRE_DIV12         (0xCUL)                                                      /*!< Value 0x0000000C */
+#define RCC_CLKCFG_MCO2PRE_DIV13         (0xDUL)                                                      /*!< Value 0x0000000D */
+#define RCC_CLKCFG_MCO2PRE_DIV14         (0xEUL)                                                      /*!< Value 0x0000000E */
+#define RCC_CLKCFG_MCO2PRE_DIV15         (0xFUL)                                                      /*!< Value 0x0000000F */
 
-#define RCC_CLKCFG_MSO1SEL_OFFSET        (22U)
-#define RCC_CLKCFG_MSO1SEL_MASK          (0x7UL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MSO1SEL))       /*!< Mask  0x01C00000 */
-#define RCC_CLKCFG_MSO1SEL_HSI           (0x0UL)                                                      /*!< Value 0x00000000 */
-#define RCC_CLKCFG_MSO1SEL_LSE           (0x1UL)                                                      /*!< Value 0x00000001 */
-#define RCC_CLKCFG_MSO1SEL_HSE           (0x2UL)                                                      /*!< Value 0x00000002 */
-#define RCC_CLKCFG_MSO1SEL_PLL1          (0x3UL)                                                      /*!< Value 0x00000003 */
-#define RCC_CLKCFG_MSO1SEL_HSI48         (0x4UL)                                                      /*!< Value 0x00000004 */
+#define RCC_CLKCFG_MCO1SEL_OFFSET        (22U)
+#define RCC_CLKCFG_MCO1SEL_MASK          (0x7UL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MCO1SEL))       /*!< Mask  0x01C00000 */
+#define RCC_CLKCFG_MCO1SEL_HSI           (0x0UL)                                                      /*!< Value 0x00000000 */
+#define RCC_CLKCFG_MCO1SEL_LSE           (0x1UL)                                                      /*!< Value 0x00000001 */
+#define RCC_CLKCFG_MCO1SEL_HSE           (0x2UL)                                                      /*!< Value 0x00000002 */
+#define RCC_CLKCFG_MCO1SEL_PLL1          (0x3UL)                                                      /*!< Value 0x00000003 */
+#define RCC_CLKCFG_MCO1SEL_HSI48         (0x4UL)                                                      /*!< Value 0x00000004 */
 
-#define RCC_CLKCFG_MSO1PRE_OFFSET        (18U)
-#define RCC_CLKCFG_MSO1PRE_MASK          (0xFUL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MSO1PRE))       /*!< Mask  0x003C0000 */
-#define RCC_CLKCFG_MSO1PRE_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define RCC_CLKCFG_MSO1PRE_BYPASS        (0x1UL)                                                      /*!< Value 0x00000001 */
-#define RCC_CLKCFG_MSO1PRE_DIV2          (0x2UL)                                                      /*!< Value 0x00000002 */
-#define RCC_CLKCFG_MSO1PRE_DIV3          (0x3UL)                                                      /*!< Value 0x00000003 */
-#define RCC_CLKCFG_MSO1PRE_DIV4          (0x4UL)                                                      /*!< Value 0x00000004 */
-#define RCC_CLKCFG_MSO1PRE_DIV5          (0x5UL)                                                      /*!< Value 0x00000005 */
-#define RCC_CLKCFG_MSO1PRE_DIV6          (0x6UL)                                                      /*!< Value 0x00000006 */
-#define RCC_CLKCFG_MSO1PRE_DIV7          (0x7UL)                                                      /*!< Value 0x00000007 */
-#define RCC_CLKCFG_MSO1PRE_DIV8          (0x8UL)                                                      /*!< Value 0x00000008 */
-#define RCC_CLKCFG_MSO1PRE_DIV9          (0x9UL)                                                      /*!< Value 0x00000009 */
-#define RCC_CLKCFG_MSO1PRE_DIV10         (0xAUL)                                                      /*!< Value 0x0000000A */
-#define RCC_CLKCFG_MSO1PRE_DIV11         (0xBUL)                                                      /*!< Value 0x0000000B */
-#define RCC_CLKCFG_MSO1PRE_DIV12         (0xCUL)                                                      /*!< Value 0x0000000C */
-#define RCC_CLKCFG_MSO1PRE_DIV13         (0xDUL)                                                      /*!< Value 0x0000000D */
-#define RCC_CLKCFG_MSO1PRE_DIV14         (0xEUL)                                                      /*!< Value 0x0000000E */
-#define RCC_CLKCFG_MSO1PRE_DIV15         (0xFUL)                                                      /*!< Value 0x0000000F */
+#define RCC_CLKCFG_MCO1PRE_OFFSET        (18U)
+#define RCC_CLKCFG_MCO1PRE_MASK          (0xFUL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, MCO1PRE))       /*!< Mask  0x003C0000 */
+#define RCC_CLKCFG_MCO1PRE_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
+#define RCC_CLKCFG_MCO1PRE_BYPASS        (0x1UL)                                                      /*!< Value 0x00000001 */
+#define RCC_CLKCFG_MCO1PRE_DIV2          (0x2UL)                                                      /*!< Value 0x00000002 */
+#define RCC_CLKCFG_MCO1PRE_DIV3          (0x3UL)                                                      /*!< Value 0x00000003 */
+#define RCC_CLKCFG_MCO1PRE_DIV4          (0x4UL)                                                      /*!< Value 0x00000004 */
+#define RCC_CLKCFG_MCO1PRE_DIV5          (0x5UL)                                                      /*!< Value 0x00000005 */
+#define RCC_CLKCFG_MCO1PRE_DIV6          (0x6UL)                                                      /*!< Value 0x00000006 */
+#define RCC_CLKCFG_MCO1PRE_DIV7          (0x7UL)                                                      /*!< Value 0x00000007 */
+#define RCC_CLKCFG_MCO1PRE_DIV8          (0x8UL)                                                      /*!< Value 0x00000008 */
+#define RCC_CLKCFG_MCO1PRE_DIV9          (0x9UL)                                                      /*!< Value 0x00000009 */
+#define RCC_CLKCFG_MCO1PRE_DIV10         (0xAUL)                                                      /*!< Value 0x0000000A */
+#define RCC_CLKCFG_MCO1PRE_DIV11         (0xBUL)                                                      /*!< Value 0x0000000B */
+#define RCC_CLKCFG_MCO1PRE_DIV12         (0xCUL)                                                      /*!< Value 0x0000000C */
+#define RCC_CLKCFG_MCO1PRE_DIV13         (0xDUL)                                                      /*!< Value 0x0000000D */
+#define RCC_CLKCFG_MCO1PRE_DIV14         (0xEUL)                                                      /*!< Value 0x0000000E */
+#define RCC_CLKCFG_MCO1PRE_DIV15         (0xFUL)                                                      /*!< Value 0x0000000F */
 
 #define RCC_CLKCFG_TIMERPRE_OFFSET       (15U)
 #define RCC_CLKCFG_TIMERPRE_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCFG, TIMERPRE))      /*!< Mask  0x00008000 */
