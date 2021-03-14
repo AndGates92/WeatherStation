@@ -8,9 +8,18 @@
 
 #include "config/config.h"
 
+void gpio_blink() {
+
+	// GPIOA configuratin
+
+
+}
+
 int main(int argc, char * argv[]) {
 
 	clk_config();
+
+	gpio_blink();
 
 	return 0;
 

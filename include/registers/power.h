@@ -63,10 +63,10 @@ typedef struct {
 #define PWR_CTRL1_FLASHLPSTOP_NORMALMODE  (0x0UL)                                                     /*!< Value 0x00000000 */
 #define PWR_CTRL1_FLASHLPSTOP_LPMODE      (0x1UL)                                                     /*!< Value 0x00000001 */
 
-#define PWR_CTRL1_DISBCKWRPROT_OFFSET     (8U)
-#define PWR_CTRL1_DISBCKWRPROT_MASK       (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, DISBCKWRPROT))  /*!< Mask  0x00002000 */
-#define PWR_CTRL1_DISBCKWRPROT_NORMALMODE (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_DISBCKWRPROT_LPMODE     (0x1UL)                                                     /*!< Value 0x00000001 */
+#define PWR_CTRL1_BCKWRPROT_OFFSET        (8U)
+#define PWR_CTRL1_BCKWRPROT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, BCKWRPROT))     /*!< Mask  0x00002000 */
+#define PWR_CTRL1_BCKWRPROT_DISABLE       (0x0UL)                                                     /*!< Value 0x00000000 */
+#define PWR_CTRL1_BCKWRPROT_ENABLE        (0x1UL)                                                     /*!< Value 0x00000001 */
 
 #define PWR_CTRL1_VTHPVD_OFFSET           (5U)
 #define PWR_CTRL1_VTHPVD_MASK             (0x7UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, VTHPVD))        /*!< Mask  0x000000E0 */
@@ -203,97 +203,49 @@ typedef struct {
 #define PWR_CTRL3_PWRMGMTBYPASS_DISABLE           (0x0UL)                                                            /*!< Value 0x00000000 */
 #define PWR_CTRL3_PWRMGMTBYPASS_ENABLE            (0x1UL)                                                            /*!< Value 0x00000001 */
 
-/*!< CPU1 power control register */
-#define PWR_CPU1CTRL_D3RUNMODE_OFFSET            (11U)
-#define PWR_CPU1CTRL_D3RUNMODE_MASK              (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D3RUNMODE))           /*!< Mask  0x00000800 */
-#define PWR_CPU1CTRL_D3RUNMODE_FOLLOWSUBSYSMODE  (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU1CTRL_D3RUNMODE_ALWAYSON          (0x1UL)                                                              /*!< Value 0x00000001 */
+/*!< CPU power control register */
+#define PWR_CPUCTRL_D3RUNMODE_OFFSET               (11U)
+#define PWR_CPUCTRL_D3RUNMODE_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D3RUNMODE))               /*!< Mask  0x00000800 */
+#define PWR_CPUCTRL_D3RUNMODE_FOLLOWSUBSYSMODE     (0x0UL)                                                                 /*!< Value 0x00000000 */
+#define PWR_CPUCTRL_D3RUNMODE_ALWAYSON             (0x1UL)                                                                 /*!< Value 0x00000001 */
 
-#define PWR_CPU1CTRL_CPU2HOLD_OFFSET             (10U)
-#define PWR_CPU1CTRL_CPU2HOLD_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, CPU2HOLD))            /*!< Mask  0x00000400 */
-#define PWR_CPU1CTRL_CPU2HOLD_RUNAFTERWAKEUP     (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU1CTRL_CPU2HOLD_KEEPONHOLD         (0x1UL)                                                              /*!< Value 0x00000001 */
+#define PWR_CPUCTRL_CPU2HOLD_OFFSET                (10U)
+#define PWR_CPUCTRL_CPU2HOLD_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, CPU2HOLD))                /*!< Mask  0x00000400 */
+#define PWR_CPUCTRL_CPU2HOLD_RUNAFTERWAKEUP        (0x0UL)                                                                 /*!< Value 0x00000000 */
+#define PWR_CPUCTRL_CPU2HOLD_KEEPONHOLD            (0x1UL)                                                                 /*!< Value 0x00000001 */
 
-#define PWR_CPU1CTRL_D1FLAGSCLR_OFFSET           (9U)
-#define PWR_CPU1CTRL_D1FLAGSCLR_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D1FLAGSCLR))          /*!< Mask  0x00000200 */
-#define PWR_CPU1CTRL_D1FLAGSCLR_NOEFFECT         (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU1CTRL_D1FLAGSCLR_CLRFLAGS         (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D1FLAGSCLR))          /*!< Mask  0x00000200 */
+#define PWR_CPUCTRL_D1FLAGSCLR_OFFSET              (9U)
+#define PWR_CPUCTRL_D1FLAGSCLR_MASK                (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D1FLAGSCLR))              /*!< Mask  0x00000200 */
+#define PWR_CPUCTRL_D1FLAGSCLR_NOEFFECT            (0x0UL)                                                                 /*!< Value 0x00000000 */
+#define PWR_CPUCTRL_D1FLAGSCLR_CLRFLAGS            (0x1UL)                                                                 /*!< Value 0x00000001 */
 
-#define PWR_CPU1CTRL_D2STANDBYFLAG_OFFSET        (8U)
-#define PWR_CPU1CTRL_D2STANDBYFLAG_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D2STANDBYFLAG))       /*!< Mask  0x00000100 */
+#define PWR_CPUCTRL_D2STANDBYFLAG_OFFSET           (8U)
+#define PWR_CPUCTRL_D2STANDBYFLAG_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D2STANDBYFLAG))           /*!< Mask  0x00000100 */
 
-#define PWR_CPU1CTRL_D1STANDBYFLAG_OFFSET        (7U)
-#define PWR_CPU1CTRL_D1STANDBYFLAG_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D1STANDBYFLAG))       /*!< Mask  0x00000080 */
+#define PWR_CPUCTRL_D1STANDBYFLAG_OFFSET           (7U)
+#define PWR_CPUCTRL_D1STANDBYFLAG_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D1STANDBYFLAG))           /*!< Mask  0x00000080 */
 
-#define PWR_CPU1CTRL_SYSSTANDBYFLAG_OFFSET       (6U)
-#define PWR_CPU1CTRL_SYSSTANDBYFLAG_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, SYSSTANDBYFLAG))      /*!< Mask  0x00000040 */
+#define PWR_CPUCTRL_SYSSTANDBYFLAG_OFFSET          (6U)
+#define PWR_CPUCTRL_SYSSTANDBYFLAG_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, SYSSTANDBYFLAG))          /*!< Mask  0x00000040 */
 
-#define PWR_CPU1CTRL_STOPFLAG_OFFSET             (5U)
-#define PWR_CPU1CTRL_STOPFLAG_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, STOPFLAG))            /*!< Mask  0x00000020 */
+#define PWR_CPUCTRL_STOPFLAG_OFFSET                (5U)
+#define PWR_CPUCTRL_STOPFLAG_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, STOPFLAG))                /*!< Mask  0x00000020 */
 
-#define PWR_CPU1CTRL_CPU2HOLDWAKEUPFLAG_OFFSET   (4U)
-#define PWR_CPU1CTRL_CPU2HOLDWAKEUPFLAG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, CPU2HOLDWAKEUPFLAG))  /*!< Mask  0x00000010 */
+#define PWR_CPUCTRL_OTHERCPUHOLDWAKEUPFLAG_OFFSET  (4U)
+#define PWR_CPUCTRL_OTHERCPUHOLDWAKEUPFLAG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, OTHERCPUHOLDWAKEUPFLAG))  /*!< Mask  0x00000010 */
 
-#define PWR_CPU1CTRL_D3PWRDOWNDS_OFFSET          (2U)
-#define PWR_CPU1CTRL_D3PWRDOWNDS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D3PWRDOWNDS))         /*!< Mask  0x00000004 */
-#define PWR_CPU1CTRL_D3PWRDOWNDS_KEEPSTOPMODE    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU1CTRL_D3PWRDOWNDS_ALLOWSTANDBY    (0x1UL)                                                              /*!< Value 0x00000001 */
+#define PWR_CPUCTRL_D3PWRDOWNDS_OFFSET             (2U)
+#define PWR_CPUCTRL_D3PWRDOWNDS_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D3PWRDOWNDS))             /*!< Mask  0x00000004 */
 
-#define PWR_CPU1CTRL_D2PWRDOWNDS_OFFSET          (1U)
-#define PWR_CPU1CTRL_D2PWRDOWNDS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D2PWRDOWNDS))         /*!< Mask  0x00000002 */
-#define PWR_CPU1CTRL_D2PWRDOWNDS_KEEPSTOPMODE    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU1CTRL_D2PWRDOWNDS_ALLOWSTANDBY    (0x1UL)                                                              /*!< Value 0x00000001 */
+#define PWR_CPUCTRL_D2PWRDOWNDS_OFFSET             (1U)
+#define PWR_CPUCTRL_D2PWRDOWNDS_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D2PWRDOWNDS))             /*!< Mask  0x00000002 */
 
-#define PWR_CPU1CTRL_D1PWRDOWNDS_OFFSET          (0U)
-#define PWR_CPU1CTRL_D1PWRDOWNDS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU1CTRL, D1PWRDOWNDS))         /*!< Mask  0x00000001 */
-#define PWR_CPU1CTRL_D1PWRDOWNDS_KEEPSTOPMODE    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU1CTRL_D1PWRDOWNDS_ALLOWSTANDBY    (0x1UL)                                                              /*!< Value 0x00000001 */
+#define PWR_CPUCTRL_D1PWRDOWNDS_OFFSET             (0U)
+#define PWR_CPUCTRL_D1PWRDOWNDS_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPUCTRL, D1PWRDOWNDS))             /*!< Mask  0x00000001 */
 
-/*!< CPU2 power control register */
-#define PWR_CPU2CTRL_D3RUNMODE_OFFSET            (11U)
-#define PWR_CPU2CTRL_D3RUNMODE_MASK              (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D3RUNMODE))           /*!< Mask  0x00000800 */
-#define PWR_CPU2CTRL_D3RUNMODE_FOLLOWSUBSYSMODE  (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU2CTRL_D3RUNMODE_ALWAYSON          (0x1UL)                                                              /*!< Value 0x00000001 */
-
-#define PWR_CPU2CTRL_CPU2HOLD_OFFSET             (10U)
-#define PWR_CPU2CTRL_CPU2HOLD_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, CPU2HOLD))            /*!< Mask  0x00000400 */
-#define PWR_CPU2CTRL_CPU2HOLD_RUNAFTERWAKEUP     (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU2CTRL_CPU2HOLD_KEEPONHOLD         (0x1UL)                                                              /*!< Value 0x00000001 */
-
-#define PWR_CPU2CTRL_D1FLAGSCLR_OFFSET           (9U)
-#define PWR_CPU2CTRL_D1FLAGSCLR_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D1FLAGSCLR))          /*!< Mask  0x00000200 */
-#define PWR_CPU2CTRL_D1FLAGSCLR_NOEFFECT         (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU2CTRL_D1FLAGSCLR_CLRFLAGS         (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D1FLAGSCLR))          /*!< Mask  0x00000200 */
-
-#define PWR_CPU2CTRL_D2STANDBYFLAG_OFFSET        (8U)
-#define PWR_CPU2CTRL_D2STANDBYFLAG_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D2STANDBYFLAG))       /*!< Mask  0x00000100 */
-
-#define PWR_CPU2CTRL_D1STANDBYFLAG_OFFSET        (7U)
-#define PWR_CPU2CTRL_D1STANDBYFLAG_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D1STANDBYFLAG))       /*!< Mask  0x00000080 */
-
-#define PWR_CPU2CTRL_SYSSTANDBYFLAG_OFFSET       (6U)
-#define PWR_CPU2CTRL_SYSSTANDBYFLAG_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, SYSSTANDBYFLAG))      /*!< Mask  0x00000040 */
-
-#define PWR_CPU2CTRL_STOPFLAG_OFFSET             (5U)
-#define PWR_CPU2CTRL_STOPFLAG_MASK               (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, STOPFLAG))            /*!< Mask  0x00000020 */
-
-#define PWR_CPU2CTRL_CPU2HOLDWAKEUPFLAG_OFFSET   (4U)
-#define PWR_CPU2CTRL_CPU2HOLDWAKEUPFLAG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, CPU2HOLDWAKEUPFLAG))  /*!< Mask  0x00000010 */
-
-#define PWR_CPU2CTRL_D3PWRDOWNDS_OFFSET          (2U)
-#define PWR_CPU2CTRL_D3PWRDOWNDS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D3PWRDOWNDS))         /*!< Mask  0x00000004 */
-#define PWR_CPU2CTRL_D3PWRDOWNDS_KEEPSTOPMODE    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU2CTRL_D3PWRDOWNDS_ALLOWSTANDBY    (0x1UL)                                                              /*!< Value 0x00000001 */
-
-#define PWR_CPU2CTRL_D2PWRDOWNDS_OFFSET          (1U)
-#define PWR_CPU2CTRL_D2PWRDOWNDS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D2PWRDOWNDS))         /*!< Mask  0x00000002 */
-#define PWR_CPU2CTRL_D2PWRDOWNDS_KEEPSTOPMODE    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU2CTRL_D2PWRDOWNDS_ALLOWSTANDBY    (0x1UL)                                                              /*!< Value 0x00000001 */
-
-#define PWR_CPU2CTRL_D1PWRDOWNDS_OFFSET          (0U)
-#define PWR_CPU2CTRL_D1PWRDOWNDS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CPU2CTRL, D1PWRDOWNDS))         /*!< Mask  0x00000001 */
-#define PWR_CPU2CTRL_D1PWRDOWNDS_KEEPSTOPMODE    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define PWR_CPU2CTRL_D1PWRDOWNDS_ALLOWSTANDBY    (0x1UL)                                                              /*!< Value 0x00000001 */
+// Value of domain power down deepsleep
+#define PWR_PWRDOWNDS_KEEPSTOPMODE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_PWRDOWNDS_ALLOWSTANDBY  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Domain 3 control register */
 #define PWR_D3CTRL_VOS_OFFSET       (14U)
@@ -311,155 +263,115 @@ typedef struct {
 /*!< Wakeup clear register */
 #define PWR_WAKEUPCLR_PIN6_OFFSET  (5U)
 #define PWR_WAKEUPCLR_PIN6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPCLR, PIN6))  /*!< Mask  0x00000020 */
-#define PWR_WAKEUPCLR_PIN6_CLEAR   (0x1UL)                                                 /*!< Value 0x00000001 */
 
 #define PWR_WAKEUPCLR_PIN5_OFFSET  (4U)
 #define PWR_WAKEUPCLR_PIN5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPCLR, PIN5))  /*!< Mask  0x00000010 */
-#define PWR_WAKEUPCLR_PIN5_CLEAR   (0x1UL)                                                 /*!< Value 0x00000001 */
 
 #define PWR_WAKEUPCLR_PIN4_OFFSET  (3U)
 #define PWR_WAKEUPCLR_PIN4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPCLR, PIN4))  /*!< Mask  0x00000008 */
-#define PWR_WAKEUPCLR_PIN4_CLEAR   (0x1UL)                                                 /*!< Value 0x00000001 */
 
 #define PWR_WAKEUPCLR_PIN3_OFFSET  (2U)
 #define PWR_WAKEUPCLR_PIN3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPCLR, PIN3))  /*!< Mask  0x00000004 */
-#define PWR_WAKEUPCLR_PIN3_CLEAR   (0x1UL)                                                 /*!< Value 0x00000001 */
 
 #define PWR_WAKEUPCLR_PIN2_OFFSET  (1U)
 #define PWR_WAKEUPCLR_PIN2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPCLR, PIN2))  /*!< Mask  0x00000002 */
-#define PWR_WAKEUPCLR_PIN2_CLEAR   (0x1UL)                                                 /*!< Value 0x00000001 */
 
 #define PWR_WAKEUPCLR_PIN1_OFFSET  (0U)
 #define PWR_WAKEUPCLR_PIN1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPCLR, PIN1))  /*!< Mask  0x00000001 */
-#define PWR_WAKEUPCLR_PIN1_CLEAR   (0x1UL)                                                 /*!< Value 0x00000001 */
+
+// Value to clear the wake up pin flag
+#define PWR_WAKEUPCLR_CLEAR  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Wakeup flag register */
-#define PWR_WAKEUPFLAG_PIN6_OFFSET    (5U)
-#define PWR_WAKEUPFLAG_PIN6_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN6))  /*!< Mask  0x00000020 */
-#define PWR_WAKEUPFLAG_PIN6_NOEVENT   (0x0UL)                                                  /*!< Value 0x00000000 */
-#define PWR_WAKEUPFLAG_PIN6_EVENTREC  (0x1UL)                                                  /*!< Value 0x00000001 */
+#define PWR_WAKEUPFLAG_PIN6_OFFSET  (5U)
+#define PWR_WAKEUPFLAG_PIN6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN6))  /*!< Mask  0x00000020 */
 
-#define PWR_WAKEUPFLAG_PIN5_OFFSET    (4U)
-#define PWR_WAKEUPFLAG_PIN5_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN5))  /*!< Mask  0x00000010 */
-#define PWR_WAKEUPFLAG_PIN5_NOEVENT   (0x0UL)                                                  /*!< Value 0x00000000 */
-#define PWR_WAKEUPFLAG_PIN5_EVENTREC  (0x1UL)                                                  /*!< Value 0x00000001 */
+#define PWR_WAKEUPFLAG_PIN5_OFFSET  (4U)
+#define PWR_WAKEUPFLAG_PIN5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN5))  /*!< Mask  0x00000010 */
 
-#define PWR_WAKEUPFLAG_PIN4_OFFSET    (3U)
-#define PWR_WAKEUPFLAG_PIN4_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN4))  /*!< Mask  0x00000008 */
-#define PWR_WAKEUPFLAG_PIN4_NOEVENT   (0x0UL)                                                  /*!< Value 0x00000000 */
-#define PWR_WAKEUPFLAG_PIN4_EVENTREC  (0x1UL)                                                  /*!< Value 0x00000001 */
+#define PWR_WAKEUPFLAG_PIN4_OFFSET  (3U)
+#define PWR_WAKEUPFLAG_PIN4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN4))  /*!< Mask  0x00000008 */
 
-#define PWR_WAKEUPFLAG_PIN3_OFFSET    (2U)
-#define PWR_WAKEUPFLAG_PIN3_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN3))  /*!< Mask  0x00000004 */
-#define PWR_WAKEUPFLAG_PIN3_NOEVENT   (0x0UL)                                                  /*!< Value 0x00000000 */
-#define PWR_WAKEUPFLAG_PIN3_EVENTREC  (0x1UL)                                                  /*!< Value 0x00000001 */
+#define PWR_WAKEUPFLAG_PIN3_OFFSET  (2U)
+#define PWR_WAKEUPFLAG_PIN3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN3))  /*!< Mask  0x00000004 */
 
-#define PWR_WAKEUPFLAG_PIN2_OFFSET    (1U)
-#define PWR_WAKEUPFLAG_PIN2_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN2))  /*!< Mask  0x00000002 */
-#define PWR_WAKEUPFLAG_PIN2_NOEVENT   (0x0UL)                                                  /*!< Value 0x00000000 */
-#define PWR_WAKEUPFLAG_PIN2_EVENTREC  (0x1UL)                                                  /*!< Value 0x00000001 */
+#define PWR_WAKEUPFLAG_PIN2_OFFSET  (1U)
+#define PWR_WAKEUPFLAG_PIN2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN2))  /*!< Mask  0x00000002 */
 
-#define PWR_WAKEUPFLAG_PIN1_OFFSET    (0U)
-#define PWR_WAKEUPFLAG_PIN1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN1))  /*!< Mask  0x00000001 */
-#define PWR_WAKEUPFLAG_PIN1_NOEVENT   (0x0UL)                                                  /*!< Value 0x00000000 */
-#define PWR_WAKEUPFLAG_PIN1_EVENTREC  (0x1UL)                                                  /*!< Value 0x00000001 */
+#define PWR_WAKEUPFLAG_PIN1_OFFSET  (0U)
+#define PWR_WAKEUPFLAG_PIN1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPFLAG, PIN1))  /*!< Mask  0x00000001 */
+
+// Value of wake up pin flag
+#define PWR_WAKEUPFLAG_NOEVENT   (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_WAKEUPFLAG_EVENTREC  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Wakeup flag register */
-#define PWR_WAKEUPENPLR_PULLCFG6_OFFSET    (26U)
-#define PWR_WAKEUPENPLR_PULLCFG6_MASK      (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG6))  /*!< Mask  0x0C000000 */
-#define PWR_WAKEUPENPLR_PULLCFG6_NOPULLUP  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PULLCFG6_PULLUP    (0x1UL)                                                       /*!< Value 0x00000001 */
-#define PWR_WAKEUPENPLR_PULLCFG6_PULLDOWN  (0x2UL)                                                       /*!< Value 0x00000002 */
+#define PWR_WAKEUPENPLR_PULLCFG6_OFFSET  (26U)
+#define PWR_WAKEUPENPLR_PULLCFG6_MASK    (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG6))  /*!< Mask  0x0C000000 */
 
-#define PWR_WAKEUPENPLR_PULLCFG5_OFFSET    (24U)
-#define PWR_WAKEUPENPLR_PULLCFG5_MASK      (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG5))  /*!< Mask  0x03000000 */
-#define PWR_WAKEUPENPLR_PULLCFG5_NOPULLUP  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PULLCFG5_PULLUP    (0x1UL)                                                       /*!< Value 0x00000001 */
-#define PWR_WAKEUPENPLR_PULLCFG5_PULLDOWN  (0x2UL)                                                       /*!< Value 0x00000002 */
+#define PWR_WAKEUPENPLR_PULLCFG5_OFFSET  (24U)
+#define PWR_WAKEUPENPLR_PULLCFG5_MASK    (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG5))  /*!< Mask  0x03000000 */
 
-#define PWR_WAKEUPENPLR_PULLCFG4_OFFSET    (22U)
-#define PWR_WAKEUPENPLR_PULLCFG4_MASK      (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG4))  /*!< Mask  0x00C00000 */
-#define PWR_WAKEUPENPLR_PULLCFG4_NOPULLUP  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PULLCFG4_PULLUP    (0x1UL)                                                       /*!< Value 0x00000001 */
-#define PWR_WAKEUPENPLR_PULLCFG4_PULLDOWN  (0x2UL)                                                       /*!< Value 0x00000002 */
+#define PWR_WAKEUPENPLR_PULLCFG4_OFFSET  (22U)
+#define PWR_WAKEUPENPLR_PULLCFG4_MASK    (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG4))  /*!< Mask  0x00C00000 */
 
-#define PWR_WAKEUPENPLR_PULLCFG3_OFFSET    (20U)
-#define PWR_WAKEUPENPLR_PULLCFG3_MASK      (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG3))  /*!< Mask  0x00300000 */
-#define PWR_WAKEUPENPLR_PULLCFG3_NOPULLUP  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PULLCFG3_PULLUP    (0x1UL)                                                       /*!< Value 0x00000001 */
-#define PWR_WAKEUPENPLR_PULLCFG3_PULLDOWN  (0x2UL)                                                       /*!< Value 0x00000002 */
+#define PWR_WAKEUPENPLR_PULLCFG3_OFFSET  (20U)
+#define PWR_WAKEUPENPLR_PULLCFG3_MASK    (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG3))  /*!< Mask  0x00300000 */
 
-#define PWR_WAKEUPENPLR_PULLCFG2_OFFSET    (18U)
-#define PWR_WAKEUPENPLR_PULLCFG2_MASK      (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG2))  /*!< Mask  0x000C0000 */
-#define PWR_WAKEUPENPLR_PULLCFG2_NOPULLUP  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PULLCFG2_PULLUP    (0x1UL)                                                       /*!< Value 0x00000001 */
-#define PWR_WAKEUPENPLR_PULLCFG2_PULLDOWN  (0x2UL)                                                       /*!< Value 0x00000002 */
+#define PWR_WAKEUPENPLR_PULLCFG2_OFFSET  (18U)
+#define PWR_WAKEUPENPLR_PULLCFG2_MASK    (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG2))  /*!< Mask  0x000C0000 */
 
-#define PWR_WAKEUPENPLR_PULLCFG1_OFFSET    (16U)
-#define PWR_WAKEUPENPLR_PULLCFG1_MASK      (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG1))  /*!< Mask  0x00030000 */
-#define PWR_WAKEUPENPLR_PULLCFG1_NOPULLUP  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PULLCFG1_PULLUP    (0x1UL)                                                       /*!< Value 0x00000001 */
-#define PWR_WAKEUPENPLR_PULLCFG1_PULLDOWN  (0x2UL)                                                       /*!< Value 0x00000002 */
+#define PWR_WAKEUPENPLR_PULLCFG1_OFFSET  (16U)
+#define PWR_WAKEUPENPLR_PULLCFG1_MASK    (0x3UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PULLCFG1))  /*!< Mask  0x00030000 */
 
-#define PWR_WAKEUPENPLR_PLR6_OFFSET        (13U)
-#define PWR_WAKEUPENPLR_PLR6_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR6))      /*!< Mask  0x00002000 */
-#define PWR_WAKEUPENPLR_PLR6_RISEDET       (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PLR6_FALLDET       (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_PLR6_OFFSET      (13U)
+#define PWR_WAKEUPENPLR_PLR6_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR6))      /*!< Mask  0x00002000 */
 
-#define PWR_WAKEUPENPLR_PLR5_OFFSET        (12U)
-#define PWR_WAKEUPENPLR_PLR5_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR5))      /*!< Mask  0x00001000 */
-#define PWR_WAKEUPENPLR_PLR5_RISEDET       (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PLR5_FALLDET       (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_PLR5_OFFSET      (12U)
+#define PWR_WAKEUPENPLR_PLR5_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR5))      /*!< Mask  0x00001000 */
 
-#define PWR_WAKEUPENPLR_PLR4_OFFSET        (11U)
-#define PWR_WAKEUPENPLR_PLR4_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR4))      /*!< Mask  0x00000800 */
-#define PWR_WAKEUPENPLR_PLR4_RISEDET       (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PLR4_FALLDET       (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_PLR4_OFFSET      (11U)
+#define PWR_WAKEUPENPLR_PLR4_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR4))      /*!< Mask  0x00000800 */
 
-#define PWR_WAKEUPENPLR_PLR3_OFFSET        (10U)
-#define PWR_WAKEUPENPLR_PLR3_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR3))      /*!< Mask  0x00000400 */
-#define PWR_WAKEUPENPLR_PLR3_RISEDET       (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PLR3_FALLDET       (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_PLR3_OFFSET      (10U)
+#define PWR_WAKEUPENPLR_PLR3_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR3))      /*!< Mask  0x00000400 */
 
-#define PWR_WAKEUPENPLR_PLR2_OFFSET        (9U)
-#define PWR_WAKEUPENPLR_PLR2_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR2))      /*!< Mask  0x00000200 */
-#define PWR_WAKEUPENPLR_PLR2_RISEDET       (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PLR2_FALLDET       (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_PLR2_OFFSET      (9U)
+#define PWR_WAKEUPENPLR_PLR2_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR2))      /*!< Mask  0x00000200 */
 
-#define PWR_WAKEUPENPLR_PLR1_OFFSET        (8U)
-#define PWR_WAKEUPENPLR_PLR1_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR1))      /*!< Mask  0x00000100 */
-#define PWR_WAKEUPENPLR_PLR1_RISEDET       (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_PLR1_FALLDET       (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_PLR1_OFFSET      (8U)
+#define PWR_WAKEUPENPLR_PLR1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, PLR1))      /*!< Mask  0x00000100 */
 
-#define PWR_WAKEUPENPLR_EN6_OFFSET         (5U)
-#define PWR_WAKEUPENPLR_EN6_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN6))       /*!< Mask  0x00000020 */
-#define PWR_WAKEUPENPLR_EN6_DISABLE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_EN6_ENABLE         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_EN6_OFFSET       (5U)
+#define PWR_WAKEUPENPLR_EN6_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN6))       /*!< Mask  0x00000020 */
 
-#define PWR_WAKEUPENPLR_EN5_OFFSET         (4U)
-#define PWR_WAKEUPENPLR_EN5_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN5))       /*!< Mask  0x00000010 */
-#define PWR_WAKEUPENPLR_EN5_DISABLE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_EN5_ENABLE         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_EN5_OFFSET       (4U)
+#define PWR_WAKEUPENPLR_EN5_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN5))       /*!< Mask  0x00000010 */
 
-#define PWR_WAKEUPENPLR_EN4_OFFSET         (3U)
-#define PWR_WAKEUPENPLR_EN4_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN4))       /*!< Mask  0x00000008 */
-#define PWR_WAKEUPENPLR_EN4_DISABLE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_EN4_ENABLE         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_EN4_OFFSET       (3U)
+#define PWR_WAKEUPENPLR_EN4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN4))       /*!< Mask  0x00000008 */
 
-#define PWR_WAKEUPENPLR_EN3_OFFSET         (2U)
-#define PWR_WAKEUPENPLR_EN3_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN3))       /*!< Mask  0x00000004 */
-#define PWR_WAKEUPENPLR_EN3_DISABLE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_EN3_ENABLE         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_EN3_OFFSET       (2U)
+#define PWR_WAKEUPENPLR_EN3_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN3))       /*!< Mask  0x00000004 */
 
-#define PWR_WAKEUPENPLR_EN2_OFFSET         (1U)
-#define PWR_WAKEUPENPLR_EN2_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN2))       /*!< Mask  0x00000002 */
-#define PWR_WAKEUPENPLR_EN2_DISABLE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_EN2_ENABLE         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_EN2_OFFSET       (1U)
+#define PWR_WAKEUPENPLR_EN2_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN2))       /*!< Mask  0x00000002 */
 
-#define PWR_WAKEUPENPLR_EN1_OFFSET         (0U)
-#define PWR_WAKEUPENPLR_EN1_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN1))       /*!< Mask  0x00000001 */
-#define PWR_WAKEUPENPLR_EN1_DISABLE        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define PWR_WAKEUPENPLR_EN1_ENABLE         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define PWR_WAKEUPENPLR_EN1_OFFSET       (0U)
+#define PWR_WAKEUPENPLR_EN1_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, WAKEUPENPLR, EN1))       /*!< Mask  0x00000001 */
+
+// Value of wakeup pin pull configuration
+#define PWR_WAKEUPPULLCFG_NOPULLUP  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_WAKEUPPULLCFG_PULLUP    (0x1UL)  /*!< Value 0x00000001 */
+#define PWR_WAKEUPPULLCFG_PULLDOWN  (0x2UL)  /*!< Value 0x00000002 */
+
+// Value of wakeup pin polarity
+#define PWR_WAKEUPPLR_RISEDET  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_WAKEUPPLR_FALLDET  (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of wakeup pin enqble bit
+#define PWR_WAKEUP_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_WAKEUP_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Power control registers */
 #define PWR_OFFSET 0x4800UL

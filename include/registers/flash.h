@@ -435,186 +435,169 @@ typedef struct {
 #define FLASH_OPTCTRL_LOCKCTRL_LOCKED           (0x1UL)                                                             /*!< Value 0x00000001 */
 
 /*!< Current option status register */
-#define FLASH_CUROPTSTATUS_SWAPBANKS_OFFSET               (31U)
-#define FLASH_CUROPTSTATUS_SWAPBANKS_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, SWAPBANKS))           /*!< Mask  0x80000000 */
-#define FLASH_CUROPTSTATUS_SWAPBANKS_DISABLE              (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_SWAPBANKS_ENABLE               (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_SWAPBANKS_OFFSET                 (31U)
+#define FLASH_CUROPTSTATUS_SWAPBANKS_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, SWAPBANKS))                 /*!< Mask  0x80000000 */
 
-#define FLASH_CUROPTSTATUS_OPTBYTECHANGEINT_OFFSET        (30U)
-#define FLASH_CUROPTSTATUS_OPTBYTECHANGEINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, OPTBYTECHANGEINT))    /*!< Mask  0x40000000 */
-#define FLASH_CUROPTSTATUS_OPTBYTECHANGEINT_NOTTRIGGERED  (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_OPTBYTECHANGEINT_TRIGGERED     (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_OPTBYTECHANGEINT_OFFSET          (30U)
+#define FLASH_CUROPTSTATUS_OPTBYTECHANGEINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, OPTBYTECHANGEINT))          /*!< Mask  0x40000000 */
 
-#define FLASH_CUROPTSTATUS_IOVLT_OFFSET                   (29U)
-#define FLASH_CUROPTSTATUS_IOVLT_MASK                     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, IOVLT))               /*!< Mask  0x20000000 */
-#define FLASH_CUROPTSTATUS_IOVLT_FULLRANGE                (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_IOVLT_BELOW2_5V                (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_IOVLT_OFFSET                     (29U)
+#define FLASH_CUROPTSTATUS_IOVLT_MASK                       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, IOVLT))                     /*!< Mask  0x20000000 */
 
-#define FLASH_CUROPTSTATUS_D2STANDBYRST_OFFSET            (25U)
-#define FLASH_CUROPTSTATUS_D2STANDBYRST_MASK              (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D2STANDBYRST))        /*!< Mask  0x02000000 */
-#define FLASH_CUROPTSTATUS_D2STANDBYRST_ENABLED           (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_D2STANDBYRST_DISABLED          (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_D2STANDBYRST_OFFSET              (25U)
+#define FLASH_CUROPTSTATUS_D2STANDBYRST_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D2STANDBYRST))              /*!< Mask  0x02000000 */
 
-#define FLASH_CUROPTSTATUS_D2STOPRST_OFFSET               (24U)
-#define FLASH_CUROPTSTATUS_D2STOPRST_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D2STOPRST))           /*!< Mask  0x01000000 */
-#define FLASH_CUROPTSTATUS_D2STOPRST_ENABLED              (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_D2STOPRST_DISABLED             (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_D2STOPRST_OFFSET                 (24U)
+#define FLASH_CUROPTSTATUS_D2STOPRST_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D2STOPRST))                 /*!< Mask  0x01000000 */
 
-#define FLASH_CUROPTSTATUS_BOOTM7_OFFSET                  (23U)
-#define FLASH_CUROPTSTATUS_BOOTM7_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, BOOTM7))              /*!< Mask  0x00800000 */
-#define FLASH_CUROPTSTATUS_BOOTM7_DISABLED                (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_BOOTM7_ENABLED                 (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_BOOTM7_OFFSET                    (23U)
+#define FLASH_CUROPTSTATUS_BOOTM7_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, BOOTM7))                    /*!< Mask  0x00800000 */
 
-#define FLASH_CUROPTSTATUS_BOOTM4_OFFSET                  (22U)
-#define FLASH_CUROPTSTATUS_BOOTM4_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, BOOTM4))              /*!< Mask  0x00400000 */
-#define FLASH_CUROPTSTATUS_BOOTM4_DISABLED                (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_BOOTM4_ENABLED                 (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_BOOTM4_OFFSET                    (22U)
+#define FLASH_CUROPTSTATUS_BOOTM4_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, BOOTM4))                    /*!< Mask  0x00400000 */
 
-#define FLASH_CUROPTSTATUS_SECOPT_OFFSET                  (21U)
-#define FLASH_CUROPTSTATUS_SECOPT_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, SECOPT))              /*!< Mask  0x00200000 */
-#define FLASH_CUROPTSTATUS_SECOPT_DISABLED                (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_SECOPT_ENABLED                 (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_SECOPT_OFFSET                    (21U)
+#define FLASH_CUROPTSTATUS_SECOPT_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, SECOPT))                    /*!< Mask  0x00200000 */
 
-#define FLASH_CUROPTSTATUS_STRAMSIZE_OFFSET               (19U)
-#define FLASH_CUROPTSTATUS_STRAMSIZE_MASK                 (0x3UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, STRAMSIZE))           /*!< Mask  0x00180000 */
-#define FLASH_CUROPTSTATUS_STRAMSIZE_2KRESERVED           (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_STRAMSIZE_4KRESERVED           (0x1UL)                                                                    /*!< Value 0x00000001 */
-#define FLASH_CUROPTSTATUS_STRAMSIZE_8KRESERVED           (0x2UL)                                                                    /*!< Value 0x00000002 */
-#define FLASH_CUROPTSTATUS_STRAMSIZE_16KRESERVED          (0x3UL)                                                                    /*!< Value 0x00000003 */
+#define FLASH_CUROPTSTATUS_STRAMSIZE_OFFSET                 (19U)
+#define FLASH_CUROPTSTATUS_STRAMSIZE_MASK                   (0x3UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, STRAMSIZE))                 /*!< Mask  0x00180000 */
 
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTANDBY_OFFSET      (18U)
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTANDBY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOGSTANDBY))  /*!< Mask  0x00040000 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTANDBY_DISABLED    (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTANDBY_ENABLED     (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_INDWATCHDOGINSTANDBYMODE_OFFSET  (18U)
+#define FLASH_CUROPTSTATUS_INDWATCHDOGISTANDBYMODE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOGINSTANDBYMODE))  /*!< Mask  0x00040000 */
 
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTOP_OFFSET         (17U)
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTOP_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOGSTOP))     /*!< Mask  0x00020000 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTOP_DISABLED       (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOGSTOP_ENABLED        (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_INDWATCHDOGINSTOPMODE_OFFSET     (17U)
+#define FLASH_CUROPTSTATUS_INDWATCHDOGINSTOPMODE_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOGINSTOPMODE))     /*!< Mask  0x00020000 */
 
-#define FLASH_CUROPTSTATUS_READOUTPROT_OFFSET             (8U)
-#define FLASH_CUROPTSTATUS_READOUTPROT_MASK               (0xFFUL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, READOUTPROT))        /*!< Mask  0x0000FF00 */
-#define FLASH_CUROPTSTATUS_READOUTPROT_LEVEL1             (0x88UL)                                                                   /*!< Value 0x00008800 */
-#define FLASH_CUROPTSTATUS_READOUTPROT_LEVEL0             (0xAAUL)                                                                   /*!< Value 0x0000AA00 */
-#define FLASH_CUROPTSTATUS_READOUTPROT_LEVEL2             (0xCCUL)                                                                   /*!< Value 0x0000CC00 */
+#define FLASH_CUROPTSTATUS_READOUTPROT_OFFSET               (8U)
+#define FLASH_CUROPTSTATUS_READOUTPROT_MASK                 (0xFFUL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, READOUTPROT))              /*!< Mask  0x0000FF00 */
 
-#define FLASH_CUROPTSTATUS_D1STANDBYRST_OFFSET            (7U)
-#define FLASH_CUROPTSTATUS_D1STANDBYRST_MASK              (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D1STANDBYRST))        /*!< Mask  0x00000080 */
-#define FLASH_CUROPTSTATUS_D1STANDBYRST_ENABLED           (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_D1STANDBYRST_DISABLED          (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_D1STANDBYRST_OFFSET              (7U)
+#define FLASH_CUROPTSTATUS_D1STANDBYRST_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D1STANDBYRST))              /*!< Mask  0x00000080 */
 
-#define FLASH_CUROPTSTATUS_D1STOPRST_OFFSET               (6U)
-#define FLASH_CUROPTSTATUS_D1STOPRST_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D1STOPRST))           /*!< Mask  0x00000040 */
-#define FLASH_CUROPTSTATUS_D1STOPRST_ENABLED              (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_D1STOPRST_DISABLED             (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_D1STOPRST_OFFSET                 (6U)
+#define FLASH_CUROPTSTATUS_D1STOPRST_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, D1STOPRST))                 /*!< Mask  0x00000040 */
 
-#define FLASH_CUROPTSTATUS_INDWATCHDOG2CTRL_OFFSET        (5U)
-#define FLASH_CUROPTSTATUS_INDWATCHDOG2CTRL_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOG2CTRL))    /*!< Mask  0x00000020 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOG2CTRL_HW            (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOG2CTRL_SW            (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_INDWATCHDOG2CTRL_OFFSET          (5U)
+#define FLASH_CUROPTSTATUS_INDWATCHDOG2CTRL_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOG2CTRL))          /*!< Mask  0x00000020 */
 
-#define FLASH_CUROPTSTATUS_INDWATCHDOGCTRL_OFFSET         (4U)
-#define FLASH_CUROPTSTATUS_INDWATCHDOGCTRL_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOGCTRL))     /*!< Mask  0x00000010 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOGCTRL_HW             (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_INDWATCHDOGCTRL_SW             (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_INDWATCHDOGCTRL_OFFSET           (4U)
+#define FLASH_CUROPTSTATUS_INDWATCHDOGCTRL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, INDWATCHDOGCTRL))           /*!< Mask  0x00000010 */
 
-#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_OFFSET         (2U)
-#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_MASK           (0x3UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, SYSRSTBROWLEVEL))     /*!< Mask  0x0000000C */
-#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_VTH0           (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_VTH1           (0x1UL)                                                                    /*!< Value 0x00000001 */
-#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_VTH2           (0x2UL)                                                                    /*!< Value 0x00000002 */
-#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_VTH3           (0x3UL)                                                                    /*!< Value 0x00000003 */
+#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_OFFSET           (2U)
+#define FLASH_CUROPTSTATUS_SYSRSTBROWLEVEL_MASK             (0x3UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, SYSRSTBROWLEVEL))           /*!< Mask  0x0000000C */
 
-#define FLASH_CUROPTSTATUS_OPTBUSY_OFFSET                 (0U)
-#define FLASH_CUROPTSTATUS_OPTBUSY_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, OPTBUSY))             /*!< Mask  0x00000001 */
-#define FLASH_CUROPTSTATUS_OPTBUSY_NOOP                   (0x0UL)                                                                    /*!< Value 0x00000000 */
-#define FLASH_CUROPTSTATUS_OPTBUSY_OPONGOING              (0x1UL)                                                                    /*!< Value 0x00000001 */
+#define FLASH_CUROPTSTATUS_OPTBUSY_OFFSET                   (0U)
+#define FLASH_CUROPTSTATUS_OPTBUSY_MASK                     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, CUROPTSTATUS, OPTBUSY))                   /*!< Mask  0x00000001 */
+
+// Value of option byte change error
+#define FLASH_OPTBYTECHANGEINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTBYTECHANGEINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of option byte change
+#define FLASH_OPTBYTE_NOOP       (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTBYTE_OPONGOING  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Programmatic option status register */
-#define FLASH_PROGOPTSTATUS_SWAPBANKS_OFFSET             (31U)
-#define FLASH_PROGOPTSTATUS_SWAPBANKS_MASK               (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, SWAPBANKS))           /*!< Mask  0x80000000 */
-#define FLASH_PROGOPTSTATUS_SWAPBANKS_DISABLE            (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_SWAPBANKS_ENABLE             (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_SWAPBANKS_OFFSET                 (31U)
+#define FLASH_PROGOPTSTATUS_SWAPBANKS_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, SWAPBANKS))                 /*!< Mask  0x80000000 */
 
-#define FLASH_PROGOPTSTATUS_IOVLT_OFFSET                 (29U)
-#define FLASH_PROGOPTSTATUS_IOVLT_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, IOVLT))               /*!< Mask  0x20000000 */
-#define FLASH_PROGOPTSTATUS_IOVLT_FULLRANGE              (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_IOVLT_BELOW2_5V              (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_IOVLT_OFFSET                     (29U)
+#define FLASH_PROGOPTSTATUS_IOVLT_MASK                       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, IOVLT))                     /*!< Mask  0x20000000 */
 
-#define FLASH_PROGOPTSTATUS_D2STANDBYRST_OFFSET          (25U)
-#define FLASH_PROGOPTSTATUS_D2STANDBYRST_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D2STANDBYRST))        /*!< Mask  0x02000000 */
-#define FLASH_PROGOPTSTATUS_D2STANDBYRST_ENABLED         (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_D2STANDBYRST_DISABLED        (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_D2STANDBYRST_OFFSET              (25U)
+#define FLASH_PROGOPTSTATUS_D2STANDBYRST_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D2STANDBYRST))              /*!< Mask  0x02000000 */
 
-#define FLASH_PROGOPTSTATUS_D2STOPRST_OFFSET             (24U)
-#define FLASH_PROGOPTSTATUS_D2STOPRST_MASK               (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D2STOPRST))           /*!< Mask  0x01000000 */
-#define FLASH_PROGOPTSTATUS_D2STOPRST_ENABLED            (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_D2STOPRST_DISABLED           (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_D2STOPRST_OFFSET                 (24U)
+#define FLASH_PROGOPTSTATUS_D2STOPRST_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D2STOPRST))                 /*!< Mask  0x01000000 */
 
-#define FLASH_PROGOPTSTATUS_BOOTM7_OFFSET                (23U)
-#define FLASH_PROGOPTSTATUS_BOOTM7_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, BOOTM7))              /*!< Mask  0x00800000 */
-#define FLASH_PROGOPTSTATUS_BOOTM7_CLKGATED              (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_BOOTM7_ENABLED               (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_BOOTM7_OFFSET                    (23U)
+#define FLASH_PROGOPTSTATUS_BOOTM7_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, BOOTM7))                    /*!< Mask  0x00800000 */
 
-#define FLASH_PROGOPTSTATUS_BOOTM4_OFFSET                (22U)
-#define FLASH_PROGOPTSTATUS_BOOTM4_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, BOOTM4))              /*!< Mask  0x00400000 */
-#define FLASH_PROGOPTSTATUS_BOOTM4_CLKGATED              (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_BOOTM4_ENABLED               (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_BOOTM4_OFFSET                    (22U)
+#define FLASH_PROGOPTSTATUS_BOOTM4_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, BOOTM4))                    /*!< Mask  0x00400000 */
 
-#define FLASH_PROGOPTSTATUS_SECOPT_OFFSET                (21U)
-#define FLASH_PROGOPTSTATUS_SECOPT_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, SECOPT))              /*!< Mask  0x00200000 */
-#define FLASH_PROGOPTSTATUS_SECOPT_DISABLED              (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_SECOPT_ENABLED               (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_SECOPT_OFFSET                    (21U)
+#define FLASH_PROGOPTSTATUS_SECOPT_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, SECOPT))                    /*!< Mask  0x00200000 */
 
-#define FLASH_PROGOPTSTATUS_STRAMSIZE_OFFSET             (19U)
-#define FLASH_PROGOPTSTATUS_STRAMSIZE_MASK               (0x3UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, STRAMSIZE))           /*!< Mask  0x00180000 */
-#define FLASH_PROGOPTSTATUS_STRAMSIZE_2KRESERVED         (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_STRAMSIZE_4KRESERVED         (0x1UL)                                                                     /*!< Value 0x00000001 */
-#define FLASH_PROGOPTSTATUS_STRAMSIZE_8KRESERVED         (0x2UL)                                                                     /*!< Value 0x00000002 */
-#define FLASH_PROGOPTSTATUS_STRAMSIZE_16KRESERVED        (0x3UL)                                                                     /*!< Value 0x00000003 */
+#define FLASH_PROGOPTSTATUS_STRAMSIZE_OFFSET                 (19U)
+#define FLASH_PROGOPTSTATUS_STRAMSIZE_MASK                   (0x3UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, STRAMSIZE))                 /*!< Mask  0x00180000 */
 
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTANDBY_OFFSET    (18U)
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTANDBY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOGSTANDBY))  /*!< Mask  0x00040000 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTANDBY_DISABLED  (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTANDBY_ENABLED   (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_INDWATCHDOGINSTANDBYMODE_OFFSET  (18U)
+#define FLASH_PROGOPTSTATUS_INDWATCHDOGINSTANDBYMODE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOGINSTANDBYMODE))  /*!< Mask  0x00040000 */
 
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTOP_OFFSET       (17U)
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTOP_MASK         (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOGSTOP))     /*!< Mask  0x00020000 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTOP_DISABLED     (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGSTOP_ENABLED      (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_INDWATCHDOGINSTOPMODE_OFFSET     (17U)
+#define FLASH_PROGOPTSTATUS_INDWATCHDOGINSTOPMODE_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOGINSTOPMODE))     /*!< Mask  0x00020000 */
 
-#define FLASH_PROGOPTSTATUS_READOUTPROT_OFFSET           (8U)
-#define FLASH_PROGOPTSTATUS_READOUTPROT_MASK             (0xFFUL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, READOUTPROT))        /*!< Mask  0x0000FF00 */
-#define FLASH_PROGOPTSTATUS_READOUTPROT_LEVEL1           (0x88UL)                                                                    /*!< Value 0x00008800 */
-#define FLASH_PROGOPTSTATUS_READOUTPROT_LEVEL0           (0xAAUL)                                                                    /*!< Value 0x0000AA00 */
-#define FLASH_PROGOPTSTATUS_READOUTPROT_LEVEL2           (0xCCUL)                                                                    /*!< Value 0x0000CC00 */
+#define FLASH_PROGOPTSTATUS_READOUTPROT_OFFSET               (8U)
+#define FLASH_PROGOPTSTATUS_READOUTPROT_MASK                 (0xFFUL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, READOUTPROT))              /*!< Mask  0x0000FF00 */
 
-#define FLASH_PROGOPTSTATUS_D1STANDBYRST_OFFSET          (7U)
-#define FLASH_PROGOPTSTATUS_D1STANDBYRST_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D1STANDBYRST))        /*!< Mask  0x00000080 */
-#define FLASH_PROGOPTSTATUS_D1STANDBYRST_ENABLED         (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_D1STANDBYRST_DISABLED        (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_D1STANDBYRST_OFFSET              (7U)
+#define FLASH_PROGOPTSTATUS_D1STANDBYRST_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D1STANDBYRST))              /*!< Mask  0x00000080 */
 
-#define FLASH_PROGOPTSTATUS_D1STOPRST_OFFSET             (6U)
-#define FLASH_PROGOPTSTATUS_D1STOPRST_MASK               (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D1STOPRST))           /*!< Mask  0x00000040 */
-#define FLASH_PROGOPTSTATUS_D1STOPRST_ENABLED            (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_D1STOPRST_DISABLED           (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_D1STOPRST_OFFSET                 (6U)
+#define FLASH_PROGOPTSTATUS_D1STOPRST_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, D1STOPRST))                 /*!< Mask  0x00000040 */
 
-#define FLASH_PROGOPTSTATUS_INDWATCHDOG2CTRL_OFFSET      (5U)
-#define FLASH_PROGOPTSTATUS_INDWATCHDOG2CTRL_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOG2CTRL))    /*!< Mask  0x00000020 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOG2CTRL_HW          (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOG2CTRL_SW          (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_INDWATCHDOG2CTRL_OFFSET          (5U)
+#define FLASH_PROGOPTSTATUS_INDWATCHDOG2CTRL_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOG2CTRL))          /*!< Mask  0x00000020 */
 
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGCTRL_OFFSET       (4U)
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGCTRL_MASK         (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOGCTRL))     /*!< Mask  0x00000010 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGCTRL_HW           (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_INDWATCHDOGCTRL_SW           (0x1UL)                                                                     /*!< Value 0x00000001 */
+#define FLASH_PROGOPTSTATUS_INDWATCHDOGCTRL_OFFSET           (4U)
+#define FLASH_PROGOPTSTATUS_INDWATCHDOGCTRL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, INDWATCHDOGCTRL))           /*!< Mask  0x00000010 */
 
-#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_OFFSET       (2U)
-#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_MASK         (0x3UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, SYSRSTBROWLEVEL))     /*!< Mask  0x0000000C */
-#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_VTH0         (0x0UL)                                                                     /*!< Value 0x00000000 */
-#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_VTH1         (0x1UL)                                                                     /*!< Value 0x00000001 */
-#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_VTH2         (0x2UL)                                                                     /*!< Value 0x00000002 */
-#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_VTH3         (0x3UL)                                                                     /*!< Value 0x00000003 */
+#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_OFFSET           (2U)
+#define FLASH_PROGOPTSTATUS_SYSRSTBROWLEVEL_MASK             (0x3UL << REGISTER_FIELD_OFFSET(FLASH, PROGOPTSTATUS, SYSRSTBROWLEVEL))           /*!< Mask  0x0000000C */
+
+// Value of swap bank bit
+#define FLASH_SWAPBANKS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SWAPBANKS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of I/O high speed at low voltage bit
+#define FLASH_IOVLT_FULLRANGE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_IOVLT_BELOW2_5V  (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of security bit
+#define FLASH_SECURITY_DISABLED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SECURITY_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of CPU boot bit
+#define FLASH_COREBOOT_CLKGATED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_COREBOOT_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of independent watchdog freeze in DStandby
+#define FLASH_INDWATCHDOGINSTANDBYMODE_FREEZE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_INDWATCHDOGINSTABDYOMODE_RUN     (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of independent watchdog freeze in DStop
+#define FLASH_INDWATCHDOGINSTOPMODE_FREEZE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_INDWATCHDOGINSTOPMODE_RUN     (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of entry reset on DStandby
+#define FLASH_STANDBYRST_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_STANDBYRST_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of entry reset on DStop
+#define FLASH_STOPRST_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_STOPRST_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Size of the RAM reserved to ST
+#define FLASH_STRAMSIZE_2KRESERVED   (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_STRAMSIZE_4KRESERVED   (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_STRAMSIZE_8KRESERVED   (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_STRAMSIZE_16KRESERVED  (0x3UL)  /*!< Value 0x00000003 */
+
+// Value of readout protection level
+#define FLASH_READOUTPROTLEVEL1  (0x88UL)  /*!< Value 0x00008800 */
+#define FLASH_READOUTPROTLEVEL0  (0xAAUL)  /*!< Value 0x0000AA00 */
+#define FLASH_READOUTPROTLEVEL2  (0xCCUL)  /*!< Value 0x0000CC00 */
+
+// Value of the independent watchdog controller
+#define FLASH_INDWATCHDOGCTRL_HW  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_INDWATCHDOGCTRL_SW  (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of brownout level
+#define FLASH_SYSRSTBROWLEVEL_VTH0  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SYSRSTBROWLEVEL_VTH1  (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_SYSRSTBROWLEVEL_VTH2  (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_SYSRSTBROWLEVEL_VTH3  (0x3UL)  /*!< Value 0x00000003 */
 
 /*!< Option clear control register */
 #define FLASH_OPTCLRCTRL_OPTBYTECHANGEINT_OFFSET  (6U)
@@ -625,8 +608,6 @@ typedef struct {
 /*!< Bank current protection address register */
 #define FLASH_BANKCURPROTADDR_ERASE_OFFSET      (31U)
 #define FLASH_BANKCURPROTADDR_ERASE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURPROTADDR, ERASE))        /*!< Mask  0x80000000 */
-#define FLASH_BANKCURPROTADDR_ERASE_DISABLED    (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCURPROTADDR_ERASE_ENABLED     (0x1UL)                                                                /*!< Value 0x00000001 */
 
 #define FLASH_BANKCURPROTADDR_ENDADDR_OFFSET    (16U)
 #define FLASH_BANKCURPROTADDR_ENDADDR_MASK      (0xFFFUL << REGISTER_FIELD_OFFSET(FLASH, BANKCURPROTADDR, ENDADDR))    /*!< Mask  0x0FFF0000 */
@@ -661,8 +642,6 @@ typedef struct {
 /*!< Bank programmatic protection address register */
 #define FLASH_BANKPROGPROTADDR_ERASE_OFFSET      (31U)
 #define FLASH_BANKPROGPROTADDR_ERASE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGPROTADDR, ERASE))        /*!< Mask  0x80000000 */
-#define FLASH_BANKPROGPROTADDR_ERASE_DISABLED    (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define FLASH_BANKPROGPROTADDR_ERASE_ENABLED     (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define FLASH_BANKPROGPROTADDR_ENDADDR_OFFSET    (16U)
 #define FLASH_BANKPROGPROTADDR_ENDADDR_MASK      (0xFFFUL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGPROTADDR, ENDADDR))    /*!< Mask  0x0FFF0000 */
@@ -697,8 +676,6 @@ typedef struct {
 /*!< Bank current secure address register */
 #define FLASH_BANKCURSECADDR_ERASE_OFFSET      (31U)
 #define FLASH_BANKCURSECADDR_ERASE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURSECADDR, ERASE))        /*!< Mask  0x80000000 */
-#define FLASH_BANKCURSECADDR_ERASE_DISABLED    (0x0UL)                                                               /*!< Value 0x00000000 */
-#define FLASH_BANKCURSECADDR_ERASE_ENABLED     (0x1UL)                                                               /*!< Value 0x00000001 */
 
 #define FLASH_BANKCURSECADDR_ENDADDR_OFFSET    (16U)
 #define FLASH_BANKCURSECADDR_ENDADDR_MASK      (0xFFFUL << REGISTER_FIELD_OFFSET(FLASH, BANKCURSECADDR, ENDADDR))    /*!< Mask  0x0FFF0000 */
@@ -733,8 +710,6 @@ typedef struct {
 /*!< Bank programmatic secure address register */
 #define FLASH_BANKPROGSECADDR_ERASE_OFFSET      (31U)
 #define FLASH_BANKPROGSECADDR_ERASE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGSECADDR, ERASE))        /*!< Mask  0x80000000 */
-#define FLASH_BANKPROGSECADDR_ERASE_DISABLED    (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKPROGSECADDR_ERASE_ENABLED     (0x1UL)                                                                /*!< Value 0x00000001 */
 
 #define FLASH_BANKPROGSECADDR_ENDADDR_OFFSET    (16U)
 #define FLASH_BANKPROGSECADDR_ENDADDR_MASK      (0xFFFUL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGSECADDR, ENDADDR))    /*!< Mask  0x0FFF0000 */
@@ -766,87 +741,63 @@ typedef struct {
 #define FLASH_BANKPROGSECADDR_STARTADDR_10      (0x400UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGSECADDR, STARTADDR))  /*!< Value 0x00000400 */
 #define FLASH_BANKPROGSECADDR_STARTADDR_11      (0x800UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGSECADDR, STARTADDR))  /*!< Value 0x00000800 */
 
+// Value of enable bank area erase bit when the protection level downgrades from 1 to 0
+#define FLASH_ERASEAREA_DISABLED    (0x0UL)                                                                /*!< Value 0x00000000 */
+#define FLASH_ERASEAREA_ENABLED     (0x1UL)                                                                /*!< Value 0x00000001 */
+
 /*!< Bank current write sector protection register */
-#define FLASH_BANKCURWRSECPROT_SEC7_OFFSET        (7U)
-#define FLASH_BANKCURWRSECPROT_SEC7_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC7))  /*!< Mask  0x00000080 */
-#define FLASH_BANKCURWRSECPROT_SEC7_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC7_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC7_OFFSET  (7U)
+#define FLASH_BANKCURWRSECPROT_SEC7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC7))  /*!< Mask  0x00000080 */
 
-#define FLASH_BANKCURWRSECPROT_SEC6_OFFSET        (6U)
-#define FLASH_BANKCURWRSECPROT_SEC6_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC6))  /*!< Mask  0x00000040 */
-#define FLASH_BANKCURWRSECPROT_SEC6_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC6_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC6_OFFSET  (6U)
+#define FLASH_BANKCURWRSECPROT_SEC6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC6))  /*!< Mask  0x00000040 */
 
-#define FLASH_BANKCURWRSECPROT_SEC5_OFFSET        (5U)
-#define FLASH_BANKCURWRSECPROT_SEC5_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC5))  /*!< Mask  0x00000020 */
-#define FLASH_BANKCURWRSECPROT_SEC5_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC5_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC5_OFFSET  (5U)
+#define FLASH_BANKCURWRSECPROT_SEC5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC5))  /*!< Mask  0x00000020 */
 
-#define FLASH_BANKCURWRSECPROT_SEC4_OFFSET        (4U)
-#define FLASH_BANKCURWRSECPROT_SEC4_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC4))  /*!< Mask  0x00000010 */
-#define FLASH_BANKCURWRSECPROT_SEC4_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC4_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC4_OFFSET  (4U)
+#define FLASH_BANKCURWRSECPROT_SEC4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC4))  /*!< Mask  0x00000010 */
 
-#define FLASH_BANKCURWRSECPROT_SEC3_OFFSET        (3U)
-#define FLASH_BANKCURWRSECPROT_SEC3_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC3))  /*!< Mask  0x00000008 */
-#define FLASH_BANKCURWRSECPROT_SEC3_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC3_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC3_OFFSET  (3U)
+#define FLASH_BANKCURWRSECPROT_SEC3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC3))  /*!< Mask  0x00000008 */
 
-#define FLASH_BANKCURWRSECPROT_SEC2_OFFSET        (2U)
-#define FLASH_BANKCURWRSECPROT_SEC2_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC2))  /*!< Mask  0x00000004 */
-#define FLASH_BANKCURWRSECPROT_SEC2_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC2_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC2_OFFSET  (2U)
+#define FLASH_BANKCURWRSECPROT_SEC2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC2))  /*!< Mask  0x00000004 */
 
-#define FLASH_BANKCURWRSECPROT_SEC1_OFFSET        (1U)
-#define FLASH_BANKCURWRSECPROT_SEC1_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC1))  /*!< Mask  0x00000002 */
-#define FLASH_BANKCURWRSECPROT_SEC1_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC1_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC1_OFFSET  (1U)
+#define FLASH_BANKCURWRSECPROT_SEC1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC1))  /*!< Mask  0x00000002 */
 
-#define FLASH_BANKCURWRSECPROT_SEC0_OFFSET        (0U)
-#define FLASH_BANKCURWRSECPROT_SEC0_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC0))  /*!< Mask  0x00000001 */
-#define FLASH_BANKCURWRSECPROT_SEC0_PROTECTED     (0x0UL)                                                          /*!< Value 0x00000000 */
-#define FLASH_BANKCURWRSECPROT_SEC0_NOTPROTECTED  (0x1UL)                                                          /*!< Value 0x00000001 */
+#define FLASH_BANKCURWRSECPROT_SEC0_OFFSET  (0U)
+#define FLASH_BANKCURWRSECPROT_SEC0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCURWRSECPROT, SEC0))  /*!< Mask  0x00000001 */
 
 /*!< Bank programmatic write sector protection register */
-#define FLASH_BANKPROGWRSECPROT_SEC7_OFFSET     (7U)
-#define FLASH_BANKPROGWRSECPROT_SEC7_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC7))  /*!< Mask  0x00000080 */
-#define FLASH_BANKPROGWRSECPROT_SEC7_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC7_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC7_OFFSET  (7U)
+#define FLASH_BANKPROGWRSECPROT_SEC7_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC7))  /*!< Mask  0x00000080 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC6_OFFSET     (6U)
-#define FLASH_BANKPROGWRSECPROT_SEC6_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC6))  /*!< Mask  0x00000040 */
-#define FLASH_BANKPROGWRSECPROT_SEC6_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC6_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC6_OFFSET  (6U)
+#define FLASH_BANKPROGWRSECPROT_SEC6_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC6))  /*!< Mask  0x00000040 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC5_OFFSET     (5U)
-#define FLASH_BANKPROGWRSECPROT_SEC5_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC5))  /*!< Mask  0x00000020 */
-#define FLASH_BANKPROGWRSECPROT_SEC5_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC5_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC5_OFFSET  (5U)
+#define FLASH_BANKPROGWRSECPROT_SEC5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC5))  /*!< Mask  0x00000020 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC4_OFFSET     (4U)
-#define FLASH_BANKPROGWRSECPROT_SEC4_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC4))  /*!< Mask  0x00000010 */
-#define FLASH_BANKPROGWRSECPROT_SEC4_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC4_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC4_OFFSET  (4U)
+#define FLASH_BANKPROGWRSECPROT_SEC4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC4))  /*!< Mask  0x00000010 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC3_OFFSET     (3U)
-#define FLASH_BANKPROGWRSECPROT_SEC3_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC3))  /*!< Mask  0x00000008 */
-#define FLASH_BANKPROGWRSECPROT_SEC3_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC3_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC3_OFFSET  (3U)
+#define FLASH_BANKPROGWRSECPROT_SEC3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC3))  /*!< Mask  0x00000008 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC2_OFFSET     (2U)
-#define FLASH_BANKPROGWRSECPROT_SEC2_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC2))  /*!< Mask  0x00000004 */
-#define FLASH_BANKPROGWRSECPROT_SEC2_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC2_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC2_OFFSET  (2U)
+#define FLASH_BANKPROGWRSECPROT_SEC2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC2))  /*!< Mask  0x00000004 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC1_OFFSET     (1U)
-#define FLASH_BANKPROGWRSECPROT_SEC1_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC1))  /*!< Mask  0x00000002 */
-#define FLASH_BANKPROGWRSECPROT_SEC1_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC1_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC1_OFFSET  (1U)
+#define FLASH_BANKPROGWRSECPROT_SEC1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC1))  /*!< Mask  0x00000002 */
 
-#define FLASH_BANKPROGWRSECPROT_SEC0_OFFSET     (0U)
-#define FLASH_BANKPROGWRSECPROT_SEC0_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC0))  /*!< Mask  0x00000001 */
-#define FLASH_BANKPROGWRSECPROT_SEC0_PROTECT    (0x0UL)                                                           /*!< Value 0x00000000 */
-#define FLASH_BANKPROGWRSECPROT_SEC0_NOPROTECT  (0x1UL)                                                           /*!< Value 0x00000001 */
+#define FLASH_BANKPROGWRSECPROT_SEC0_OFFSET  (0U)
+#define FLASH_BANKPROGWRSECPROT_SEC0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKPROGWRSECPROT, SEC0))  /*!< Mask  0x00000001 */
+
+// Value of bank sector write protection
+#define FLASH_WRSECPROT_PROTECT    (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_WRSECPROT_NOPROTECT  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Current boot address register for ARM Cortex M7 core */
 #define FLASH_CURBOOTADDRM7_ADDR1_OFFSET  (16U)
