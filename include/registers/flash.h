@@ -610,8 +610,10 @@ typedef struct {
 /*!< Option clear control register */
 #define FLASH_OPTCLRCTRL_OPTBYTECHANGEINT_OFFSET  (6U)
 #define FLASH_OPTCLRCTRL_OPTBYTECHANGEINT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCLRCTRL, OPTBYTECHANGEINT))  /*!< Mask  0x00000040 */
-#define FLASH_OPTCLRCTRL_OPTBYTECHANGEINT_NOCLR   (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_OPTCLRCTRL_OPTBYTECHANGEINT_CLR     (0x1UL)                                                                /*!< Value 0x00000001 */
+
+// Values of option clear interrupt clear bit
+#define FLASH_OPTBYTECHANGEINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTBYTECHANGEINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Bank current protection address register */
 #define FLASH_BANKCURPROTADDR_ERASE_OFFSET      (31U)
@@ -964,53 +966,69 @@ typedef struct {
 #define FLASH_PROGBOOTADDRM4_ADDR0_15      (0x8000UL << REGISTER_FIELD_OFFSET(FLASH, PROGBOOTADDRM4, ADDR0))  /*!< Value 0x80000000 */
 
 /*!< Bank CRC control register */
-#define FLASH_BANKCRCCTRL_ALLSECTORS_OFFSET        (22U)
-#define FLASH_BANKCRCCTRL_ALLSECTORS_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, ALLSECTORS))    /*!< Mask  0x00400000 */
-#define FLASH_BANKCRCCTRL_ALLSECTORS_DISABLE       (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_ALLSECTORS_ENABLE        (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_ALLSECTORS_OFFSET    (22U)
+#define FLASH_BANKCRCCTRL_ALLSECTORS_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, ALLSECTORS))    /*!< Mask  0x00400000 */
 
-#define FLASH_BANKCRCCTRL_BURSTSIZE_OFFSET         (20U)
-#define FLASH_BANKCRCCTRL_BURSTSIZE_MASK           (0x3UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, BURSTSIZE))     /*!< Mask  0x00300000 */
-#define FLASH_BANKCRCCTRL_BURSTSIZE_4FLASHWORDS    (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_BURSTSIZE_16FLASHWORDS   (0x1UL)                                                             /*!< Value 0x00000001 */
-#define FLASH_BANKCRCCTRL_BURSTSIZE_64FLASHWORDS   (0x2UL)                                                             /*!< Value 0x00000001 */
-#define FLASH_BANKCRCCTRL_BURSTSIZE_256FLASHWORDS  (0x3UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_BURSTSIZE_OFFSET     (20U)
+#define FLASH_BANKCRCCTRL_BURSTSIZE_MASK       (0x3UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, BURSTSIZE))     /*!< Mask  0x00300000 */
 
-#define FLASH_BANKCRCCTRL_CLRRESULT_OFFSET         (17U)
-#define FLASH_BANKCRCCTRL_CLRRESULT_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, CLRRESULT))     /*!< Mask  0x00020000 */
-#define FLASH_BANKCRCCTRL_CLRRESULT_KEEP           (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_CLRRESULT_CLEAR          (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_CLRRESULT_OFFSET     (17U)
+#define FLASH_BANKCRCCTRL_CLRRESULT_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, CLRRESULT))     /*!< Mask  0x00020000 */
 
-#define FLASH_BANKCRCCTRL_STARTCALC_OFFSET         (16U)
-#define FLASH_BANKCRCCTRL_STARTCALC_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, STARTCALC))     /*!< Mask  0x00010000 */
-#define FLASH_BANKCRCCTRL_STARTCALC_NOTRIGGER      (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_STARTCALC_TRIGGER        (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_STARTCALC_OFFSET     (16U)
+#define FLASH_BANKCRCCTRL_STARTCALC_MASK       (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, STARTCALC))     /*!< Mask  0x00010000 */
 
-#define FLASH_BANKCRCCTRL_CLEARSECLIST_OFFSET      (10U)
-#define FLASH_BANKCRCCTRL_CLEARSECLIST_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, CLEARSECLIST))  /*!< Mask  0x00000400 */
-#define FLASH_BANKCRCCTRL_CLEARSECLIST_KEEP        (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_CLEARSECLIST_CLEAR       (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_CLEARSECLIST_OFFSET  (10U)
+#define FLASH_BANKCRCCTRL_CLEARSECLIST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, CLEARSECLIST))  /*!< Mask  0x00000400 */
 
-#define FLASH_BANKCRCCTRL_ADDSECTOCALC_OFFSET      (9U)
-#define FLASH_BANKCRCCTRL_ADDSECTOCALC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, ADDSECTOCALC))  /*!< Mask  0x00000200 */
-#define FLASH_BANKCRCCTRL_ADDSECTOCALC_NOADD       (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_ADDSECTOCALC_ADD         (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_ADDSECTOCALC_OFFSET  (9U)
+#define FLASH_BANKCRCCTRL_ADDSECTOCALC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, ADDSECTOCALC))  /*!< Mask  0x00000200 */
 
-#define FLASH_BANKCRCCTRL_CALCMODE_OFFSET          (8U)
-#define FLASH_BANKCRCCTRL_CALCMODE_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, CALCMODE))      /*!< Mask  0x00000100 */
-#define FLASH_BANKCRCCTRL_CALCMODE_ALLADDR         (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_CALCMODE_SECTOR          (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_BANKCRCCTRL_CALCMODE_OFFSET      (8U)
+#define FLASH_BANKCRCCTRL_CALCMODE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, CALCMODE))      /*!< Mask  0x00000100 */
 
-#define FLASH_BANKCRCCTRL_SELECTSEC_OFFSET         (0U)
-#define FLASH_BANKCRCCTRL_SELECTSEC_MASK           (0x7UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, SELECTSEC))     /*!< Mask  0x00000007 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC0           (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC1           (0x1UL)                                                             /*!< Value 0x00000001 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC2           (0x2UL)                                                             /*!< Value 0x00000002 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC3           (0x3UL)                                                             /*!< Value 0x00000003 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC4           (0x4UL)                                                             /*!< Value 0x00000004 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC5           (0x5UL)                                                             /*!< Value 0x00000005 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC6           (0x6UL)                                                             /*!< Value 0x00000006 */
-#define FLASH_BANKCRCCTRL_SELECTSEC_SEC7           (0x7UL)                                                             /*!< Value 0x00000007 */
+#define FLASH_BANKCRCCTRL_SELECTSEC_OFFSET     (0U)
+#define FLASH_BANKCRCCTRL_SELECTSEC_MASK       (0x7UL << REGISTER_FIELD_OFFSET(FLASH, BANKCRCCTRL, SELECTSEC))     /*!< Mask  0x00000007 */
+
+// Values of enable bit to add all sectors to the list of sector used to calculate the CRC
+#define FLASH_ALLSECTORS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_ALLSECTORS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of CRC burst size
+#define FLASH_BURSTSIZE_4FLASHWORDS    (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BURSTSIZE_16FLASHWORDS   (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_BURSTSIZE_64FLASHWORDS   (0x2UL)  /*!< Value 0x00000001 */
+#define FLASH_BURSTSIZE_256FLASHWORDS  (0x3UL)  /*!< Value 0x00000001 */
+
+// Values of CRC calculation clear bit
+#define FLASH_CLRRESULT_KEEP   (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_CLRRESULT_CLEAR  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of CRC calculation start bit
+#define FLASH_STARTCALC_NOTRIGGER  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_STARTCALC_TRIGGER    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of sector list clear bit
+#define FLASH_SECLIST_KEEP   (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SECLIST_CLEAR  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of sector addition enable bit
+#define FLASH_SECLIST_NOADD  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SECLIST_ADD    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of CRC calculation mode select bit
+#define FLASH_CRCCALC_ALLADDR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_CRCCALC_SECTOR   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of sector selector register
+#define FLASH_SECSEL_SEC0  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SECSEL_SEC1  (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_SECSEL_SEC2  (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_SECSEL_SEC3  (0x3UL)  /*!< Value 0x00000003 */
+#define FLASH_SECSEL_SEC4  (0x4UL)  /*!< Value 0x00000004 */
+#define FLASH_SECSEL_SEC5  (0x5UL)  /*!< Value 0x00000005 */
+#define FLASH_SECSEL_SEC6  (0x6UL)  /*!< Value 0x00000006 */
+#define FLASH_SECSEL_SEC7  (0x7UL)  /*!< Value 0x00000007 */
 
 /*!< Bank CRC start address register */
 #define FLASH_BANKCRCSTARTADDR_ADDR_OFFSET  (2U)

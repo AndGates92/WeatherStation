@@ -42,166 +42,224 @@ typedef struct {
 /*!< Power control 1 register */
 #define PWR_CTRL1_VTHAVD_OFFSET           (17U)
 #define PWR_CTRL1_VTHAVD_MASK             (0x3UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, VTHAVD))        /*!< Mask  0x00060000 */
-#define PWR_CTRL1_VTHAVD_1_7V             (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_VTHAVD_2_1V             (0x1UL)                                                     /*!< Value 0x00000001 */
-#define PWR_CTRL1_VTHAVD_2_5V             (0x2UL)                                                     /*!< Value 0x00000002 */
-#define PWR_CTRL1_VTHAVD_2_8V             (0x3UL)                                                     /*!< Value 0x00000003 */
 
 #define PWR_CTRL1_AVDEN_OFFSET            (16U)
 #define PWR_CTRL1_AVDEN_MASK              (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, AVDEN))         /*!< Mask  0x00010000 */
-#define PWR_CTRL1_AVDEN_DISABLE           (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_AVDEN_ENABLE            (0x1UL)                                                     /*!< Value 0x00000001 */
 
 #define PWR_CTRL1_SYSSTOPVS_OFFSET        (14U)
 #define PWR_CTRL1_SYSSTOPVS_MASK          (0x3UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, SYSSTOPVS))     /*!< Mask  0x0000C000 */
-#define PWR_CTRL1_SYSSTOPVS_SCALE5        (0x1UL)                                                     /*!< Value 0x00000001 */
-#define PWR_CTRL1_SYSSTOPVS_SCALE4        (0x2UL)                                                     /*!< Value 0x00000002 */
-#define PWR_CTRL1_SYSSTOPVS_SCALE3        (0x3UL)                                                     /*!< Value 0x00000003 */
 
 #define PWR_CTRL1_FLASHLPSTOP_OFFSET      (9U)
 #define PWR_CTRL1_FLASHLPSTOP_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, FLASHLPSTOP))   /*!< Mask  0x00002000 */
-#define PWR_CTRL1_FLASHLPSTOP_NORMALMODE  (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_FLASHLPSTOP_LPMODE      (0x1UL)                                                     /*!< Value 0x00000001 */
 
 #define PWR_CTRL1_BCKWRPROT_OFFSET        (8U)
 #define PWR_CTRL1_BCKWRPROT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, BCKWRPROT))     /*!< Mask  0x00002000 */
-#define PWR_CTRL1_BCKWRPROT_DISABLE       (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_BCKWRPROT_ENABLE        (0x1UL)                                                     /*!< Value 0x00000001 */
 
 #define PWR_CTRL1_VTHPVD_OFFSET           (5U)
 #define PWR_CTRL1_VTHPVD_MASK             (0x7UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, VTHPVD))        /*!< Mask  0x000000E0 */
-#define PWR_CTRL1_VTHPVD_1_95V            (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_VTHPVD_2_10V            (0x1UL)                                                     /*!< Value 0x00000001 */
-#define PWR_CTRL1_VTHPVD_2_25V            (0x2UL)                                                     /*!< Value 0x00000002 */
-#define PWR_CTRL1_VTHPVD_2_40V            (0x3UL)                                                     /*!< Value 0x00000003 */
-#define PWR_CTRL1_VTHPVD_2_55V            (0x4UL)                                                     /*!< Value 0x00000004 */
-#define PWR_CTRL1_VTHPVD_2_70V            (0x5UL)                                                     /*!< Value 0x00000005 */
-#define PWR_CTRL1_VTHPVD_2_85V            (0x6UL)                                                     /*!< Value 0x00000006 */
-#define PWR_CTRL1_VTHPVD_EXTERNAL         (0x7UL)                                                     /*!< Value 0x00000007 */
 
 #define PWR_CTRL1_PVDEN_OFFSET            (4U)
 #define PWR_CTRL1_PVDEN_MASK              (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, PVDEN))         /*!< Mask  0x00000010 */
-#define PWR_CTRL1_PVDEN_DISABLE           (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_PVDEN_ENABLE            (0x1UL)                                                     /*!< Value 0x00000001 */
 
 #define PWR_CTRL1_LPDSSVOS3_OFFSET        (0U)
 #define PWR_CTRL1_LPDSSVOS3_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL1, LPDSSVOS3))     /*!< Mask  0x00000001 */
-#define PWR_CTRL1_LPDSSVOS3_VRMAINMODE    (0x0UL)                                                     /*!< Value 0x00000000 */
-#define PWR_CTRL1_LPDSSVOS3_VRLPMODE      (0x1UL)                                                     /*!< Value 0x00000001 */
+
+// Values of analog voltage detector (AVD) threshold voltage register
+#define PWR_VTHAVD_1_7V  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VTHAVD_2_1V  (0x1UL)  /*!< Value 0x00000001 */
+#define PWR_VTHAVD_2_5V  (0x2UL)  /*!< Value 0x00000002 */
+#define PWR_VTHAVD_2_8V  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of analog voltage detector (AVD) enable bit
+#define PWR_AVDEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_AVDEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of system stop voltage scaling (SVOS) selection register
+#define PWR_SYSSTOPVS_SCALE5   (0x1UL)  /*!< Value 0x00000001 */
+#define PWR_SYSSTOPVS_SCALE4   (0x2UL)  /*!< Value 0x00000002 */
+#define PWR_SYSSTOPVS_SCALE3   (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of flash low power mode in DStop mode register
+#define PWR_FLASHLPSTOP_NORMALMODE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_FLASHLPSTOP_LPMODE      (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of backup domain write protection enable bit
+#define PWR_BCKWRPROT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_BCKWRPROT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of programmable voltage detector (PVD) threshold voltage register
+#define PWR_VTHPVD_1_95V     (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VTHPVD_2_10V     (0x1UL)  /*!< Value 0x00000001 */
+#define PWR_VTHPVD_2_25V     (0x2UL)  /*!< Value 0x00000002 */
+#define PWR_VTHPVD_2_40V     (0x3UL)  /*!< Value 0x00000003 */
+#define PWR_VTHPVD_2_55V     (0x4UL)  /*!< Value 0x00000004 */
+#define PWR_VTHPVD_2_70V     (0x5UL)  /*!< Value 0x00000005 */
+#define PWR_VTHPVD_2_85V     (0x6UL)  /*!< Value 0x00000006 */
+#define PWR_VTHPVD_EXTERNAL  (0x7UL)  /*!< Value 0x00000007 */
+
+// Values of programmable voltage detector (PVD) enable bit
+#define PWR_PVDEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_PVDEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of low power deep sleep with system stop voltage supply 3 (SVOS3) scaling mode register
+#define PWR_LPDSSVOS3_VRMAINMODE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_LPDSSVOS3_VRLPMODE    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Constrol status 1 register */
-#define PWR_CS1_AVDO_OFFSET     (16U)
-#define PWR_CS1_AVDO_MASK       (0x1UL << REGISTER_FIELD_OFFSET(PWR, CS1, AVDO))    /*!< Mask  0x00010000 */
-#define PWR_CS1_AVDO_HEVTH      (0x0UL)                                             /*!< Value 0x00000000 */
-#define PWR_CS1_AVDO_LVTH       (0x1UL)                                             /*!< Value 0x00000001 */
+#define PWR_CS1_AVDO_OFFSET    (16U)
+#define PWR_CS1_AVDO_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, CS1, AVDO))    /*!< Mask  0x00010000 */
 
-#define PWR_CS1_VOS_OFFSET      (14U)
-#define PWR_CS1_VOS_MASK        (0x3UL << REGISTER_FIELD_OFFSET(PWR, CS1, VOS))     /*!< Mask  0x0000C000 */
-#define PWR_CS1_VOS_0           (0x1UL)                                             /*!< Value 0x00000001 */
-#define PWR_CS1_VOS_1           (0x2UL)                                             /*!< Value 0x00000002 */
+#define PWR_CS1_VOS_OFFSET     (14U)
+#define PWR_CS1_VOS_MASK       (0x3UL << REGISTER_FIELD_OFFSET(PWR, CS1, VOS))     /*!< Mask  0x0000C000 */
+#define PWR_CS1_VOS_0          (0x1UL)                                             /*!< Value 0x00000001 */
+#define PWR_CS1_VOS_1          (0x2UL)                                             /*!< Value 0x00000002 */
 
-#define PWR_CS1_VSORDY_OFFSET   (13U)
-#define PWR_CS1_VOSRDY_MASK     (0x1UL << REGISTER_FIELD_OFFSET(PWR, CS1, VOSRDY))  /*!< Mask  0x00002000 */
-#define PWR_CS1_VOSRDY_NOTEADY  (0x0UL)                                             /*!< Value 0x00000000 */
-#define PWR_CS1_VOSRDY_READY    (0x1UL)                                             /*!< Value 0x00000001 */
+#define PWR_CS1_VSORDY_OFFSET  (13U)
+#define PWR_CS1_VOSRDY_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, CS1, VOSRDY))  /*!< Mask  0x00002000 */
 
-#define PWR_CS1_PVDO_OFFSET     (4U)
-#define PWR_CS1_PVDO_MASK       (0x1UL << REGISTER_FIELD_OFFSET(PWR, CS1, PVDO))    /*!< Mask  0x00000010 */
-#define PWR_CS1_PVDO_HEVTH      (0x0UL)                                             /*!< Value 0x00000000 */
-#define PWR_CS1_PVDO_LVTH       (0x1UL)                                             /*!< Value 0x00000001 */
+#define PWR_CS1_PVDO_OFFSET    (4U)
+#define PWR_CS1_PVDO_MASK      (0x1UL << REGISTER_FIELD_OFFSET(PWR, CS1, PVDO))    /*!< Mask  0x00000010 */
+
+// Values of analog voltage detector (AVD) output bit
+#define PWR_AVDO_HEVTH  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_AVDO_LVTH   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of voltage supply (VOS) ready bit
+#define PWR_VOSRDY_NOTREADY  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VOSRDY_READY     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of programmable voltage detector (PVD) output bit
+#define PWR_PVDO_HEVTH  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_PVDO_LVTH   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Power control 2 register */
-#define PWR_CTRL2_TEMPH_OFFSET           (23U)
-#define PWR_CTRL2_TEMPH_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, TEMPH))          /*!< Mask  0x00800000 */
-#define PWR_CTRL2_TEMPH_TLOWERHVTH       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define PWR_CTRL2_TEMPH_THIGHEREQUALVTH  (0x1UL)                                                      /*!< Value 0x00000001 */
+#define PWR_CTRL2_TEMPH_OFFSET          (23U)
+#define PWR_CTRL2_TEMPH_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, TEMPH))          /*!< Mask  0x00800000 */
 
-#define PWR_CTRL2_TEMPL_OFFSET           (22U)
-#define PWR_CTRL2_TEMPL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, TEMPL))          /*!< Mask  0x00400000 */
-#define PWR_CTRL2_TEMPL_TLOWERHVTH       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define PWR_CTRL2_TEMPL_THIGHEREQUALVTH  (0x1UL)                                                      /*!< Value 0x00000001 */
+#define PWR_CTRL2_TEMPL_OFFSET          (22U)
+#define PWR_CTRL2_TEMPL_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, TEMPL))          /*!< Mask  0x00400000 */
 
-#define PWR_CTRL2_VBATH_OFFSET           (21U)
-#define PWR_CTRL2_VBATH_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, VBATH))          /*!< Mask  0x00200000 */
-#define PWR_CTRL2_VBATH_VLOWERHVTH       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define PWR_CTRL2_VBATH_VHIGHEREQUALVTH  (0x1UL)                                                      /*!< Value 0x00000001 */
+#define PWR_CTRL2_VBATH_OFFSET          (21U)
+#define PWR_CTRL2_VBATH_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, VBATH))          /*!< Mask  0x00200000 */
 
-#define PWR_CTRL2_VBATL_OFFSET           (20U)
-#define PWR_CTRL2_VBATL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, VBATL))          /*!< Mask  0x00100000 */
-#define PWR_CTRL2_VBATL_VLOWERHVTH       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define PWR_CTRL2_VBATL_VHIGHEREQUALVTH  (0x1UL)                                                      /*!< Value 0x00000001 */
+#define PWR_CTRL2_VBATL_OFFSET          (20U)
+#define PWR_CTRL2_VBATL_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, VBATL))          /*!< Mask  0x00100000 */
 
-#define PWR_CTRL2_BCKREGRDY_OFFSET       (16U)
-#define PWR_CTRL2_BCKREGRDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, BCKREGRDY))      /*!< Mask  0x00010000 */
-#define PWR_CTRL2_BCKREGRDY_NOTREADY     (0x0UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, BCKREGRDY))      /*!< Mask  0x00000000 */
-#define PWR_CTRL2_BCKREGRDY_READY        (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, BCKREGRDY))      /*!< Mask  0x00010000 */
+#define PWR_CTRL2_BCKREGRDY_OFFSET      (16U)
+#define PWR_CTRL2_BCKREGRDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, BCKREGRDY))      /*!< Mask  0x00010000 */
 
-#define PWR_CTRL2_VBATTEMPMONEN_OFFSET   (4U)
-#define PWR_CTRL2_VBATTEMPMONEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, VBATTEMPMONEN))  /*!< Mask  0x00000010 */
-#define PWR_CTRL2_VBATTEMPMONEN_DISABLE  (0x0UL)                                                      /*!< Value 0x00000000 */
-#define PWR_CTRL2_VBATTEMPMONEN_ENABLE   (0x1UL)                                                      /*!< Value 0x00000001 */
+#define PWR_CTRL2_VBATTEMPMONEN_OFFSET  (4U)
+#define PWR_CTRL2_VBATTEMPMONEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, VBATTEMPMONEN))  /*!< Mask  0x00000010 */
 
-#define PWR_CTRL2_BCKREGEN_OFFSET        (0U)
-#define PWR_CTRL2_BCKREGEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, BCKREGEN))       /*!< Mask  0x00000001 */
-#define PWR_CTRL2_BCKREGEN_DISABLE       (0x0UL)                                                      /*!< Value 0x00000000 */
-#define PWR_CTRL2_BCKREGEN_ENABLE        (0x1UL)                                                      /*!< Value 0x00000001 */
+#define PWR_CTRL2_BCKREGEN_OFFSET       (0U)
+#define PWR_CTRL2_BCKREGEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL2, BCKREGEN))       /*!< Mask  0x00000001 */
+
+// Values of temperature level monitoring versus high threshold bit
+#define PWR_TEMPH_TLOWERHVTH        (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_TEMPH_THIGHEREQUALHVTH  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of temperature level monitoring versus low threshold bit
+#define PWR_TEMPL_TLOWERLVTH        (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_TEMPL_THIGHEREQUALLVTH  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of battery voltage (VBAT) level monitoring versus high threshold bit
+#define PWR_VBATH_VLOWERHVTH        (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VBATH_VHIGHEREQUALHVTH  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of battery voltage (VBAT) level monitoring versus low threshold bit
+#define PWR_VBATL_VLOWERLVTH        (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VBATL_VHIGHEREQUALLVTH  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of backup regulator ready bit
+#define PWR_BCKREGRDY_NOTREADY  (0x0UL)  /*!< Mask  0x00000000 */
+#define PWR_BCKREGRDY_READY     (0x1UL)  /*!< Mask  0x00000001 */
+
+// Values of monitoring enable bit
+#define PWR_VBATTEMPMONEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VBATTEMPMONEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of backup regulator enable bit
+#define PWR_BCKREGEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_BCKREGEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Power control 3 register */
 #define PWR_CTRL3_USB33RDY_OFFSET                 (26U)
 #define PWR_CTRL3_USB33RDY_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, USB33RDY))             /*!< Mask  0x04000000 */
-#define PWR_CTRL3_USB33RDY_NOTREADY               (0x0UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, USB33RDY))             /*!< Mask  0x00000000 */
-#define PWR_CTRL3_USB33RDY_READY                  (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, USB33RDY))             /*!< Mask  0x04000000 */
 
 #define PWR_CTRL3_USBREGEN_OFFSET                 (25U)
 #define PWR_CTRL3_USBREGEN_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, USBREGEN))             /*!< Mask  0x02000000 */
-#define PWR_CTRL3_USBREGEN_DISABLE                (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_USBREGEN_ENABLE                 (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_USB33VDETEN_OFFSET              (24U)
 #define PWR_CTRL3_USB33VDETEN_MASK                (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, USB33VDETEN))          /*!< Mask  0x01000000 */
-#define PWR_CTRL3_USB33VDETEN_DISABLE             (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_USB33VDETEN_ENABLE              (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_STEPDOWNCONVRDY_OFFSET          (16U)
 #define PWR_CTRL3_STEPDOWNCONVRDY_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, STEPDOWNCONVRDY))      /*!< Mask  0x00010000 */
-#define PWR_CTRL3_STEPDOWNCONVRDY_NOTREADY        (0x0UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, STEPDOWNCONVRDY))      /*!< Mask  0x00000000 */
-#define PWR_CTRL3_STEPDOWNCONVRDY_READY           (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, STEPDOWNCONVRDY))      /*!< Mask  0x00010000 */
 
 #define PWR_CTRL3_VBATRSEL_OFFSET                 (9U)
 #define PWR_CTRL3_VBATRSEL_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, VBATRSEL))             /*!< Mask  0x00000200 */
-#define PWR_CTRL3_VBATRSEL_5K                     (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_VBATRSEL_1_5K                   (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_VBATEN_OFFSET                   (8U)
 #define PWR_CTRL3_VBATEN_MASK                     (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, VBATEN))               /*!< Mask  0x00000100 */
-#define PWR_CTRL3_VBATEN_DISABLE                  (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_VBATEN_ENABLE                   (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_STEPDOWNCONVVOUTSEL_OFFSET      (4U)
 #define PWR_CTRL3_STEPDOWNCONVVOUTSEL_MASK        (0x3UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, STEPDOWNCONVVOUTSEL))  /*!< Mask  0x00000030 */
-#define PWR_CTRL3_STEPDOWNCONVVOUTSEL_RESETVALUE  (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_STEPDOWNCONVVOUTSEL_1_8V        (0x1UL)                                                            /*!< Value 0x00000001 */
-#define PWR_CTRL3_STEPDOWNCONVVOUTSEL_2_5V        (0x2UL)                                                            /*!< Value 0x00000002 */
 
 #define PWR_CTRL3_STEPDOWNCONVMODE_OFFSET         (3U)
 #define PWR_CTRL3_STEPDOWNCONVMODE_MASK           (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, STEPDOWNCONVHPMODE))   /*!< Mask  0x00000008 */
-#define PWR_CTRL3_STEPDOWNCONVMODE_NORMALMODE     (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_STEPDOWNCONVMODE_MAINMODE       (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_STEPDOWNCONVEN_OFFSET           (2U)
 #define PWR_CTRL3_STEPDOWNCONVEN_MASK             (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, STEPDOWNCONVEN))       /*!< Mask  0x00000004 */
-#define PWR_CTRL3_STEPDOWNCONVEN_DISABLE          (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_STEPDOWNCONVEN_ENABLE           (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_LOWDROPOUTREGEN_OFFSET          (1U)
 #define PWR_CTRL3_LOWDROPOUTREGEN_MASK            (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, LOWDROPOUTREGEN))      /*!< Mask  0x00000002 */
-#define PWR_CTRL3_LOWDROPOUTREGEN_DISABLE         (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_LOWDROPOUTREGEN_ENABLE          (0x1UL)                                                            /*!< Value 0x00000001 */
 
 #define PWR_CTRL3_PWRMGMTBYPASS_OFFSET            (0U)
 #define PWR_CTRL3_PWRMGMTBYPASS_MASK              (0x1UL << REGISTER_FIELD_OFFSET(PWR, CTRL3, PWRMGMTBYPASS))        /*!< Mask  0x00000001 */
-#define PWR_CTRL3_PWRMGMTBYPASS_DISABLE           (0x0UL)                                                            /*!< Value 0x00000000 */
-#define PWR_CTRL3_PWRMGMTBYPASS_ENABLE            (0x1UL)                                                            /*!< Value 0x00000001 */
+
+// Value of USB33 ready bit
+#define PWR_USB33RDY_NOTREADY  (0x0UL)  /*!< Mask  0x00000000 */
+#define PWR_USB33RDY_READY     (0x1UL)  /*!< Mask  0x04000000 */
+
+// Value of USB regulator enable bit
+#define PWR_USBREGEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_USBREGEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of USB33 voltage detector enable bit
+#define PWR_USB33VDETEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_USB33VDETEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of step-down converter ready bit
+#define PWR_STEPDOWNCONVRDY_NOTREADY  (0x0UL)  /*!< Mask  0x00000000 */
+#define PWR_STEPDOWNCONVRDY_READY     (0x1UL)  /*!< Mask  0x00000001 */
+
+// Value of battery voltage resistor selection bit
+#define PWR_VBATRSEL_5K    (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VBATRSEL_1_5K  (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of battery voltage enable bit
+#define PWR_VBATEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_VBATEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of step-down converter output level selection
+#define PWR_STEPDOWNCONVVOUTSEL_RESETVALUE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_STEPDOWNCONVVOUTSEL_1_8V        (0x1UL)  /*!< Value 0x00000001 */
+#define PWR_STEPDOWNCONVVOUTSEL_2_5V        (0x2UL)  /*!< Value 0x00000002 */
+
+// Value of step-down converter mode bit
+#define PWR_STEPDOWNCONVMODE_NORMALMODE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_STEPDOWNCONVMODE_MAINMODE    (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of step-down converter enable bit
+#define PWR_STEPDOWNCONVEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_STEPDOWNCONVEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of low drop-out regulator enable bit
+#define PWR_LOWDROPOUTREGEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_LOWDROPOUTREGEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Value of power unit management unit bypass bit
+#define PWR_PWRMGMTBYPASS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define PWR_PWRMGMTBYPASS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< CPU power control register */
 #define PWR_CPUCTRL_D3RUNMODE_OFFSET               (11U)
@@ -369,7 +427,7 @@ typedef struct {
 #define PWR_WAKEUPPLR_RISEDET  (0x0UL)  /*!< Value 0x00000000 */
 #define PWR_WAKEUPPLR_FALLDET  (0x1UL)  /*!< Value 0x00000001 */
 
-// Value of wakeup pin enqble bit
+// Value of wakeup pin enable bit
 #define PWR_WAKEUP_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define PWR_WAKEUP_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 

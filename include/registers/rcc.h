@@ -1578,58 +1578,82 @@ typedef struct {
 
 #define RCC_BCKDCTR_RTCEN_OFFSET                 (15U)
 #define RCC_BCKDCTR_RTCEN_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, RTCEN))                /*!< Mask  0x00008000 */
-#define RCC_BCKDCTR_RTCEN_DISABLE                (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_RTCEN_ENABLE                 (0x1UL)                                                              /*!< Value 0x00000001 */
 
 #define RCC_BCKDCTR_RTCSEL_OFFSET                (8U)
 #define RCC_BCKDCTR_RTCSEL_MASK                  (0x3UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, RTCSEL))               /*!< Mask  0x00000008 */
-#define RCC_BCKDCTR_RTCSEL_NOCLK                 (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_RTCSEL_LSE                   (0x1UL)                                                              /*!< Value 0x00000001 */
-#define RCC_BCKDCTR_RTCSEL_LSI                   (0x2UL)                                                              /*!< Value 0x00000002 */
-#define RCC_BCKDCTR_RTCSEL_HSE                   (0x3UL)                                                              /*!< Value 0x00000003 */
 
 #define RCC_BCKDCTR_LSECLKSECSYSFAILDET_OFFSET   (6U)
 #define RCC_BCKDCTR_LSECLKSECSYSFAILDET_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSECLKSECSYSFAILDET))  /*!< Mask  0x00000006 */
-#define RCC_BCKDCTR_LSECLKSECSYSFAILDET_SUCCESS  (0x1UL)                                                              /*!< Value 0x00000001 */
-#define RCC_BCKDCTR_LSECLKSECSYSFAILDET_FAILURE  (0x1UL)                                                              /*!< Value 0x00000001 */
 
 #define RCC_BCKDCTR_LSECLKSECSYSEN_OFFSET        (5U)
 #define RCC_BCKDCTR_LSECLKSECSYSEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSECLKSECSYSEN))       /*!< Mask  0x00000005 */
-#define RCC_BCKDCTR_LSECLKSECSYSEN_DISABLE       (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_LSECLKSECSYSEN_ENABLE        (0x1UL)                                                              /*!< Value 0x00000001 */
 
 #define RCC_BCKDCTR_LSEOSCDRV_OFFSET             (3U)
 #define RCC_BCKDCTR_LSEOSCDRV_MASK               (0x3UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSEOSCDRV))            /*!< Mask  0x00000018 */
-#define RCC_BCKDCTR_LSEOSCDRV_LOW                (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_LSEOSCDRV_MEDIUMLOW          (0x1UL)                                                              /*!< Value 0x00000001 */
-#define RCC_BCKDCTR_LSEOSCDRV_MEDIUMHIGH         (0x2UL)                                                              /*!< Value 0x00000002 */
-#define RCC_BCKDCTR_LSEOSCDRV_HIGH               (0x3UL)                                                              /*!< Value 0x00000003 */
 
 #define RCC_BCKDCTR_LSEBYPASS_OFFSET             (2U)
 #define RCC_BCKDCTR_LSEBYPASS_MASK               (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSEBYPASS))            /*!< Mask  0x00000002 */
-#define RCC_BCKDCTR_LSEBYPASS_DISABLE            (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_LSEBYPASS_ENABLE             (0x1UL)                                                              /*!< Value 0x00000001 */
 
 #define RCC_BCKDCTR_LSERDY_OFFSET                (1U)
 #define RCC_BCKDCTR_LSERDY_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSERDY))               /*!< Mask  0x00000001 */
-#define RCC_BCKDCTR_LSERDY_NOTREADY              (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_LSERDY_READY                 (0x1UL)                                                              /*!< Value 0x00000001 */
 
 #define RCC_BCKDCTR_LSEON_OFFSET                 (0U)
 #define RCC_BCKDCTR_LSEON_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSEON))                /*!< Mask  0x00000000 */
-#define RCC_BCKDCTR_LSEON_OFF                    (0x0UL)                                                              /*!< Value 0x00000000 */
-#define RCC_BCKDCTR_LSEON_ON                     (0x1UL)                                                              /*!< Value 0x00000001 */
+
+// Values of software reset
+#define RCC_BCKDCTR_BCKDSWRST_NORST   (0x0UL)  /*!< Value 0x00000001 */
+#define RCC_BCKDCTR_BCKDSWRST_RSTVSW  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of real time clock (RTC) enable bit
+#define RCC_BCKDCTR_RTCEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_RTCEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of real time clock (RTC) source
+#define RCC_BCKDCTR_RTCSEL_NOCLK  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_RTCSEL_LSE    (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_BCKDCTR_RTCSEL_LSI    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_BCKDCTR_RTCSEL_HSE    (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of low speed external (LSE) RC oscillator clock security system security bit
+#define RCC_BCKDCTR_LSECLKSECSYSFAILDET_SUCCESS  (0x0UL)  /*!< Value 0x00000001 */
+#define RCC_BCKDCTR_LSECLKSECSYSFAILDET_FAILURE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of low speed external (LSE) RC oscillator clock security system enable bit
+#define RCC_BCKDCTR_LSECLKSECSYSEN_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_LSECLKSECSYSEN_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of low speed external (LSE) RC oscillator driving capability
+#define RCC_BCKDCTR_LSEOSCDRV_LOW         (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_LSEOSCDRV_MEDIUMLOW   (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_BCKDCTR_LSEOSCDRV_MEDIUMHIGH  (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_BCKDCTR_LSEOSCDRV_HIGH        (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of low speed external (LSE) RC oscillator bypass bit
+#define RCC_BCKDCTR_LSEBYPASS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_LSEBYPASS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of low speed external (LSE) RC oscillator ready bit
+#define RCC_BCKDCTR_LSERDY_NOTREADY  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_LSERDY_READY     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of low speed external (LSE) RC oscillator enable bit
+#define RCC_BCKDCTR_LSEON_OFF  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_BCKDCTR_LSEON_ON   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Clock control and status register */
-#define RCC_CLKCTRLSTATUS_LSIRDY_OFFSET    (1U)
-#define RCC_CLKCTRLSTATUS_LSIRDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCTRLSTATUS, LSIRDY))  /*!< Mask  0x00000001 */
-#define RCC_CLKCTRLSTATUS_LSIRDY_NOTREADY  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define RCC_CLKCTRLSTATUS_LSIRDY_READY     (0x1UL)                                                       /*!< Value 0x00000001 */
+#define RCC_CLKCTRLSTATUS_LSIRDY_OFFSET  (1U)
+#define RCC_CLKCTRLSTATUS_LSIRDY_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCTRLSTATUS, LSIRDY))  /*!< Mask  0x00000001 */
 
-#define RCC_CLKCTRLSTATUS_LSION_OFFSET     (0U)
-#define RCC_CLKCTRLSTATUS_LSION_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCTRLSTATUS, LSION))   /*!< Mask  0x00000000 */
-#define RCC_CLKCTRLSTATUS_LSION_OFF        (0x0UL)                                                       /*!< Value 0x00000000 */
-#define RCC_CLKCTRLSTATUS_LSION_ON         (0x1UL)                                                       /*!< Value 0x00000001 */
+#define RCC_CLKCTRLSTATUS_LSION_OFFSET   (0U)
+#define RCC_CLKCTRLSTATUS_LSION_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCTRLSTATUS, LSION))   /*!< Mask  0x00000000 */
+
+// Values of low speed internal (LSI) RC oscillator ready bit
+#define RCC_LSIRDY_NOTREADY  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_LSIRDY_READY     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of low speed internal (LSI) RC oscillator enable bit
+#define RCC_CLKCTRLSTATUS_LSION_OFF  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_CLKCTRLSTATUS_LSION_ON   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< AHB3 reset register */
 #define RCC_AHB3RST_SDMMC_OFFSET   (16U)
