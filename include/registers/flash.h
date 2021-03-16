@@ -55,27 +55,29 @@ typedef struct {
 
 /*!< Embedded Flash memory registers */
 /*!< Access control register */
-#define FLASH_ACCESSCTRL_PROGDLY_OFFSET      (4U)
-#define FLASH_ACCESSCTRL_PROGDLY_MASK        (0x3UL << REGISTER_FIELD_OFFSET(FLASH, ACCESSCTRL, PROGDLY))  /*!< Mask  0x00000030 */
-#define FLASH_ACCESSCTRL_PROGDLY_0           (0x0UL)                                                       /*!< Value 0x00000000 */
-#define FLASH_ACCESSCTRL_PROGDLY_1           (0x1UL)                                                       /*!< Value 0x00000001 */
-#define FLASH_ACCESSCTRL_PROGDLY_2           (0x2UL)                                                       /*!< Value 0x00000002 */
-#define FLASH_ACCESSCTRL_PROGDLY_3           (0x3UL)                                                       /*!< Value 0x00000003 */
+#define FLASH_ACCESSCTRL_PROGDLY_OFFSET  (4U)
+#define FLASH_ACCESSCTRL_PROGDLY_MASK    (0x3UL << REGISTER_FIELD_OFFSET(FLASH, ACCESSCTRL, PROGDLY))  /*!< Mask  0x00000030 */
 
-#define FLASH_ACCESSCTRL_LATENCY_OFFSET      (0U)
-#define FLASH_ACCESSCTRL_LATENCY_MASK        (0xFUL << REGISTER_FIELD_OFFSET(FLASH, ACCESSCTRL, LATENCY))  /*!< Mask  0x0000000F */
-#define FLASH_ACCESSCTRL_LATENCY_0WAITSTATE  (0x0UL)                                                       /*!< Value 0x00000000 */
-#define FLASH_ACCESSCTRL_LATENCY_1WAITSTATE  (0x1UL)                                                       /*!< Value 0x00000001 */
-#define FLASH_ACCESSCTRL_LATENCY_2WAITSTATE  (0x2UL)                                                       /*!< Value 0x00000002 */
-#define FLASH_ACCESSCTRL_LATENCY_3WAITSTATE  (0x3UL)                                                       /*!< Value 0x00000003 */
-#define FLASH_ACCESSCTRL_LATENCY_4WAITSTATE  (0x4UL)                                                       /*!< Value 0x00000004 */
-#define FLASH_ACCESSCTRL_LATENCY_7WAITSTATE  (0x7UL)                                                       /*!< Value 0x00000007 */
+#define FLASH_ACCESSCTRL_LATENCY_OFFSET  (0U)
+#define FLASH_ACCESSCTRL_LATENCY_MASK    (0xFUL << REGISTER_FIELD_OFFSET(FLASH, ACCESSCTRL, LATENCY))  /*!< Mask  0x0000000F */
+
+// Available delays between non volatile memory signals during programming operations
+#define FLASH_PROGDLY_0  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_PROGDLY_1  (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_PROGDLY_2  (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_PROGDLY_3  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of flash wait states
+#define FLASH_LATENCY_0WAITSTATE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_LATENCY_1WAITSTATE  (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_LATENCY_2WAITSTATE  (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_LATENCY_3WAITSTATE  (0x3UL)  /*!< Value 0x00000003 */
+#define FLASH_LATENCY_4WAITSTATE  (0x4UL)  /*!< Value 0x00000004 */
+#define FLASH_LATENCY_7WAITSTATE  (0x7UL)  /*!< Value 0x00000007 */
 
 /*!< Bank key register register  */
 #define FLASH_BANKKEY_ACCESSKEY_OFFSET  (0U)
 #define FLASH_BANKKEY_ACCESSKEY_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(FLASH, BANKKEY, ACCESSKEY))  /*!< Mask  0xFFFFFFFF */
-#define FLASH_BANKKEY_ACCESSKEY_KEY1    (0x45670123UL)                                                      /*!< Value 0x45670123 */
-#define FLASH_BANKKEY_ACCESSKEY_KEY2    (0xCDEF89ABUL)                                                      /*!< Value 0xCDEF89AB */
 #define FLASH_BANKKEY_ACCESSKEY_0       (0x00000001UL << REGISTER_FIELD_OFFSET(FLASH, BANKKEY, ACCESSKEY))  /*!< Value 0x00000001 */
 #define FLASH_BANKKEY_ACCESSKEY_1       (0x00000002UL << REGISTER_FIELD_OFFSET(FLASH, BANKKEY, ACCESSKEY))  /*!< Value 0x00000002 */
 #define FLASH_BANKKEY_ACCESSKEY_2       (0x00000004UL << REGISTER_FIELD_OFFSET(FLASH, BANKKEY, ACCESSKEY))  /*!< Value 0x00000004 */
@@ -109,11 +111,13 @@ typedef struct {
 #define FLASH_BANKKEY_ACCESSKEY_30      (0x40000000UL << REGISTER_FIELD_OFFSET(FLASH, BANKKEY, ACCESSKEY))  /*!< Value 0x40000000 */
 #define FLASH_BANKKEY_ACCESSKEY_31      (0x80000000UL << REGISTER_FIELD_OFFSET(FLASH, BANKKEY, ACCESSKEY))  /*!< Value 0x80000000 */
 
+// Key to program the bank key register with
+#define FLASH_BANKKEY_KEY1  (0x45670123UL)  /*!< Value 0x45670123 */
+#define FLASH_BANKKEY_KEY2  (0xCDEF89ABUL)  /*!< Value 0xCDEF89AB */
+
 /*!< Option key register  */
 #define FLASH_OPTKEY_ACCESSKEY_OFFSET  (0U)
 #define FLASH_OPTKEY_ACCESSKEY_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Mask  0xFFFFFFFF */
-#define FLASH_OPTKEY_ACCESSKEY_KEY1    (0x4C5D6E7FUL)                                                     /*!< Value 0x4C5D6E7F */
-#define FLASH_OPTKEY_ACCESSKEY_KEY2    (0x08192A3BUL)                                                     /*!< Value 0x08192A3B */
 #define FLASH_OPTKEY_ACCESSKEY_0       (0x00000001UL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Value 0x00000001 */
 #define FLASH_OPTKEY_ACCESSKEY_1       (0x00000002UL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Value 0x00000002 */
 #define FLASH_OPTKEY_ACCESSKEY_2       (0x00000004UL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Value 0x00000004 */
@@ -146,6 +150,10 @@ typedef struct {
 #define FLASH_OPTKEY_ACCESSKEY_29      (0x20000000UL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Value 0x20000000 */
 #define FLASH_OPTKEY_ACCESSKEY_30      (0x40000000UL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Value 0x40000000 */
 #define FLASH_OPTKEY_ACCESSKEY_31      (0x80000000UL << REGISTER_FIELD_OFFSET(FLASH, OPTKEY, ACCESSKEY))  /*!< Value 0x80000000 */
+
+// Key to program the option key register with
+#define FLASH_OPTKEY_KEY1    (0x4C5D6E7FUL)  /*!< Value 0x4C5D6E7F */
+#define FLASH_OPTKEY_KEY2    (0x08192A3BUL)  /*!< Value 0x08192A3B */
 
 /*!< Bank control register register  */
 #define FLASH_BANKCTRL_CRCRDERRINT_OFFSET           (28U)

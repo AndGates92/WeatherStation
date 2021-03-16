@@ -495,10 +495,6 @@ typedef struct {
 
 #define RCC_PLLCLKSEL_PLLSRC_OFFSET    (0U)
 #define RCC_PLLCLKSEL_PLLSRC_MASK      (0x3UL << REGISTER_FIELD_OFFSET(RCC, PLLCLKSEL, PLLSRC))    /*!< Mask  0x00000003 */
-#define RCC_PLLCLKSEL_PLLSRC_HSI       (0x0UL)                                                     /*!< Value 0x00000000 */
-#define RCC_PLLCLKSEL_PLLSRC_CSI       (0x1UL)                                                     /*!< Value 0x00000001 */
-#define RCC_PLLCLKSEL_PLLSRC_HSE       (0x2UL)                                                     /*!< Value 0x00000002 */
-#define RCC_PLLCLKSEL_PLLSRC_NOCLK     (0x3UL)                                                     /*!< Value 0x00000003 */
 
 // Value of PLL prescaler
 #define RCC_PLLPRE_DISABLE  (0x00UL)  /*!< Value 0x00000000 */
@@ -566,6 +562,11 @@ typedef struct {
 #define RCC_PLLPRE_DIV62    (0x3EUL)  /*!< Value 0x0000003E */
 #define RCC_PLLPRE_DIV63    (0x3FUL)  /*!< Value 0x0000003F */
 
+// Values of PLL clock source
+#define RCC_PLLSRC_HSI    (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_PLLSRC_CSI    (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_PLLSRC_HSE    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_PLLSRC_NOCLK  (0x3UL)  /*!< Value 0x00000003 */
 
 /*!< RCC PLL configuration register */
 #define RCC_PLLCFG_PLL3DIVR_OFFSET        (24U)
@@ -1193,215 +1194,272 @@ typedef struct {
 #define RCC_PLLFRACDIV_FRACN_12      (0x1000UL)                                                   /*!< Value 0x00001000 */
 
 /*!< Domain 1 kernel configuration register */
-#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_OFFSET    (28U)
-#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_MASK      (0x3UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, CLKPERIPHERALSEL))  /*!< Mask  0x30000000 */
-#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_HSI       (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_CSI       (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_HSE       (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_DISABLE   (0x3UL)                                                                  /*!< Value 0x00000003 */
+#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_OFFSET  (28U)
+#define RCC_D1KERNELCLKCFG_CLKPERIPHERALSEL_MASK    (0x3UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, CLKPERIPHERALSEL))  /*!< Mask  0x30000000 */
 
-#define RCC_D1KERNELCLKCFG_SDMMCCLKSEL_OFFSET         (16U)
-#define RCC_D1KERNELCLKCFG_SDMMCCLKSEL_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, SDMMCCLKSEL))       /*!< Mask  0x00010000 */
-#define RCC_D1KERNELCLKCFG_SDMMCCLKSEL_PLL1Q          (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D1KERNELCLKCFG_SDMMCCLKSEL_PLL2R          (0x1UL)                                                                  /*!< Value 0x00000001 */
+#define RCC_D1KERNELCLKCFG_SDMMCCLKSEL_OFFSET       (16U)
+#define RCC_D1KERNELCLKCFG_SDMMCCLKSEL_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, SDMMCCLKSEL))       /*!< Mask  0x00010000 */
 
-#define RCC_D1KERNELCLKCFG_DSICLKSEL_OFFSET           (8U)
-#define RCC_D1KERNELCLKCFG_DSICLKSEL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, DSICLKSEL))         /*!< Mask  0x00001000 */
-#define RCC_D1KERNELCLKCFG_DSICLKSEL_PHYCLK           (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D1KERNELCLKCFG_DSICLKSEL_PLL2Q            (0x1UL)                                                                  /*!< Value 0x00000001 */
+#define RCC_D1KERNELCLKCFG_DSICLKSEL_OFFSET         (8U)
+#define RCC_D1KERNELCLKCFG_DSICLKSEL_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, DSICLKSEL))         /*!< Mask  0x00001000 */
 
-#define RCC_D1KERNELCLKCFG_QSPICLKSEL_OFFSET          (4U)
-#define RCC_D1KERNELCLKCFG_QSPICLKSEL_MASK            (0x3UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, QSPICLKSEL))        /*!< Mask  0x00000030 */
-#define RCC_D1KERNELCLKCFG_QSPICLKSEL_HCLK3           (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D1KERNELCLKCFG_QSPICLKSEL_PLL1Q           (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D1KERNELCLKCFG_QSPICLKSEL_PLL2R           (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D1KERNELCLKCFG_QSPICLKSEL_PERIPERAL       (0x3UL)                                                                  /*!< Value 0x00000003 */
+#define RCC_D1KERNELCLKCFG_QSPICLKSEL_OFFSET        (4U)
+#define RCC_D1KERNELCLKCFG_QSPICLKSEL_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, QSPICLKSEL))        /*!< Mask  0x00000030 */
 
-#define RCC_D1KERNELCLKCFG_FMCCLKSEL_OFFSET           (0U)
-#define RCC_D1KERNELCLKCFG_FMCCLKSEL_MASK             (0x3UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, FMCCLKSEL))         /*!< Mask  0x00000003 */
-#define RCC_D1KERNELCLKCFG_FMCCLKSEL_HCLK3            (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D1KERNELCLKCFG_FMCCLKSEL_PLL1Q            (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D1KERNELCLKCFG_FMCCLKSEL_PLL2R            (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D1KERNELCLKCFG_FMCCLKSEL_PERIPERAL        (0x3UL)                                                                  /*!< Value 0x00000003 */
+#define RCC_D1KERNELCLKCFG_FMCCLKSEL_OFFSET         (0U)
+#define RCC_D1KERNELCLKCFG_FMCCLKSEL_MASK           (0x3UL << REGISTER_FIELD_OFFSET(RCC, D1KERNELCLKCFG, FMCCLKSEL))         /*!< Mask  0x00000003 */
+
+// Values of the clock peripheral single wire kernel clock
+#define RCC_CLKPERIPHERAL_HSI      (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_CLKPERIPHERAL_CSI      (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_CLKPERIPHERAL_HSE      (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_CLKPERIPHERAL_DISABLE  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of the secure digital input/output MultiMediaCard inteerface kernel clock
+#define RCC_SDMMCCLK_PLL1Q  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SDMMCCLK_PLL2R  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the display serial interface kernel clock
+#define RCC_DSICLK_PHYCLK  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_DSICLK_PLL2Q   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the quad serial peripheral interface (QSPI) kernel clock
+#define RCC_QSPICLK_HCLK3      (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_QSPICLK_PLL1Q      (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_QSPICLK_PLL2R      (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_QSPICLK_PERIPERAL  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of the flexibler memory controller kernel clock
+#define RCC_FMCCLK_HCLK3      (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_FMCCLK_PLL1Q      (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_FMCCLK_PLL2R      (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_FMCCLK_PERIPERAL  (0x3UL)  /*!< Value 0x00000003 */
 
 /*!< Domain 2 kernel configuration register */
 #define RCC_D2KERNELCLKCFG0_SINGLEWIRECLKSEL_OFFSET     (31U)
 #define RCC_D2KERNELCLKCFG0_SINGLEWIRECLKSEL_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SINGLEWIRECLKSEL))     /*!< Mask  0x80000000 */
-#define RCC_D2KERNELCLKCFG0_SINGLEWIRECLKSEL_PCLK       (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SINGLEWIRECLKSEL_HSI        (0x1UL)                                                                      /*!< Value 0x00000001 */
 
 #define RCC_D2KERNELCLKCFG0_FDCANCLKSEL_OFFSET          (28U)
 #define RCC_D2KERNELCLKCFG0_FDCANCLKSEL_MASK            (0x3UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, FDCANCLKSEL))          /*!< Mask  0x30000000 */
-#define RCC_D2KERNELCLKCFG0_FDCANCLKSEL_HSE             (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_FDCANCLKSEL_PLL1Q           (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG0_FDCANCLKSEL_PLL2Q           (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG0_FDCANCLKSEL_DISABLE         (0x3UL)                                                                      /*!< Value 0x00000003 */
 
 #define RCC_D2KERNELCLKCFG0_SIGMADELTAMODCLKSEL_OFFSET  (24U)
 #define RCC_D2KERNELCLKCFG0_SIGMADELTAMODCLKSEL_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SIGMADELTAMODCLKSEL))  /*!< Mask  0x01000000 */
-#define RCC_D2KERNELCLKCFG0_SIGMADELTAMODCLKSEL_PCLK2   (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SIGMADELTAMODCLKSEL_SYSCLK  (0x1UL)                                                                      /*!< Value 0x00000001 */
 
 #define RCC_D2KERNELCLKCFG0_SPDIFRXCLKSEL_OFFSET        (20U)
 #define RCC_D2KERNELCLKCFG0_SPDIFRXCLKSEL_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SPDIFRXCLKSEL))        /*!< Mask  0x00300000 */
-#define RCC_D2KERNELCLKCFG0_SPDIFRXCLKSEL_PLL1Q         (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SPDIFRXCLKSEL_PLL2R         (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG0_SPDIFRXCLKSEL_PLL3R         (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG0_SPDIFRXCLKSEL_HSI           (0x3UL)                                                                      /*!< Value 0x00000003 */
 
 #define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_OFFSET          (16U)
 #define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_MASK            (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SPI45CLKSEL))          /*!< Mask  0x00070000 */
-#define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_APB             (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_PLL2Q           (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_PLL3Q           (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_HSI             (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_CSI             (0x4UL)                                                                      /*!< Value 0x00000004 */
-#define RCC_D2KERNELCLKCFG0_SPI45CLKSEL_HSE             (0x5UL)                                                                      /*!< Value 0x00000005 */
 
 #define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_OFFSET         (12U)
 #define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_MASK           (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SPI123CLKSEL))         /*!< Mask  0x00007000 */
-#define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_PLL1Q          (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_PLL2P          (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_PLL3P          (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_I2S            (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG0_SPI123CLKSEL_PERIPHERAL     (0x4UL)                                                                      /*!< Value 0x00000004 */
 
 #define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_OFFSET          (6U)
 #define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_MASK            (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SAI23CLKSEL))          /*!< Mask  0x000001C0 */
-#define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_PLL1Q           (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_PLL2P           (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_PLL3P           (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_I2S             (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG0_SAI23CLKSEL_PERIPHERAL      (0x4UL)                                                                      /*!< Value 0x00000004 */
 
 #define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_OFFSET           (0U)
 #define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_MASK             (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG0, SAI1CLKSEL))           /*!< Mask  0x00000007 */
-#define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_PLL1Q            (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_PLL2P            (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_PLL3P            (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_I2S              (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG0_SAI1CLKSEL_PERIPHERAL       (0x4UL)                                                                      /*!< Value 0x00000004 */
 
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_OFFSET        (28U)
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_MASK          (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, LPTIMERCLKSEL))        /*!< Mask  0x70000000 */
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_PCLK1         (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_PLL2P         (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_PLL3R         (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_LSE           (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_LSI           (0x4UL)                                                                      /*!< Value 0x00000004 */
-#define RCC_D2KERNELCLKCFG1_LPTIMERCLKSEL_PERIPHERAL    (0x5UL)                                                                      /*!< Value 0x00000005 */
+#define RCC_D2KERNELCLKCFG1_LPTIMER1CLKSEL_OFFSET       (28U)
+#define RCC_D2KERNELCLKCFG1_LPTIMER1CLKSEL_MASK         (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, LPTIMER1CLKSEL))       /*!< Mask  0x70000000 */
 
 #define RCC_D2KERNELCLKCFG1_HDMICECCLKSEL_OFFSET        (22U)
 #define RCC_D2KERNELCLKCFG1_HDMICECCLKSEL_MASK          (0x3UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, HDMICECCLKSEL))        /*!< Mask  0x00C00000 */
-#define RCC_D2KERNELCLKCFG1_HDMICECCLKSEL_LSE           (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_HDMICECCLKSEL_LSI           (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_HDMICECCLKSEL_CSI           (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_HDMICECCLKSEL_DISABLE       (0x3UL)                                                                      /*!< Value 0x00000003 */
 
 #define RCC_D2KERNELCLKCFG1_USBCLKSEL_OFFSET            (20U)
 #define RCC_D2KERNELCLKCFG1_USBCLKSEL_MASK              (0x3UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, USBCLKSEL))            /*!< Mask  0x00300000 */
-#define RCC_D2KERNELCLKCFG1_USBCLKSEL_DISABLE           (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_USBCLKSEL_PLL1Q             (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_USBCLKSEL_PLL3Q             (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_USBCLKSEL_HSI48             (0x3UL)                                                                      /*!< Value 0x00000003 */
 
 #define RCC_D2KERNELCLKCFG1_I2C123CLKSEL_OFFSET         (12U)
 #define RCC_D2KERNELCLKCFG1_I2C123CLKSEL_MASK           (0x3UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, I2C123CLKSEL))         /*!< Mask  0x00003000 */
-#define RCC_D2KERNELCLKCFG1_I2C123CLKSEL_PCLK1          (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_I2C123CLKSEL_PLL3R          (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_I2C123CLKSEL_HSI            (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_I2C123CLKSEL_CSI            (0x3UL)                                                                      /*!< Value 0x00000003 */
 
 #define RCC_D2KERNELCLKCFG1_RNGCLKSEL_OFFSET            (8U)
 #define RCC_D2KERNELCLKCFG1_RNGCLKSEL_MASK              (0x3UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, RNGCLKSEL))            /*!< Mask  0x00000300 */
-#define RCC_D2KERNELCLKCFG1_RNGCLKSEL_HSI48             (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_RNGCLKSEL_PLL1Q             (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_RNGCLKSEL_LSE               (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_RNGCLKSEL_LSI               (0x3UL)                                                                      /*!< Value 0x00000003 */
 
 #define RCC_D2KERNELCLKCFG1_UART16CLKSEL_OFFSET         (3U)
 #define RCC_D2KERNELCLKCFG1_UART16CLKSEL_MASK           (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, UART16CLKSEL))         /*!< Mask  0x0000001C */
-#define RCC_D2KERNELCLKCFG1_UART16CLKSEL_PCLK2          (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_UART16CLKSEL_PLL2Q          (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_UART16CLKSEL_PLL3Q          (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_UART16CLKSEL_HSI            (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG1_UART16CLKSEL_LSI            (0x4UL)                                                                      /*!< Value 0x00000004 */
-#define RCC_D2KERNELCLKCFG1_UART16CLKSEL_LSE            (0x5UL)                                                                      /*!< Value 0x00000005 */
 
 #define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_OFFSET     (0U)
 #define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_MASK       (0x7UL << REGISTER_FIELD_OFFSET(RCC, D2KERNELCLKCFG1, UART234578CLKSEL))     /*!< Mask  0x00000007 */
-#define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_PCLK1      (0x0UL)                                                                      /*!< Value 0x00000000 */
-#define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_PLL2Q      (0x1UL)                                                                      /*!< Value 0x00000001 */
-#define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_PLL3Q      (0x2UL)                                                                      /*!< Value 0x00000002 */
-#define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_HSI        (0x3UL)                                                                      /*!< Value 0x00000003 */
-#define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_CSI        (0x4UL)                                                                      /*!< Value 0x00000004 */
-#define RCC_D2KERNELCLKCFG1_UART234578CLKSEL_LSE        (0x5UL)                                                                      /*!< Value 0x00000005 */
+
+// Values of single wire kernel clock
+#define RCC_SINGLEWIRECLK_PCLK  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SINGLEWIRECLK_HSI   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the flexible data rate controller area network kernel clock
+#define RCC_FDCANCLK_HSE      (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_FDCANCLK_PLL1Q    (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_FDCANCLK_PLL2Q    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_FDCANCLK_DISABLE  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of the digital filter sigma delta modulator kernel clock
+#define RCC_SIGMADELTAMODCLK_PCLK2   (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SIGMADELTAMODCLK_SYSCLK  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the Sony/Philips digital interface kernel clock
+#define RCC_SPDIFRXCLK_PLL1Q  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SPDIFRXCLK_PLL2R  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SPDIFRXCLK_PLL3R  (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SPDIFRXCLK_HSI    (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of serial peripheral interface 4/5 (SPI4/5) kernel clock
+#define RCC_SPI45CLK_APB    (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SPI45CLK_PLL2Q  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SPI45CLK_PLL3Q  (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SPI45CLK_HSI    (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SPI45CLK_CSI    (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_SPI45CLK_HSE    (0x5UL)  /*!< Value 0x00000005 */
+
+// Values of serial peripheral interface 1/2/3 (SPI1/2/3) kernel clock
+#define RCC_SPI123CLK_PLL1Q       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SPI123CLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SPI123CLK_PLL3P       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SPI123CLK_I2S         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SPI123CLK_PERIPHERAL  (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of the serial audio interface 2/3 (SAI2/3) kernel clock
+#define RCC_SAI23CLK_PLL1Q       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SAI23CLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SAI23CLK_PLL3P       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SAI23CLK_I2S         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SAI23CLK_PERIPHERAL  (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of the serial audio interface 1 (SAI1) kernel clock
+#define RCC_SAI1CLK_PLL1Q       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SAI1CLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SAI1CLK_PLL3P       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SAI1CLK_I2S         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SAI1CLK_PERIPHERAL  (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of low power timer 1 kernel clock
+#define RCC_LPTIMER1CLK_PCLK1       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_LPTIMER1CLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_LPTIMER1CLK_PLL3R       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_LPTIMER1CLK_LSE         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_LPTIMER1CLK_LSI         (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_LPTIMER1CLK_PERIPHERAL  (0x5UL)  /*!< Value 0x00000005 */
+
+// Values of HDMI consumer electronics control (CEC) kernel clock
+#define RCC_HDMICECCLK_LSE      (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_HDMICECCLK_LSI      (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_HDMICECCLK_CSI      (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_HDMICECCLK_DISABLE  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of USB kernel clock
+#define RCC_USBCLK_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_USBCLK_PLL1Q    (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_USBCLK_PLL3Q    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_USBCLK_HSI48    (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of inter-integrated circuit 1/2/3 (I2C1/2/3) kernel clock
+#define RCC_I2C123CLK_PCLK1  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_I2C123CLK_PLL3R  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_I2C123CLK_HSI    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_I2C123CLK_CSI    (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of random number generator kernel clock
+#define RCC_RNGCLK_HSI48  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_RNGCLK_PLL1Q  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_RNGCLK_LSE    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_RNGCLK_LSI    (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of UART 1/6 kernel clock
+#define RCC_UART16CLK_PCLK2  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_UART16CLK_PLL2Q  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_UART16CLK_PLL3Q  (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_UART16CLK_HSI    (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_UART16CLK_LSI    (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_UART16CLK_LSE    (0x5UL)  /*!< Value 0x00000005 */
+
+// Values of UART 2/3/4/5/7/8 kernel clock
+#define RCC_UART234578CLK_PCLK1  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_UART234578CLK_PLL2Q  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_UART234578CLK_PLL3Q  (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_UART234578CLK_HSI    (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_UART234578CLK_CSI    (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_UART234578CLK_LSE    (0x5UL)  /*!< Value 0x00000005 */
 
 /*!< Domain 3 kernel configuration register */
 #define RCC_D3KERNELCLKCFG_SPI6CLKSEL_OFFSET            (28U)
 #define RCC_D3KERNELCLKCFG_SPI6CLKSEL_MASK              (0x7UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, SPI6CLKSEL))        /*!< Mask  0x70000000 */
-#define RCC_D3KERNELCLKCFG_SPI6CLKSEL_PCLK4             (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_SPI6CLKSEL_PLL2Q             (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_SPI6CLKSEL_PLL3Q             (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_SPI6CLKSEL_HSI               (0x3UL)                                                                  /*!< Value 0x00000003 */
-#define RCC_D3KERNELCLKCFG_SPI6CLKSEL_CSI               (0x4UL)                                                                  /*!< Value 0x00000004 */
-#define RCC_D3KERNELCLKCFG_SPI6CLKSEL_HSE               (0x5UL)                                                                  /*!< Value 0x00000005 */
 
 #define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_OFFSET           (24U)
 #define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_MASK             (0x7UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, SAI4BCLKSEL))       /*!< Mask  0x07000000 */
-#define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_PLL1Q            (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_PLL2P            (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_PLL3P            (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_I2S              (0x3UL)                                                                  /*!< Value 0x00000003 */
-#define RCC_D3KERNELCLKCFG_SAI4BCLKSEL_PERIPHERAL       (0x4UL)                                                                  /*!< Value 0x00000004 */
 
 #define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_OFFSET           (21U)
 #define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_MASK             (0x7UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, SAI4ACLKSEL))       /*!< Mask  0x00E00000 */
-#define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_PLL1Q            (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_PLL2P            (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_PLL3P            (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_I2S              (0x3UL)                                                                  /*!< Value 0x00000003 */
-#define RCC_D3KERNELCLKCFG_SAI4ACLKSEL_PERIPHERAL       (0x4UL)                                                                  /*!< Value 0x00000004 */
 
 #define RCC_D3KERNELCLKCFG_ADCCLKSEL_OFFSET             (16U)
 #define RCC_D3KERNELCLKCFG_ADCCLKSEL_MASK               (0x3UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, ADCCLKSEL))         /*!< Mask  0x00030000 */
-#define RCC_D3KERNELCLKCFG_ADCCLKSEL_PLL2P              (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_ADCCLKSEL_PLL3R              (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_ADCCLKSEL_PERIPHERAL         (0x2UL)                                                                  /*!< Value 0x00000002 */
 
 #define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_OFFSET      (13U)
 #define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_MASK        (0x7UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, LPTIMER345CLKSEL))  /*!< Mask  0x0000E000 */
-#define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_PCLK4       (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_PLL2P       (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_PLL3R       (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_LSE         (0x3UL)                                                                  /*!< Value 0x00000003 */
-#define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_LSI         (0x4UL)                                                                  /*!< Value 0x00000004 */
-#define RCC_D3KERNELCLKCFG_LPTIMER345CLKSEL_PERIPHERAL  (0x5UL)                                                                  /*!< Value 0x00000005 */
 
 #define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_OFFSET        (10U)
 #define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_MASK          (0x7UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, LPTIMER2CLKSEL))    /*!< Mask  0x00001C00 */
-#define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_PCLK4         (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_PLL2P         (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_PLL3R         (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_LSE           (0x3UL)                                                                  /*!< Value 0x00000003 */
-#define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_LSI           (0x4UL)                                                                  /*!< Value 0x00000004 */
-#define RCC_D3KERNELCLKCFG_LPTIMER2CLKSEL_PERIPHERAL    (0x5UL)                                                                  /*!< Value 0x00000005 */
 
 #define RCC_D3KERNELCLKCFG_I2C4CLKSEL_OFFSET            (8U)
 #define RCC_D3KERNELCLKCFG_I2C4CLKSEL_MASK              (0x3UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, I2C4CLKSEL))        /*!< Mask  0x00000300 */
-#define RCC_D3KERNELCLKCFG_I2C4CLKSEL_PCLK4             (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_I2C4CLKSEL_PLL3R             (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_I2C4CLKSEL_HSI               (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_I2C4CLKSEL_CSI               (0x3UL)                                                                  /*!< Value 0x00000003 */
 
 #define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_OFFSET         (0U)
 #define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_MASK           (0x7UL << REGISTER_FIELD_OFFSET(RCC, D3KERNELCLKCFG, LPUART1CLKSEL))     /*!< Mask  0x00000007 */
-#define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_PCLKD3         (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_PLL2Q          (0x1UL)                                                                  /*!< Value 0x00000001 */
-#define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_PLL3Q          (0x2UL)                                                                  /*!< Value 0x00000002 */
-#define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_HSI            (0x3UL)                                                                  /*!< Value 0x00000003 */
-#define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_CSI            (0x4UL)                                                                  /*!< Value 0x00000004 */
-#define RCC_D3KERNELCLKCFG_LPUART1CLKSEL_LSE            (0x5UL)                                                                  /*!< Value 0x00000005 */
+
+// Values of serial peripheral interface 6 (SPI6) kernel clock
+#define RCC_SPI6CLK_PCLK4  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SPI6CLK_PLL2Q  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SPI6CLK_PLL3Q  (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SPI6CLK_HSI    (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SPI6CLK_CSI    (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_SPI6CLK_HSE    (0x5UL)  /*!< Value 0x00000005 */
+
+// Values of the sub-block B of serial audio interface 4 (SAI4) kernel clock
+#define RCC_SAI4BCLK_PLL1Q       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SAI4BCLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SAI4BCLK_PLL3P       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SAI4BCLK_I2S         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SAI4BCLK_PERIPHERAL  (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of the sub-block A of serial audio interface 4 (SAI4) kernel clock
+#define RCC_SAI4ACLK_PLL1Q       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_SAI4ACLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_SAI4ACLK_PLL3P       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_SAI4ACLK_I2S         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_SAI4ACLK_PERIPHERAL  (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of analog to digital converter kernel clock
+#define RCC_ADCCLK_PLL2P       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_ADCCLK_PLL3R       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_ADCCLK_PERIPHERAL  (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of low power timer 3/4/5 kernel clock
+#define RCC_LPTIMER345CLK_PCLK4       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_LPTIMER345CLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_LPTIMER345CLK_PLL3R       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_LPTIMER345CLK_LSE         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_LPTIMER345CLK_LSI         (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_LPTIMER345CLK_PERIPHERAL  (0x5UL)  /*!< Value 0x00000005 */
+
+// Values of low power timer 2 kernel clock
+#define RCC_LPTIMER2CLK_PCLK4       (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_LPTIMER2CLK_PLL2P       (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_LPTIMER2CLK_PLL3R       (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_LPTIMER2CLK_LSE         (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_LPTIMER2CLK_LSI         (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_LPTIMER2CLK_PERIPHERAL  (0x5UL)  /*!< Value 0x00000005 */
+
+// Values of inter-integrated circuit 4 (I2C4) kernel clock
+#define RCC_I2C4CLK_PCLK4  (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_I2C4CLK_PLL3R  (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_I2C4CLK_HSI    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_I2C4CLK_CSI    (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of low power UART 1 kernel clock
+#define RCC_LPUART1CLK_PCLKD3   (0x0UL)  /*!< Value 0x00000000 */
+#define RCC_LPUART1CLK_PLL2Q    (0x1UL)  /*!< Value 0x00000001 */
+#define RCC_LPUART1CLK_PLL3Q    (0x2UL)  /*!< Value 0x00000002 */
+#define RCC_LPUART1CLK_HSI      (0x3UL)  /*!< Value 0x00000003 */
+#define RCC_LPUART1CLK_CSI      (0x4UL)  /*!< Value 0x00000004 */
+#define RCC_LPUART1CLK_LSE      (0x5UL)  /*!< Value 0x00000005 */
+#define RCC_LPUART1CLK_DISABLE  (0x7UL)  /*!< Value 0x00000007 */
 
 /*!< Clock source interrupt enable register */
 #define RCC_CLKINTEN_LSECLKSEC_OFFSET  (9U)
