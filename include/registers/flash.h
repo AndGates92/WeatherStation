@@ -321,170 +321,236 @@ typedef struct {
 /*!< Bank status register register */
 #define FLASH_BANKSTATUS_CRCRDERRINT_OFFSET               (28U)
 #define FLASH_BANKSTATUS_CRCRDERRINT_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, CRCRDERRINT))         /*!< Mask  0x10000000 */
-#define FLASH_BANKSTATUS_CRCRDERRINT_NOTTRIGGERED         (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_CRCRDERRINT_TRIGGERED            (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_CRCEOCINT_OFFSET                 (27U)
 #define FLASH_BANKSTATUS_CRCEOCINT_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, CRCEOCINT))           /*!< Mask  0x08000000 */
-#define FLASH_BANKSTATUS_CRCEOCINT_NOTTRIGGERED           (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_CRCEOCINT_TRIGGERED              (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_ERRDOUBLEDETERRINT_OFFSET        (26U)
 #define FLASH_BANKSTATUS_ERRDOUBLEDETERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, ERRDOUBLEDETERRINT))  /*!< Mask  0x04000000 */
-#define FLASH_BANKSTATUS_ERRDOUBLEDETERRINT_NOTTRIGGERED  (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_ERRDOUBLEDETERRINT_TRIGGERED     (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_ERRSGLCORRERRINT_OFFSET          (25U)
 #define FLASH_BANKSTATUS_ERRSGLCORRERRINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, ERRSGLCORRERRINT))    /*!< Mask  0x02000000 */
-#define FLASH_BANKSTATUS_ERRSGLCORRERRINT_NOTTRIGGERED    (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_ERRSGLCORRERRINT_TRIGGERED       (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_SECRDERRINT_OFFSET               (24U)
 #define FLASH_BANKSTATUS_SECRDERRINT_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, SECRDERRINT))         /*!< Mask  0x01000000 */
-#define FLASH_BANKSTATUS_SECRDERRINT_NOTTRIGGERED         (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_SECRDERRINT_TRIGGERED            (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_1RCRDERRINT_OFFSET               (23U)
 #define FLASH_BANKSTATUS_RDPROTERRINT_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, RDPROTERRINT))        /*!< Mask  0x00800000 */
-#define FLASH_BANKSTATUS_RDPROTERRINT_NOTTRIGGERED        (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_RDPROTERRINT_TRIGGERED           (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_WREROPERRINT_OFFSET              (22U)
 #define FLASH_BANKSTATUS_WREROPERRINT_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, WREROPERRINT))        /*!< Mask  0x00400000 */
-#define FLASH_BANKSTATUS_WREROPERRINT_NOTTRIGGERED        (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_WREROPERRINT_TRIGGERED           (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_WRINCOSTENCYERRINT_OFFSET        (21U)
 #define FLASH_BANKSTATUS_WRINCOSTENCYERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, WRINCOSTENCYERRINT))  /*!< Mask  0x00200000 */
-#define FLASH_BANKSTATUS_WRINCOSTENCYERRINT_NOTTRIGGERED  (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_WRINCOSTENCYERRINT_TRIGGERED     (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_WRSTRBERRINT_OFFSET              (19U)
 #define FLASH_BANKSTATUS_WRSTRBERRINT_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, WRSTRBERRINT))        /*!< Mask  0x00080000 */
-#define FLASH_BANKSTATUS_WRSTRBERRINT_NOTTRIGGERED        (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_WRSTRBERRINT_TRIGGERED           (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_PROGSEQINT_OFFSET                (18U)
 #define FLASH_BANKSTATUS_PROGSEQINT_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, PROGSEQINT))          /*!< Mask  0x00040000 */
-#define FLASH_BANKSTATUS_PROGSEQINT_NOTTRIGGERED          (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_PROGSEQINT_TRIGGERED             (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_WRPROTERRINT_OFFSET              (17U)
 #define FLASH_BANKSTATUS_WRPROTERRINT_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, WRPROTERRINT))        /*!< Mask  0x00020000 */
-#define FLASH_BANKSTATUS_WRPROTERRINT_NOTTRIGGERED        (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_WRPROTERRINT_TRIGGERED           (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_EOPINT_OFFSET                    (16U)
 #define FLASH_BANKSTATUS_EOPINT_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, EOPINT))              /*!< Mask  0x00010000 */
-#define FLASH_BANKSTATUS_EOPINT_NOTTRIGGERED              (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_EOPINT_TRIGGERED                 (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_CRCBUSY_OFFSET                   (3U)
 #define FLASH_BANKSTATUS_CRCBUSY_MASK                     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, CRCBUSYFLAG))         /*!< Mask  0x00000008 */
-#define FLASH_BANKSTATUS_CRCBUSY_NOCALCRUNNING            (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_CRCBUSY_CALCRUNNINGG             (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_WAITQUEUEFLAG_OFFSET             (2U)
 #define FLASH_BANKSTATUS_WAITQUEUE_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, WAITQUEUEFLAG))       /*!< Mask  0x00000004 */
-#define FLASH_BANKSTATUS_WAITQUEUE_EMPTY                  (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_WAITQUEUE_OPPENDING              (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_WRITEBUF_OFFSET                  (1U)
 #define FLASH_BANKSTATUS_WRITEBUF_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, WRITEBUF))            /*!< Mask  0x00000002 */
-#define FLASH_BANKSTATUS_WRITEBUF_EMPTY                   (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_WRITEBUF_WAITINGDATA             (0x1UL)                                                                  /*!< Value 0x00000001 */
 
 #define FLASH_BANKSTATUS_BUSYFLAGS_OFFSET                 (0U)
 #define FLASH_BANKSTATUS_BUSYFLAGS_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKSTATUS, BUSYFLAGS))           /*!< Mask  0x00000001 */
-#define FLASH_BANKSTATUS_BUSYFLAGS_NOOP                   (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define FLASH_BANKSTATUS_BUSYFLAGS_OPONGOING              (0x1UL)                                                                  /*!< Value 0x00000001 */
+
+// Values of bank CRC read error interrupt
+#define FLASH_BANKCRCRDERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCRDERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank CRC end of calculation interrupt
+#define FLASH_BANKCRCEOCINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCEOCINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank ECC double detection error interrupt
+#define FLASH_BANKERRDOUBLEDETERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERRDOUBLEDETERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank single correction error interrupt
+#define FLASH_BANKERRSGLCORRERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERRSGLCORRERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank secure error interrupt
+#define FLASH_BANKSECRDERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKSECRDERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank read protection error interrupt
+#define FLASH_BANKRDPROTERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKRDPROTERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write/erase error interrupt
+#define FLASH_BANKWREROPERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWREROPERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank inconsistency error interrupt
+#define FLASH_BANKWRINCOSTENCYERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRINCOSTENCYERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank strobe error interrupt
+#define FLASH_BANKWRSTRBERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRSTRBERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank programming sequence error interrupt
+#define FLASH_BANKPROGSEQINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKPROGSEQINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write protection error interrupt
+#define FLASH_BANKWRPROTERRINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRPROTERRINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank end of program error interrupt
+#define FLASH_BANKEOPINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKEOPINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank CRC busy bit
+#define FLASH_BANKCRCBUSY_NOCALCRUNNING  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCBUSY_CALCRUNNINGG   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank wait queue empty bit
+#define FLASH_BANKWAITQUEUE_EMPTY      (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWAITQUEUE_OPWAITING  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write buffer empty bit
+#define FLASH_BANKWRITEBUF_EMPTY        (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRITEBUF_WAITINGDATA  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank busy bit
+#define FLASH_BANKBUSYFLAGS_NOOP       (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKBUSYFLAGS_OPONGOING  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Bank clear control register */
 #define FLASH_BANKCLRCTRL_CRCRDERRINT_OFFSET         (28U)
 #define FLASH_BANKCLRCTRL_CRCRDERRINT_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, CRCRDERRINT))         /*!< Mask  0x10000000 */
-#define FLASH_BANKCLRCTRL_CRCRDERRINT_NOCLR          (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_CRCRDERRINT_CLR            (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_CRCEOCINT_OFFSET           (27U)
 #define FLASH_BANKCLRCTRL_CRCEOCINT_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, CRCEOCINT))           /*!< Mask  0x08000000 */
-#define FLASH_BANKCLRCTRL_CRCEOCINT_NOCLR            (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_CRCEOCINT_CLR              (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_ERRDOUBLEDETERRINT_OFFSET  (26U)
 #define FLASH_BANKCLRCTRL_ERRDOUBLEDETERRINT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, ERRDOUBLEDETERRINT))  /*!< Mask  0x04000000 */
-#define FLASH_BANKCLRCTRL_ERRDOUBLEDETERRINT_NOCLR   (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_ERRDOUBLEDETERRINT_CLR     (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_ERRSGLCORRERRINT_OFFSET    (25U)
 #define FLASH_BANKCLRCTRL_ERRSGLCORRERRINT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, ERRSGLCORRERRINT))    /*!< Mask  0x02000000 */
-#define FLASH_BANKCLRCTRL_ERRSGLCORRERRINT_NOCLR     (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_ERRSGLCORRERRINT_CLR       (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_SECRDERRINT_OFFSET         (24U)
 #define FLASH_BANKCLRCTRL_SECRDERRINT_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, SECRDERRINT))         /*!< Mask  0x01000000 */
-#define FLASH_BANKCLRCTRL_SECRDERRINT_NOCLR          (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_SECRDERRINT_CLR            (0x1UL)                                                                   /*!< Value 0x00000001 */
 
-#define FLASH_BANKCLRCTRL_1RCRDERRINT_OFFSET         (23U)
+#define FLASH_BANKCLRCTRL_RDPROTERRINT_OFFSET        (23U)
 #define FLASH_BANKCLRCTRL_RDPROTERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, RDPROTERRINT))        /*!< Mask  0x00800000 */
-#define FLASH_BANKCLRCTRL_RDPROTERRINT_NOCLR         (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_RDPROTERRINT_CLR           (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_WREROPERRINT_OFFSET        (22U)
 #define FLASH_BANKCLRCTRL_WREROPERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, WREROPERRINT))        /*!< Mask  0x00400000 */
-#define FLASH_BANKCLRCTRL_WREROPERRINT_NOCLR         (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_WREROPERRINT_CLR           (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_WRINCOSTENCYERRINT_OFFSET  (21U)
 #define FLASH_BANKCLRCTRL_WRINCOSTENCYERRINT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, WRINCOSTENCYERRINT))  /*!< Mask  0x00200000 */
-#define FLASH_BANKCLRCTRL_WRINCOSTENCYERRINT_NOCLR   (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_WRINCOSTENCYERRINT_CLR     (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_WRSTRBERRINT_OFFSET        (19U)
 #define FLASH_BANKCLRCTRL_WRSTRBERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, WRSTRBERRINT))        /*!< Mask  0x00080000 */
-#define FLASH_BANKCLRCTRL_WRSTRBERRINT_NOCLR         (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_WRSTRBERRINT_CLR           (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_PROGSEQINT_OFFSET          (18U)
 #define FLASH_BANKCLRCTRL_PROGSEQINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, PROGSEQINT))          /*!< Mask  0x00040000 */
-#define FLASH_BANKCLRCTRL_PROGSEQINT_NOCLR           (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_PROGSEQINT_CLR             (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_WRPROTERRINT_OFFSET        (17U)
 #define FLASH_BANKCLRCTRL_WRPROTERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, WRPROTERRINT))        /*!< Mask  0x00020000 */
-#define FLASH_BANKCLRCTRL_WRPROTERRINT_NOCLR         (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_WRPROTERRINT_CLR           (0x1UL)                                                                   /*!< Value 0x00000001 */
 
 #define FLASH_BANKCLRCTRL_EOPINT_OFFSET              (16U)
 #define FLASH_BANKCLRCTRL_EOPINT_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCLRCTRL, EOPINT))              /*!< Mask  0x00010000 */
-#define FLASH_BANKCLRCTRL_EOPINT_NOCLR               (0x0UL)                                                                   /*!< Value 0x00000000 */
-#define FLASH_BANKCLRCTRL_EOPINT_CLR                 (0x1UL)                                                                   /*!< Value 0x00000001 */
+
+// Values of bank CRC read error interrupt clear bit
+#define FLASH_BANKCRCRDERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCRDERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank CRC end of calculator interrupt clear bit
+#define FLASH_BANKCRCEOCINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCEOCINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank double detection error interrupt clear bit
+#define FLASH_BANKERRDOUBLEDETERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERRDOUBLEDETERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank single correction error interrupt clear bit
+#define FLASH_BANKERRSGLCORRERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERRSGLCORRERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank secure error interrupt clear bit
+#define FLASH_BANKSECRDERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKSECRDERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank read protection error interrupt clear bit
+#define FLASH_BANKRDPROTERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKRDPROTERRINT_CLR  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write/erase error interrupt clear bit
+#define FLASH_BANKWREROPERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWREROPERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write inconsistency error interrupt clear bit
+#define FLASH_BANKWRINCOSTENCYERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRINCOSTENCYERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write strobes error interrupt clear bit
+#define FLASH_BANKWRSTRBERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRSTRBERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank programming sequence interrupt clear bit
+#define FLASH_BANKPROGSEQINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKPROGSEQINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write protection error interrupt clear bit
+#define FLASH_BANKWRPROTERRINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRPROTERRINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank end of program interrupt clear bit
+#define FLASH_BANKEOPINT_NOCLR  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKEOPINT_CLR    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Option control register */
-#define FLASH_OPTCTRL_SWAPBANKS_OFFSET          (31U)
-#define FLASH_OPTCTRL_SWAPBANKS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, SWAPBANKS))         /*!< Mask  0x80000000 */
-#define FLASH_OPTCTRL_SWAPBANKS_DISABLE         (0x0UL)                                                            /*!< Value 0x00000000 */
-#define FLASH_OPTCTRL_SWAPBANKS_ENABLE          (0x1UL)                                                            /*!< Value 0x00000001 */
+#define FLASH_OPTCTRL_SWAPBANKS_OFFSET         (31U)
+#define FLASH_OPTCTRL_SWAPBANKS_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, SWAPBANKS))         /*!< Mask  0x80000000 */
 
-#define FLASH_OPTCTRL_OPTBYTECHANGEINT_OFFSET   (30U)
-#define FLASH_OPTCTRL_OPTBYTECHANGEINT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, OPTBYTECHANGEINT))  /*!< Mask  0x40000000 */
-#define FLASH_OPTCTRL_OPTBYTECHANGEINT_DISABLE  (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_OPTCTRL_OPTBYTECHANGEINT_ENABLE   (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_OPTCTRL_OPTBYTECHANGEINT_OFFSET  (30U)
+#define FLASH_OPTCTRL_OPTBYTECHANGEINT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, OPTBYTECHANGEINT))  /*!< Mask  0x40000000 */
 
-#define FLASH_OPTCTRL_MASSERASE_OFFSET          (4U)
-#define FLASH_OPTCTRL_MASSERASE_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, MASSERASE))         /*!< Mask  0x00000010 */
-#define FLASH_OPTCTRL_MASSERASE_NOREQUEST       (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_OPTCTRL_MASSERASE_REQUEST         (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_OPTCTRL_MASSERASE_OFFSET         (4U)
+#define FLASH_OPTCTRL_MASSERASE_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, MASSERASE))         /*!< Mask  0x00000010 */
 
-#define FLASH_OPTCTRL_OPTBYTESTART_OFFSET       (1U)
-#define FLASH_OPTCTRL_OPTBYTESTART_MASK         (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, OPTBYTESTART))      /*!< Mask  0x00000002 */
-#define FLASH_OPTCTRL_OPTBYTESTART_NOTRIGGER    (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_OPTCTRL_OPTBYTESTART_TRIGGER      (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_OPTCTRL_OPTBYTESTART_OFFSET      (1U)
+#define FLASH_OPTCTRL_OPTBYTESTART_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, OPTBYTESTART))      /*!< Mask  0x00000002 */
 
-#define FLASH_OPTCTRL_LOCKCTRL_OFFSET           (0U)
-#define FLASH_OPTCTRL_LOCKCTRL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, LOCKCTRL))          /*!< Mask  0x00000001 */
-#define FLASH_OPTCTRL_LOCKCTRL_UNLOCKED         (0x0UL)                                                             /*!< Value 0x00000000 */
-#define FLASH_OPTCTRL_LOCKCTRL_LOCKED           (0x1UL)                                                             /*!< Value 0x00000001 */
+#define FLASH_OPTCTRL_LOCKCTRL_OFFSET          (0U)
+#define FLASH_OPTCTRL_LOCKCTRL_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, OPTCTRL, LOCKCTRL))          /*!< Mask  0x00000001 */
+
+// Values of swap bank enable bit
+#define FLASH_SWAPBANKS_DISABLED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_SWAPBANKS_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of option byte change error interrupt enable bit
+#define FLASH_OPTBYTECHANGEINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTBYTECHANGEINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of mass erase request bit
+#define FLASH_OPTMASSERASE_NOREQUEST  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTMASSERASE_REQUEST    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of option byte change start bit
+#define FLASH_OPTBYTESTART_NOTRIGGER  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTBYTESTART_TRIGGER    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of option configuration lock bit
+#define FLASH_OPTLOCKCTRL_UNLOCKED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_OPTLOCKCTRL_LOCKED    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Current option status register */
 #define FLASH_CUROPTSTATUS_SWAPBANKS_OFFSET                 (31U)

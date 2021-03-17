@@ -64,388 +64,255 @@ typedef struct {
 /*!< Peripheral mode configuration register */
 #define SYSCFG_PERIPHERALMODECFG_PC3SWITCH_OFFSET                (27U)
 #define SYSCFG_PERIPHERALMODECFG_PC3SWITCH_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PC3SWITCH))         /*!< Mask  0x08000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC3SWITCH_CLOSE                 (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC3SWITCH_OPEN                  (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_PC2SWITCH_OFFSET                (26U)
 #define SYSCFG_PERIPHERALMODECFG_PC2SWITCH_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PC2SWITCH))         /*!< Mask  0x04000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC2SWITCH_CLOSE                 (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC2SWITCH_OPEN                  (0x1UL)                                                                        /*!< Value 0x00000001 */
 
-#define SYSCFG_PERIPHERALMODECFG_PC1SWITCH_OFFSET                (25U)
-#define SYSCFG_PERIPHERALMODECFG_PC1SWITCH_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PC1SWITCH))         /*!< Mask  0x02000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC1SWITCH_CLOSE                 (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC1SWITCH_OPEN                  (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_PERIPHERALMODECFG_PA1SWITCH_OFFSET                (25U)
+#define SYSCFG_PERIPHERALMODECFG_PA1SWITCH_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PA1SWITCH))         /*!< Mask  0x02000000 */
 
-#define SYSCFG_PERIPHERALMODECFG_PC0SWITCH_OFFSET                (24U)
-#define SYSCFG_PERIPHERALMODECFG_PC0SWITCH_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PC0SWITCH))         /*!< Mask  0x01000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC0SWITCH_CLOSE                 (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PC0SWITCH_OPEN                  (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_PERIPHERALMODECFG_PA0SWITCH_OFFSET                (24U)
+#define SYSCFG_PERIPHERALMODECFG_PA0SWITCH_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PA0SWITCH))         /*!< Mask  0x01000000 */
 
 #define SYSCFG_PERIPHERALMODECFG_ETHERNETPHY_OFFSET              (210U)
 #define SYSCFG_PERIPHERALMODECFG_ETHERNETPHY_MASK                (0x7UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, ETHERNETPHY))       /*!< Mask  0x00600000 */
-#define SYSCFG_PERIPHERALMODECFG_ETHERNETPHY_MII                 (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_ETHERNETPHY_RMII                (0x4UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_ANALOGPWESUPPLY_OFFSET          (9U)
 #define SYSCFG_PERIPHERALMODECFG_ANALOGPWESUPPLY_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, ANALOGPWESUPPLY))   /*!< Mask  0x00000200 */
-#define SYSCFG_PERIPHERALMODECFG_ANALOGPWESUPPLY_VDDIFNOBOOSTER  (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_ANALOGPWESUPPLY_ALWAYSBOOTSER   (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_BOOSTER_OFFSET                  (8U)
 #define SYSCFG_PERIPHERALMODECFG_BOOSTER_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, BOOSTER))           /*!< Mask  0x00000100 */
-#define SYSCFG_PERIPHERALMODECFG_BOOSTER_DISABLE                 (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_BOOSTER_ENABLE                  (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_PB9FASTMODEPLUS_OFFSET          (7U)
 #define SYSCFG_PERIPHERALMODECFG_PB9FASTMODEPLUS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PB9FASTMODEPLUS))   /*!< Mask  0x00000080 */
-#define SYSCFG_PERIPHERALMODECFG_PB9FASTMODEPLUS_DISABLE         (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PB9FASTMODEPLUS_ENABLE          (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_PB8FASTMODEPLUS_OFFSET          (6U)
 #define SYSCFG_PERIPHERALMODECFG_PB8FASTMODEPLUS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PB8FASTMODEPLUS))   /*!< Mask  0x00000040 */
-#define SYSCFG_PERIPHERALMODECFG_PB8FASTMODEPLUS_DISABLE         (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PB8FASTMODEPLUS_ENABLE          (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_PB7FASTMODEPLUS_OFFSET          (5U)
 #define SYSCFG_PERIPHERALMODECFG_PB7FASTMODEPLUS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PB7FASTMODEPLUS))   /*!< Mask  0x00000020 */
-#define SYSCFG_PERIPHERALMODECFG_PB7FASTMODEPLUS_DISABLE         (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PB7FASTMODEPLUS_ENABLE          (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_PB6FASTMODEPLUS_OFFSET          (4U)
 #define SYSCFG_PERIPHERALMODECFG_PB6FASTMODEPLUS_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, PB6FASTMODEPLUS))   /*!< Mask  0x00000010 */
-#define SYSCFG_PERIPHERALMODECFG_PB6FASTMODEPLUS_DISABLE         (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_PB6FASTMODEPLUS_ENABLE          (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_I2C4FASTMODEPLUS_OFFSET         (3U)
 #define SYSCFG_PERIPHERALMODECFG_I2C4FASTMODEPLUS_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, I2C4FASTMODEPLUS))  /*!< Mask  0x00000008 */
-#define SYSCFG_PERIPHERALMODECFG_I2C4FASTMODEPLUS_DISABLE        (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_I2C4FASTMODEPLUS_ENABLE         (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_I2C3FASTMODEPLUS_OFFSET         (2U)
 #define SYSCFG_PERIPHERALMODECFG_I2C3FASTMODEPLUS_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, I2C3FASTMODEPLUS))  /*!< Mask  0x00000004 */
-#define SYSCFG_PERIPHERALMODECFG_I2C3FASTMODEPLUS_DISABLE        (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_I2C3FASTMODEPLUS_ENABLE         (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_I2C2FASTMODEPLUS_OFFSET         (1U)
 #define SYSCFG_PERIPHERALMODECFG_I2C2FASTMODEPLUS_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, I2C2FASTMODEPLUS))  /*!< Mask  0x00000002 */
-#define SYSCFG_PERIPHERALMODECFG_I2C2FASTMODEPLUS_DISABLE        (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_I2C2FASTMODEPLUS_ENABLE         (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 #define SYSCFG_PERIPHERALMODECFG_I2C1FASTMODEPLUS_OFFSET         (0U)
 #define SYSCFG_PERIPHERALMODECFG_I2C1FASTMODEPLUS_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PERIPHERALMODECFG, I2C1FASTMODEPLUS))  /*!< Mask  0x00000001 */
-#define SYSCFG_PERIPHERALMODECFG_I2C1FASTMODEPLUS_DISABLE        (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_PERIPHERALMODECFG_I2C1FASTMODEPLUS_ENABLE         (0x1UL)                                                                        /*!< Value 0x00000001 */
+
+// Values of analog switch between PC and PC_C control bit
+#define SYSCFG_PCSWITCH_CLOSE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PCSWITCH_OPEN   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of analog switch between PA and PA_C control bit
+#define SYSCFG_PASWITCH_CLOSE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PASWITCH_OPEN   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of ethernet PHY interface selection register
+#define SYSCFG_ETHERNETPHY_MII   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_ETHERNETPHY_RMII  (0x4UL)  /*!< Value 0x00000001 */
+
+// Values of analog switch supply voltage selection register
+#define SYSCFG_ANALOGPWESUPPLY_VDDIFNOBOOSTER  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_ANALOGPWESUPPLY_ALWAYSBOOTSER   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of booster enable bit
+#define SYSCFG_BOOSTER_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_BOOSTER_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of inter-integrated circuit (I2C) fast mode plus on pin B enable bit
+#define SYSCFG_PBFASTMODEPLUS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PBFASTMODEPLUS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of inter-integrated circuit (I2C) fast mode plus enable bit
+#define SYSCFG_I2CFASTMODEPLUS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_I2CFASTMODEPLUS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< External interrupt configuration 1 register */
 #define SYSCFG_EXTERNALINTCFG3_SRC_OFFSET  (12U)
 #define SYSCFG_EXTERNALINTCFG3_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG3, SRC))  /*!< Mask  0x0000F000 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PA3     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PB3     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PC3     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PD3     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PE3     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PF3     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PG3     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PH3     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PI3     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PJ3     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG3_SRC_PK3     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG2_SRC_OFFSET  (8U)
 #define SYSCFG_EXTERNALINTCFG2_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG2, SRC))  /*!< Mask  0x00000F00 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PA2     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PB2     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PC2     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PD2     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PE2     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PF2     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PG2     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PH2     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PI2     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PJ2     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG2_SRC_PK2     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG1_SRC_OFFSET  (4U)
 #define SYSCFG_EXTERNALINTCFG1_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG1, SRC))  /*!< Mask  0x000000F0 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PA1     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PB1     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PC1     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PD1     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PE1     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PF1     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PG1     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PH1     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PI1     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PJ1     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG1_SRC_PK1     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG0_SRC_OFFSET  (0U)
 #define SYSCFG_EXTERNALINTCFG0_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG0, SRC))  /*!< Mask  0x0000000F */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PA0     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PB0     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PC0     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PD0     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PE0     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PF0     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PG0     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PH0     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PI0     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PJ0     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG0_SRC_PK0     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 /*!< External interrupt configuration 2 register */
 #define SYSCFG_EXTERNALINTCFG7_SRC_OFFSET  (12U)
 #define SYSCFG_EXTERNALINTCFG7_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG7, SRC))  /*!< Mask  0x0000F000 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PA7     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PB7     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PC7     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PD7     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PE7     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PF7     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PG7     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PH7     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PI7     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PJ7     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG7_SRC_PK7     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG6_SRC_OFFSET  (8U)
 #define SYSCFG_EXTERNALINTCFG6_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG6, SRC))  /*!< Mask  0x00000F00 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PA6     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PB6     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PC6     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PD6     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PE6     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PF6     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PG6     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PH6     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PI6     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PJ6     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG6_SRC_PK6     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG5_SRC_OFFSET  (4U)
 #define SYSCFG_EXTERNALINTCFG5_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG5, SRC))  /*!< Mask  0x000000F0 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PA5     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PB5     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PC5     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PD5     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PE5     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PF5     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PG5     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PH5     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PI5     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PJ5     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG5_SRC_PK5     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG4_SRC_OFFSET  (0U)
 #define SYSCFG_EXTERNALINTCFG4_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG4, SRC))  /*!< Mask  0x0000000F */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PA4     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PB4     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PC4     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PD4     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PE4     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PF4     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PG4     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PH4     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PI4     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PJ4     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG4_SRC_PK4     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 /*!< External interrupt configuration 3 register */
 #define SYSCFG_EXTERNALINTCFG11_SRC_OFFSET  (12U)
 #define SYSCFG_EXTERNALINTCFG11_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG11, SRC))  /*!< Mask  0x0000F000 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PA11     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PB11     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PC11     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PD11     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PE11     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PF11     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PG11     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PH11     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PI11     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PJ11     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG11_SRC_PK11     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG10_SRC_OFFSET  (8U)
 #define SYSCFG_EXTERNALINTCFG10_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG10, SRC))  /*!< Mask  0x00000F00 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PA10     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PB10     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PC10     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PD10     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PE10     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PF10     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PG10     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PH10     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PI10     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PJ10     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG10_SRC_PK10     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG9_SRC_OFFSET  (4U)
 #define SYSCFG_EXTERNALINTCFG9_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG9, SRC))    /*!< Mask  0x000000F0 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PA9     (0x0UL)                                                           /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PB9     (0x1UL)                                                           /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PC9     (0x2UL)                                                           /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PD9     (0x3UL)                                                           /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PE9     (0x4UL)                                                           /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PF9     (0x5UL)                                                           /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PG9     (0x6UL)                                                           /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PH9     (0x7UL)                                                           /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PI9     (0x8UL)                                                           /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PJ9     (0x9UL)                                                           /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG9_SRC_PK9     (0xAUL)                                                           /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG8_SRC_OFFSET  (0U)
 #define SYSCFG_EXTERNALINTCFG8_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG8, SRC))    /*!< Mask  0x0000000F */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PA8     (0x0UL)                                                           /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PB8     (0x1UL)                                                           /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PC8     (0x2UL)                                                           /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PD8     (0x3UL)                                                           /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PE8     (0x4UL)                                                           /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PF8     (0x5UL)                                                           /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PG8     (0x6UL)                                                           /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PH8     (0x7UL)                                                           /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PI8     (0x8UL)                                                           /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PJ8     (0x9UL)                                                           /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG8_SRC_PK8     (0xAUL)                                                           /*!< Value 0x0000000A */
 
 /*!< External interrupt configuration 4 register */
 #define SYSCFG_EXTERNALINTCFG15_SRC_OFFSET  (12U)
 #define SYSCFG_EXTERNALINTCFG15_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG15, SRC))  /*!< Mask  0x0000F000 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PA15     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PB15     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PC15     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PD15     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PE15     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PF15     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PG15     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PH15     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PI15     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PJ15     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG15_SRC_PK15     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG14_SRC_OFFSET  (8U)
 #define SYSCFG_EXTERNALINTCFG14_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG14, SRC))  /*!< Mask  0x00000F00 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PA14     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PB14     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PC14     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PD14     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PE14     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PF14     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PG14     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PH14     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PI14     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PJ14     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG14_SRC_PK14     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG13_SRC_OFFSET  (4U)
 #define SYSCFG_EXTERNALINTCFG13_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG13, SRC))  /*!< Mask  0x000000F0 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PA13     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PB13     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PC13     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PD13     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PE13     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PF13     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PG13     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PH13     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PI13     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PJ13     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG13_SRC_PK13     (0xAUL)                                                         /*!< Value 0x0000000A */
 
 #define SYSCFG_EXTERNALINTCFG12_SRC_OFFSET  (0U)
 #define SYSCFG_EXTERNALINTCFG12_SRC_MASK    (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, EXTERNALINTCFG12, SRC))  /*!< Mask  0x0000000F */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PA12     (0x0UL)                                                         /*!< Value 0x00000000 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PB12     (0x1UL)                                                         /*!< Value 0x00000001 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PC12     (0x2UL)                                                         /*!< Value 0x00000002 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PD12     (0x3UL)                                                         /*!< Value 0x00000003 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PE12     (0x4UL)                                                         /*!< Value 0x00000004 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PF12     (0x5UL)                                                         /*!< Value 0x00000005 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PG12     (0x6UL)                                                         /*!< Value 0x00000006 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PH12     (0x7UL)                                                         /*!< Value 0x00000007 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PI12     (0x8UL)                                                         /*!< Value 0x00000008 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PJ12     (0x9UL)                                                         /*!< Value 0x00000009 */
-#define SYSCFG_EXTERNALINTCFG12_SRC_PK12     (0xAUL)                                                         /*!< Value 0x0000000A */
+
+// Values of external interrupt input source
+#define SYSCFG_EXTERNALINTSRC_PA  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_EXTERNALINTSRC_PB  (0x1UL)  /*!< Value 0x00000001 */
+#define SYSCFG_EXTERNALINTSRC_PC  (0x2UL)  /*!< Value 0x00000002 */
+#define SYSCFG_EXTERNALINTSRC_PD  (0x3UL)  /*!< Value 0x00000003 */
+#define SYSCFG_EXTERNALINTSRC_PE  (0x4UL)  /*!< Value 0x00000004 */
+#define SYSCFG_EXTERNALINTSRC_PF  (0x5UL)  /*!< Value 0x00000005 */
+#define SYSCFG_EXTERNALINTSRC_PG  (0x6UL)  /*!< Value 0x00000006 */
+#define SYSCFG_EXTERNALINTSRC_PH  (0x7UL)  /*!< Value 0x00000007 */
+#define SYSCFG_EXTERNALINTSRC_PI  (0x8UL)  /*!< Value 0x00000008 */
+#define SYSCFG_EXTERNALINTSRC_PJ  (0x9UL)  /*!< Value 0x00000009 */
+#define SYSCFG_EXTERNALINTSRC_PK  (0xAUL)  /*!< Value 0x0000000A */
 
 /*!< Timer connection configuration register */
-#define SYSCFG_TIMERCONNCFG_AXISRAMDBLECCLOCK_OFFSET          (15U)
-#define SYSCFG_TIMERCONNCFG_AXISRAMDBLECCLOCK_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, AXISRAMDBLECCLOCK))      /*!< Mask  0x00008000 */
-#define SYSCFG_TIMERCONNCFG_AXISRAMDBLECCLOCK_DISCONNECT      (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_AXISRAMDBLECCLOCK_CONNECT         (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_AXISRAMDBLECCLOCK_OFFSET  (15U)
+#define SYSCFG_TIMERCONNCFG_AXISRAMDBLECCLOCK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, AXISRAMDBLECCLOCK))  /*!< Mask  0x00008000 */
 
-#define SYSCFG_TIMERCONNCFG_ITCMDBLECCLOCK_OFFSET             (14U)
-#define SYSCFG_TIMERCONNCFG_ITCMDBLECCLOCK_MASK               (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, ITCMDBLECCLOCK))         /*!< Mask  0x00004000 */
-#define SYSCFG_TIMERCONNCFG_ITCMDBLECCLOCK_DISCONNECT         (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_ITCMDBLECCLOCK_CONNECT            (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_ITCMDBLECCLOCK_OFFSET     (14U)
+#define SYSCFG_TIMERCONNCFG_ITCMDBLECCLOCK_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, ITCMDBLECCLOCK))     /*!< Mask  0x00004000 */
 
-#define SYSCFG_TIMERCONNCFG_DTCMDBLECCLOCK_OFFSET             (13U)
-#define SYSCFG_TIMERCONNCFG_DTCMDBLECCLOCK_MASK               (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, DTCMDBLECCLOCK))         /*!< Mask  0x00002000 */
-#define SYSCFG_TIMERCONNCFG_DTCMDBLECCLOCK_DISCONNECT         (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_DTCMDBLECCLOCK_CONNECT            (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_DTCMDBLECCLOCK_OFFSET     (13U)
+#define SYSCFG_TIMERCONNCFG_DTCMDBLECCLOCK_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, DTCMDBLECCLOCK))     /*!< Mask  0x00002000 */
 
-#define SYSCFG_TIMERCONNCFG_D2SRAM1DBLECCLOCK_OFFSET          (12U)
-#define SYSCFG_TIMERCONNCFG_D2SRAM1DBLECCLOCK_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D2SRAM1DBLECCLOCK))      /*!< Mask  0x00001000 */
-#define SYSCFG_TIMERCONNCFG_D2SRAM1DBLECCLOCK_DISCONNECT      (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_D2SRAM1DBLECCLOCK_CONNECT         (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_D2SRAM1DBLECCLOCK_OFFSET  (12U)
+#define SYSCFG_TIMERCONNCFG_D2SRAM1DBLECCLOCK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D2SRAM1DBLECCLOCK))  /*!< Mask  0x00001000 */
 
-#define SYSCFG_TIMERCONNCFG_D2SRAM2DBLECCLOCK_OFFSET          (11U)
-#define SYSCFG_TIMERCONNCFG_D2SRAM2DBLECCLOCK_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D2SRAM2DBLECCLOCK))      /*!< Mask  0x00000800 */
-#define SYSCFG_TIMERCONNCFG_D2SRAM2DBLECCLOCK_DISCONNECT      (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_D2SRAM2DBLECCLOCK_CONNECT         (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_D2SRAM2DBLECCLOCK_OFFSET  (11U)
+#define SYSCFG_TIMERCONNCFG_D2SRAM2DBLECCLOCK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D2SRAM2DBLECCLOCK))  /*!< Mask  0x00000800 */
 
-#define SYSCFG_TIMERCONNCFG_D2SRAM3DBLECCLOCK_OFFSET          (10U)
-#define SYSCFG_TIMERCONNCFG_D2SRAM3DBLECCLOCK_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D2SRAM3DBLECCLOCK))      /*!< Mask  0x00000400 */
-#define SYSCFG_TIMERCONNCFG_D2SRAM3DBLECCLOCK_DISCONNECT      (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_D2SRAM3DBLECCLOCK_CONNECT         (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_D2SRAM3DBLECCLOCK_OFFSET  (10U)
+#define SYSCFG_TIMERCONNCFG_D2SRAM3DBLECCLOCK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D2SRAM3DBLECCLOCK))  /*!< Mask  0x00000400 */
 
-#define SYSCFG_TIMERCONNCFG_D3SRAM4DBLECCLOCK_OFFSET          (9U)
-#define SYSCFG_TIMERCONNCFG_D3SRAM4DBLECCLOCK_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D3SRAM4DBLECCLOCK))      /*!< Mask  0x00000200 */
-#define SYSCFG_TIMERCONNCFG_D3SRAM4DBLECCLOCK_DISCONNECT      (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_D3SRAM4DBLECCLOCK_CONNECT         (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_D3SRAM4DBLECCLOCK_OFFSET  (9U)
+#define SYSCFG_TIMERCONNCFG_D3SRAM4DBLECCLOCK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, D3SRAM4DBLECCLOCK))  /*!< Mask  0x00000200 */
 
-#define SYSCFG_TIMERCONNCFG_BCKSRAMDBLECCLOCK_OFFSET          (7U)
-#define SYSCFG_TIMERCONNCFG_BCKSRAMDBLECCLOCK_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, BCKSRAMDBLECCLOCK)       /*!< Mask  0x00000080 */
-#define SYSCFG_TIMERCONNCFG_BCKSRAMDBLECCLOCK_DISCONNECT      (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_BCKSRAMDBLECCLOCK_CONNECT         (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_BCKSRAMDBLECCLOCK_OFFSET  (7U)
+#define SYSCFG_TIMERCONNCFG_BCKSRAMDBLECCLOCK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, BCKSRAMDBLECCLOCK))  /*!< Mask  0x00000080 */
 
-#define SYSCFG_TIMERCONNCFG_M7HARDFAULTDBLECCLOCK_OFFSET      (6U)
-#define SYSCFG_TIMERCONNCFG_M7HARDFAULTDBLECCLOCK_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, M7HARDFAULTDBLECCLOCK))  /*!< Mask  0x00000040 */
-#define SYSCFG_TIMERCONNCFG_M7HARDFAULTDBLECCLOCK_DISCONNECT  (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_M7HARDFAULTDBLECCLOCK_CONNECT     (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_M7HARDFAULT_OFFSET        (6U)
+#define SYSCFG_TIMERCONNCFG_M7HARDFAULT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, M7HARDFAULT))        /*!< Mask  0x00000040 */
 
-#define SYSCFG_TIMERCONNCFG_FLASHDBLECCLOCK_OFFSET            (3U)
-#define SYSCFG_TIMERCONNCFG_FLASHDBLECCLOCK_MASK              (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, FLASHDBLECCLOCK))        /*!< Mask  0x00000008 */
-#define SYSCFG_TIMERCONNCFG_FLASHDBLECCLOCK_DISCONNECT        (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_FLASHDBLECCLOCK_CONNECT           (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_FLASHDBLECCLOCK_OFFSET    (3U)
+#define SYSCFG_TIMERCONNCFG_FLASHDBLECCLOCK_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, FLASHDBLECCLOCK))    /*!< Mask  0x00000008 */
 
-#define SYSCFG_TIMERCONNCFG_PVFDBLECCLOCK_OFFSET              (2U)
-#define SYSCFG_TIMERCONNCFG_PVFDBLECCLOCK_MASK                (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, PVFDBLECCLOCK))          /*!< Mask  0x00000004 */
-#define SYSCFG_TIMERCONNCFG_PVFDBLECCLOCK_DISCONNECT          (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_PVFDBLECCLOCK_CONNECT             (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_PVDLOCK_OFFSET            (2U)
+#define SYSCFG_TIMERCONNCFG_PVDLOCK_MASK              (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, PVDLOCK))            /*!< Mask  0x00000004 */
 
-#define SYSCFG_TIMERCONNCFG_M4HARDFAULTDBLECCLOCK_OFFSET      (0U)
-#define SYSCFG_TIMERCONNCFG_M4HARDFAULTDBLECCLOCK_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, M4HARDFAULTDBLECCLOCK))  /*!< Mask  0x00000001 */
-#define SYSCFG_TIMERCONNCFG_M4HARDFAULTDBLECCLOCK_DISCONNECT  (0x0UL)                                                                        /*!< Value 0x00000000 */
-#define SYSCFG_TIMERCONNCFG_M4HARDFAULTDBLECCLOCK_CONNECT     (0x1UL)                                                                        /*!< Value 0x00000001 */
+#define SYSCFG_TIMERCONNCFG_M4HARDFAULT_OFFSET        (0U)
+#define SYSCFG_TIMERCONNCFG_M4HARDFAULT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, TIMERCONNCFG, M4HARDFAULT))        /*!< Mask  0x00000001 */
+
+// Values of D1 AXI SRAM double ECC error lock bit
+#define SYSCFG_AXISRAMDBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_AXISRAMDBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of D1 instruction tightly coupled RAM (ITCM) double ECC error lock bit
+#define SYSCFG_ITCMDBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_ITCMDBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of D1 data tightly coupled RAM (DTCM) double ECC error lock bit
+#define SYSCFG_DTCMDBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_DTCMDBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of D2 SRAM1 double ECC error lock bit
+#define SYSCFG_D2SRAM1DBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D2SRAM1DBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of D2 SRAM2 double ECC error lock bit
+#define SYSCFG_D2SRAM2DBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D2SRAM2DBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of D2 SRAM3 double ECC error lock bit
+#define SYSCFG_D2SRAM3DBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D2SRAM3DBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of D3 SRAM4 double ECC error lock bit
+#define SYSCFG_D3SRAM4DBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D3SRAM4DBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of backup SRAM double ECC error lock bit
+#define SYSCFG_BCKSRAMDBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_BCKSRAMDBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of Cortex M7 lockup enable bit
+#define SYSCFG_M7HARDFAULT_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_M7HARDFAULT_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of flash double ECC error lock bit
+#define SYSCFG_FLASHDBLECCLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_FLASHDBLECCLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of programmable voltage detector (PVD) lock enable bit
+#define SYSCFG_PVDLOCK_DISCONNECT  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PVDLOCK_CONNECT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of Cortex M4 lockup enable bit
+#define SYSCFG_M4HARDFAULT_DISCONNECT  (0x0UL)                                                                        /*!< Value 0x00000000 */
+#define SYSCFG_M4HARDFAULT_CONNECT     (0x1UL)                                                                        /*!< Value 0x00000001 */
 
 /*!< Compensation cell control and status register */
-#define SYSCFG_COMPCELLCTRLSTATUS_IOSPEEDLOWVLTOPT_OFFSET   (16U)
-#define SYSCFG_COMPCELLCTRLSTATUS_IOSPEEDLOWVLTOPT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, IOSPEEDLOWVLTOPT))  /*!< Mask  0x00010000 */
-#define SYSCFG_COMPCELLCTRLSTATUS_IOSPEEDLOWVLTOPT_DISABLE  (0x0UL)                                                                         /*!< Value 0x00000000 */
-#define SYSCFG_COMPCELLCTRLSTATUS_IOSPEEDLOWVLTOPT_ENABLE   (0x1UL)                                                                         /*!< Value 0x00000001 */
+#define SYSCFG_COMPCELLCTRLSTATUS_IOSPEEDLOWVLTOPT_OFFSET  (16U)
+#define SYSCFG_COMPCELLCTRLSTATUS_IOSPEEDLOWVLTOPT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, IOSPEEDLOWVLTOPT))  /*!< Mask  0x00010000 */
 
-#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLRDY_OFFSET        (8U)
-#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLRDY_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, COMPCELLRDY))       /*!< Mask  0x00000100 */
-#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLRDY_NOTREADY      (0x0UL)                                                                         /*!< Value 0x00000000 */
-#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLRDY_READY         (0x1UL)                                                                         /*!< Value 0x00000001 */
+#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLRDY_OFFSET       (8U)
+#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLRDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, COMPCELLRDY))       /*!< Mask  0x00000100 */
 
-#define SYSCFG_COMPCELLCTRLSTATUS_CODESEL_OFFSET            (1U)
-#define SYSCFG_COMPCELLCTRLSTATUS_CODESEL_MASK              (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, CODESEL))           /*!< Mask  0x00000002 */
-#define SYSCFG_COMPCELLCTRLSTATUS_CODESEL_CELLVALUE         (0x0UL)                                                                         /*!< Value 0x00000000 */
-#define SYSCFG_COMPCELLCTRLSTATUS_CODESEL_CELLCODE          (0x1UL)                                                                         /*!< Value 0x00000001 */
+#define SYSCFG_COMPCELLCTRLSTATUS_CODESEL_OFFSET           (1U)
+#define SYSCFG_COMPCELLCTRLSTATUS_CODESEL_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, CODESEL))           /*!< Mask  0x00000002 */
 
-#define SYSCFG_COMPCELLCTRLSTATUS_IOCOMPCELL_OFFSET         (0U)
-#define SYSCFG_COMPCELLCTRLSTATUS_IOCOMPCELL_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, IOCOMPCELL))        /*!< Mask  0x00000001 */
-#define SYSCFG_COMPCELLCTRLSTATUS_IOCOMPCELL_DISABLE        (0x0UL)                                                                         /*!< Value 0x00000000 */
-#define SYSCFG_COMPCELLCTRLSTATUS_IOCOMPCELL_ENABLE         (0x1UL)                                                                         /*!< Value 0x00000001 */
+#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLEN_OFFSET        (0U)
+#define SYSCFG_COMPCELLCTRLSTATUS_COMPCELLEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCTRLSTATUS, COMPCELLEN))        /*!< Mask  0x00000001 */
+
+// Values of high speed at low voltage optimization enable bit
+#define SYSCFG_IOSPEEDLOWVLTOPT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_IOSPEEDLOWVLTOPT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of compensation cell ready bit
+#define SYSCFG_COMPCELL_NOTREADY  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_COMPCELL_READY     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of compensation cell code selection bit
+#define SYSCFG_COMPCELLCODE_CELLVALUE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_COMPCELLCODE_CELLCODE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of compensation cell enable bit
+#define SYSCFG_IOCOMPCELL_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_IOCOMPCELL_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Compensation cell value register */
 #define SYSCFG_COMPCELLVALUE_PMOS_OFFSET  (4U)
@@ -478,72 +345,86 @@ typedef struct {
 #define SYSCFG_COMPCELLCODE_NMOS_3       (0x8UL << REGISTER_FIELD_OFFSET(SYSCFG, COMPCELLCODE, NMOS))  /*!< Value 0x00000008 */
 
 /*!< Power control register */
-#define SYSCFG_PWRCTRL_OVDR_OFFSET   (0U)
-#define SYSCFG_PWRCTRL_OVDR_MASK     (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PWRCTRL, OVDR))  /*!< Mask  0x00000001 */
-#define SYSCFG_PWRCTRL_OVDR_DISABLE  (0x0UL)                                                  /*!< Value 0x00000000 */
-#define SYSCFG_PWRCTRL_OVDR_ENABLE   (0x1UL)                                                  /*!< Value 0x00000001 */
+#define SYSCFG_PWRCTRL_OVDR_OFFSET  (0U)
+#define SYSCFG_PWRCTRL_OVDR_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, PWRCTRL, OVDR))  /*!< Mask  0x00000001 */
+
+// Values of power overdrive enable bit
+#define SYSCFG_PWROVDR_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PWROVDR_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Package register */
 #define SYSCFG_PKG_DEVICE_OFFSET             (0U)
 #define SYSCFG_PKG_DEVICE_MASK               (0xFUL << REGISTER_FIELD_OFFSET(SYSCFG, PKG, DEVICE))  /*!< Mask  0x0000000F */
-#define SYSCFG_PKG_DEVICE_UFBGA169STM32H7x7  (0x2UL)                                                /*!< Value 0x00000002 */
-#define SYSCFG_PKG_DEVICE_LQFP176STM32H7x7   (0x2UL)                                                /*!< Value 0x00000002 */
-#define SYSCFG_PKG_DEVICE_LQFP144STM32H7x5   (0x3UL)                                                /*!< Value 0x00000003 */
-#define SYSCFG_PKG_DEVICE_LQFP176STM32H7x5   (0x6UL)                                                /*!< Value 0x00000006 */
-#define SYSCFG_PKG_DEVICE_UFBGA176STM32H7x5  (0x7UL)                                                /*!< Value 0x00000007 */
-#define SYSCFG_PKG_DEVICE_LQFP208STM32H7x7   (0x9UL)                                                /*!< Value 0x00000009 */
-#define SYSCFG_PKG_DEVICE_LQFP208STM32H7x5   (0xAUL)                                                /*!< Value 0x0000000A */
-#define SYSCFG_PKG_DEVICE_OTHERS             (0xFUL)                                                /*!< Value 0x0000000F */
+
+// Values of device package ID
+#define SYSCFG_DEVICE_UFBGA169STM32H7x7  (0x2UL)  /*!< Value 0x00000002 */
+#define SYSCFG_DEVICE_LQFP176STM32H7x7   (0x2UL)  /*!< Value 0x00000002 */
+#define SYSCFG_DEVICE_LQFP144STM32H7x5   (0x3UL)  /*!< Value 0x00000003 */
+#define SYSCFG_DEVICE_LQFP176STM32H7x5   (0x6UL)  /*!< Value 0x00000006 */
+#define SYSCFG_DEVICE_UFBGA176STM32H7x5  (0x7UL)  /*!< Value 0x00000007 */
+#define SYSCFG_DEVICE_LQFP208STM32H7x7   (0x9UL)  /*!< Value 0x00000009 */
+#define SYSCFG_DEVICE_LQFP208STM32H7x5   (0xAUL)  /*!< Value 0x0000000A */
+#define SYSCFG_DEVICE_OTHERS             (0xFUL)  /*!< Value 0x0000000F */
 
 /*!< User 0 register */
 #define SYSCFG_USER0_READOUTPROT_OFFSET     (16U)
 #define SYSCFG_USER0_READOUTPROT_MASK       (0xFFUL << REGISTER_FIELD_OFFSET(SYSCFG, USER0, READOUTPROT))  /*!< Mask  0x00FF0000 */
-#define SYSCFG_USER0_READOUTPROT_LEVEL1     (0x88UL)                                                       /*!< Value 0x00000088 */
-#define SYSCFG_USER0_READOUTPROT_LEVEL0     (0xAAUL)                                                       /*!< Value 0x000000AA */
-#define SYSCFG_USER0_READOUTPROT_LEVEL2     (0xCCUL)                                                       /*!< Value 0x000000CC */
 
 #define SYSCFG_USER0_BANKSWAP_OFFSET        (0U)
 #define SYSCFG_USER0_BANKSWAP_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER0, BANKSWAP))      /*!< Mask  0x00000001 */
-#define SYSCFG_USER0_BANKSWAP_INVERTEDADDR  (0x0UL)                                                        /*!< Value 0x00000000 */
-#define SYSCFG_USER0_BANKSWAP_ORIGINALADDR  (0x1UL)                                                        /*!< Value 0x00000001 */
+
+// Values of read out protection level
+#define SYSCFG_READOUTPROT_LEVEL1  (0x88UL)  /*!< Value 0x00000088 */
+#define SYSCFG_READOUTPROT_LEVEL0  (0xAAUL)  /*!< Value 0x000000AA */
+#define SYSCFG_READOUTPROT_LEVEL2  (0xCCUL)  /*!< Value 0x000000CC */
+
+// Values of flash memory bank map
+#define SYSCFG_BANKSWAP_INVERTEDADDR  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_BANKSWAP_ORIGINALADDR  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 1 register */
 #define SYSCFG_USER1_M7BOOT_OFFSET   (16U)
 #define SYSCFG_USER1_M7BOOT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER1, M7BOOT))  /*!< Mask  0x00010000 */
-#define SYSCFG_USER1_M7BOOT_CLKGATE  (0x0UL)                                                  /*!< Value 0x00000000 */
-#define SYSCFG_USER1_M7BOOT_ENABLE   (0x1UL)                                                  /*!< Value 0x00000001 */
 
 #define SYSCFG_USER1_M4BOOT_OFFSET   (0U)
 #define SYSCFG_USER1_M4BOOT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER1, M4BOOT))  /*!< Mask  0x00000001 */
-#define SYSCFG_USER1_M4BOOT_CLKGATE  (0x0UL)                                                  /*!< Value 0x00000000 */
-#define SYSCFG_USER1_M4BOOT_ENABLE   (0x1UL)                                                  /*!< Value 0x00000001 */
+
+// Values of Cortex M7 boot enable
+#define SYSCFG_M7BOOT_CLKGATE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_M7BOOT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of Cortex M4 boot enable
+#define SYSCFG_USER1_M4BOOT_CLKGATE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_USER1_M4BOOT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 2 register */
 #define SYSCFG_USER2_M7ADDR0_OFFSET       (16U)
-#define SYSCFG_USER2_M7ADDR0_MASK         (0xFFFFUL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Mask  0xFFFF0000 */
-#define SYSCFG_USER2_M7ADDR0_0            (0x0001UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00010000 */
-#define SYSCFG_USER2_M7ADDR0_1            (0x0002UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00020000 */
-#define SYSCFG_USER2_M7ADDR0_2            (0x0004UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00040000 */
-#define SYSCFG_USER2_M7ADDR0_3            (0x0008UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00080000 */
-#define SYSCFG_USER2_M7ADDR0_4            (0x0010UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00100000 */
-#define SYSCFG_USER2_M7ADDR0_5            (0x0020UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00200000 */
-#define SYSCFG_USER2_M7ADDR0_6            (0x0040UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00400000 */
-#define SYSCFG_USER2_M7ADDR0_7            (0x0080UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x00800000 */
-#define SYSCFG_USER2_M7ADDR0_8            (0x0100UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x01000000 */
-#define SYSCFG_USER2_M7ADDR0_9            (0x0200UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x02000000 */
-#define SYSCFG_USER2_M7ADDR0_10           (0x0400UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x04000000 */
-#define SYSCFG_USER2_M7ADDR0_11           (0x0800UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x08000000 */
-#define SYSCFG_USER2_M7ADDR0_12           (0x1000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x10000000 */
-#define SYSCFG_USER2_M7ADDR0_13           (0x2000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x20000000 */
-#define SYSCFG_USER2_M7ADDR0_14           (0x4000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x40000000 */
-#define SYSCFG_USER2_M7ADDR0_15           (0x8000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))    /*!< Value 0x80000000 */
+#define SYSCFG_USER2_M7ADDR0_MASK         (0xFFFFUL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Mask  0xFFFF0000 */
+#define SYSCFG_USER2_M7ADDR0_0            (0x0001UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00010000 */
+#define SYSCFG_USER2_M7ADDR0_1            (0x0002UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00020000 */
+#define SYSCFG_USER2_M7ADDR0_2            (0x0004UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00040000 */
+#define SYSCFG_USER2_M7ADDR0_3            (0x0008UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00080000 */
+#define SYSCFG_USER2_M7ADDR0_4            (0x0010UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00100000 */
+#define SYSCFG_USER2_M7ADDR0_5            (0x0020UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00200000 */
+#define SYSCFG_USER2_M7ADDR0_6            (0x0040UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00400000 */
+#define SYSCFG_USER2_M7ADDR0_7            (0x0080UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x00800000 */
+#define SYSCFG_USER2_M7ADDR0_8            (0x0100UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x01000000 */
+#define SYSCFG_USER2_M7ADDR0_9            (0x0200UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x02000000 */
+#define SYSCFG_USER2_M7ADDR0_10           (0x0400UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x04000000 */
+#define SYSCFG_USER2_M7ADDR0_11           (0x0800UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x08000000 */
+#define SYSCFG_USER2_M7ADDR0_12           (0x1000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x10000000 */
+#define SYSCFG_USER2_M7ADDR0_13           (0x2000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x20000000 */
+#define SYSCFG_USER2_M7ADDR0_14           (0x4000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x40000000 */
+#define SYSCFG_USER2_M7ADDR0_15           (0x8000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, M7ADDR0))  /*!< Value 0x80000000 */
 
 #define SYSCFG_USER2_RSTBROWLEVEL_OFFSET  (0U)
 #define SYSCFG_USER2_RSTBROWLEVEL_MASK    (0x3UL << REGISTER_FIELD_OFFSET(SYSCFG, USER2, RSTBROWLEVEL))  /*!< Mask  0x00000003 */
-#define SYSCFG_USER2_RSTBROWLEVEL_VTH0    (0x0UL)                                                        /*!< Value 0x00000000 */
-#define SYSCFG_USER2_RSTBROWLEVEL_VTH1    (0x1UL)                                                        /*!< Value 0x00000001 */
-#define SYSCFG_USER2_RSTBROWLEVEL_VTH2    (0x2UL)                                                        /*!< Value 0x00000002 */
-#define SYSCFG_USER2_RSTBROWLEVEL_VTH3    (0x3UL)                                                        /*!< Value 0x00000003 */
+
+// Value of brownout reset threshold level
+#define SYSCFG_RSTBROWLEVEL_VTH0  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_RSTBROWLEVEL_VTH1  (0x1UL)  /*!< Value 0x00000001 */
+#define SYSCFG_RSTBROWLEVEL_VTH2  (0x2UL)  /*!< Value 0x00000002 */
+#define SYSCFG_RSTBROWLEVEL_VTH3  (0x3UL)  /*!< Value 0x00000003 */
 
 /*!< User 3 register */
 #define SYSCFG_USER3_M7ADDR1_OFFSET  (16U)
@@ -585,75 +466,55 @@ typedef struct {
 #define SYSCFG_USER3_M4ADDR0_15      (0x8000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER3, M4ADDR0))  /*!< Value 0x80000000 */
 
 /*!< User 4 register */
-#define SYSCFG_USER4_MASSERASEBANK1PROTADDR_OFFSET     (16U)
-#define SYSCFG_USER4_MASSERASEBANK1PROTADDR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, MASSERASEBANK1PROTADDR))  /*!< Mask  0x00010000 */
-#define SYSCFG_USER4_MASSERASEBANK1PROTADDR_ERASED     (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define SYSCFG_USER4_MASSERASEBANK1PROTADDR_NOTERASED  (0x1UL)                                                                  /*!< Value 0x00000001 */
+#define SYSCFG_USER4_BANK1PROTAREAMASSERASEEN_OFFSET  (16U)
+#define SYSCFG_USER4_BANK1PROTAREAMASSERASEEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, BANK1PROTAREAMASSERASEEN))  /*!< Mask  0x00010000 */
 
-#define SYSCFG_USER4_M4ADDR1_OFFSET                    (0U)
-#define SYSCFG_USER4_M4ADDR1_MASK                      (0xFFFFUL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Mask  0x0000FFFF */
-#define SYSCFG_USER4_M4ADDR1_0                         (0x0001UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000001 */
-#define SYSCFG_USER4_M4ADDR1_1                         (0x0002UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000002 */
-#define SYSCFG_USER4_M4ADDR1_2                         (0x0004UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000004 */
-#define SYSCFG_USER4_M4ADDR1_3                         (0x0008UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000008 */
-#define SYSCFG_USER4_M4ADDR1_4                         (0x0010UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000010 */
-#define SYSCFG_USER4_M4ADDR1_5                         (0x0020UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000020 */
-#define SYSCFG_USER4_M4ADDR1_6                         (0x0040UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000040 */
-#define SYSCFG_USER4_M4ADDR1_7                         (0x0080UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000080 */
-#define SYSCFG_USER4_M4ADDR1_8                         (0x0100UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000100 */
-#define SYSCFG_USER4_M4ADDR1_9                         (0x0200UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000200 */
-#define SYSCFG_USER4_M4ADDR1_10                        (0x0400UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000400 */
-#define SYSCFG_USER4_M4ADDR1_11                        (0x0800UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00000800 */
-#define SYSCFG_USER4_M4ADDR1_12                        (0x1000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00001000 */
-#define SYSCFG_USER4_M4ADDR1_13                        (0x2000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00002000 */
-#define SYSCFG_USER4_M4ADDR1_14                        (0x4000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00004000 */
-#define SYSCFG_USER4_M4ADDR1_15                        (0x8000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))              /*!< Value 0x00008000 */
+#define SYSCFG_USER4_M4ADDR1_OFFSET                   (0U)
+#define SYSCFG_USER4_M4ADDR1_MASK                     (0xFFFFUL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Mask  0x0000FFFF */
+#define SYSCFG_USER4_M4ADDR1_0                        (0x0001UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000001 */
+#define SYSCFG_USER4_M4ADDR1_1                        (0x0002UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000002 */
+#define SYSCFG_USER4_M4ADDR1_2                        (0x0004UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000004 */
+#define SYSCFG_USER4_M4ADDR1_3                        (0x0008UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000008 */
+#define SYSCFG_USER4_M4ADDR1_4                        (0x0010UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000010 */
+#define SYSCFG_USER4_M4ADDR1_5                        (0x0020UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000020 */
+#define SYSCFG_USER4_M4ADDR1_6                        (0x0040UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000040 */
+#define SYSCFG_USER4_M4ADDR1_7                        (0x0080UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000080 */
+#define SYSCFG_USER4_M4ADDR1_8                        (0x0100UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000100 */
+#define SYSCFG_USER4_M4ADDR1_9                        (0x0200UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000200 */
+#define SYSCFG_USER4_M4ADDR1_10                       (0x0400UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000400 */
+#define SYSCFG_USER4_M4ADDR1_11                       (0x0800UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00000800 */
+#define SYSCFG_USER4_M4ADDR1_12                       (0x1000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00001000 */
+#define SYSCFG_USER4_M4ADDR1_13                       (0x2000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00002000 */
+#define SYSCFG_USER4_M4ADDR1_14                       (0x4000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00004000 */
+#define SYSCFG_USER4_M4ADDR1_15                       (0x8000UL << REGISTER_FIELD_OFFSET(SYSCFG, USER4, M4ADDR1))                /*!< Value 0x00008000 */
 
 /*!< User 5 register */
-#define SYSCFG_USER5_WRPROTBANK1SEC7_OFFSET           (23U)
-#define SYSCFG_USER5_WRPROTBANK1SEC7_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC7))        /*!< Mask  0x00800000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC7_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC7_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC7_OFFSET          (23U)
+#define SYSCFG_USER5_WRPROTBANK1SEC7_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC7))          /*!< Mask  0x00800000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC6_OFFSET           (22U)
-#define SYSCFG_USER5_WRPROTBANK1SEC6_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC6))        /*!< Mask  0x00400000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC6_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC6_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC6_OFFSET          (22U)
+#define SYSCFG_USER5_WRPROTBANK1SEC6_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC6))          /*!< Mask  0x00400000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC5_OFFSET           (21U)
-#define SYSCFG_USER5_WRPROTBANK1SEC5_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC5))        /*!< Mask  0x00200000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC5_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC5_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC5_OFFSET          (21U)
+#define SYSCFG_USER5_WRPROTBANK1SEC5_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC5))          /*!< Mask  0x00200000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC4_OFFSET           (20U)
-#define SYSCFG_USER5_WRPROTBANK1SEC4_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC4))        /*!< Mask  0x00100000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC4_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC4_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC4_OFFSET          (20U)
+#define SYSCFG_USER5_WRPROTBANK1SEC4_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC4))          /*!< Mask  0x00100000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC3_OFFSET           (19U)
-#define SYSCFG_USER5_WRPROTBANK1SEC3_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC3))        /*!< Mask  0x00080000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC3_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC3_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC3_OFFSET          (19U)
+#define SYSCFG_USER5_WRPROTBANK1SEC3_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC3))          /*!< Mask  0x00080000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC2_OFFSET           (18U)
-#define SYSCFG_USER5_WRPROTBANK1SEC2_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC2))        /*!< Mask  0x00040000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC2_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC2_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC2_OFFSET          (18U)
+#define SYSCFG_USER5_WRPROTBANK1SEC2_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC2))          /*!< Mask  0x00040000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC1_OFFSET           (17U)
-#define SYSCFG_USER5_WRPROTBANK1SEC1_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC1))        /*!< Mask  0x00020000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC1_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC1_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC1_OFFSET          (17U)
+#define SYSCFG_USER5_WRPROTBANK1SEC1_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC1))          /*!< Mask  0x00020000 */
 
-#define SYSCFG_USER5_WRPROTBANK1SEC0_OFFSET           (16U)
-#define SYSCFG_USER5_WRPROTBANK1SEC0_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC0))        /*!< Mask  0x00010000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC0_ENABLED          (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK1SEC0_DISABLED         (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_WRPROTBANK1SEC0_OFFSET          (16U)
+#define SYSCFG_USER5_WRPROTBANK1SEC0_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK1SEC0))          /*!< Mask  0x00010000 */
 
-#define SYSCFG_USER5_MASSERASEBANK1SECADDR_OFFSET      (0U)
-#define SYSCFG_USER5_MASSERASEBANK1SECADDR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, MASSERASEBANK1SECADDR))  /*!< Mask  0x00000001 */
-#define SYSCFG_USER5_MASSERASEBANK1SECADDR_ERASED     (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_MASSERASEBANK1SECADDR_NOTERASED  (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define SYSCFG_USER5_BANK1SECAREAMASSERASEEN_OFFSET  (0U)
+#define SYSCFG_USER5_BANK1SECAREAMASSERASEEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, BANK1SECAREAMASSERASEEN))  /*!< Mask  0x00000001 */
 
 /*!< User 6 register */
 #define SYSCFG_USER6_BANK1ENDPROTADDR_OFFSET    (16U)
@@ -718,15 +579,19 @@ typedef struct {
 #define SYSCFG_USER7_BANK1STARTSECADDR_11      (0x800UL << REGISTER_FIELD_OFFSET(SYSCFG, USER7, BANK1STARTSECADDR))  /*!< Value 0x00000800 */
 
 /*!< User 8 register */
-#define SYSCFG_USER8_MASSERASEBANK2SECADDR_OFFSET      (0U)
-#define SYSCFG_USER8_MASSERASEBANK2SECADDR_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER8, MASSERASEBANK2SECADDR))   /*!< Mask  0x00000001 */
-#define SYSCFG_USER8_MASSERASEBANK2SECADDR_ERASED      (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define SYSCFG_USER8_MASSERASEBANK2SECADDR_NOTERASED   (0x1UL)                                                                  /*!< Value 0x00000001 */
+#define SYSCFG_USER8_BANK2SECAREAMASSERASEEN_OFFSET      (16U)
+#define SYSCFG_USER8_BANK2SECAREAMASSERASEEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER8, BANK2SECAREAMASSERASEEN))   /*!< Mask  0x00000001 */
 
-#define SYSCFG_USER8_MASSERASEBANK2PROTADDR_OFFSET     (16U)
-#define SYSCFG_USER8_MASSERASEBANK2PROTADDR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER8, MASSERASEBANK2PROTADDR))  /*!< Mask  0x00010000 */
-#define SYSCFG_USER8_MASSERASEBANK2PROTADDR_ERASED     (0x0UL)                                                                  /*!< Value 0x00000000 */
-#define SYSCFG_USER8_MASSERASEBANK2PROTADDR_NOTERASED  (0x1UL)                                                                  /*!< Value 0x00000001 */
+#define SYSCFG_USER8_BANK2PROTAREAMASSERASEEN_OFFSET     (0U)
+#define SYSCFG_USER8_BANK2PROTAREAMASSERASEEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER8, BANK2PROTAREAMASSERASEEN))  /*!< Mask  0x00010000 */
+
+// Values of flash protected area mass erase enable bit
+#define SYSCFG_PROTAREAMASSERASE_ENABLED   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PROTAREAMASSERASE_DISABLED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of flash secure area mass erase enable bit
+#define SYSCFG_SECAREAMASSERASE_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_SECAREAMASSERASE_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 9 register */
 #define SYSCFG_USER9_BANK2STARTPROTADDR_OFFSET  (16U)
@@ -746,43 +611,31 @@ typedef struct {
 
 #define SYSCFG_USER5_WRPROTBANK2SEC7_OFFSET    (7U)
 #define SYSCFG_USER5_WRPROTBANK2SEC7_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC7))        /*!< Mask  0x00000080 */
-#define SYSCFG_USER5_WRPROTBANK2SEC7_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC7_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC6_OFFSET    (6U)
 #define SYSCFG_USER5_WRPROTBANK2SEC6_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC6))        /*!< Mask  0x00000040 */
-#define SYSCFG_USER5_WRPROTBANK2SEC6_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC6_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC5_OFFSET    (5U)
 #define SYSCFG_USER5_WRPROTBANK2SEC5_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC5))        /*!< Mask  0x00000020 */
-#define SYSCFG_USER5_WRPROTBANK2SEC5_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC5_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC4_OFFSET    (4U)
 #define SYSCFG_USER5_WRPROTBANK2SEC4_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC4))        /*!< Mask  0x00000010 */
-#define SYSCFG_USER5_WRPROTBANK2SEC4_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC4_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC3_OFFSET    (3U)
 #define SYSCFG_USER5_WRPROTBANK2SEC3_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC3))        /*!< Mask  0x00000008 */
-#define SYSCFG_USER5_WRPROTBANK2SEC3_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC3_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC2_OFFSET    (2U)
 #define SYSCFG_USER5_WRPROTBANK2SEC2_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC2))        /*!< Mask  0x00000004 */
-#define SYSCFG_USER5_WRPROTBANK2SEC2_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC2_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC1_OFFSET    (1U)
 #define SYSCFG_USER5_WRPROTBANK2SEC1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC1))        /*!< Mask  0x00000002 */
-#define SYSCFG_USER5_WRPROTBANK2SEC1_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC1_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
 
 #define SYSCFG_USER5_WRPROTBANK2SEC0_OFFSET    (0U)
 #define SYSCFG_USER5_WRPROTBANK2SEC0_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER5, WRPROTBANK2SEC0))        /*!< Mask  0x00000001 */
-#define SYSCFG_USER5_WRPROTBANK2SEC0_ENABLED   (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define SYSCFG_USER5_WRPROTBANK2SEC0_DISABLED  (0x1UL)                                                                 /*!< Value 0x00000001 */
+
+// Value of write protection active bit
+#define SYSCFG_WRPROTSEC_ENABLED   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_WRPROTSEC_DISABLED  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 10 register */
 #define SYSCFG_USER10_BANK2STARTSECADDR_OFFSET  (16U)
@@ -818,8 +671,6 @@ typedef struct {
 /*!< User 11 register */
 #define SYSCFG_USER11_INDWATCHDOGCTRL_OFFSET  (16U)
 #define SYSCFG_USER11_INDWATCHDOGCTRL_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER11, INDWATCHDOGCTRL))     /*!< Mask  0x00010000 */
-#define SYSCFG_USER11_INDWATCHDOGCTRL_HW      (0x0UL)                                                               /*!< Value 0x00000000 */
-#define SYSCFG_USER11_INDWATCHDOGCTRL_SW      (0x1UL)                                                               /*!< Value 0x00000001 */
 
 #define SYSCFG_USER11_BANK2ENDSECADDR_OFFSET  (0U)
 #define SYSCFG_USER11_BANK2ENDSECADDR_MASK    (0xFFFUL << REGISTER_FIELD_OFFSET(SYSCFG, USER11, BANK2ENDSECADDR))   /*!< Mask  0x00000FFF */
@@ -836,68 +687,94 @@ typedef struct {
 #define SYSCFG_USER11_BANK2ENDSECADDR_10      (0x400UL << REGISTER_FIELD_OFFSET(SYSCFG, USER11, BANK2ENDSECADDR))   /*!< Value 0x00000400 */
 #define SYSCFG_USER11_BANK2ENDSECADDR_11      (0x800UL << REGISTER_FIELD_OFFSET(SYSCFG, USER11, BANK2ENDSECADDR))   /*!< Value 0x00000800 */
 
+// Values of independent watchdog controller register
+#define SYSCFG_INDWATCHDOGCTRL_HW  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_INDWATCHDOGCTRL_SW  (0x1UL)  /*!< Value 0x00000001 */
+
 /*!< User 12 register */
 #define SYSCFG_USER12_SECUREMODE_OFFSET        (16U)
 #define SYSCFG_USER12_SECUREMODE_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER12, SECUREMODE))        /*!< Mask  0x00010000 */
-#define SYSCFG_USER12_SECUREMODE_DISABLED      (0x0UL)                                                             /*!< Value 0x00000000 */
-#define SYSCFG_USER12_SECUREMODE_ENABLED       (0x1UL)                                                             /*!< Value 0x00000001 */
 
 #define SYSCFG_USER12_INDWATCHDOG2CTRL_OFFSET  (0U)
 #define SYSCFG_USER12_INDWATCHDOG2CTRL_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER12, INDWATCHDOG2CTRL))  /*!< Mask  0x00000001 */
-#define SYSCFG_USER12_INDWATCHDOG2CTRL_HW      (0x0UL)                                                             /*!< Value 0x00000000 */
-#define SYSCFG_USER12_INDWATCHDOG2CTRL_SW      (0x1UL)                                                             /*!< Value 0x00000001 */
+
+// Values of secure mode enable bit
+#define SYSCFG_SECUREMODE_DISABLED  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_SECUREMODE_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of independent watchdog 2 controller register
+#define SYSCFG_INDWATCHDOG2CTRL_HW  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_INDWATCHDOG2CTRL_SW  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 13 register */
 #define SYSCFG_USER13_D1STANDBYRSTONENTER_OFFSET  (16U)
 #define SYSCFG_USER13_D1STANDBYRSTONENTER_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER13, D1STANDBYRSTONENTER))  /*!< Mask  0x00010000 */
-#define SYSCFG_USER13_D1STANDBYRSTONENTER_ON      (0x0UL)                                                                /*!< Value 0x00000000 */
-#define SYSCFG_USER13_D1STANDBYRSTONENTER_OFF     (0x1UL)                                                                /*!< Value 0x00000001 */
 
 #define SYSCFG_USER13_SECDTCMRAMIZE_OFFSET        (0U)
 #define SYSCFG_USER13_SECDTCMRAMIZE_MASK          (0x3UL << REGISTER_FIELD_OFFSET(SYSCFG, USER13, SECDTCMRAMIZE))        /*!< Mask  0x00000003 */
-#define SYSCFG_USER13_SECDTCMRAMIZE_2K            (0x0UL)                                                                /*!< Value 0x00000000 */
-#define SYSCFG_USER13_SECDTCMRAMIZE_4K            (0x1UL)                                                                /*!< Value 0x00000001 */
-#define SYSCFG_USER13_SECDTCMRAMIZE_8K            (0x2UL)                                                                /*!< Value 0x00000002 */
-#define SYSCFG_USER13_SECDTCMRAMIZE_16K           (0x3UL)                                                                /*!< Value 0x00000003 */
+
+// Values of reset enable when entering domain 1 standby
+#define SYSCFG_D1STANDBYRSTONENTER_ON   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D1STANDBYRSTONENTER_OFF  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of secured data tightly coupled RAM (DTMC) size register
+#define SYSCFG_SECDTCMRAMIZE_2K   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_SECDTCMRAMIZE_4K   (0x1UL)  /*!< Value 0x00000001 */
+#define SYSCFG_SECDTCMRAMIZE_8K   (0x2UL)  /*!< Value 0x00000002 */
+#define SYSCFG_SECDTCMRAMIZE_16K  (0x3UL)  /*!< Value 0x00000003 */
 
 /*!< User 14 register */
 #define SYSCFG_USER14_D2STANDBYRSTONENTER_OFFSET  (16U)
 #define SYSCFG_USER14_D2STANDBYRSTONENTER_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER14, D2STANDBYRSTONENTER))  /*!< Mask  0x00010000 */
-#define SYSCFG_USER14_D2STANDBYRSTONENTER_ON      (0x0UL)                                                                /*!< Value 0x00000000 */
-#define SYSCFG_USER14_D2STANDBYRSTONENTER_OFF     (0x1UL)                                                                /*!< Value 0x00000001 */
 
 #define SYSCFG_USER14_D1STOPRSTONENTER_OFFSET     (0U)
 #define SYSCFG_USER14_D1STOPRSTONENTER_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER14, D1STOPRSTONENTER))     /*!< Mask  0x00010000 */
-#define SYSCFG_USER14_D1STOPRSTONENTER_ON         (0x0UL)                                                                /*!< Value 0x00000000 */
-#define SYSCFG_USER14_D1STOPRSTONENTER_OFF        (0x1UL)                                                                /*!< Value 0x00000001 */
+
+// Values of reset enable when entering domain 2 standby
+#define SYSCFG_D2STANDBYRSTONENTER_ON   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D2STANDBYRSTONENTER_OFF  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of reset enable when entering domain 1 stop
+#define SYSCFG_D1STOPRSTONENTER_ON   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D1STOPRSTONENTER_OFF  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 15 register */
-#define SYSCFG_USER15_D1STOPRSTONENTER_OFFSET               (16U)
-#define SYSCFG_USER15_D1STOPRSTONENTER_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER15, D1STOPRSTONENTER))               /*!< Mask  0x00010000 */
-#define SYSCFG_USER15_D1STOPRSTONENTER_ON                   (0x0UL)                                                                          /*!< Value 0x00000000 */
-#define SYSCFG_USER15_D1STOPRSTONENTER_OFF                  (0x1UL)                                                                          /*!< Value 0x00000001 */
-
-#define SYSCFG_USER15_INDWATCHDOGSTATEINSTANDBYMODE_OFFSET  (0U)
+#define SYSCFG_USER15_INDWATCHDOGSTATEINSTANDBYMODE_OFFSET  (16U)
 #define SYSCFG_USER15_INDWATCHDOGSTATEINSTANDBYMODE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER15, INDWATCHDOGSTATEINSTANDBYMODE))  /*!< Mask  0x00000001 */
-#define SYSCFG_USER15_INDWATCHDOGSTATEINSTANDBYMODE_FREEZE  (0x0UL)                                                                          /*!< Value 0x00000000 */
-#define SYSCFG_USER15_INDWATCHDOGSTATEINSTANDBYMODE_RUN     (0x1UL)                                                                          /*!< Value 0x00000001 */
+
+#define SYSCFG_USER15_D2STOPRSTONENTER_OFFSET               (0U)
+#define SYSCFG_USER15_D2STOPRSTONENTER_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER15, D2STOPRSTONENTER))               /*!< Mask  0x00010000 */
+
+// Values of the status of independent watchdog in standby mode
+#define SYSCFG_INDWATCHDOGSTATEINSTANDBYMODE_FREEZE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_INDWATCHDOGSTATEINSTANDBYMODE_RUN     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of reset enable when entering domain 2 stop
+#define SYSCFG_D2STOPRSTONENTER_ON   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_D2STOPRSTONENTER_OFF  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 16 register */
 #define SYSCFG_USER16_PRIVATEKEY_OFFSET                  (16U)
 #define SYSCFG_USER16_PRIVATEKEY_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER16, PRIVATEKEY))                  /*!< Mask  0x00010000 */
-#define SYSCFG_USER16_PRIVATEKEY_NOTPROGRAMMED           (0x0UL)                                                                       /*!< Value 0x00000000 */
-#define SYSCFG_USER16_PRIVATEKEY_PROGRAMMED              (0x1UL)                                                                       /*!< Value 0x00000001 */
 
 #define SYSCFG_USER16_INDWATCHDOGSTATEINSTOPMODE_OFFSET  (0U)
 #define SYSCFG_USER16_INDWATCHDOGSTATEINSTOPMODE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER16, INDWATCHDOGSTATEINSTOPMODE))  /*!< Mask  0x00000001 */
-#define SYSCFG_USER16_INDWATCHDOGSTATEINSTOPMODE_FREEZE  (0x0UL)                                                                       /*!< Value 0x00000000 */
-#define SYSCFG_USER16_INDWATCHDOGSTATEINSTOPMODE_RUN     (0x1UL)                                                                       /*!< Value 0x00000001 */
+
+// Values of private key programmed register
+#define SYSCFG_PRIVATEKEY_NOTPROGRAMMED  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_PRIVATEKEY_PROGRAMMED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the status of independent watchdog in stop mode
+#define SYSCFG_INDWATCHDOGSTATEINSTOPMODE_FREEZE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_INDWATCHDOGSTATEINSTOPMODE_RUN     (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< User 17 register */
-#define SYSCFG_USER17_IOVLT_OFFSET                          (0U)
-#define SYSCFG_USER17_IOVLT_MASK                            (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER17, IOVLT))  /*!< Mask  0x00000001 */
-#define SYSCFG_USER17_IOVLT_FULLVLTRANGE                    (0x0UL)                                                  /*!< Value 0x00000000 */
-#define SYSCFG_USER17_IOVLT_BELOW2_7V                       (0x1UL)                                                  /*!< Value 0x00000001 */
+#define SYSCFG_USER17_IOVLT_OFFSET  (0U)
+#define SYSCFG_USER17_IOVLT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SYSCFG, USER17, IOVLT))  /*!< Mask  0x00000001 */
+
+// Values of voltage range of I/O high speed
+#define SYSCFG_IOVLT_FULLVLTRANGE  (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCFG_IOVLT_BELOW2_7V     (0x1UL)  /*!< Value 0x00000001 */
 
 #define SYSCFG_OFFSET 0x400
 #define SYSCFG_BASE (D3_APB4_BASE + SYSCFG_OFFSET)
