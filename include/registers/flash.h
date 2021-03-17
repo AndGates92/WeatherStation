@@ -156,123 +156,167 @@ typedef struct {
 #define FLASH_OPTKEY_KEY2    (0x08192A3BUL)  /*!< Value 0x08192A3B */
 
 /*!< Bank control register register  */
-#define FLASH_BANKCTRL_CRCRDERRINT_OFFSET           (28U)
-#define FLASH_BANKCTRL_CRCRDERRINT_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, CRCRDERRINT))         /*!< Mask  0x10000000 */
-#define FLASH_BANKCTRL_CRCRDERRINT_DISABLE          (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_CRCRDERRINT_ENABLE           (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_CRCRDERRINT_OFFSET         (28U)
+#define FLASH_BANKCTRL_CRCRDERRINT_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, CRCRDERRINT))         /*!< Mask  0x10000000 */
 
-#define FLASH_BANKCTRL_CRCEOCINT_OFFSET             (27U)
-#define FLASH_BANKCTRL_CRCEOCINT_MASK               (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, CRCEOCINT))           /*!< Mask  0x08000000 */
-#define FLASH_BANKCTRL_CRCEOCINT_DISABLE            (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_CRCEOCINT_ENABLE             (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_CRCEOCINT_OFFSET           (27U)
+#define FLASH_BANKCTRL_CRCEOCINT_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, CRCEOCINT))           /*!< Mask  0x08000000 */
 
-#define FLASH_BANKCTRL_ERRDOUBLEDETERRINT_OFFSET    (26U)
-#define FLASH_BANKCTRL_ERRDOUBLEDETERRINT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, ERRDOUBLEDETERRINT))  /*!< Mask  0x04000000 */
-#define FLASH_BANKCTRL_ERRDOUBLEDETERRINT_DISABLE   (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_ERRDOUBLEDETERRINT_ENABLE    (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_ERRDOUBLEDETERRINT_OFFSET  (26U)
+#define FLASH_BANKCTRL_ERRDOUBLEDETERRINT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, ERRDOUBLEDETERRINT))  /*!< Mask  0x04000000 */
 
-#define FLASH_BANKCTRL_ERRSGLCORRERRINT_OFFSET      (25U)
-#define FLASH_BANKCTRL_ERRSGLCORRERRINT_MASK        (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, ERRSGLCORRERRINT))    /*!< Mask  0x02000000 */
-#define FLASH_BANKCTRL_ERRSGLCORRERRINT_DISABLE     (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_ERRSGLCORRERRINT_ENABLE      (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_ERRSGLCORRERRINT_OFFSET    (25U)
+#define FLASH_BANKCTRL_ERRSGLCORRERRINT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, ERRSGLCORRERRINT))    /*!< Mask  0x02000000 */
 
-#define FLASH_BANKCTRL_SECRDERRINT_OFFSET           (24U)
-#define FLASH_BANKCTRL_SECRDERRINT_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SECRDERRINT))         /*!< Mask  0x01000000 */
-#define FLASH_BANKCTRL_SECRDERRINT_DISABLE          (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_SECRDERRINT_ENABLE           (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_SECRDERRINT_OFFSET         (24U)
+#define FLASH_BANKCTRL_SECRDERRINT_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SECRDERRINT))         /*!< Mask  0x01000000 */
 
-#define FLASH_BANKCTRL_1RCRDERRINT_OFFSET           (23U)
-#define FLASH_BANKCTRL_RDPROTERRINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, RDPROTERRINT))        /*!< Mask  0x00800000 */
-#define FLASH_BANKCTRL_RDPROTERRINT_DISABLE         (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_RDPROTERRINT_ENABLE          (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_1RCRDERRINT_OFFSET         (23U)
+#define FLASH_BANKCTRL_RDPROTERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, RDPROTERRINT))        /*!< Mask  0x00800000 */
 
-#define FLASH_BANKCTRL_WREROPERRINT_OFFSET          (22U)
-#define FLASH_BANKCTRL_WREROPERRINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WREROPERRINT))        /*!< Mask  0x00400000 */
-#define FLASH_BANKCTRL_WREROPERRINT_DISABLE         (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_WREROPERRINT_ENABLE          (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_WREROPERRINT_OFFSET        (22U)
+#define FLASH_BANKCTRL_WREROPERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WREROPERRINT))        /*!< Mask  0x00400000 */
 
-#define FLASH_BANKCTRL_WRINCOSTENCYERRINT_OFFSET    (21U)
-#define FLASH_BANKCTRL_WRINCOSTENCYERRINT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WRINCOSTENCYERRINT))  /*!< Mask  0x00200000 */
-#define FLASH_BANKCTRL_WRINCOSTENCYERRINT_DISABLE   (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_WRINCOSTENCYERRINT_ENABLE    (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_WRINCOSTENCYERRINT_OFFSET  (21U)
+#define FLASH_BANKCTRL_WRINCOSTENCYERRINT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WRINCOSTENCYERRINT))  /*!< Mask  0x00200000 */
 
-#define FLASH_BANKCTRL_WRSTRBERRINT_OFFSET          (19U)
-#define FLASH_BANKCTRL_WRSTRBERRINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WRSTRBERRINT))        /*!< Mask  0x00080000 */
-#define FLASH_BANKCTRL_WRSTRBERRINT_DISABLE         (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_WRSTRBERRINT_ENABLE          (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_WRSTRBERRINT_OFFSET        (19U)
+#define FLASH_BANKCTRL_WRSTRBERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WRSTRBERRINT))        /*!< Mask  0x00080000 */
 
-#define FLASH_BANKCTRL_PROGSEQINT_OFFSET            (18U)
-#define FLASH_BANKCTRL_PROGSEQINT_MASK              (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, PROGSEQINT))          /*!< Mask  0x00040000 */
-#define FLASH_BANKCTRL_PROGSEQINT_DISABLE           (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_PROGSEQINT_ENABLE            (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_PROGSEQINT_OFFSET          (18U)
+#define FLASH_BANKCTRL_PROGSEQINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, PROGSEQINT))          /*!< Mask  0x00040000 */
 
-#define FLASH_BANKCTRL_WRPROTERRINT_OFFSET          (17U)
-#define FLASH_BANKCTRL_WRPROTERRINT_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WRPROTERRINT))        /*!< Mask  0x00020000 */
-#define FLASH_BANKCTRL_WRPROTERRINT_DISABLE         (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_WRPROTERRINT_ENABLE          (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_WRPROTERRINT_OFFSET        (17U)
+#define FLASH_BANKCTRL_WRPROTERRINT_MASK          (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, WRPROTERRINT))        /*!< Mask  0x00020000 */
 
-#define FLASH_BANKCTRL_EOPINT_OFFSET                (16U)
-#define FLASH_BANKCTRL_EOPINT_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, EOPINT))              /*!< Mask  0x00010000 */
-#define FLASH_BANKCTRL_EOPINT_DISABLE               (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_EOPINT_ENABLE                (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_EOPINT_OFFSET              (16U)
+#define FLASH_BANKCTRL_EOPINT_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, EOPINT))              /*!< Mask  0x00010000 */
 
-#define FLASH_BANKCTRL_CRCEN_OFFSET                 (15U)
-#define FLASH_BANKCTRL_CRCEN_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, CRCEN))               /*!< Mask  0x00008000 */
-#define FLASH_BANKCTRL_CRCEN_DISABLE                (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_CRCEN_ENABLE                 (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_CRCEN_OFFSET               (15U)
+#define FLASH_BANKCTRL_CRCEN_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, CRCEN))               /*!< Mask  0x00008000 */
 
-#define FLASH_BANKCTRL_SPECIALSECTORACCESS_OFFSET   (14U)
-#define FLASH_BANKCTRL_SPECIALSECTORACCESS_MASK     (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SPECIALSECTORACCESS))  /*!< Mask  0x00008000 */
-#define FLASH_BANKCTRL_SPECIALSECTORACCESS_DISABLE  (0x0UL)                                                                 /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_SPECIALSECTORACCESS_ENABLE   (0x1UL)                                                                 /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_USERSECSEL_OFFSET          (14U)
+#define FLASH_BANKCTRL_USERSECSEL_MASK            (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, USERSECSEL))          /*!< Mask  0x00008000 */
 
-#define FLASH_BANKCTRL_SECERASESEL_OFFSET           (8U)
-#define FLASH_BANKCTRL_SECERASESEL_MASK             (0x7UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SECERASESEL))         /*!< Mask  0x00000700 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC0             (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC1             (0x1UL)                                                                /*!< Value 0x00000001 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC2             (0x2UL)                                                                /*!< Value 0x00000002 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC3             (0x3UL)                                                                /*!< Value 0x00000003 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC4             (0x4UL)                                                                /*!< Value 0x00000004 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC5             (0x5UL)                                                                /*!< Value 0x00000005 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC6             (0x6UL)                                                                /*!< Value 0x00000006 */
-#define FLASH_BANKCTRL_SECERASESEL_SEC7             (0x7UL)                                                                /*!< Value 0x00000007 */
+#define FLASH_BANKCTRL_SECERASESEL_OFFSET         (8U)
+#define FLASH_BANKCTRL_SECERASESEL_MASK           (0x7UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SECERASESEL))         /*!< Mask  0x00000700 */
 
-#define FLASH_BANKCTRL_START_OFFSET                 (7U)
-#define FLASH_BANKCTRL_START_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, START))               /*!< Mask  0x00000080 */
-#define FLASH_BANKCTRL_START_DISABLE                (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_START_ENABLE                 (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_START_OFFSET               (7U)
+#define FLASH_BANKCTRL_START_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, START))               /*!< Mask  0x00000080 */
 
-#define FLASH_BANKCTRL_FORCEWR_OFFSET               (6U)
-#define FLASH_BANKCTRL_FORCEWR_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, FORCEWR))             /*!< Mask  0x00000040 */
-#define FLASH_BANKCTRL_FORCEWR_DISABLE              (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_FORCEWR_ENABLE               (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_FORCEWR_OFFSET             (6U)
+#define FLASH_BANKCTRL_FORCEWR_MASK               (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, FORCEWR))             /*!< Mask  0x00000040 */
 
-#define FLASH_BANKCTRL_PROGSIZE_OFFSET              (4U)
-#define FLASH_BANKCTRL_PROGSIZE_MASK                (0x3UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, PROGSIZE))            /*!< Mask  0x00000030 */
-#define FLASH_BANKCTRL_PROGSIZE_BYTEPAR             (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_PROGSIZE_HALFWORDPAR         (0x1UL)                                                                /*!< Value 0x00000001 */
-#define FLASH_BANKCTRL_PROGSIZE_WORDPAR             (0x2UL)                                                                /*!< Value 0x00000002 */
-#define FLASH_BANKCTRL_PROGSIZE_DOUBLEWORDPAR       (0x3UL)                                                                /*!< Value 0x00000003 */
+#define FLASH_BANKCTRL_PROGSIZE_OFFSET            (4U)
+#define FLASH_BANKCTRL_PROGSIZE_MASK              (0x3UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, PROGSIZE))            /*!< Mask  0x00000030 */
 
-#define FLASH_BANKCTRL_ERASEREQ_OFFSET              (3U)
-#define FLASH_BANKCTRL_ERASEREQ_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, ERASEREQ))            /*!< Mask  0x00000008 */
-#define FLASH_BANKCTRL_ERASEREQ_DISABLE             (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_ERASEREQ_ENABLE              (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_ERASEREQ_OFFSET            (3U)
+#define FLASH_BANKCTRL_ERASEREQ_MASK              (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, ERASEREQ))            /*!< Mask  0x00000008 */
 
-#define FLASH_BANKCTRL_SECERASEREQ_OFFSET           (2U)
-#define FLASH_BANKCTRL_SECERASEREQ_MASK             (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SECERASEREQ))         /*!< Mask  0x00000004 */
-#define FLASH_BANKCTRL_SECERASEREQ_DISABLE          (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_SECERASEREQ_ENABLE           (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_SECERASEREQ_OFFSET         (2U)
+#define FLASH_BANKCTRL_SECERASEREQ_MASK           (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, SECERASEREQ))         /*!< Mask  0x00000004 */
 
-#define FLASH_BANKCTRL_INTBUFEN_OFFSET              (1U)
-#define FLASH_BANKCTRL_INTBUFEN_MASK                (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, INTBUFEN))            /*!< Mask  0x00000002 */
-#define FLASH_BANKCTRL_INTBUFEN_DISABLE             (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_INTBUFEN_ENABLE              (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_INTBUFEN_OFFSET            (1U)
+#define FLASH_BANKCTRL_INTBUFEN_MASK              (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, INTBUFEN))            /*!< Mask  0x00000002 */
 
-#define FLASH_BANKCTRL_LOCK_OFFSET                  (0U)
-#define FLASH_BANKCTRL_LOCK_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, LOCK))                /*!< Mask  0x00000001 */
-#define FLASH_BANKCTRL_LOCK_DISABLE                 (0x0UL)                                                                /*!< Value 0x00000000 */
-#define FLASH_BANKCTRL_LOCK_ENABLE                  (0x1UL)                                                                /*!< Value 0x00000001 */
+#define FLASH_BANKCTRL_LOCKCFG_OFFSET             (0U)
+#define FLASH_BANKCTRL_LOCKCFG_MASK               (0x1UL << REGISTER_FIELD_OFFSET(FLASH, BANKCTRL, LOCK))                /*!< Mask  0x00000001 */
+
+// Values of bank CRC read error interrupt enable bit
+#define FLASH_BANKCRCRDERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCRDERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank CRC end of calculation interrupt enable bit
+#define FLASH_BANKCRCEOCINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRCEOCINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank ECC double detection error interrupt enable bit
+#define FLASH_BANKERRDOUBLEDETERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERRDOUBLEDETERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank ECC single detection error interrupt enable bit
+#define FLASH_BANKERRSGLCORRERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERRSGLCORRERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank secure error interrupt enable bit
+#define FLASH_BANKSECRDERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKSECRDERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank read protection interrupt enable bit
+#define FLASH_BANKRDPROTERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKRDPROTERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write/erase error interrupt enable bit
+#define FLASH_BANKWREROPERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWREROPERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write incosistency error interrupt enable bit
+#define FLASH_BANKWRINCOSTENCYERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRINCOSTENCYERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank strobe error interrupt enable bit
+#define FLASH_BANKWRSTRBERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRSTRBERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank programming sequence error interrupt enable bit
+#define FLASH_BANKPROGSEQINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKPROGSEQINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank write protection interrupt enable bit
+#define FLASH_BANKWRPROTERRINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKWRPROTERRINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank end of program interrupt enable bit
+#define FLASH_BANKEOPINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKEOPINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank CRC enable bit
+#define FLASH_BANKCRC_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCRC_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank user sector selection bit
+#define FLASH_BANKUSERSEC_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKUSERSEC_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank sector erase selection register
+#define FLASH_BANKSECERASESEL_SEC0  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKSECERASESEL_SEC1  (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_BANKSECERASESEL_SEC2  (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_BANKSECERASESEL_SEC3  (0x3UL)  /*!< Value 0x00000003 */
+#define FLASH_BANKSECERASESEL_SEC4  (0x4UL)  /*!< Value 0x00000004 */
+#define FLASH_BANKSECERASESEL_SEC5  (0x5UL)  /*!< Value 0x00000005 */
+#define FLASH_BANKSECERASESEL_SEC6  (0x6UL)  /*!< Value 0x00000006 */
+#define FLASH_BANKSECERASESEL_SEC7  (0x7UL)  /*!< Value 0x00000007 */
+
+// Values of bank erase start bit
+#define FLASH_BANKSTART_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKSTART_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of enable got to start a write even if the wrtie buffer is not full
+#define FLASH_BANKFORCEWR_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKFORCEWR_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank program size register
+#define FLASH_BANKPROGSIZE_BYTEPAR        (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKPROGSIZE_HALFWORDPAR    (0x1UL)  /*!< Value 0x00000001 */
+#define FLASH_BANKPROGSIZE_WORDPAR        (0x2UL)  /*!< Value 0x00000002 */
+#define FLASH_BANKPROGSIZE_DOUBLEWORDPAR  (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of bank erase request bit
+#define FLASH_BANKERASEREQ_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKERASEREQ_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank sector erase request bit
+#define FLASH_BANKSECERASEREQ_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKSECERASEREQ_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank internal buffer enable bit
+#define FLASH_BANKINTBUF_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKINTBUF_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of bank configuration lock bit
+#define FLASH_BANKCFG_UNLOCKED  (0x0UL)  /*!< Value 0x00000000 */
+#define FLASH_BANKCFG_LOCKED    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Bank status register register */
 #define FLASH_BANKSTATUS_CRCRDERRINT_OFFSET               (28U)
