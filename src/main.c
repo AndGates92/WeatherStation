@@ -8,6 +8,8 @@
 
 #include "config/config.h"
 
+#include "registers/gpio.h"
+
 void gpio_blink() {
 
 	if (GET_FIELD_VALUE(GPIO_GPIOC->IDATA, GPIO, IDATA, PIN13) == GPIO_1) {
@@ -27,7 +29,7 @@ void gpio_blink() {
 
 		uint32_t counter = 0;
 		while(counter < 1000) {
-			couter++;
+			counter++;
 		}
 	}
 }
