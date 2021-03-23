@@ -52,10 +52,18 @@ PROFILER = $(TOOLCHAIN)-gprof
 OBJDUMP = $(TOOLCHAIN)-objdump
 OBJSIZE = $(TOOLCHAIN)-size
 PROGRAMMER = STM32_Programmer_CLI
+STLINKGDBSERVER = ST-LINK_gdbserver
 
 # Programmer configuration
 PROGRAM_ADDRESS = 0x8000000
 PORT = swd
+SECTOR ?= 0
+PROGRAMMER_VERBOSITY = -vb 3
+
+# ST Link GDB server configuration
+GDBSERVER_VERBOSITY = -l 31
+PROGRAMMER_LOCATION = /opt/STMicroelectronics/STM32CubeProgrammer/bin
+DEBUG_MODE = --swd
 
 ifeq ($(COVERAGE), 1)
   COVFLAGS = -ftest-coverage -fprofile-arcs -fprofile-abs-path
@@ -184,8 +192,17 @@ profiling :
 # Work around to force generating the file
 $(DEPS) :
 
+erase_sector :
+	$(PROGRAMMER) -c port=$(PORT) -e $(SECTOR) -vb 3
+
+mass_erase :
+	$(PROGRAMMER) -c port=$(PORT) -e all -vb 3
+
 program : $(BIN)
-	$(PROGRAMMER) -c port=$(PORT) -w $(BIN) $(PROGRAM_ADDRESS) 
+	$(PROGRAMMER) -c port=$(PORT) -w $(BIN) $(PROGRAM_ADDRESS) $(PROGRAMMER_VERBOSITY)
+
+gdbserver :
+	$(STLINKGDBSERVER) -cp $(PROGRAMMER_LOCATION) $(DEBUG_MODE) $(GDBSERVER_VERBOSITY)
 
 compile : $(BIN)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating binary file $^"
@@ -209,6 +226,7 @@ debug :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Object dump: $(OBJDUMP)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Object size: $(OBJSIZE)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Programmer: $(PROGRAMMER)"
+	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] ST Link GDB server: $(STLINKGDBSERVER)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Executables:"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> binary: $(BIN)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiler options:"
