@@ -88,8 +88,12 @@ else
 endif
 
 # Compile flags
-CFLAGS = -std=gnu99 -g -O2 -Wall -fsingle-precision-constant -Wdouble-promotion 
+CFLAGS = -std=gnu99 -g -O2 -Wall -fsingle-precision-constant -Wdouble-promotion
 ARMFLAGS = -mlittle-endian -mthumb -mthumb-interwork -mcpu=cortex-m7
+# data-sections: each data item is put into its own section - this prevents linker optimizations
+# function-sections: each function is put into its own section - this prevents linker optimizations
+# stack-usage: outputs stack usage informations
+ADDITIONALFLAGS = -fstack-usage -fdata-sections -ffunction-sections
 
 # Linker flags
 CLDFLAGS = -nostdlib -nostartfiles
@@ -181,7 +185,7 @@ $(OBJ_DIR)/%.$(C_EXT).$(OBJ_EXT) : $(SRC_DIR)/%.$(C_EXT)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiling $(<F) and creating object $@"
 	$(MKDIR) $(dir $(DEPFILE))
 	$(MKDIR) $(@D)
-	$(CC) $(DEPENDFLAG) $(CFLAGS) $(ARMFLAGS) $(INCLUDES) -c $< -o $@ $(LDFLAGS)
+	$(CC) $(DEPENDFLAG) $(CFLAGS) $(ARMFLAGS) $(ADDITIONALFLAGS) $(INCLUDES) -c $< -o $@ $(LDFLAGS)
 
 coverage :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Generating coverage report with $(COV)"
@@ -233,6 +237,7 @@ clean :
 debug :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Language: $(PROG_LANG)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiler: $(CC)"
+	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Debugger: $(GDB)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Linker: $(LD)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Object copy: $(OBJCOPY)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Coverage tool: $(COV)"
@@ -246,6 +251,7 @@ debug :
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiler options:"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> $(PROG_LANG) flags: $(CFLAGS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> ARM flags: $(ARMFLAGS)"
+	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Additional GCC flags: $(ADDITIONALFLAGS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Linked flags: $(LDFLAGS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Coverage compile flags: $(COVFLAGS)"
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] --> Profiler flags: $(PROFILERFLAGS)"
