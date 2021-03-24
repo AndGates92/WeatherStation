@@ -55,14 +55,15 @@ PROGRAMMER = STM32_Programmer_CLI
 STLINKGDBSERVER = ST-LINK_gdbserver
 
 # Programmer configuration
-PROGRAM_ADDRESS = 0x8000000
+PROGRAM_ADDRESS ?= 0x8000000
 PORT = swd
 SECTOR ?= 0
-PROGRAMMER_VERBOSITY = -vb 3
+PROGRAMMER_VERBOSITY ?= 3
+FLASHING_OPTIONS ?= -e all
 
 # ST Link GDB server configuration
-GDBSERVER_VERBOSITY = -l 31
-PROGRAMMER_LOCATION = /opt/STMicroelectronics/STM32CubeProgrammer/bin
+GDBSERVER_VERBOSITY ?= 31
+PROGRAMMER_LOCATION ?= /opt/STMicroelectronics/STM32CubeProgrammer/bin
 DEBUG_MODE = --swd
 
 ifeq ($(COVERAGE), 1)
@@ -193,16 +194,16 @@ profiling :
 $(DEPS) :
 
 erase_sector :
-	$(PROGRAMMER) -c port=$(PORT) -e $(SECTOR) -vb 3
+	$(PROGRAMMER) -c port=$(PORT) -e $(SECTOR) -vb $(PROGRAMMER_VERBOSITY)
 
 mass_erase :
-	$(PROGRAMMER) -c port=$(PORT) -e all -vb 3
+	$(PROGRAMMER) -c port=$(PORT) -e all -vb $(PROGRAMMER_VERBOSITY)
 
 program : $(BIN)
-	$(PROGRAMMER) -c port=$(PORT) -w $(BIN) $(PROGRAM_ADDRESS) $(PROGRAMMER_VERBOSITY)
+	$(PROGRAMMER) -c port=$(PORT) $(FLASHING_OPTIONS) -w $(BIN) $(PROGRAM_ADDRESS) -vb $(PROGRAMMER_VERBOSITY)
 
 gdbserver :
-	$(STLINKGDBSERVER) -cp $(PROGRAMMER_LOCATION) $(DEBUG_MODE) $(GDBSERVER_VERBOSITY)
+	$(STLINKGDBSERVER) -cp $(PROGRAMMER_LOCATION) $(DEBUG_MODE) -l $(GDBSERVER_VERBOSITY)
 
 compile : $(BIN)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating binary file $^"
