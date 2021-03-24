@@ -36,6 +36,9 @@ DEP_EXT = dep
 # Directory containing binary files
 BIN_DIR ?= bin
 
+# Directory containing scripts
+SCRIPT_DIR ?= script
+
 # Coverage directory
 COVERAGE_DIR ?= coverage
 
@@ -44,6 +47,7 @@ PROFILE_DIR ?= profile
 
 TOOLCHAIN ?= arm-none-eabi
 CC = $(TOOLCHAIN)-gcc
+GDB = $(TOOLCHAIN)-gdb
 LD = $(TOOLCHAIN)-ld
 AS = $(TOOLCHAIN)-as
 OBJCOPY = $(TOOLCHAIN)-objcopy
@@ -65,6 +69,8 @@ FLASHING_OPTIONS ?= -e all
 GDBSERVER_VERBOSITY ?= 31
 PROGRAMMER_LOCATION ?= /opt/STMicroelectronics/STM32CubeProgrammer/bin
 DEBUG_MODE = --swd
+GDBSERVER_TCPPORT ?= 61234
+GDBSERVER_OPTIONS ?= -e
 
 ifeq ($(COVERAGE), 1)
   COVFLAGS = -ftest-coverage -fprofile-arcs -fprofile-abs-path
@@ -89,7 +95,13 @@ CLDFLAGS = -nostdlib -nostartfiles
 LIB_LIST = $(COVLIBS)
 LDFLAGS := $(foreach LIB, ${LIB_LIST}, -l${LIB}) $(CLDFLAGS)
 
-SPECFILE ?= ./linker_script/CortexM7.ld
+SPECFILE_DIR ?= $(SCRIPT_DIR)/linker
+SPECFILE ?= CortexM7.ld
+SPECFILEPATH ?= $(SPECFILE_DIR)/$(SPECFILE)
+
+GDBCOMMANDFILE_DIR ?= $(SCRIPT_DIR)/gdb
+GDBCOMMANDFILE ?= command.gdb
+GDBCOMMANDFILEPATH ?= $(GDBCOMMANDFILE_DIR)/$(GDBCOMMANDFILE)
 
 # Coverage
 COVSEARCHDIR := $(foreach DIR, ${OBJS_DIR}, --object-directory ${DIR})
@@ -157,7 +169,7 @@ $(BIN) : $(ELF)
 $(ELF) : $(OBJS)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating elf file $@ from object files $^"
 	$(MKDIR) $(@D)
-	$(LD) -T$(SPECFILE)  -o $@ $^
+	$(LD) -T$(SPECFILEPATH)  -o $@ $^
 
 $(OBJ_DIR)/%.$(AS_EXT).$(OBJ_EXT) : $(SRC_DIR)/%.$(AS_EXT)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Compiling $(<F) and creating object $@"
@@ -203,7 +215,10 @@ program : $(BIN)
 	$(PROGRAMMER) -c port=$(PORT) $(FLASHING_OPTIONS) -w $(BIN) $(PROGRAM_ADDRESS) -vb $(PROGRAMMER_VERBOSITY)
 
 gdbserver :
-	$(STLINKGDBSERVER) -cp $(PROGRAMMER_LOCATION) $(DEBUG_MODE) -l $(GDBSERVER_VERBOSITY)
+	$(STLINKGDBSERVER) -cp $(PROGRAMMER_LOCATION) $(DEBUG_MODE) -l $(GDBSERVER_VERBOSITY) -p $(GDBSERVER_TCPPORT) $(GDBSERVER_OPTIONS)
+
+gdb : $(ELF)
+	$(GDB) --command=$(GDBCOMMANDFILEPATH) $(ELF)
 
 compile : $(BIN)
 	$(VERBOSE_ECHO)echo "[${TIMESTAMP}] Creating binary file $^"
