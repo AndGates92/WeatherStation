@@ -63,14 +63,15 @@ PROGRAM_ADDRESS ?= 0x8000000
 PORT = swd
 SECTOR ?= 0
 PROGRAMMER_VERBOSITY ?= 3
-FLASHING_OPTIONS ?= -e all
+FLASHING_OPTIONS ?= --erase all
 
 # ST Link GDB server configuration
-GDBSERVER_VERBOSITY ?= 31
+GDBSERVER_LOGLEVEL ?= 31
+GDBSERVER_VERBOSITY ?= --verbose
 PROGRAMMER_LOCATION ?= /opt/STMicroelectronics/STM32CubeProgrammer/bin
 DEBUG_MODE = --swd
 GDBSERVER_TCPPORT ?= 61234
-GDBSERVER_OPTIONS ?= -e
+GDBSERVER_OPTIONS ?= --persistent
 
 ifeq ($(COVERAGE), 1)
   COVFLAGS = -ftest-coverage -fprofile-arcs -fprofile-abs-path
@@ -206,16 +207,16 @@ profiling :
 $(DEPS) :
 
 erase_sector :
-	$(PROGRAMMER) -c port=$(PORT) -e $(SECTOR) -vb $(PROGRAMMER_VERBOSITY)
+	$(PROGRAMMER) --connect port=$(PORT) --erase $(SECTOR) --verbosity $(PROGRAMMER_VERBOSITY)
 
 mass_erase :
-	$(PROGRAMMER) -c port=$(PORT) -e all -vb $(PROGRAMMER_VERBOSITY)
+	$(PROGRAMMER) --connect port=$(PORT) --erase all --verbosity $(PROGRAMMER_VERBOSITY)
 
 program : $(BIN)
-	$(PROGRAMMER) -c port=$(PORT) $(FLASHING_OPTIONS) -w $(BIN) $(PROGRAM_ADDRESS) -vb $(PROGRAMMER_VERBOSITY)
+	$(PROGRAMMER) --connect port=$(PORT) $(FLASHING_OPTIONS) --write $(BIN) $(PROGRAM_ADDRESS)  --verbosity $(PROGRAMMER_VERBOSITY)
 
 gdbserver :
-	$(STLINKGDBSERVER) -cp $(PROGRAMMER_LOCATION) $(DEBUG_MODE) -l $(GDBSERVER_VERBOSITY) -p $(GDBSERVER_TCPPORT) $(GDBSERVER_OPTIONS)
+	$(STLINKGDBSERVER) --stm32cubeprogrammer-path $(PROGRAMMER_LOCATION) $(DEBUG_MODE) --log-level $(GDBSERVER_LOGLEVEL) $(GDBSERVER_VERBOSITY) --port-number $(GDBSERVER_TCPPORT) $(GDBSERVER_OPTIONS)
 
 gdb : $(ELF)
 	$(GDB) --command=$(GDBCOMMANDFILEPATH) $(ELF)
