@@ -61,9 +61,9 @@ STLINKGDBSERVER = ST-LINK_gdbserver
 # Programmer configuration
 PROGRAM_ADDRESS ?= 0x8000000
 PORT = swd
-SECTOR ?= 0
+SECTOR ?= all
 PROGRAMMER_VERBOSITY ?= 3
-FLASHING_OPTIONS ?= --erase all
+FLASHING_STATUS ?= --optionbytes displ -coreReg -score
 
 # ST Link GDB server configuration
 GDBSERVER_LOGLEVEL ?= 31
@@ -206,14 +206,11 @@ profiling :
 # Work around to force generating the file
 $(DEPS) :
 
-erase_sector :
+erase_flash :
 	$(PROGRAMMER) --connect port=$(PORT) --erase $(SECTOR) --verbosity $(PROGRAMMER_VERBOSITY)
 
-mass_erase :
-	$(PROGRAMMER) --connect port=$(PORT) --erase all --verbosity $(PROGRAMMER_VERBOSITY)
-
-program : $(BIN)
-	$(PROGRAMMER) --connect port=$(PORT) $(FLASHING_OPTIONS) --write $(BIN) $(PROGRAM_ADDRESS)  --verbosity $(PROGRAMMER_VERBOSITY)
+program : $(ELF)
+	$(PROGRAMMER) --connect port=$(PORT) --write $(ELF) $(PROGRAM_ADDRESS) $(FLASHING_STATUS) --verbosity $(PROGRAMMER_VERBOSITY)
 
 gdbserver :
 	$(STLINKGDBSERVER) --stm32cubeprogrammer-path $(PROGRAMMER_LOCATION) $(DEBUG_MODE) --log-level $(GDBSERVER_LOGLEVEL) $(GDBSERVER_VERBOSITY) --port-number $(GDBSERVER_TCPPORT) $(GDBSERVER_OPTIONS)
