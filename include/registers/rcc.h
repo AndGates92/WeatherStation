@@ -663,9 +663,9 @@ typedef struct {
 #define RCC_PLLDIV_DIVN_MASK    (0x1FFUL << REGISTER_FIELD_OFFSET(RCC, PLLDIV, DIVN))  /*!< Mask  0x000001FF */
 
 /*!< RCC PLL divider for PLL1, PLL2 and PLL3 (Macros valid for registers PLL3DIV, PLL2DIV and PLL1DIV) */
-#define RCC_PLLDIV_BYPASS       (0x000UL)                                              /*!< Value 0x00000003 */
-#define RCC_PLLDIV2             (0x001UL)                                              /*!< Value 0x00000003 */
-#define RCC_PLLDIV3             (0x002UL)                                              /*!< Value 0x00000003 */
+#define RCC_PLLDIV_BYPASS       (0x000UL)                                              /*!< Value 0x00000000 */
+#define RCC_PLLDIV2             (0x001UL)                                              /*!< Value 0x00000001 */
+#define RCC_PLLDIV3             (0x002UL)                                              /*!< Value 0x00000002 */
 #define RCC_PLLDIV4             (0x003UL)                                              /*!< Value 0x00000003 */
 #define RCC_PLLDIV5             (0x004UL)                                              /*!< Value 0x00000004 */
 #define RCC_PLLDIV6             (0x005UL)                                              /*!< Value 0x00000005 */
