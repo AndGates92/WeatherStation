@@ -71,7 +71,7 @@ GDBSERVER_VERBOSITY ?= --verbose
 PROGRAMMER_LOCATION ?= /opt/STMicroelectronics/STM32CubeProgrammer/bin
 DEBUG_MODE = --swd
 GDBSERVER_TCPPORT ?= 61234
-GDBSERVER_OPTIONS ?= --persistent
+GDBSERVER_OPTIONS ?= --ext-memory-loaders --persistent
 
 ifeq ($(COVERAGE), 1)
   COVFLAGS = -ftest-coverage -fprofile-arcs -fprofile-abs-path
@@ -88,12 +88,12 @@ else
 endif
 
 # Compile flags
-CFLAGS = -std=gnu99 -g -O2 -Wall -fsingle-precision-constant -Wdouble-promotion
+CFLAGS = -std=gnu99 -g3 -O0 -Wall -fsingle-precision-constant -Wdouble-promotion
 ARMFLAGS = -mlittle-endian -mthumb -mthumb-interwork -mcpu=cortex-m7
 # data-sections: each data item is put into its own section - this prevents linker optimizations
 # function-sections: each function is put into its own section - this prevents linker optimizations
 # stack-usage: outputs stack usage informations
-ADDITIONALFLAGS = -fstack-usage -fdata-sections -ffunction-sections
+ADDITIONALFLAGS = --specs=nano.specs -fstack-usage -fdata-sections -ffunction-sections
 
 # Linker flags
 CLDFLAGS = -nostdlib -nostartfiles
