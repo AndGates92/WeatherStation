@@ -5,7 +5,7 @@
  * @file sysctrlscs.h
  * @author Andrea Gianarda
  * @date 30th of March 2021
- * @brief System control register in system control space (SCS) register
+ * @brief System control registers in system control space (SCS) register
 */
 
 #include <stdint.h>
@@ -20,8 +20,8 @@
 
 /**
  *  @ingroup RegisterGroup
- *  @defgroup SysCtrl System control register in system control space (SCS)
- *  @brief System control register in system control space (SCS) macros and structures
+ *  @defgroup SysCtrl System control registers in system control space (SCS)
+ *  @brief System control registers in system control space (SCS) macros and structures
  *  @{
  */
 
@@ -93,15 +93,15 @@ typedef struct {
 #define SYSCTRL_ACTL_FOLDEDINSTR_MASK         (0x1UL << REGISTER_FIELD_OFFSET(SYSCTRL, ACTL, FOLDEDINSTR))       /*!< Mask  0x00000004 */
 
 // Values of dual issue bits
-#define SYSCTRL_ACTL_DUALISSUE_VFP              (0x10UL)  /*!< Value 0x00000010 */
-#define SYSCTRL_ACTL_DUALISSUE_INTMACMUL        (0x08UL)  /*!< Value 0x00000008 */
-#define SYSCTRL_ACTL_DUALISSUE_LOADPC           (0x04UL)  /*!< Value 0x00000004 */
-#define SYSCTRL_ACTL_DUALISSUE_INDIRECTBRANCH   (0x02UL)  /*!< Value 0x00000002 */
-#define SYSCTRL_ACTL_DUALISSUE_DIRECTBRANCH     (0x01UL)  /*!< Value 0x00000001 */
+#define SYSCTRL_DUALISSUE_DIRECTBRANCH     (0x01UL)  /*!< Value 0x00000001 */
+#define SYSCTRL_DUALISSUE_INDIRECTBRANCH   (0x02UL)  /*!< Value 0x00000002 */
+#define SYSCTRL_DUALISSUE_LOADPC           (0x04UL)  /*!< Value 0x00000004 */
+#define SYSCTRL_DUALISSUE_INTMACMUL        (0x08UL)  /*!< Value 0x00000008 */
+#define SYSCTRL_DUALISSUE_VFP              (0x10UL)  /*!< Value 0x00000010 */
 
 // Values of enable bits
-#define SYSCTRL_ACTL_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
-#define SYSCTRL_ACTL_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
+#define SYSCTRL_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
+#define SYSCTRL_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
 
 #define SYSCTRL_OFFSET 0x0
 #define SYSCTRL_BASE (SCS_BASE + SYSCTRL_OFFSET)
