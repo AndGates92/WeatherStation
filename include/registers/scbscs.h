@@ -491,20 +491,56 @@ typedef struct {
 #define SCB_CFGCTRL_STKALIGN_OFFSET  (9U)
 #define SCB_CFGCTRL_STKALIGN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, STKALIGN))  /*!< Mask  0x00000200 */
 
-#define SCB_CFGCTRL_SENDEVENTONPENDING_OFFSET  (8U)
-#define SCB_CFGCTRL_SENDEVENTONPENDING_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, SENDEVENTONPENDING))  /*!< Mask  0x00000100 */
+#define SCB_CFGCTRL_DATAACCESSFAULTWITHPRIM1M2_OFFSET  (8U)
+#define SCB_CFGCTRL_DATAACCESSFAULTWITHPRIM1M2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DATAACCESSFAULTWITHPRIM1M2))  /*!< Mask  0x00000100 */
 
-#define SCB_CFGCTRL_SENDEVENTONPENDING_OFFSET  (4U)
-#define SCB_CFGCTRL_SENDEVENTONPENDING_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, SENDEVENTONPENDING))  /*!< Mask  0x00000010 */
+#define SCB_CFGCTRL_DIV0TRAP_OFFSET  (4U)
+#define SCB_CFGCTRL_DIV0TRAP_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DIV0TRAP))  /*!< Mask  0x00000010 */
 
-#define SCB_CFGCTRL_SLEEPSTATE_OFFSET          (3U)
-#define SCB_CFGCTRL_SLEEPSTATE_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, SLEEPSTATE))          /*!< Mask  0x00000008 */
+#define SCB_CFGCTRL_UALIGNTRAP_OFFSET          (3U)
+#define SCB_CFGCTRL_UALIGNTRAP_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, UNALIGNTRAP))          /*!< Mask  0x00000008 */
 
-#define SCB_CFGCTRL_SLEEPONISREXIT_OFFSET      (1U)
-#define SCB_CFGCTRL_SLEEPONISREXIT_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, SLEEPONISREXIT))      /*!< Mask  0x00000002 */
+#define SCB_CFGCTRL_UNPRIVILILEGEDSTIRACCESS_OFFSET      (1U)
+#define SCB_CFGCTRL_UNPRIVILILEGEDSTIRACCESS_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, UNPRIVILILEGEDSTIRACCESS))      /*!< Mask  0x00000002 */
 
-#define SCB_CFGCTRL_SLEEPONISREXIT_OFFSET      (0U)
-#define SCB_CFGCTRL_SLEEPONISREXIT_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, SLEEPONISREXIT))      /*!< Mask  0x00000001 */
+#define SCB_CFGCTRL_THREADMODEENTER_OFFSET      (0U)
+#define SCB_CFGCTRL_THREADMODEENTER_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, THREADMODEENTER))      /*!< Mask  0x00000001 */
+
+// Values of branch prediction enable bit
+#define SCB_BRANCHPRED_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_BRANCHPRED_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of instruction cache enable bit
+#define SCB_ICACHE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_ICACHE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of data cache enable bit
+#define SCB_DCACHE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_DCACHE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of stack alignment on exception entry select bit
+#define SCB_STKALIGN_4BYTE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_STKALIGN_8BYTE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the bit controlling the effect of precise data access fault on handlers runign at priority -1 or priority -2
+#define SCB_DATAACCESSFAULTWITHPRIM1M2_LOCKUP   (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_DATAACCESSFAULTWITHPRIM1M2_IGNORED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of trap on divide by 0 enable bit
+#define SCB_DIV0TRAP_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_DIV0TRAP_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of trap on ualigned work or halfword access enable bit
+#define SCB_UNALIGNTRAP_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_UNALIGNTRAP_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of unprivileged software access to the software triggerred interrupt register (STIR) enable bit
+#define SCB_UNPRIVILILEGEDSTIRACCESS_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_UNPRIVILILEGEDSTIRACCESS_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register controlling how thread mode is entered
+#define SCB_THREADMODEENTER_NOEXCEPTIONACTIVE               (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_THREADMODEENTER_CONTROLLEDEXCEPTIONRETURNVALUE  (0x1UL)  /*!< Value 0x00000001 */
 
 #define SCB_OFFSET 0xD00
 #define SCB_BASE (SCS_BASE + SCB_OFFSET)
