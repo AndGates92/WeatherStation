@@ -26,40 +26,40 @@
  */
 
 typedef struct {
-	RO uint32_t CPUID;                   /*!< CPU ID register                                   (Offset 0x0)          */
-	RW uint32_t INTCTRLSTATE;            /*!< Interrupt control and state register              (Offset 0x4)          */
-	RW uint32_t INTVECTTABLEOFFSET;      /*!< Interrupt vector table offset register            (Offset 0x8)          */
-	RW uint32_t APPINTRSTCTRL;           /*!< Application interrupt and reset control register  (Offset 0xC)          */
-	RW uint32_t SYSCTRL;                 /*!< System control register                           (Offset 0x10)         */
-	RW uint32_t CFGCTRL;                 /*!< Configuration and control register                (Offset 0x14)         */
-	RW uint32_t SYSHANDLERPRIORITY[3U];  /*!< System handler priority register                  (Offset 0x18 - 0x20)  */
-	RW uint32_t SYSHANDLERCTRLSTATE;     /*!< System handler control and state register         (Offset 0x24)         */
-	RW uint32_t CFGFAULTSTATUS;          /*!< Configurable fault status register                (Offset 0x28)         */
-	RW uint32_t HARDFAULTSTATUS;         /*!< Hard fault status register                        (Offset 0x2C)         */
-	RW uint32_t DEBUGFAULTSTATUS;        /*!< Debug fault status register                       (Offset 0x30)         */
-	RW uint32_t MMHANDLERCTRLSTATE;      /*!< MemManage handler control and state register      (Offset 0x34)         */
-	RW uint32_t BUSFAULTSTATUS;          /*!< Bus fault status register                         (Offset 0x38)         */
-	RW uint32_t AUXFAULTSTATUS;          /*!< Auxiliary fault status register                   (Offset 0x3C)         */
-	RO uint32_t PROCFEATURE0;            /*!< Processor feature register 0                      (Offset 0x40)         */
-	RO uint32_t PROCFEATURE1;            /*!< Processor feature register 1                      (Offset 0x44)         */
-	RO uint32_t DEBUGFEATURE;            /*!< Debug feature register                            (Offset 0x48)         */
-	RO uint32_t AUXFEATURE;              /*!< Auxiliary feature register                        (Offset 0x4C)         */
-	RO uint32_t MODELMEMFEATURE0;        /*!< Model memory feature register 0                   (Offset 0x50)         */
-	RO uint32_t MODELMEMFEATURE1;        /*!< Model memory feature register 1                   (Offset 0x54)         */
-	RO uint32_t MODELMEMFEATURE2;        /*!< Model memory feature register 2                   (Offset 0x58)         */
-	RO uint32_t MODELMEMFEATURE3;        /*!< Model memory feature register 3                   (Offset 0x5C)         */
-	RO uint32_t INSTRSETATTR0;           /*!< Instruction set attribute register 0              (Offset 0x60)         */
-	RO uint32_t INSTRSETATTR1;           /*!< Instruction set attribute register 1              (Offset 0x64)         */
-	RO uint32_t INSTRSETATTR2;           /*!< Instruction set attribute register 2              (Offset 0x68)         */
-	RO uint32_t INSTRSETATTR3;           /*!< Instruction set attribute register 3              (Offset 0x6C)         */
-	RO uint32_t INSTRSETATTR4;           /*!< Instruction set attribute register 4              (Offset 0x70)         */
-	RO uint32_t INSTRSETATTR5;           /*!< Instruction set attribute register 5              (Offset 0x74)         */
-	RO uint32_t CACHELVLID;              /*!< Cache level ID register                           (Offset 0x78)         */
-	RO uint32_t CACHETYPE;               /*!< Cache type register                               (Offset 0x7C)         */
-	RO uint32_t CACHESIZEID;             /*!< Cache size ID register                            (Offset 0x80)         */
-	RO uint32_t CACHESIZESEL;            /*!< Cache size selection register                     (Offset 0x84)         */
-	RO uint32_t COMPRESSORACCESSCTRL;    /*!< Compressor access control register                (Offset 0x88)         */
-	   uint32_t reserved;                /*!< Reserved                                          (Offset 0x8C)         */
+	RO uint32_t CPUID;                    /*!< CPU ID register                                   (Offset 0x0)          */
+	RW uint32_t INTCTRLSTATE;             /*!< Interrupt control and state register              (Offset 0x4)          */
+	RW uint32_t INTVECTTABLEOFFSET;       /*!< Interrupt vector table offset register            (Offset 0x8)          */
+	RW uint32_t APPINTRSTCTRL;            /*!< Application interrupt and reset control register  (Offset 0xC)          */
+	RW uint32_t SYSCTRL;                  /*!< System control register                           (Offset 0x10)         */
+	RW uint32_t CFGCTRL;                  /*!< Configuration and control register                (Offset 0x14)         */
+	RW uint8_t  SYSHANDLERPRIORITY[12U];  /*!< System handler priority register                  (Offset 0x18 - 0x20)  */
+	RW uint32_t SYSHANDLERCTRLSTATE;      /*!< System handler control and state register         (Offset 0x24)         */
+	RW uint32_t CFGFAULTSTATUS;           /*!< Configurable fault status register                (Offset 0x28)         */
+	RW uint32_t HARDFAULTSTATUS;          /*!< Hard fault status register                        (Offset 0x2C)         */
+	RW uint32_t DEBUGFAULTSTATUS;         /*!< Debug fault status register                       (Offset 0x30)         */
+	RW uint32_t MMHANDLERCTRLSTATE;       /*!< MemManage handler control and state register      (Offset 0x34)         */
+	RW uint32_t BUSFAULTSTATUS;           /*!< Bus fault status register                         (Offset 0x38)         */
+	RW uint32_t AUXFAULTSTATUS;           /*!< Auxiliary fault status register                   (Offset 0x3C)         */
+	RO uint32_t PROCFEATURE0;             /*!< Processor feature register 0                      (Offset 0x40)         */
+	RO uint32_t PROCFEATURE1;             /*!< Processor feature register 1                      (Offset 0x44)         */
+	RO uint32_t DEBUGFEATURE;             /*!< Debug feature register                            (Offset 0x48)         */
+	RO uint32_t AUXFEATURE;               /*!< Auxiliary feature register                        (Offset 0x4C)         */
+	RO uint32_t MODELMEMFEATURE0;         /*!< Model memory feature register 0                   (Offset 0x50)         */
+	RO uint32_t MODELMEMFEATURE1;         /*!< Model memory feature register 1                   (Offset 0x54)         */
+	RO uint32_t MODELMEMFEATURE2;         /*!< Model memory feature register 2                   (Offset 0x58)         */
+	RO uint32_t MODELMEMFEATURE3;         /*!< Model memory feature register 3                   (Offset 0x5C)         */
+	RO uint32_t INSTRSETATTR0;            /*!< Instruction set attribute register 0              (Offset 0x60)         */
+	RO uint32_t INSTRSETATTR1;            /*!< Instruction set attribute register 1              (Offset 0x64)         */
+	RO uint32_t INSTRSETATTR2;            /*!< Instruction set attribute register 2              (Offset 0x68)         */
+	RO uint32_t INSTRSETATTR3;            /*!< Instruction set attribute register 3              (Offset 0x6C)         */
+	RO uint32_t INSTRSETATTR4;            /*!< Instruction set attribute register 4              (Offset 0x70)         */
+	RO uint32_t INSTRSETATTR5;            /*!< Instruction set attribute register 5              (Offset 0x74)         */
+	RO uint32_t CACHELVLID;               /*!< Cache level ID register                           (Offset 0x78)         */
+	RO uint32_t CACHETYPE;                /*!< Cache type register                               (Offset 0x7C)         */
+	RO uint32_t CACHESIZEID;              /*!< Cache size ID register                            (Offset 0x80)         */
+	RO uint32_t CACHESIZESEL;             /*!< Cache size selection register                     (Offset 0x84)         */
+	RO uint32_t COMPRESSORACCESSCTRL;     /*!< Compressor access control register                (Offset 0x88)         */
+	   uint32_t reserved;                 /*!< Reserved                                          (Offset 0x8C)         */
 } scs_scb_regs;
 
 /*!< System control block (SCB) registers in system control space (SCS) registers */
@@ -479,32 +479,32 @@ typedef struct {
 #define SCB_SLEEPONISREXIT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Configuration and control register */
-#define SCB_CFGCTRL_BRANCHPRED_OFFSET  (18U)
-#define SCB_CFGCTRL_BRANCHPRED_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, BRANCHPRED))  /*!< Mask  0x00040000 */
+#define SCB_CFGCTRL_BRANCHPRED_OFFSET                  (18U)
+#define SCB_CFGCTRL_BRANCHPRED_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, BRANCHPRED))                  /*!< Mask  0x00040000 */
 
-#define SCB_CFGCTRL_ICACHE_OFFSET  (17U)
-#define SCB_CFGCTRL_ICACHE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, ICACHE))  /*!< Mask  0x00020000 */
+#define SCB_CFGCTRL_ICACHE_OFFSET                      (17U)
+#define SCB_CFGCTRL_ICACHE_MASK                        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, ICACHE))                      /*!< Mask  0x00020000 */
 
-#define SCB_CFGCTRL_DCACHE_OFFSET  (16U)
-#define SCB_CFGCTRL_DCACHE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DCACHE))  /*!< Mask  0x00010000 */
+#define SCB_CFGCTRL_DCACHE_OFFSET                      (16U)
+#define SCB_CFGCTRL_DCACHE_MASK                        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DCACHE))                      /*!< Mask  0x00010000 */
 
-#define SCB_CFGCTRL_STKALIGN_OFFSET  (9U)
-#define SCB_CFGCTRL_STKALIGN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, STKALIGN))  /*!< Mask  0x00000200 */
+#define SCB_CFGCTRL_STKALIGN_OFFSET                    (9U)
+#define SCB_CFGCTRL_STKALIGN_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, STKALIGN))                    /*!< Mask  0x00000200 */
 
 #define SCB_CFGCTRL_DATAACCESSFAULTWITHPRIM1M2_OFFSET  (8U)
 #define SCB_CFGCTRL_DATAACCESSFAULTWITHPRIM1M2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DATAACCESSFAULTWITHPRIM1M2))  /*!< Mask  0x00000100 */
 
-#define SCB_CFGCTRL_DIV0TRAP_OFFSET  (4U)
-#define SCB_CFGCTRL_DIV0TRAP_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DIV0TRAP))  /*!< Mask  0x00000010 */
+#define SCB_CFGCTRL_DIV0TRAP_OFFSET                    (4U)
+#define SCB_CFGCTRL_DIV0TRAP_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, DIV0TRAP))                    /*!< Mask  0x00000010 */
 
-#define SCB_CFGCTRL_UALIGNTRAP_OFFSET          (3U)
-#define SCB_CFGCTRL_UALIGNTRAP_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, UNALIGNTRAP))          /*!< Mask  0x00000008 */
+#define SCB_CFGCTRL_UALIGNTRAP_OFFSET                  (3U)
+#define SCB_CFGCTRL_UALIGNTRAP_MASK                    (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, UNALIGNTRAP))                 /*!< Mask  0x00000008 */
 
-#define SCB_CFGCTRL_UNPRIVILILEGEDSTIRACCESS_OFFSET      (1U)
-#define SCB_CFGCTRL_UNPRIVILILEGEDSTIRACCESS_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, UNPRIVILILEGEDSTIRACCESS))      /*!< Mask  0x00000002 */
+#define SCB_CFGCTRL_UNPRIVILILEGEDSTIRACCESS_OFFSET    (1U)
+#define SCB_CFGCTRL_UNPRIVILILEGEDSTIRACCESS_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, UNPRIVILILEGEDSTIRACCESS))    /*!< Mask  0x00000002 */
 
-#define SCB_CFGCTRL_THREADMODEENTER_OFFSET      (0U)
-#define SCB_CFGCTRL_THREADMODEENTER_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, THREADMODEENTER))      /*!< Mask  0x00000001 */
+#define SCB_CFGCTRL_THREADMODEENTER_OFFSET             (0U)
+#define SCB_CFGCTRL_THREADMODEENTER_MASK               (0x1UL << REGISTER_FIELD_OFFSET(SCB, CFGCTRL, THREADMODEENTER))             /*!< Mask  0x00000001 */
 
 // Values of branch prediction enable bit
 #define SCB_BRANCHPRED_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
@@ -541,6 +541,154 @@ typedef struct {
 // Values of register controlling how thread mode is entered
 #define SCB_THREADMODEENTER_NOEXCEPTIONACTIVE               (0x0UL)  /*!< Value 0x00000000 */
 #define SCB_THREADMODEENTER_CONTROLLEDEXCEPTIONRETURNVALUE  (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< System handler priority register*/
+#define SCB_SYSHANDLERPRIORITY_SYSTICK_INDEX       (11U)
+#define SCB_SYSHANDLERPRIORITY_PENDSV_INDEX        (10U)
+#define SCB_SYSHANDLERPRIORITY_SYSHANDLER13_INDEX  (9U)
+#define SCB_SYSHANDLERPRIORITY_DEBUGMONITOR_INDEX  (8U)
+#define SCB_SYSHANDLERPRIORITY_SVCALL_INDEX        (7U)
+#define SCB_SYSHANDLERPRIORITY_SYSHANDLER10_INDEX  (6U)
+#define SCB_SYSHANDLERPRIORITY_SYSHANDLER9_INDEX   (5U)
+#define SCB_SYSHANDLERPRIORITY_SYSHANDLER8_INDEX   (4U)
+#define SCB_SYSHANDLERPRIORITY_SYSHANDLER7_INDEX   (3U)
+#define SCB_SYSHANDLERPRIORITY_USAGEFAULT_INDEX    (2U)
+#define SCB_SYSHANDLERPRIORITY_BUSFAULT_INDEX      (1U)
+#define SCB_SYSHANDLERPRIORITY_MEMMANAGE_INDEX     (0U)
+
+#define SCB_SYSHANDLERPRIORITY_0  (0x01UL)  /*!< Value 0x00000001 */
+#define SCB_SYSHANDLERPRIORITY_1  (0x02UL)  /*!< Value 0x00000002 */
+#define SCB_SYSHANDLERPRIORITY_2  (0x04UL)  /*!< Value 0x00000004 */
+#define SCB_SYSHANDLERPRIORITY_3  (0x08UL)  /*!< Value 0x00000008 */
+#define SCB_SYSHANDLERPRIORITY_4  (0x10UL)  /*!< Value 0x00000010 */
+#define SCB_SYSHANDLERPRIORITY_5  (0x20UL)  /*!< Value 0x00000020 */
+#define SCB_SYSHANDLERPRIORITY_6  (0x40UL)  /*!< Value 0x00000040 */
+#define SCB_SYSHANDLERPRIORITY_7  (0x80UL)  /*!< Value 0x00000080 */
+
+/*!< System handler control and state register*/
+#define SCB_SYSHANDLERCTRLSTATE_USAGEFAULTEN_OFFSET         (18U)
+#define SCB_SYSHANDLERCTRLSTATE_USAGEFAULTEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, USAGEFAULTEN))        /*!< Mask  0x00040000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_BUSFAULTEN_OFFSET           (17U)
+#define SCB_SYSHANDLERCTRLSTATE_BUSFAULTEN_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, BUSFAULTEN))          /*!< Mask  0x00020000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_MEMMANAGEEN_OFFSET          (16U)
+#define SCB_SYSHANDLERCTRLSTATE_MEMMANAGEEN_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, MEMMANAGEEN))         /*!< Mask  0x00010000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_SVCALLPEND_OFFSET           (15U)
+#define SCB_SYSHANDLERCTRLSTATE_SVCALLPEND_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, SVCALLPEND))          /*!< Mask  0x00008000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_BUSFAULTPEND_OFFSET         (14U)
+#define SCB_SYSHANDLERCTRLSTATE_BUSFAULTPEND_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, BUSFAULTPEND))        /*!< Mask  0x00004000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_MEMMANAGEPEND_OFFSET        (13U)
+#define SCB_SYSHANDLERCTRLSTATE_MEMMANAGEPEND_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, MEMMANAGEPEND))       /*!< Mask  0x00002000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_USAGEFAULTPEND_OFFSET       (12U)
+#define SCB_SYSHANDLERCTRLSTATE_USAGEFAULTPEND_MASK         (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, USAGEFAULTPEND))      /*!< Mask  0x00001000 */
+
+#define SCB_SYSHANDLERCTRLSTATE_SYSTICKACTIVE_OFFSET        (11U)
+#define SCB_SYSHANDLERCTRLSTATE_SYSTICKACTIVE_MASK          (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, SYSTICKACTIVE))       /*!< Mask  0x00000800 */
+
+#define SCB_SYSHANDLERCTRLSTATE_PENDSVACTIVE_OFFSET         (10U)
+#define SCB_SYSHANDLERCTRLSTATE_PENDSVACTIVE_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, PENDSVACTIVE))        /*!< Mask  0x00000400 */
+
+#define SCB_SYSHANDLERCTRLSTATE_DEBUGMONITORACTIVE_OFFSET   (8U)
+#define SCB_SYSHANDLERCTRLSTATE_DEBUGMONITORACTIVE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, DEBUGMONITORACTIVE))  /*!< Mask  0x00000100 */
+
+#define SCB_SYSHANDLERCTRLSTATE_SVCALLACTIVE_OFFSET         (7U)
+#define SCB_SYSHANDLERCTRLSTATE_SVCALLACTIVE_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, SVCALLACTIVE))        /*!< Mask  0x00000080 */
+
+#define SCB_SYSHANDLERCTRLSTATE_USAGEFAULTACTIVE_OFFSET     (3U)
+#define SCB_SYSHANDLERCTRLSTATE_USAGEFAULTACTIVE_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, USAGEFAULTACTIVE))    /*!< Mask  0x00000008 */
+
+#define SCB_SYSHANDLERCTRLSTATE_BUSFAULTACTIVE_OFFSET       (1U)
+#define SCB_SYSHANDLERCTRLSTATE_BUSFAULTACTIVE_MASK         (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, BUSFAULTACTIVE))      /*!< Mask  0x00000002 */
+
+#define SCB_SYSHANDLERCTRLSTATE_MEMMANAGEACTIVE_OFFSET      (0U)
+#define SCB_SYSHANDLERCTRLSTATE_MEMMANAGEACTIVE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, SYSHANDLERCTRLSTATE, MEMMANAGEACTIVE))     /*!< Mask  0x00000001 */
+
+// Values of exception enable bit
+#define SCB_EXCEPTION_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_EXCEPTION_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of exception pending bit
+#define SCB_EXCEPTION_NOTPENDING  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_EXCEPTION_PENDING     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of exception active bit
+#define SCB_EXCEPTION_INACTIVE  (0x0UL)  /*!< Value 0x00000000 */
+#define SCB_EXCEPTION_ACTIVE    (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< System handler control and state register*/
+#define SCB_CFGFAULTSTATUS_USAGEFAULT_OFFSET  (16U)
+#define SCB_CFGFAULTSTATUS_USAGEFAULT_MASK    (0xFFFFUL << REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT))  /*!< Mask  0xFFFF0000 */
+
+#define SCB_CFGFAULTSTATUS_BUSFAULT_OFFSET    (8U)
+#define SCB_CFGFAULTSTATUS_BUSFAULT_MASK      (0xFFUL << REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT))      /*!< Mask  0x0000FF00 */
+
+#define SCB_CFGFAULTSTATUS_MEMMANAGE_OFFSET   (0U)
+#define SCB_CFGFAULTSTATUS_MEMMANAGE_MASK     (0xFFUL << REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE))     /*!< Mask  0x000000FF */
+
+// Values of UsageFault status register
+#define SCB_USAGEFAULTSTATUS_DIVBYZERO_OFFSET          (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT) + 9U)
+#define SCB_USAGEFAULTSTATUS_DIVBYZERO_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, USAGEFAULTSTATUS, DIVBYZERO))          /*!< Mask  0x02000000 */
+
+#define SCB_USAGEFAULTSTATUS_UNALIGNEDACCESS_OFFSET    (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT) + 8U)
+#define SCB_USAGEFAULTSTATUS_UNALIGNEDACCESS_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SCB, USAGEFAULTSTATUS, UNALIGNEDACCESS))    /*!< Mask  0x01000000 */
+
+#define SCB_USAGEFAULTSTATUS_COPROCESSORACCESS_OFFSET  (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT) + 3U)
+#define SCB_USAGEFAULTSTATUS_COPROCESSORACCESS_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, USAGEFAULTSTATUS, COPROCESSORACCESS))  /*!< Mask  0x00080000 */
+
+#define SCB_USAGEFAULTSTATUS_INVALIDPCLOAD_OFFSET      (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT) + 2U)
+#define SCB_USAGEFAULTSTATUS_INVALIDPCLOAD_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, USAGEFAULTSTATUS, INVALIDPCLOAD))      /*!< Mask  0x00040000 */
+
+#define SCB_USAGEFAULTSTATUS_INVALIDSTATE_OFFSET       (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT) + 1U)
+#define SCB_USAGEFAULTSTATUS_INVALIDSTATE_MASK         (0x1UL << REGISTER_FIELD_OFFSET(SCB, USAGEFAULTSTATUS, INVALIDSTATE))       /*!< Mask  0x00020000 */
+
+#define SCB_USAGEFAULTSTATUS_UNDEFINEDINSTR_OFFSET     (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, USAGEFAULT) + 0U)
+#define SCB_USAGEFAULTSTATUS_UNDEFINEDINSTR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SCB, USAGEFAULTSTATUS, UNDEFINEDINSTR))     /*!< Mask  0x00010000 */
+
+// Values of BusFault status register
+#define SCB_BUSFAULTSTATUS_VALID_OFFSET                    (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 7U)
+#define SCB_BUSFAULTSTATUS_VALID_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, VALID))                    /*!< Mask  0x00008000 */
+
+#define SCB_BUSFAULTSTATUS_FPLAZYSTATEPRESERVATION_OFFSET  (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 5U)
+#define SCB_BUSFAULTSTATUS_FPLAZYSTATEPRESERVATION_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, FPLAZYSTATEPRESERVATION))  /*!< Mask  0x00002000 */
+
+#define SCB_BUSFAULTSTATUS_EXCEPTIONENTRY_OFFSET           (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 4U)
+#define SCB_BUSFAULTSTATUS_EXCEPTIONENTRY_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, EXCEPTIONENTRY))           /*!< Mask  0x00001000 */
+
+#define SCB_BUSFAULTSTATUS_EXCEPTIONRETURN_OFFSET          (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 3U)
+#define SCB_BUSFAULTSTATUS_EXCEPTIONRETURN_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, EXCEPTIONRETURN))          /*!< Mask  0x00000800 */
+
+#define SCB_BUSFAULTSTATUS_IMPRECISEDATABUSERROR_OFFSET    (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 2U)
+#define SCB_BUSFAULTSTATUS_IMPRECISEDATABUSERROR_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, IMPRECISEDATABUSERROR))    /*!< Mask  0x00000400 */
+
+#define SCB_BUSFAULTSTATUS_DATABUSERROR_OFFSET             (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 1U)
+#define SCB_BUSFAULTSTATUS_DATABUSERROR_MASK               (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, DATABUSERROR))             /*!< Mask  0x00000200 */
+
+#define SCB_BUSFAULTSTATUS_INSTRBUSERROR_OFFSET            (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, BUSFAULT) + 0U)
+#define SCB_BUSFAULTSTATUS_INSTRBUSERROR_MASK              (0x1UL << REGISTER_FIELD_OFFSET(SCB, BUSFAULTSTATUS, INSTRBUSERROR))            /*!< Mask  0x00000100 */
+
+// Values of MemManage status register
+#define SCB_MEMMANAGEFAULTSTATUS_VALID_OFFSET                    (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE) + 7U)
+#define SCB_MEMMANAGEFAULTSTATUS_VALID_MASK                      (0x1UL << REGISTER_FIELD_OFFSET(SCB, MEMMANAGEFAULTSTATUS, VALID))                    /*!< Mask  0x00000080 */
+
+#define SCB_MEMMANAGEFAULTSTATUS_FPLAZYSTATEPRESERVATION_OFFSET  (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE) + 5U)
+#define SCB_MEMMANAGEFAULTSTATUS_FPLAZYSTATEPRESERVATION_MASK    (0x1UL << REGISTER_FIELD_OFFSET(SCB, MEMMANAGEFAULTSTATUS, FPLAZYSTATEPRESERVATION))  /*!< Mask  0x00000020 */
+
+#define SCB_MEMMANAGEFAULTSTATUS_EXCEPTIONENTRY_OFFSET           (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE) + 4U)
+#define SCB_MEMMANAGEFAULTSTATUS_EXCEPTIONENTRY_MASK             (0x1UL << REGISTER_FIELD_OFFSET(SCB, MEMMANAGEFAULTSTATUS, EXCEPTIONENTRY))           /*!< Mask  0x00000010 */
+
+#define SCB_MEMMANAGEFAULTSTATUS_EXCEPTIONRETURN_OFFSET          (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE) + 3U)
+#define SCB_MEMMANAGEFAULTSTATUS_EXCEPTIONRETURN_MASK            (0x1UL << REGISTER_FIELD_OFFSET(SCB, MEMMANAGEFAULTSTATUS, EXCEPTIONRETURN))          /*!< Mask  0x00000008 */
+
+#define SCB_MEMMANAGEFAULTSTATUS_DATAACCESSVIOLATION_OFFSET      (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE) + 1U)
+#define SCB_MEMMANAGEFAULTSTATUS_DATAACCESSVIOLATION_MASK        (0x1UL << REGISTER_FIELD_OFFSET(SCB, MEMMANAGEFAULTSTATUS, DATAACCESSVIOLATION))      /*!< Mask  0x00000002 */
+
+#define SCB_MEMMANAGEFAULTSTATUS_INSTRACCESSVIOLATION_OFFSET     (REGISTER_FIELD_OFFSET(SCB, CFGFAULTSTATUS, MEMMANAGE) + 0U)
+#define SCB_MEMMANAGEFAULTSTATUS_INSTRACCESSVIOLATION_MASK       (0x1UL << REGISTER_FIELD_OFFSET(SCB, MEMMANAGEFAULTSTATUS, INSTRACCESSVIOLATION))     /*!< Mask  0x00000001 */
 
 #define SCB_OFFSET 0xD00
 #define SCB_BASE (SCS_BASE + SCB_OFFSET)

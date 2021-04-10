@@ -275,7 +275,7 @@ typedef struct {
 #define RCC_CSICFG_CSICAL_5       (0x020UL)                                                /*!< Value 0x00000020 */
 #define RCC_CSICFG_CSICAL_6       (0x040UL)                                                /*!< Value 0x00000040 */
 #define RCC_CSICFG_CSICAL_7       (0x080UL)                                                /*!< Value 0x00000080 */
-#define RCC_CSICFG_CSICAL_8       (0x100UL)                                                /*!< Mask 0X00000100 */
+#define RCC_CSICFG_CSICAL_8       (0x100UL)                                                /*!< Value 0X00000100 */
 #define RCC_CSICFG_CSICAL_9       (0x200UL)                                                /*!< Value 0x00000200 */
 
 /*!< Clock configuration register */
