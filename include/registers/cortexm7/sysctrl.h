@@ -10,8 +10,6 @@
 
 #include <stdint.h>
 
-#include "global/peripherals.h"
-
 /**
  *  @defgroup RegisterGroup Register global macros, structure and functions
  *  @brief Registers global macros, structure and functions
