@@ -26,95 +26,95 @@
  */
 
 typedef struct {
-	RW uint32_t CR;         /*!< Source control register                                     (Offset 0x0)            */
-	RW uint32_t HSICFGR;          /*!< HSI (High speed internal oscillator) configuration register (Offset 0x4)            */
-	RO uint32_t CRRCR;            /*!< Clock recovery RC register                                  (Offset 0x8)            */
-	RW uint32_t CSICFGR;          /*!< CSI (Low power internal oscillator) configuration register  (Offset 0xC)            */
-	RW uint32_t CFGR;          /*!< Clock configuration register                                (Offset 0x10)           */
-	   uint32_t reserved0;       /*!< Reserved                                                    (Offset 0x14)           */
-	RW uint32_t D1CFGR;        /*!< Domain 1 clock configuration register                       (Offset 0x18)           */
-	RW uint32_t D2CFGR;        /*!< Domain 2 clock configuration register                       (Offset 0x1C)           */
-	RW uint32_t D3CFGR;        /*!< Domain 3 clock configuration register                       (Offset 0x20)           */
-	   uint32_t reserved1;       /*!< Reserved                                                    (Offset 0x24)           */
-	RW uint32_t PLLCKSELR;       /*!< PLLs clock source selection register                        (Offset 0x28)           */
-	RW uint32_t PLLCFGR;          /*!< PLLs configuration register                                 (Offset 0x2C)           */
-	RW uint32_t PLL1DIVR;         /*!< PLL 1 divider register                                      (Offset 0x30)           */
-	RW uint32_t PLL1FRACR;     /*!< PLL 1 fractional divider register                           (Offset 0x34)           */
-	RW uint32_t PLL2DIVR;         /*!< PLL 2 divider register                                      (Offset 0x38)           */
-	RW uint32_t PLL2FRACR;     /*!< PLL 2 fractional divider register                           (Offset 0x3C)           */
-	RW uint32_t PLL3DIVR;         /*!< PLL 3 divider register                                      (Offset 0x40)           */
-	RW uint32_t PLL3FRACR;     /*!< PLL 3 fractional divider register                           (Offset 0x44)           */
-	   uint32_t reserved2;       /*!< Reserved register                                           (Offset 0x48)           */
-	RW uint32_t D1CCIPR;  /*!< Domain 1 kernel clock configuration register                (Offset 0x4C)           */
-	RW uint32_t D2CCIP1R; /*!< Domain 2 kernel clock configuration 1 register              (Offset 0x50)           */
-	RW uint32_t D2CCIP2R; /*!< Domain 2 kernel clock configuration 2 register              (Offset 0x54)           */
-	RW uint32_t D3CCIPR;  /*!< Domain 3 kernel clock configuration register                (Offset 0x58)           */
-	   uint32_t reserved3;       /*!< Reserved                                                    (Offset 0x5C)           */
-	RW uint32_t CLKINTEN;        /*!< Clock source interrupt enable register                      (Offset 0x60)           */
-	RO uint32_t CLKINTFLAG;      /*!< Clock source interrupt flag register                        (Offset 0x64)           */
-	RW uint32_t CLKINTCLR;       /*!< Clock source interrupt clear register                       (Offset 0x68)           */
-	   uint32_t reserved4;       /*!< Reserved                                                    (Offset 0x6C)           */
-	RW uint32_t BCKDCTR;         /*!< Backup domain control register                              (Offset 0x70)           */
-	RW uint32_t CLKCTRLSTATUS;   /*!< Clock control and status register                           (Offset 0x74)           */
-	   uint32_t reserved5;       /*!< Reserved                                                    (Offset 0x78)           */
-	RW uint32_t AHB3RST;         /*!< AHB3 reset register                                         (Offset 0x7C)           */
-	RW uint32_t AHB1RST;         /*!< AHB1 reset register                                         (Offset 0x80)           */
-	RW uint32_t AHB2RST;         /*!< AHB2 reset register                                         (Offset 0x84)           */
-	RW uint32_t AHB4RST;         /*!< AHB4 reset register                                         (Offset 0x88)           */
-	RW uint32_t APB3RST;         /*!< APB3 reset register                                         (Offset 0x8C)           */
-	RW uint32_t APB1LRST;        /*!< APB1 reset low register                                     (Offset 0x90)           */
-	RW uint32_t APB1HRST;        /*!< APB1 reset high register                                    (Offset 0x94)           */
-	RW uint32_t APB2RST;         /*!< APB2 reset register                                         (Offset 0x98)           */
-	RW uint32_t APB4RST;         /*!< APB4 reset register                                         (Offset 0x9C)           */
-	RW uint32_t GBLCTRL;         /*!< Global control register                                     (Offset 0xA0)           */
-	   uint32_t reserved6;       /*!< Reserved                                                    (Offset 0xA4)           */
-	RW uint32_t D3AM;            /*!< Domain 3 autonomous mode                                    (Offset 0xA8)           */
-	   uint32_t reserved7[9U];   /*!< Reserved                                                    (Offset 0xAC to 0xCC)   */
-	RW uint32_t RSTSTATUS;       /*!< Reset status                                                (Offset 0xD0)           */
-	RW uint32_t AHB3CLKEN;       /*!< AHB3 clock register                                         (Offset 0xD4)           */
-	RW uint32_t AHB1CLKEN;       /*!< AHB1 clock register                                         (Offset 0xD8)           */
-	RW uint32_t AHB2CLKEN;       /*!< AHB2 clock register                                         (Offset 0xDC)           */
-	RW uint32_t AHB4CLKEN;       /*!< AHB4 clock register                                         (Offset 0xE0)           */
-	RW uint32_t APB3CLKEN;       /*!< APB3 clock register                                         (Offset 0xE4)           */
-	RW uint32_t APB1LCLKEN;      /*!< APB1 low clock register                                     (Offset 0xE8)           */
-	RW uint32_t APB1HCLKEN;      /*!< APB1 high clock register                                    (Offset 0xEC)           */
-	RW uint32_t APB2CLKEN;       /*!< APB2 clock register                                         (Offset 0xF0)           */
-	RW uint32_t APB4CLKEN;       /*!< APB4 clock register                                         (Offset 0xF4)           */
-	   uint32_t reserved8;       /*!< Reserved                                                    (Offset 0xF8)           */
-	RW uint32_t AHB3LPCLKEN;     /*!< AHB3 low power clock register                               (Offset 0xFC)           */
-	RW uint32_t AHB1LPCLKEN;     /*!< AHB1 low power clock register                               (Offset 0x100)          */
-	RW uint32_t AHB2LPCLKEN;     /*!< AHB2 low power clock register                               (Offset 0x104)          */
-	RW uint32_t AHB4LPCLKEN;     /*!< AHB4 low power clock register                               (Offset 0x108)          */
-	RW uint32_t APB3LPCLKEN;     /*!< APB3 low power clock register                               (Offset 0x10C)          */
-	RW uint32_t APB1LLPCLKEN;    /*!< APB1 low low power clock register                           (Offset 0x110)          */
-	RW uint32_t APB1HLPCLKEN;    /*!< APB1 high low power clock register                          (Offset 0x114)          */
-	RW uint32_t APB2LPCLKEN;     /*!< APB2 low power clock register                               (Offset 0x118)          */
-	RW uint32_t APB4LPCLKEN;     /*!< APB4 low power clock register                               (Offset 0x11C)          */
-	   uint32_t reserved9[4U];   /*!< Reserved                                                    (Offset 0x120 to 0x12C) */
+	RW uint32_t CR;             /*!< Source control register                                     (Offset 0x0)            */
+	RW uint32_t HSICFGR;        /*!< HSI (High speed internal oscillator) configuration register (Offset 0x4)            */
+	RO uint32_t CRRCR;          /*!< Clock recovery RC register                                  (Offset 0x8)            */
+	RW uint32_t CSICFGR;        /*!< CSI (Low power internal oscillator) configuration register  (Offset 0xC)            */
+	RW uint32_t CFGR;           /*!< Clock configuration register                                (Offset 0x10)           */
+	   uint32_t reserved0;      /*!< Reserved                                                    (Offset 0x14)           */
+	RW uint32_t D1CFGR;         /*!< Domain 1 clock configuration register                       (Offset 0x18)           */
+	RW uint32_t D2CFGR;         /*!< Domain 2 clock configuration register                       (Offset 0x1C)           */
+	RW uint32_t D3CFGR;         /*!< Domain 3 clock configuration register                       (Offset 0x20)           */
+	   uint32_t reserved1;      /*!< Reserved                                                    (Offset 0x24)           */
+	RW uint32_t PLLCKSELR;      /*!< PLLs clock source selection register                        (Offset 0x28)           */
+	RW uint32_t PLLCFGR;        /*!< PLLs configuration register                                 (Offset 0x2C)           */
+	RW uint32_t PLL1DIVR;       /*!< PLL 1 divider register                                      (Offset 0x30)           */
+	RW uint32_t PLL1FRACR;      /*!< PLL 1 fractional divider register                           (Offset 0x34)           */
+	RW uint32_t PLL2DIVR;       /*!< PLL 2 divider register                                      (Offset 0x38)           */
+	RW uint32_t PLL2FRACR;      /*!< PLL 2 fractional divider register                           (Offset 0x3C)           */
+	RW uint32_t PLL3DIVR;       /*!< PLL 3 divider register                                      (Offset 0x40)           */
+	RW uint32_t PLL3FRACR;      /*!< PLL 3 fractional divider register                           (Offset 0x44)           */
+	   uint32_t reserved2;      /*!< Reserved register                                           (Offset 0x48)           */
+	RW uint32_t D1CCIPR;        /*!< Domain 1 kernel clock configuration register                (Offset 0x4C)           */
+	RW uint32_t D2CCIP1R;       /*!< Domain 2 kernel clock configuration 1 register              (Offset 0x50)           */
+	RW uint32_t D2CCIP2R;       /*!< Domain 2 kernel clock configuration 2 register              (Offset 0x54)           */
+	RW uint32_t D3CCIPR;        /*!< Domain 3 kernel clock configuration register                (Offset 0x58)           */
+	   uint32_t reserved3;      /*!< Reserved                                                    (Offset 0x5C)           */
+	RW uint32_t CIER;           /*!< Clock source interrupt enable register                      (Offset 0x60)           */
+	RO uint32_t CLKINTFLAG;     /*!< Clock source interrupt flag register                        (Offset 0x64)           */
+	RW uint32_t CLKINTCLR;      /*!< Clock source interrupt clear register                       (Offset 0x68)           */
+	   uint32_t reserved4;      /*!< Reserved                                                    (Offset 0x6C)           */
+	RW uint32_t BDCR;           /*!< Backup domain control register                              (Offset 0x70)           */
+	RW uint32_t CSR;            /*!< Clock control and status register                           (Offset 0x74)           */
+	   uint32_t reserved5;      /*!< Reserved                                                    (Offset 0x78)           */
+	RW uint32_t AHB3RSTR;       /*!< AHB3 reset register                                         (Offset 0x7C)           */
+	RW uint32_t AHB1RSTR;       /*!< AHB1 reset register                                         (Offset 0x80)           */
+	RW uint32_t AHB2RSTR;       /*!< AHB2 reset register                                         (Offset 0x84)           */
+	RW uint32_t AHB4RSTR;       /*!< AHB4 reset register                                         (Offset 0x88)           */
+	RW uint32_t APB3RSTR;       /*!< APB3 reset register                                         (Offset 0x8C)           */
+	RW uint32_t APB1LRSTR;      /*!< APB1 reset low register                                     (Offset 0x90)           */
+	RW uint32_t APB1HRSTR;      /*!< APB1 reset high register                                    (Offset 0x94)           */
+	RW uint32_t APB2RSTR;       /*!< APB2 reset register                                         (Offset 0x98)           */
+	RW uint32_t APB4RSTR;       /*!< APB4 reset register                                         (Offset 0x9C)           */
+	RW uint32_t GCR;            /*!< Global control register                                     (Offset 0xA0)           */
+	   uint32_t reserved6;      /*!< Reserved                                                    (Offset 0xA4)           */
+	RW uint32_t D3AMR;          /*!< Domain 3 autonomous mode                                    (Offset 0xA8)           */
+	   uint32_t reserved7[9U];  /*!< Reserved                                                    (Offset 0xAC to 0xCC)   */
+	RW uint32_t RSR;            /*!< Reset status                                                (Offset 0xD0)           */
+	RW uint32_t AHB3ENR;        /*!< AHB3 clock register                                         (Offset 0xD4)           */
+	RW uint32_t AHB1ENR;        /*!< AHB1 clock register                                         (Offset 0xD8)           */
+	RW uint32_t AHB2ENR;        /*!< AHB2 clock register                                         (Offset 0xDC)           */
+	RW uint32_t AHB4ENR;        /*!< AHB4 clock register                                         (Offset 0xE0)           */
+	RW uint32_t APB3ENR;        /*!< APB3 clock register                                         (Offset 0xE4)           */
+	RW uint32_t APB1LENR;       /*!< APB1 low clock register                                     (Offset 0xE8)           */
+	RW uint32_t APB1HENR;       /*!< APB1 high clock register                                    (Offset 0xEC)           */
+	RW uint32_t APB2ENR;        /*!< APB2 clock register                                         (Offset 0xF0)           */
+	RW uint32_t APB4ENR;        /*!< APB4 clock register                                         (Offset 0xF4)           */
+	   uint32_t reserved8;      /*!< Reserved                                                    (Offset 0xF8)           */
+	RW uint32_t AHB3LPENR;      /*!< AHB3 low power clock register                               (Offset 0xFC)           */
+	RW uint32_t AHB1LPENR;      /*!< AHB1 low power clock register                               (Offset 0x100)          */
+	RW uint32_t AHB2LPENR;      /*!< AHB2 low power clock register                               (Offset 0x104)          */
+	RW uint32_t AHB4LPENR;      /*!< AHB4 low power clock register                               (Offset 0x108)          */
+	RW uint32_t APB3LPENR;      /*!< APB3 low power clock register                               (Offset 0x10C)          */
+	RW uint32_t APB1LLPENR;     /*!< APB1 low low power clock register                           (Offset 0x110)          */
+	RW uint32_t APB1HLPENR;     /*!< APB1 high low power clock register                          (Offset 0x114)          */
+	RW uint32_t APB2LPENR;      /*!< APB2 low power clock register                               (Offset 0x118)          */
+	RW uint32_t APB4LPENR;      /*!< APB4 low power clock register                               (Offset 0x11C)          */
+	   uint32_t reserved9[4U];  /*!< Reserved                                                    (Offset 0x120 to 0x12C) */
 } rcc_common_regs;
 
 typedef struct {
-	RW uint32_t RSTSTATUS;     /*!< Reset status                       (Offset 0x0)          */
-	RW uint32_t AHB3CLKEN;     /*!< AHB3 clock register                (Offset 0x4)          */
-	RW uint32_t AHB1CLKEN;     /*!< AHB1 clock register                (Offset 0x8)          */
-	RW uint32_t AHB2CLKEN;     /*!< AHB2 clock register                (Offset 0xC)          */
-	RW uint32_t AHB4CLKEN;     /*!< AHB4 clock register                (Offset 0x10)         */
-	RW uint32_t APB3CLKEN;     /*!< APB3 clock register                (Offset 0x14)         */
-	RW uint32_t APB1LCLKEN;    /*!< APB1 low clock register            (Offset 0x18)         */
-	RW uint32_t APB1HCLKEN;    /*!< APB1 high clock register           (Offset 0x1C)         */
-	RW uint32_t APB2CLKEN;     /*!< APB2 clock register                (Offset 0x20)         */
-	RW uint32_t APB4CLKEN;     /*!< APB4 clock register                (Offset 0x24)         */
-	   uint32_t reserved0;     /*!< Reserved                           (Offset 0x28)         */
-	RW uint32_t AHB3LPCLKEN;   /*!< AHB3 low power clock register      (Offset 0x2C)         */
-	RW uint32_t AHB1LPCLKEN;   /*!< AHB1 low power clock register      (Offset 0x30)         */
-	RW uint32_t AHB2LPCLKEN;   /*!< AHB2 low power clock register      (Offset 0x34)         */
-	RW uint32_t AHB4LPCLKEN;   /*!< AHB4 low power clock register      (Offset 0x38)         */
-	RW uint32_t APB3LPCLKEN;   /*!< APB3 low power clock register      (Offset 0x3C)         */
-	RW uint32_t APB1LLPCLKEN;  /*!< APB1 low low power clock register  (Offset 0x40)         */
-	RW uint32_t APB1HLPCLKEN;  /*!< APB1 high low power clock register (Offset 0x44)         */
-	RW uint32_t APB2LPCLKEN;   /*!< APB2 low power clock register      (Offset 0x48)         */
-	RW uint32_t APB4LPCLKEN;   /*!< APB4 low power clock register      (Offset 0x4C)         */
-	   uint32_t reserved1[4U]; /*!< Reserved                           (Offset 0x50 to 0x5C) */
+	RW uint32_t RSR;            /*!< Reset status                       (Offset 0x0)          */
+	RW uint32_t AHB3ENR;        /*!< AHB3 clock register                (Offset 0x4)          */
+	RW uint32_t AHB1ENR;        /*!< AHB1 clock register                (Offset 0x8)          */
+	RW uint32_t AHB2ENR;        /*!< AHB2 clock register                (Offset 0xC)          */
+	RW uint32_t AHB4ENR;        /*!< AHB4 clock register                (Offset 0x10)         */
+	RW uint32_t APB3ENR;        /*!< APB3 clock register                (Offset 0x14)         */
+	RW uint32_t APB1LENR;       /*!< APB1 low clock register            (Offset 0x18)         */
+	RW uint32_t APB1HENR;       /*!< APB1 high clock register           (Offset 0x1C)         */
+	RW uint32_t APB2ENR;        /*!< APB2 clock register                (Offset 0x20)         */
+	RW uint32_t APB4ENR;        /*!< APB4 clock register                (Offset 0x24)         */
+	   uint32_t reserved0;      /*!< Reserved                           (Offset 0x28)         */
+	RW uint32_t AHB3LPENR;      /*!< AHB3 low power clock register      (Offset 0x2C)         */
+	RW uint32_t AHB1LPENR;      /*!< AHB1 low power clock register      (Offset 0x30)         */
+	RW uint32_t AHB2LPENR;      /*!< AHB2 low power clock register      (Offset 0x34)         */
+	RW uint32_t AHB4LPENR;      /*!< AHB4 low power clock register      (Offset 0x38)         */
+	RW uint32_t APB3LPENR;      /*!< APB3 low power clock register      (Offset 0x3C)         */
+	RW uint32_t APB1LLPENR;     /*!< APB1 low low power clock register  (Offset 0x40)         */
+	RW uint32_t APB1HLPENR;     /*!< APB1 high low power clock register (Offset 0x44)         */
+	RW uint32_t APB2LPENR;      /*!< APB2 low power clock register      (Offset 0x48)         */
+	RW uint32_t APB4LPENR;      /*!< APB4 low power clock register      (Offset 0x4C)         */
+	   uint32_t reserved1[4U];  /*!< Reserved                           (Offset 0x50 to 0x5C) */
 } rcc_core_regs;
 
 /*!< RCC common registers */
@@ -1463,143 +1463,143 @@ typedef struct {
 #define RCC_LPUART1CLK_DISABLE  (0x7UL)  /*!< Value 0x00000007 */
 
 /*!< Clock source interrupt enable register */
-#define RCC_CLKINTEN_LSECLKSEC_OFFSET  (9U)
-#define RCC_CLKINTEN_LSECLKSEC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, HSECLKSEC))  /*!< Mask  0x00000200 */
+#define RCC_CIER_LSECSSIE_OFFSET    (9U)
+#define RCC_CIER_LSECSSIE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, LSECSSIE))    /*!< Mask  0x00000200 */
 
-#define RCC_CLKINTEN_PLL3RDY_OFFSET    (8U)
-#define RCC_CLKINTEN_PLL3RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, PLL3RDY))    /*!< Mask  0x00000100 */
+#define RCC_CIER_PLL3RDYIE_OFFSET   (8U)
+#define RCC_CIER_PLL3RDYIE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, PLL3RDYIE))   /*!< Mask  0x00000100 */
 
-#define RCC_CLKINTEN_PLL2RDY_OFFSET    (7U)
-#define RCC_CLKINTEN_PLL2RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, PLL2RDY))    /*!< Mask  0x00000080 */
+#define RCC_CIER_PLL2RDYIE_OFFSET   (7U)
+#define RCC_CIER_PLL2RDYIE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, PLL2RDYIE))   /*!< Mask  0x00000080 */
 
-#define RCC_CLKINTEN_PLL1RDY_OFFSET    (6U)
-#define RCC_CLKINTEN_PLL1RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, PLL1RDY))    /*!< Mask  0x00000040 */
+#define RCC_CIER_PLL1RDYIE_OFFSET   (6U)
+#define RCC_CIER_PLL1RDYIE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, PLL1RDYIE))   /*!< Mask  0x00000040 */
 
-#define RCC_CLKINTEN_HSI48RDY_OFFSET   (5U)
-#define RCC_CLKINTEN_HSI48RDY_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, HSI48RDY))   /*!< Mask  0x00000020 */
+#define RCC_CIER_HSI48RDYIE_OFFSET  (5U)
+#define RCC_CIER_HSI48RDYIE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, HSI48RDYIE))  /*!< Mask  0x00000020 */
 
-#define RCC_CLKINTEN_CSIRDY_OFFSET     (4U)
-#define RCC_CLKINTEN_CSIRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, CSIRDY))     /*!< Mask  0x00000010 */
+#define RCC_CIER_CSIRDYIE_OFFSET    (4U)
+#define RCC_CIER_CSIRDYIE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, CSIRDYIE))    /*!< Mask  0x00000010 */
 
-#define RCC_CLKINTEN_HSERDY_OFFSET     (3U)
-#define RCC_CLKINTEN_HSERDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, HSERDY))     /*!< Mask  0x00000008 */
+#define RCC_CIER_HSERDYIE_OFFSET    (3U)
+#define RCC_CIER_HSERDYIE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, HSERDYIE))    /*!< Mask  0x00000008 */
 
-#define RCC_CLKINTEN_HSIRDY_OFFSET     (2U)
-#define RCC_CLKINTEN_HSIRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, HSIRDY))     /*!< Mask  0x00000004 */
+#define RCC_CIER_HSIRDYIE_OFFSET    (2U)
+#define RCC_CIER_HSIRDYIE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, HSIRDYIE))    /*!< Mask  0x00000004 */
 
-#define RCC_CLKINTEN_LSERDY_OFFSET     (1U)
-#define RCC_CLKINTEN_LSERDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, LSERDY))     /*!< Mask  0x00000002 */
+#define RCC_CIER_LSERDYIE_OFFSET    (1U)
+#define RCC_CIER_LSERDYIE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, LSERDYIE))    /*!< Mask  0x00000002 */
 
-#define RCC_CLKINTEN_LSIRDY_OFFSET     (0U)
-#define RCC_CLKINTEN_LSIRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTEN, LSIRDY))     /*!< Mask  0x00000001 */
+#define RCC_CIER_LSIRDYIE_OFFSET    (0U)
+#define RCC_CIER_LSIRDYIE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CIER, LSIRDYIE))    /*!< Mask  0x00000001 */
 
 // Values of clock interrupt enable bit
 #define RCC_CLKINT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define RCC_CLKINT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Clock source interrupt flag register */
-#define RCC_CLKINTFLAG_HSECLKSEC_OFFSET  (10U)
-#define RCC_CLKINTFLAG_HSECLKSEC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSECLKSEC))  /*!< Mask  0x00000400 */
+#define RCC_CLKINTFLAG_HSECSSF_OFFSET    (10U)
+#define RCC_CLKINTFLAG_HSECSSF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSECSSF))    /*!< Mask  0x00000400 */
 
-#define RCC_CLKINTFLAG_LSECLKSEC_OFFSET  (9U)
-#define RCC_CLKINTFLAG_LSECLKSEC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, LSECLKSEC))  /*!< Mask  0x00000200 */
+#define RCC_CLKINTFLAG_LSECSSF_OFFSET    (9U)
+#define RCC_CLKINTFLAG_LSECSSF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, LSECSSF))    /*!< Mask  0x00000200 */
 
-#define RCC_CLKINTFLAG_PLL3RDY_OFFSET    (8U)
-#define RCC_CLKINTFLAG_PLL3RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, PLL3RDY))    /*!< Mask  0x00000100 */
+#define RCC_CLKINTFLAG_PLL3RDYF_OFFSET   (8U)
+#define RCC_CLKINTFLAG_PLL3RDYF_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, PLL3RDYF))   /*!< Mask  0x00000100 */
 
-#define RCC_CLKINTFLAG_PLL2RDY_OFFSET    (7U)
-#define RCC_CLKINTFLAG_PLL2RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, PLL2RDY))    /*!< Mask  0x00000080 */
+#define RCC_CLKINTFLAG_PLL2RDYF_OFFSET   (7U)
+#define RCC_CLKINTFLAG_PLL2RDYF_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, PLL2RDYF))   /*!< Mask  0x00000080 */
 
-#define RCC_CLKINTFLAG_PLL1RDY_OFFSET    (6U)
-#define RCC_CLKINTFLAG_PLL1RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, PLL1RDY))    /*!< Mask  0x00000040 */
+#define RCC_CLKINTFLAG_PLL1RDYF_OFFSET   (6U)
+#define RCC_CLKINTFLAG_PLL1RDYF_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, PLL1RDYF))   /*!< Mask  0x00000040 */
 
-#define RCC_CLKINTFLAG_HSI48RDY_OFFSET   (5U)
-#define RCC_CLKINTFLAG_HSI48RDY_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSI48RDY))   /*!< Mask  0x00000020 */
+#define RCC_CLKINTFLAG_HSI48RDYF_OFFSET  (5U)
+#define RCC_CLKINTFLAG_HSI48RDYF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSI48RDYF))  /*!< Mask  0x00000020 */
 
-#define RCC_CLKINTFLAG_CSIRDY_OFFSET     (4U)
-#define RCC_CLKINTFLAG_CSIRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, CSIRDY))     /*!< Mask  0x00000010 */
+#define RCC_CLKINTFLAG_CSIRDYF_OFFSET    (4U)
+#define RCC_CLKINTFLAG_CSIRDYF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, CSIRDYF))    /*!< Mask  0x00000010 */
 
-#define RCC_CLKINTFLAG_HSERDY_OFFSET     (3U)
-#define RCC_CLKINTFLAG_HSERDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSERDY))     /*!< Mask  0x00000008 */
+#define RCC_CLKINTFLAG_HSERDYF_OFFSET    (3U)
+#define RCC_CLKINTFLAG_HSERDYF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSERDYF))    /*!< Mask  0x00000008 */
 
-#define RCC_CLKINTFLAG_HSIRDY_OFFSET     (2U)
-#define RCC_CLKINTFLAG_HSIRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSIRDY))     /*!< Mask  0x00000004 */
+#define RCC_CLKINTFLAG_HSIRDYF_OFFSET    (2U)
+#define RCC_CLKINTFLAG_HSIRDYF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, HSIRDYF))    /*!< Mask  0x00000004 */
 
-#define RCC_CLKINTFLAG_LSERDY_OFFSET     (1U)
-#define RCC_CLKINTFLAG_LSERDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, LSERDY))     /*!< Mask  0x00000002 */
+#define RCC_CLKINTFLAG_LSERDYF_OFFSET    (1U)
+#define RCC_CLKINTFLAG_LSERDYF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, LSERDYF))    /*!< Mask  0x00000002 */
 
-#define RCC_CLKINTFLAG_LSIRDY_OFFSET     (0U)
-#define RCC_CLKINTFLAG_LSIRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, LSIRDY))     /*!< Mask  0x00000001 */
+#define RCC_CLKINTFLAG_LSIRDYF_OFFSET    (0U)
+#define RCC_CLKINTFLAG_LSIRDYF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTFLAG, LSIRDYF))    /*!< Mask  0x00000001 */
 
 // Values of clock interrupt triggered bit
 #define RCC_CLKINT_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
 #define RCC_CLKINT_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Clock source interrupt clear register */
-#define RCC_CLKINTCLR_HSECLKSEC_OFFSET   (10U)
-#define RCC_CLKINTCLR_HSECLKSEC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSECLKSEC))  /*!< Mask  0x00000400 */
+#define RCC_CLKINTCLR_HSECSSC_OFFSET    (10U)
+#define RCC_CLKINTCLR_HSECSSC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSECSSC))    /*!< Mask  0x00000400 */
 
-#define RCC_CLKINTCLR_LSECLKSEC_OFFSET   (9U)
-#define RCC_CLKINTCLR_LSECLKSEC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, LSECLKSEC))  /*!< Mask  0x00000200 */
+#define RCC_CLKINTCLR_LSECSSC_OFFSET    (9U)
+#define RCC_CLKINTCLR_LSECSSC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, LSECSSC))    /*!< Mask  0x00000200 */
 
-#define RCC_CLKINTCLR_PLL3RDY_OFFSET     (8U)
-#define RCC_CLKINTCLR_PLL3RDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, PLL3RDY))    /*!< Mask  0x00000100 */
+#define RCC_CLKINTCLR_PLL3RDYC_OFFSET   (8U)
+#define RCC_CLKINTCLR_PLL3RDYC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, PLL3RDYC))   /*!< Mask  0x00000100 */
 
-#define RCC_CLKINTCLR_PLL2RDY_OFFSET     (7U)
-#define RCC_CLKINTCLR_PLL2RDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, PLL2RDY))    /*!< Mask  0x00000080 */
+#define RCC_CLKINTCLR_PLL2RDYC_OFFSET   (7U)
+#define RCC_CLKINTCLR_PLL2RDYC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, PLL2RDYC))   /*!< Mask  0x00000080 */
 
-#define RCC_CLKINTCLR_PLL1RDY_OFFSET     (6U)
-#define RCC_CLKINTCLR_PLL1RDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, PLL1RDY))    /*!< Mask  0x00000040 */
+#define RCC_CLKINTCLR_PLL1RDYC_OFFSET   (6U)
+#define RCC_CLKINTCLR_PLL1RDYC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, PLL1RDYC))   /*!< Mask  0x00000040 */
 
-#define RCC_CLKINTCLR_HSI48RDY_OFFSET    (5U)
-#define RCC_CLKINTCLR_HSI48RDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSI48RDY))   /*!< Mask  0x00000020 */
+#define RCC_CLKINTCLR_HSI48RDYC_OFFSET  (5U)
+#define RCC_CLKINTCLR_HSI48RDYC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSI48RDYC))  /*!< Mask  0x00000020 */
 
-#define RCC_CLKINTCLR_CSIRDY_OFFSET      (4U)
-#define RCC_CLKINTCLR_CSIRDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, CSIRDY))     /*!< Mask  0x00000010 */
+#define RCC_CLKINTCLR_CSIRDYC_OFFSET    (4U)
+#define RCC_CLKINTCLR_CSIRDYC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, CSIRDYC))    /*!< Mask  0x00000010 */
 
-#define RCC_CLKINTCLR_HSERDY_OFFSET      (3U)
-#define RCC_CLKINTCLR_HSERDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSERDY))     /*!< Mask  0x00000008 */
+#define RCC_CLKINTCLR_HSERDYC_OFFSET    (3U)
+#define RCC_CLKINTCLR_HSERDYC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSERDYC))    /*!< Mask  0x00000008 */
 
-#define RCC_CLKINTCLR_HSIRDY_OFFSET      (2U)
-#define RCC_CLKINTCLR_HSIRDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSIRDY))     /*!< Mask  0x00000004 */
+#define RCC_CLKINTCLR_HSIRDYC_OFFSET    (2U)
+#define RCC_CLKINTCLR_HSIRDYC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, HSIRDYC))    /*!< Mask  0x00000004 */
 
-#define RCC_CLKINTCLR_LSERDY_OFFSET      (1U)
-#define RCC_CLKINTCLR_LSERDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, LSERDY))     /*!< Mask  0x00000002 */
+#define RCC_CLKINTCLR_LSERDYC_OFFSET    (1U)
+#define RCC_CLKINTCLR_LSERDYC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, LSERDYC))    /*!< Mask  0x00000002 */
 
-#define RCC_CLKINTCLR_LSIRDY_OFFSET      (0U)
-#define RCC_CLKINTCLR_LSIRDY_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, LSIRDY))     /*!< Mask  0x00000001 */
+#define RCC_CLKINTCLR_LSIRDYC_OFFSET    (0U)
+#define RCC_CLKINTCLR_LSIRDYC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKINTCLR, LSIRDYC))    /*!< Mask  0x00000001 */
 
 // Values of clock interrupt clear bit
 #define RCC_CLKINT_CLEARED  (0x0UL)  /*!< Value 0x00000000 */
 #define RCC_CLKINT_CLEAR    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Backup domain control register */
-#define RCC_BCKDCTR_BCKDSWRST_OFFSET             (16U)
-#define RCC_BCKDCTR_BCKDSWRST_MASK               (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, BCKDSWRST))            /*!< Mask  0x00010000 */
+#define RCC_BDCR_BCDRST_OFFSET    (16U)
+#define RCC_BDCR_BCDRST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, BCDRST))    /*!< Mask  0x00010000 */
 
-#define RCC_BCKDCTR_RTCEN_OFFSET                 (15U)
-#define RCC_BCKDCTR_RTCEN_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, RTCEN))                /*!< Mask  0x00008000 */
+#define RCC_BDCR_RTCEN_OFFSET     (15U)
+#define RCC_BDCR_RTCEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, RTCEN))     /*!< Mask  0x00008000 */
 
-#define RCC_BCKDCTR_RTCSRCSEL_OFFSET             (8U)
-#define RCC_BCKDCTR_RTCSRCSEL_MASK               (0x3UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, RTCSRCSEL))            /*!< Mask  0x00000008 */
+#define RCC_BDCR_RTCSEL_OFFSET    (8U)
+#define RCC_BDCR_RTCSEL_MASK      (0x3UL << REGISTER_FIELD_OFFSET(RCC, BDCR, RTCSEL))    /*!< Mask  0x00000008 */
 
-#define RCC_BCKDCTR_LSECLKSECSYSFAILDET_OFFSET   (6U)
-#define RCC_BCKDCTR_LSECLKSECSYSFAILDET_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSECLKSECSYSFAILDET))  /*!< Mask  0x00000006 */
+#define RCC_BDCR_LSECSSD_OFFSET   (6U)
+#define RCC_BDCR_LSECSSD_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, LSECSSD))   /*!< Mask  0x00000006 */
 
-#define RCC_BCKDCTR_LSECLKSECSYSEN_OFFSET        (5U)
-#define RCC_BCKDCTR_LSECLKSECSYSEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSECLKSECSYSEN))       /*!< Mask  0x00000005 */
+#define RCC_BDCR_LSECSSON_OFFSET  (5U)
+#define RCC_BDCR_LSECSSON_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, LSECSSON))  /*!< Mask  0x00000005 */
 
-#define RCC_BCKDCTR_LSEOSCDRV_OFFSET             (3U)
-#define RCC_BCKDCTR_LSEOSCDRV_MASK               (0x3UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSEOSCDRV))            /*!< Mask  0x00000018 */
+#define RCC_BDCR_LSEDRV_OFFSET    (3U)
+#define RCC_BDCR_LSEDRV_MASK      (0x3UL << REGISTER_FIELD_OFFSET(RCC, BDCR, LSEDRV))    /*!< Mask  0x00000018 */
 
-#define RCC_BCKDCTR_LSEBYPASS_OFFSET             (2U)
-#define RCC_BCKDCTR_LSEBYPASS_MASK               (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSEBYPASS))            /*!< Mask  0x00000002 */
+#define RCC_BDCR_LSEBYP_OFFSET    (2U)
+#define RCC_BDCR_LSEBYP_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, LSEBYP))    /*!< Mask  0x00000002 */
 
-#define RCC_BCKDCTR_LSERDY_OFFSET                (1U)
-#define RCC_BCKDCTR_LSERDY_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSERDY))               /*!< Mask  0x00000001 */
+#define RCC_BDCR_LSERDY_OFFSET    (1U)
+#define RCC_BDCR_LSERDY_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, LSERDY))    /*!< Mask  0x00000001 */
 
-#define RCC_BCKDCTR_LSEON_OFFSET                 (0U)
-#define RCC_BCKDCTR_LSEON_MASK                   (0x1UL << REGISTER_FIELD_OFFSET(RCC, BCKDCTR, LSEON))                /*!< Mask  0x00000000 */
+#define RCC_BDCR_LSEON_OFFSET     (0U)
+#define RCC_BDCR_LSEON_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, BDCR, LSEON))     /*!< Mask  0x00000000 */
 
 // Values of software reset
 #define RCC_BCKDSW_NORST   (0x0UL)  /*!< Value 0x00000001 */
@@ -1642,11 +1642,11 @@ typedef struct {
 #define RCC_LSE_ON   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Clock control and status register */
-#define RCC_CLKCTRLSTATUS_LSIRDY_OFFSET  (1U)
-#define RCC_CLKCTRLSTATUS_LSIRDY_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCTRLSTATUS, LSIRDY))  /*!< Mask  0x00000001 */
+#define RCC_CSR_LSIRDY_OFFSET  (1U)
+#define RCC_CSR_LSIRDY_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, CSR, LSIRDY))  /*!< Mask  0x00000001 */
 
-#define RCC_CLKCTRLSTATUS_LSION_OFFSET   (0U)
-#define RCC_CLKCTRLSTATUS_LSION_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CLKCTRLSTATUS, LSION))   /*!< Mask  0x00000000 */
+#define RCC_CSR_LSION_OFFSET   (0U)
+#define RCC_CSR_LSION_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, CSR, LSION))   /*!< Mask  0x00000000 */
 
 // Values of low speed internal (LSI) RC oscillator ready bit
 #define RCC_LSI_NOTREADY  (0x0UL)  /*!< Value 0x00000000 */
@@ -1657,296 +1657,300 @@ typedef struct {
 #define RCC_LSI_ON   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< AHB3 reset register */
-#define RCC_AHB3RST_SDMMC_OFFSET   (16U)
-#define RCC_AHB3RST_SDMMC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RST, SDMMC))   /*!< Mask  0x00010000 */
+#define RCC_AHB3RSTR_SDMMC1RST_OFFSET  (16U)
+#define RCC_AHB3RSTR_SDMMC1RST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RSTR, SDMMC1RST))  /*!< Mask  0x00010000 */
 
-#define RCC_AHB3RST_QSPI_OFFSET    (14U)
-#define RCC_AHB3RST_QSPI_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RST, QSPI))    /*!< Mask  0x00004000 */
+#define RCC_AHB3RSTR_QSPIRST_OFFSET    (14U)
+#define RCC_AHB3RSTR_QSPIRST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RSTR, QSPIRST))    /*!< Mask  0x00004000 */
 
-#define RCC_AHB3RST_FMC_OFFSET     (12U)
-#define RCC_AHB3RST_FMC_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RST, FMC))     /*!< Mask  0x00001000 */
+#define RCC_AHB3RSTR_FMCRST_OFFSET     (12U)
+#define RCC_AHB3RSTR_FMCRST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RSTR, FMCRST))     /*!< Mask  0x00001000 */
 
-#define RCC_AHB3RST_JPGDEC_OFFSET  (5U)
-#define RCC_AHB3RST_JPGDEC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RST, JPGDEC))  /*!< Mask  0x00000020 */
+#define RCC_AHB3RSTR_JPGDECRST_OFFSET  (5U)
+#define RCC_AHB3RSTR_JPGDECRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RSTR, JPGDECRST))  /*!< Mask  0x00000020 */
 
-#define RCC_AHB3RST_DMA2D_OFFSET   (4U)
-#define RCC_AHB3RST_DMA2D_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RST, DMA2D))   /*!< Mask  0x00000010 */
+#define RCC_AHB3RSTR_DMA2DRST_OFFSET   (4U)
+#define RCC_AHB3RSTR_DMA2DRST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RSTR, DMA2DRST))   /*!< Mask  0x00000010 */
 
-#define RCC_AHB3RST_MDMA_OFFSET    (0U)
-#define RCC_AHB3RST_MDMA_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RST, MDMA))    /*!< Mask  0x00000001 */
+#define RCC_AHB3RSTR_MDMARST_OFFSET    (0U)
+#define RCC_AHB3RSTR_MDMARST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3RSTR, MDMARST))    /*!< Mask  0x00000001 */
 
 /*!< AHB1 reset register */
-#define RCC_AHB1RST_USB2OTG_OFFSET  (27U)
-#define RCC_AHB1RST_USB2OTG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, USB2OTG))  /*!< Mask  0x08000000 */
+#define RCC_AHB1RSTR_USB2OTGRST_OFFSET  (27U)
+#define RCC_AHB1RSTR_USB2OTGRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, USB2OTGRST))  /*!< Mask  0x08000000 */
 
-#define RCC_AHB1RST_USB1OTG_OFFSET  (25U)
-#define RCC_AHB1RST_USB1OTG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, USB1OTG))  /*!< Mask  0x02000000 */
+#define RCC_AHB1RSTR_USB1OTGRST_OFFSET  (25U)
+#define RCC_AHB1RSTR_USB1OTGRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, USB1OTGRST))  /*!< Mask  0x02000000 */
 
-#define RCC_AHB1RST_ETH1MAC_OFFSET  (15U)
-#define RCC_AHB1RST_ETH1MAC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, ETH1MAC))  /*!< Mask  0x00008000 */
+#define RCC_AHB1RSTR_ETH1MACRST_OFFSET  (15U)
+#define RCC_AHB1RSTR_ETH1MACRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, ETH1MACRST))  /*!< Mask  0x00008000 */
 
-#define RCC_AHB1RST_ART_OFFSET      (14U)
-#define RCC_AHB1RST_ART_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, ART))      /*!< Mask  0x00004000 */
+#define RCC_AHB1RSTR_ARTRST_OFFSET      (14U)
+#define RCC_AHB1RSTR_ARTRST_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, ARTRST))      /*!< Mask  0x00004000 */
 
-#define RCC_AHB1RST_ADC_OFFSET      (5U)
-#define RCC_AHB1RST_ADC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, ADC))      /*!< Mask  0x00000020 */
+#define RCC_AHB1RSTR_ADC12RST_OFFSET    (5U)
+#define RCC_AHB1RSTR_ADC12RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, ADC12RST))    /*!< Mask  0x00000020 */
 
-#define RCC_AHB1RST_DMA2_OFFSET     (1U)
-#define RCC_AHB1RST_DMA2_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, DMA2))     /*!< Mask  0x00000002 */
+#define RCC_AHB1RSTR_DMA2RST_OFFSET     (1U)
+#define RCC_AHB1RSTR_DMA2RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, DMA2RST))     /*!< Mask  0x00000002 */
 
-#define RCC_AHB1RST_DMA1_OFFSET     (0U)
-#define RCC_AHB1RST_DMA1_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RST, DMA1))     /*!< Mask  0x00000001 */
+#define RCC_AHB1RSTR_DMA1RST_OFFSET     (0U)
+#define RCC_AHB1RSTR_DMA1RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1RSTR, DMA1RST))     /*!< Mask  0x00000001 */
 
 /*!< AHB2 reset register */
-#define RCC_AHB2RST_SDMMC2_OFFSET  (9U)
-#define RCC_AHB2RST_SDMMC2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RST, SDMMC2))  /*!< Mask  0x00000200 */
+#define RCC_AHB2RSTR_SDMMC2RST_OFFSET  (9U)
+#define RCC_AHB2RSTR_SDMMC2RST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RSTR, SDMMC2RST))  /*!< Mask  0x00000200 */
 
-#define RCC_AHB2RST_RNG_OFFSET     (6U)
-#define RCC_AHB2RST_RNG_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RST, RNG))     /*!< Mask  0x02000040 */
+#define RCC_AHB2RSTR_RNGRST_OFFSET     (6U)
+#define RCC_AHB2RSTR_RNGRST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RSTR, RNGRST))     /*!< Mask  0x02000040 */
 
-#define RCC_AHB2RST_HASH_OFFSET    (5U)
-#define RCC_AHB2RST_HASH_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RST, HASH))    /*!< Mask  0x00000020 */
+#define RCC_AHB2RSTR_HASHRST_OFFSET    (5U)
+#define RCC_AHB2RSTR_HASHRST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RSTR, HASHRST))    /*!< Mask  0x00000020 */
 
-#define RCC_AHB2RST_CRYPTO_OFFSET  (4U)
-#define RCC_AHB2RST_CRYPTO_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RST, CRYPTO))  /*!< Mask  0x00000010 */
+#define RCC_AHB2RSTR_CRYPTRST_OFFSET   (4U)
+#define RCC_AHB2RSTR_CRYPTRST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RSTR, CRYPTRST))   /*!< Mask  0x00000010 */
 
-#define RCC_AHB2RST_CAMITF_OFFSET  (0U)
-#define RCC_AHB2RST_CAMITF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RST, CAMITF))  /*!< Mask  0x00000001 */
+#define RCC_AHB2RSTR_CAMITFRST_OFFSET  (0U)
+#define RCC_AHB2RSTR_CAMITFRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2RSTR, CAMITFRST))  /*!< Mask  0x00000001 */
 
 /*!< AHB4 reset register */
-#define RCC_AHB4RST_HSEM_OFFSET   (25U)
-#define RCC_AHB4RST_HSEM_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, HSEM))   /*!< Mask  0x02000000 */
+#define RCC_AHB4RSTR_HSEMRST_OFFSET   (25U)
+#define RCC_AHB4RSTR_HSEMRST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, HSEMRST))   /*!< Mask  0x02000000 */
 
-#define RCC_AHB4RST_ADC3_OFFSET   (24U)
-#define RCC_AHB4RST_ADC3_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, ADC3))   /*!< Mask  0x01000000 */
+#define RCC_AHB4RSTR_ADC3RST_OFFSET   (24U)
+#define RCC_AHB4RSTR_ADC3RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, ADC3RST))   /*!< Mask  0x01000000 */
 
-#define RCC_AHB4RST_BDMA_OFFSET   (21U)
-#define RCC_AHB4RST_BDMA_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, BDMA))   /*!< Mask  0x00200000 */
+#define RCC_AHB4RSTR_BDMARST_OFFSET   (21U)
+#define RCC_AHB4RSTR_BDMARST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, BDMARST))   /*!< Mask  0x00200000 */
 
-#define RCC_AHB4RST_CRC_OFFSET    (19U)
-#define RCC_AHB4RST_CRC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, CRC))    /*!< Mask  0x00080000 */
+#define RCC_AHB4RSTR_CRCRST_OFFSET    (19U)
+#define RCC_AHB4RSTR_CRCRST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, CRCRST))    /*!< Mask  0x00080000 */
 
-#define RCC_AHB4RST_GPIOK_OFFSET  (10U)
-#define RCC_AHB4RST_GPIOK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOK))  /*!< Mask  0x00000400 */
+#define RCC_AHB4RSTR_GPIOKRST_OFFSET  (10U)
+#define RCC_AHB4RSTR_GPIOKRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOKRST))  /*!< Mask  0x00000400 */
 
-#define RCC_AHB4RST_GPIOJ_OFFSET  (9U)
-#define RCC_AHB4RST_GPIOJ_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOJ))  /*!< Mask  0x00000200 */
+#define RCC_AHB4RSTR_GPIOJRST_OFFSET  (9U)
+#define RCC_AHB4RSTR_GPIOJRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOJRST))  /*!< Mask  0x00000200 */
 
-#define RCC_AHB4RST_GPIOI_OFFSET  (8U)
-#define RCC_AHB4RST_GPIOI_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOI))  /*!< Mask  0x00000100 */
+#define RCC_AHB4RSTR_GPIOIRST_OFFSET  (8U)
+#define RCC_AHB4RSTR_GPIOIRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOIRST))  /*!< Mask  0x00000100 */
 
-#define RCC_AHB4RST_GPIOH_OFFSET  (7U)
-#define RCC_AHB4RST_GPIOH_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOH))  /*!< Mask  0x00000080 */
+#define RCC_AHB4RSTR_GPIOHRST_OFFSET  (7U)
+#define RCC_AHB4RSTR_GPIOHRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOHRST))  /*!< Mask  0x00000080 */
 
-#define RCC_AHB4RST_GPIOG_OFFSET  (6U)
-#define RCC_AHB4RST_GPIOG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOG))  /*!< Mask  0x00000040 */
+#define RCC_AHB4RSTR_GPIOGRST_OFFSET  (6U)
+#define RCC_AHB4RSTR_GPIOGRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOGRST))  /*!< Mask  0x00000040 */
 
-#define RCC_AHB4RST_GPIOF_OFFSET  (5U)
-#define RCC_AHB4RST_GPIOF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOF))  /*!< Mask  0x00000020 */
+#define RCC_AHB4RSTR_GPIOFRST_OFFSET  (5U)
+#define RCC_AHB4RSTR_GPIOFRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOFRST))  /*!< Mask  0x00000020 */
 
-#define RCC_AHB4RST_GPIOE_OFFSET  (4U)
-#define RCC_AHB4RST_GPIOE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOE))  /*!< Mask  0x00000010 */
+#define RCC_AHB4RSTR_GPIOERST_OFFSET  (4U)
+#define RCC_AHB4RSTR_GPIOERST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOERST))  /*!< Mask  0x00000010 */
 
-#define RCC_AHB4RST_GPIOD_OFFSET  (3U)
-#define RCC_AHB4RST_GPIOD_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOD))  /*!< Mask  0x00000008 */
+#define RCC_AHB4RSTR_GPIODRST_OFFSET  (3U)
+#define RCC_AHB4RSTR_GPIODRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIODRST))  /*!< Mask  0x00000008 */
 
-#define RCC_AHB4RST_GPIOC_OFFSET  (2U)
-#define RCC_AHB4RST_GPIOC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOC))  /*!< Mask  0x00000004 */
+#define RCC_AHB4RSTR_GPIOCRST_OFFSET  (2U)
+#define RCC_AHB4RSTR_GPIOCRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOCRST))  /*!< Mask  0x00000004 */
 
-#define RCC_AHB4RST_GPIOB_OFFSET  (1U)
-#define RCC_AHB4RST_GPIOB_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOB))  /*!< Mask  0x00000002 */
+#define RCC_AHB4RSTR_GPIOBRST_OFFSET  (1U)
+#define RCC_AHB4RSTR_GPIOBRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOBRST))  /*!< Mask  0x00000002 */
 
-#define RCC_AHB4RST_GPIOA_OFFSET  (0U)
-#define RCC_AHB4RST_GPIOA_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RST, GPIOA))  /*!< Mask  0x00000001 */
+#define RCC_AHB4RSTR_GPIOARST_OFFSET  (0U)
+#define RCC_AHB4RSTR_GPIOARST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4RSTR, GPIOARST))  /*!< Mask  0x00000001 */
 
 /*!< APB3 reset register */
-#define RCC_APB3RST_DSI_OFFSET   (4U)
-#define RCC_APB3RST_DSI_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3RST, DSI))   /*!< Mask  0x00000010 */
+#define RCC_APB3RSTR_DSIRST_OFFSET   (4U)
+#define RCC_APB3RSTR_DSIRST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3RSTR, DSIRST))   /*!< Mask  0x00000010 */
 
-#define RCC_APB3RST_LTDC_OFFSET  (3U)
-#define RCC_APB3RST_LTDC_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3RST, LTDC))  /*!< Mask  0x00000001 */
+#define RCC_APB3RSTR_LTDCRST_OFFSET  (3U)
+#define RCC_APB3RSTR_LTDCRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3RSTR, LTDCRST))  /*!< Mask  0x00000001 */
 
-/*!< APB1 reset register */
-#define RCC_APB1LRST_UART8_OFFSET       (31U)
-#define RCC_APB1LRST_UART8_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, UART8))       /*!< Mask  0x80000000 */
+/*!< APB1 reset low register */
+#define RCC_APB1LRSTR_UART8RST_OFFSET    (31U)
+#define RCC_APB1LRSTR_UART8RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, UART8RST))    /*!< Mask  0x80000000 */
 
-#define RCC_APB1LRST_UART7_OFFSET       (30U)
-#define RCC_APB1LRST_UART7_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, UART7))       /*!< Mask  0x40000000 */
+#define RCC_APB1LRSTR_UART7RST_OFFSET    (30U)
+#define RCC_APB1LRSTR_UART7RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, UART7RST))    /*!< Mask  0x40000000 */
 
-#define RCC_APB1LRST_HDMICEC_OFFSET     (27U)
-#define RCC_APB1LRST_HDMICEC_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, HDMICEC))     /*!< Mask  0x08000000 */
+#define RCC_APB1LRSTR_DAC12RST_OFFSET    (29U)
+#define RCC_APB1LRSTR_DAC12RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, DAC12RST))    /*!< Mask  0x20000000 */
 
-#define RCC_APB1LRST_I2C3_OFFSET        (23U)
-#define RCC_APB1LRST_I2C3_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, I2C3))        /*!< Mask  0x00800000 */
+#define RCC_APB1LRSTR_CECRST_OFFSET      (27U)
+#define RCC_APB1LRSTR_CECRST_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, CECRST))      /*!< Mask  0x08000000 */
 
-#define RCC_APB1LRST_I2C2_OFFSET        (22U)
-#define RCC_APB1LRST_I2C2_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, I2C2))        /*!< Mask  0x00400000 */
+#define RCC_APB1LRSTR_I2C3RST_OFFSET     (23U)
+#define RCC_APB1LRSTR_I2C3RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, I2C3RST))     /*!< Mask  0x00800000 */
 
-#define RCC_APB1LRST_I2C1_OFFSET        (21U)
-#define RCC_APB1LRST_I2C1_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, I2C1))        /*!< Mask  0x00200000 */
+#define RCC_APB1LRSTR_I2C2RST_OFFSET     (22U)
+#define RCC_APB1LRSTR_I2C2RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, I2C2RST))     /*!< Mask  0x00400000 */
 
-#define RCC_APB1LRST_UART5_OFFSET       (20U)
-#define RCC_APB1LRST_UART5_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, UART5))       /*!< Mask  0x00100000 */
+#define RCC_APB1LRSTR_I2C1RST_OFFSET     (21U)
+#define RCC_APB1LRSTR_I2C1RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, I2C1RST))     /*!< Mask  0x00200000 */
 
-#define RCC_APB1LRST_UART4_OFFSET       (19U)
-#define RCC_APB1LRST_UART4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, UART4))       /*!< Mask  0x00080000 */
+#define RCC_APB1LRSTR_UART5RST_OFFSET    (20U)
+#define RCC_APB1LRSTR_UART5RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, UART5RST))    /*!< Mask  0x00100000 */
 
-#define RCC_APB1LRST_UART3_OFFSET       (18U)
-#define RCC_APB1LRST_UART3_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, UART3))       /*!< Mask  0x00040000 */
+#define RCC_APB1LRSTR_UART4RST_OFFSET    (19U)
+#define RCC_APB1LRSTR_UART4RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, UART4RST))    /*!< Mask  0x00080000 */
 
-#define RCC_APB1LRST_UART2_OFFSET       (17U)
-#define RCC_APB1LRST_UART2_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, UART2))       /*!< Mask  0x00020000 */
+#define RCC_APB1LRSTR_USART3RST_OFFSET   (18U)
+#define RCC_APB1LRSTR_USART3RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, USART3RST))   /*!< Mask  0x00040000 */
 
-#define RCC_APB1LRST_SPDIFRX_OFFSET     (16U)
-#define RCC_APB1LRST_SPDIFRX_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, SPDIFRX))     /*!< Mask  0x00010000 */
+#define RCC_APB1LRSTR_USART2RST_OFFSET   (17U)
+#define RCC_APB1LRSTR_USART2RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, USART2RST))   /*!< Mask  0x00020000 */
 
-#define RCC_APB1LRST_SPI3_OFFSET        (15U)
-#define RCC_APB1LRST_SPI3_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, SPI3))        /*!< Mask  0x00008000 */
+#define RCC_APB1LRSTR_SPDIFRXRST_OFFSET  (16U)
+#define RCC_APB1LRSTR_SPDIFRXRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, SPDIFRXRST))  /*!< Mask  0x00010000 */
 
-#define RCC_APB1LRST_SPI2_OFFSET        (14U)
-#define RCC_APB1LRST_SPI2_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, SPI2))        /*!< Mask  0x00004000 */
+#define RCC_APB1LRSTR_SPI3RST_OFFSET     (15U)
+#define RCC_APB1LRSTR_SPI3RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, SPI3RST))     /*!< Mask  0x00008000 */
 
-#define RCC_APB1LRST_LPTIMER1_OFFSET    (9U)
-#define RCC_APB1LRST_LPTIMER1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, LPTIMER1))    /*!< Mask  0x00000200 */
+#define RCC_APB1LRSTR_SPI2RST_OFFSET     (14U)
+#define RCC_APB1LRSTR_SPI2RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, SPI2RST))     /*!< Mask  0x00004000 */
 
-#define RCC_APB1LRST_TIMER14_OFFSET     (8U)
-#define RCC_APB1LRST_TIMER14_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER14))     /*!< Mask  0x00000100 */
+#define RCC_APB1LRSTR_LPTIM1RST_OFFSET   (9U)
+#define RCC_APB1LRSTR_LPTIM1RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, LPTIM1RST))   /*!< Mask  0x00000200 */
 
-#define RCC_APB1LRST_TIMER13_OFFSET     (7U)
-#define RCC_APB1LRST_TIMER13_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER13))     /*!< Mask  0x00000080 */
+#define RCC_APB1LRSTR_TIM14RST_OFFSET    (8U)
+#define RCC_APB1LRSTR_TIM14RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM14RST))    /*!< Mask  0x00000100 */
 
-#define RCC_APB1LRST_TIMER12_OFFSET     (6U)
-#define RCC_APB1LRST_TIMER12_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER12))     /*!< Mask  0x00000040 */
+#define RCC_APB1LRSTR_TIM13RST_OFFSET    (7U)
+#define RCC_APB1LRSTR_TIM13RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM13RST))    /*!< Mask  0x00000080 */
 
-#define RCC_APB1LRST_TIMER7_OFFSET      (5U)
-#define RCC_APB1LRST_TIMER7_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER7))      /*!< Mask  0x00000020 */
+#define RCC_APB1LRSTR_TIM12RST_OFFSET    (6U)
+#define RCC_APB1LRSTR_TIM12RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM12RST))    /*!< Mask  0x00000040 */
 
-#define RCC_APB1LRST_TIMER6_OFFSET      (4U)
-#define RCC_APB1LRST_TIMER6_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER6))      /*!< Mask  0x00000010 */
+#define RCC_APB1LRSTR_TIM7RST_OFFSET     (5U)
+#define RCC_APB1LRSTR_TIM7RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM7RST))     /*!< Mask  0x00000020 */
 
-#define RCC_APB1LRST_TIMER5_OFFSET      (3U)
-#define RCC_APB1LRST_TIMER5_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER5))      /*!< Mask  0x00000008 */
+#define RCC_APB1LRSTR_TIM6RST_OFFSET     (4U)
+#define RCC_APB1LRSTR_TIM6RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM6RST))     /*!< Mask  0x00000010 */
 
-#define RCC_APB1LRST_TIMER4_OFFSET      (2U)
-#define RCC_APB1LRST_TIMER4_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER4))      /*!< Mask  0x00000004 */
+#define RCC_APB1LRSTR_TIM5RST_OFFSET     (3U)
+#define RCC_APB1LRSTR_TIM5RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM5RST))     /*!< Mask  0x00000008 */
 
-#define RCC_APB1LRST_TIMER3_OFFSET      (1U)
-#define RCC_APB1LRST_TIMER3_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER3))      /*!< Mask  0x00000002 */
+#define RCC_APB1LRSTR_TIM4RST_OFFSET     (2U)
+#define RCC_APB1LRSTR_TIM4RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM4RST))     /*!< Mask  0x00000004 */
 
-#define RCC_APB1LRST_TIMER2_OFFSET      (0U)
-#define RCC_APB1LRST_TIMER2_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRST, TIMER2))      /*!< Mask  0x00000001 */
+#define RCC_APB1LRSTR_TIM3RST_OFFSET     (1U)
+#define RCC_APB1LRSTR_TIM3RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM3RST))     /*!< Mask  0x00000002 */
 
-#define RCC_APB1HRST_FDCAN_OFFSET       (8U)
-#define RCC_APB1HRST_FDCAN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRST, FDCAN))       /*!< Mask  0x00000100 */
+#define RCC_APB1LRSTR_TIM2RST_OFFSET     (0U)
+#define RCC_APB1LRSTR_TIM2RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LRSTR, TIM2RST))     /*!< Mask  0x00000001 */
 
-#define RCC_APB1HRST_MDIOS_OFFSET       (5U)
-#define RCC_APB1HRST_MDIOS_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRST, MDIOS))       /*!< Mask  0x00000020 */
+/*!< APB1 reset high register */
+#define RCC_APB1HRSTR_FDCANRST_OFFSET  (8U)
+#define RCC_APB1HRSTR_FDCANRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRSTR, FDCANRST))  /*!< Mask  0x00000100 */
 
-#define RCC_APB1HRST_OPAMP_OFFSET       (4U)
-#define RCC_APB1HRST_OPAMP_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRST, OPAMP))       /*!< Mask  0x00000010 */
+#define RCC_APB1HRSTR_MDIOSRST_OFFSET  (5U)
+#define RCC_APB1HRSTR_MDIOSRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRSTR, MDIOSRST))  /*!< Mask  0x00000020 */
 
-#define RCC_APB1HRST_SINGLEWIRE_OFFSET  (2U)
-#define RCC_APB1HRST_SINGLEWIRE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRST, SINGLEWIRE))  /*!< Mask  0x00000004 */
+#define RCC_APB1HRSTR_OPAMPRST_OFFSET  (4U)
+#define RCC_APB1HRSTR_OPAMPRST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRSTR, OPAMPRST))  /*!< Mask  0x00000010 */
 
-#define RCC_APB1HRST_CLKREC_OFFSET      (1U)
-#define RCC_APB1HRST_CLKREC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRST, CLKREC))      /*!< Mask  0x00000002 */
+#define RCC_APB1HRSTR_SWPRST_OFFSET    (2U)
+#define RCC_APB1HRSTR_SWPRST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRSTR, SWPRST))    /*!< Mask  0x00000004 */
+
+#define RCC_APB1HRSTR_CRSRST_OFFSET    (1U)
+#define RCC_APB1HRSTR_CRSRST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HRSTR, CRSRST))    /*!< Mask  0x00000002 */
 
 /*!< APB2 reset register */
-#define RCC_APB2RST_HRTIMER_OFFSET  (29U)
-#define RCC_APB2RST_HRTIMER_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, HRTIMER))  /*!< Mask  0x20000000 */
+#define RCC_APB2RSTR_HRTIMRST_OFFSET   (29U)
+#define RCC_APB2RSTR_HRTIMRST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, HRTIMRST))   /*!< Mask  0x20000000 */
 
-#define RCC_APB2RST_DFSDM1_OFFSET   (28U)
-#define RCC_APB2RST_DFSDM1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, DFSDM1))   /*!< Mask  0x10000000 */
+#define RCC_APB2RSTR_DFSDM1RST_OFFSET  (28U)
+#define RCC_APB2RSTR_DFSDM1RST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, DFSDM1RST))  /*!< Mask  0x10000000 */
 
-#define RCC_APB2RST_SAI3_OFFSET     (24U)
-#define RCC_APB2RST_SAI3_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, SAI3))     /*!< Mask  0x01000000 */
+#define RCC_APB2RSTR_SAI3RST_OFFSET    (24U)
+#define RCC_APB2RSTR_SAI3RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, SAI3RST))    /*!< Mask  0x01000000 */
 
-#define RCC_APB2RST_SAI2_OFFSET     (23U)
-#define RCC_APB2RST_SAI2_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, SAI2))     /*!< Mask  0x00800000 */
+#define RCC_APB2RSTR_SAI2RST_OFFSET    (23U)
+#define RCC_APB2RSTR_SAI2RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, SAI2RST))    /*!< Mask  0x00800000 */
 
-#define RCC_APB2RST_SAI1_OFFSET     (22U)
-#define RCC_APB2RST_SAI1_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, SAI1))     /*!< Mask  0x00400000 */
+#define RCC_APB2RSTR_SAI1RST_OFFSET    (22U)
+#define RCC_APB2RSTR_SAI1RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, SAI1RST))    /*!< Mask  0x00400000 */
 
-#define RCC_APB2RST_SPI5_OFFSET     (20U)
-#define RCC_APB2RST_SPI5_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, SPI5))     /*!< Mask  0x00100000 */
+#define RCC_APB2RSTR_SPI5RST_OFFSET    (20U)
+#define RCC_APB2RSTR_SPI5RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, SPI5RST))    /*!< Mask  0x00100000 */
 
-#define RCC_APB2RST_TIMER17_OFFSET  (18U)
-#define RCC_APB2RST_TIMER17_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, TIMER17))  /*!< Mask  0x00040000 */
+#define RCC_APB2RSTR_TIM17RST_OFFSET   (18U)
+#define RCC_APB2RSTR_TIM17RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, TIM17RST))   /*!< Mask  0x00040000 */
 
-#define RCC_APB2RST_TIMER16_OFFSET  (17U)
-#define RCC_APB2RST_TIMER16_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, TIMER16))  /*!< Mask  0x00020000 */
+#define RCC_APB2RSTR_TIM16RST_OFFSET   (17U)
+#define RCC_APB2RSTR_TIM16RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, TIM16RST))   /*!< Mask  0x00020000 */
 
-#define RCC_APB2RST_TIMER15_OFFSET  (16U)
-#define RCC_APB2RST_TIMER15_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, TIMER15))  /*!< Mask  0x00010000 */
+#define RCC_APB2RSTR_TIM15RST_OFFSET   (16U)
+#define RCC_APB2RSTR_TIM15RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, TIM15RST))   /*!< Mask  0x00010000 */
 
-#define RCC_APB2RST_SPI4_OFFSET     (13U)
-#define RCC_APB2RST_SPI4_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, SPI4))     /*!< Mask  0x00002000 */
+#define RCC_APB2RSTR_SPI4RST_OFFSET    (13U)
+#define RCC_APB2RSTR_SPI4RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, SPI4RST))    /*!< Mask  0x00002000 */
 
-#define RCC_APB2RST_SPI1_OFFSET     (12U)
-#define RCC_APB2RST_SPI1_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, SPI1))     /*!< Mask  0x00002000 */
+#define RCC_APB2RSTR_SPI1RST_OFFSET    (12U)
+#define RCC_APB2RSTR_SPI1RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, SPI1RST))    /*!< Mask  0x00002000 */
 
-#define RCC_APB2RST_USART6_OFFSET   (5U)
-#define RCC_APB2RST_USART6_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, USART6))   /*!< Mask  0x00000020 */
+#define RCC_APB2RSTR_USART6RST_OFFSET  (5U)
+#define RCC_APB2RSTR_USART6RST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, USART6RST))  /*!< Mask  0x00000020 */
 
-#define RCC_APB2RST_USART1_OFFSET   (4U)
-#define RCC_APB2RST_USART1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, USART1))   /*!< Mask  0x00000010 */
+#define RCC_APB2RSTR_USART1RST_OFFSET  (4U)
+#define RCC_APB2RSTR_USART1RST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, USART1RST))  /*!< Mask  0x00000010 */
 
-#define RCC_APB2RST_TIMER8_OFFSET   (1U)
-#define RCC_APB2RST_TIMER8_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, TIMER8))   /*!< Mask  0x00000002 */
+#define RCC_APB2RSTR_TIM8RST_OFFSET    (1U)
+#define RCC_APB2RSTR_TIM8RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, TIM8RST))    /*!< Mask  0x00000002 */
 
-#define RCC_APB2RST_TIMER1_OFFSET   (0U)
-#define RCC_APB2RST_TIMER1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RST, TIMER1))   /*!< Mask  0x00000001 */
+#define RCC_APB2RSTR_TIM1RST_OFFSET    (0U)
+#define RCC_APB2RSTR_TIM1RST_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2RSTR, TIM1RST))    /*!< Mask  0x00000001 */
 
 /*!< APB4 reset register */
-#define RCC_APB4RST_SAI4_OFFSET      (21U)
-#define RCC_APB4RST_SAI4_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, SAI4))      /*!< Mask  0x00200000 */
+#define RCC_APB4RSTR_SAI4RST_OFFSET     (21U)
+#define RCC_APB4RSTR_SAI4RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, SAI4RST))      /*!< Mask  0x00200000 */
 
-#define RCC_APB4RST_VREF_OFFSET      (15U)
-#define RCC_APB4RST_VREF_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, VREF))      /*!< Mask  0x00008000 */
+#define RCC_APB4RSTR_VREFRST_OFFSET     (15U)
+#define RCC_APB4RSTR_VREFRST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, VREFRST))      /*!< Mask  0x00008000 */
 
-#define RCC_APB4RST_COMP12_OFFSET    (14U)
-#define RCC_APB4RST_COMP12_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, COMP12))    /*!< Mask  0x00004000 */
+#define RCC_APB4RSTR_COMP12RST_OFFSET   (14U)
+#define RCC_APB4RSTR_COMP12RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, COMP12RST))    /*!< Mask  0x00004000 */
 
-#define RCC_APB4RST_LPTIMER5_OFFSET  (12U)
-#define RCC_APB4RST_LPTIMER5_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, LPTIMER5))  /*!< Mask  0x00001000 */
+#define RCC_APB4RSTR_LPTIM5RST_OFFSET   (12U)
+#define RCC_APB4RSTR_LPTIM5RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, LPTIM5RST))  /*!< Mask  0x00001000 */
 
-#define RCC_APB4RST_LPTIMER4_OFFSET  (11U)
-#define RCC_APB4RST_LPTIMER4_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, LPTIMER4))  /*!< Mask  0x00000800 */
+#define RCC_APB4RSTR_LPTIM4RST_OFFSET   (11U)
+#define RCC_APB4RSTR_LPTIM4RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, LPTIM4RST))  /*!< Mask  0x00000800 */
 
-#define RCC_APB4RST_LPTIMER3_OFFSET  (10U)
-#define RCC_APB4RST_LPTIMER3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, LPTIMER3))  /*!< Mask  0x00000400 */
+#define RCC_APB4RSTR_LPTIM3RST_OFFSET   (10U)
+#define RCC_APB4RSTR_LPTIM3RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, LPTIM3RST))  /*!< Mask  0x00000400 */
 
-#define RCC_APB4RST_LPTIMER2_OFFSET  (9U)
-#define RCC_APB4RST_LPTIMER2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, LPTIMER2))  /*!< Mask  0x00000200 */
+#define RCC_APB4RSTR_LPTIM2RST_OFFSET   (9U)
+#define RCC_APB4RSTR_LPTIM2RST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, LPTIM2RST))  /*!< Mask  0x00000200 */
 
-#define RCC_APB4RST_I2C4_OFFSET      (7U)
-#define RCC_APB4RST_I2C4_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, I2C4))      /*!< Mask  0x00000080 */
+#define RCC_APB4RSTR_I2C4RST_OFFSET     (7U)
+#define RCC_APB4RSTR_I2C4RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, I2C4RST))      /*!< Mask  0x00000080 */
 
-#define RCC_APB4RST_SPI6_OFFSET      (5U)
-#define RCC_APB4RST_SPI6_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, SPI6))      /*!< Mask  0x00000020 */
+#define RCC_APB4RSTR_SPI6RST_OFFSET     (5U)
+#define RCC_APB4RSTR_SPI6RST_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, SPI6RST))      /*!< Mask  0x00000020 */
 
-#define RCC_APB4RST_LPUART1_OFFSET   (3U)
-#define RCC_APB4RST_LPUART1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, LPUART1))   /*!< Mask  0x00000008 */
+#define RCC_APB4RSTR_LPUART1RST_OFFSET  (3U)
+#define RCC_APB4RSTR_LPUART1RST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, LPUART1RST))   /*!< Mask  0x00000008 */
 
-#define RCC_APB4RST_SYSCFG_OFFSET    (1U)
-#define RCC_APB4RST_SYSCFG_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RST, SYSCFG))    /*!< Mask  0x00000002 */
+#define RCC_APB4RSTR_SYSCFGRST_OFFSET   (1U)
+#define RCC_APB4RSTR_SYSCFGRST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4RSTR, SYSCFGRST))    /*!< Mask  0x00000002 */
 
 // Values of reset register of peripherals
 #define RCC_PERIPHERALRST_CLEAR  (0x0UL)  /*!< Value 0x00000000 */
 #define RCC_PERIPHERALRST_SET    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Global control register */
-#define RCC_GBLCTRL_BOOTC2_OFFSET                (3U)
-#define RCC_GBLCTRL_BOOTC2_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(RCC, GBLCTRL, BOOTC2))                   /*!< Mask  0x00000008 */
+#define RCC_GCR_BOOT_C2_OFFSET  (3U)
+#define RCC_GCR_BOOT_C2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, GCR, BOOT_C2))  /*!< Mask  0x00000008 */
 
-#define RCC_GBLCTRL_BOOTC1_OFFSET                (2U)
-#define RCC_GBLCTRL_BOOTC1_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(RCC, GBLCTRL, BOOTC1))                   /*!< Mask  0x00000004 */
+#define RCC_GCR_BOOT_C1_OFFSET  (2U)
+#define RCC_GCR_BOOT_C1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, GCR, BOOT_C1))  /*!< Mask  0x00000004 */
 
-#define RCC_GBLCTRL_WINWATCHDOG2RSTSCOPE_OFFSET  (1U)
-#define RCC_GBLCTRL_WINWATCHDOG2RSTSCOPE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, GBLCTRL, SYSWINWATCHDOG2RSTSCOPE))  /*!< Mask  0x00000002 */
+#define RCC_GCR_WW2RSC_OFFSET   (1U)
+#define RCC_GCR_WW2RSC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, GCR, WW2RSC))   /*!< Mask  0x00000002 */
 
-#define RCC_GBLCTRL_WINWATCHDOG1RSTSCOPE_OFFSET  (0U)
-#define RCC_GBLCTRL_WINWATCHDOG1RSTSCOPE_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, GBLCTRL, SYSWINWATCHDOG1RSTSCOPE))  /*!< Mask  0x00000001 */
+#define RCC_GCR_WW1RSC_OFFSET   (0U)
+#define RCC_GCR_WW1RSC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, GCR, WW1RSC))   /*!< Mask  0x00000001 */
 
 // Values of reset register of peripherals
 #define RCC_BOOTCPU_OPTBYTE        (0x0UL)  /*!< Value 0x00000000 */
@@ -1957,762 +1961,764 @@ typedef struct {
 #define RCC_WINWATCHDOGRSTSCOPE_SYSRST   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Domain 3 autonomous mode register */
-#define RCC_D3AM_SRAM4EN_OFFSET      (29U)
-#define RCC_D3AM_SRAM4EN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, SRAM4EN))     /*!< Mask  0x20000000 */
+#define RCC_D3AMR_SRAM4AMEN_OFFSET    (29U)
+#define RCC_D3AMR_SRAM4AMEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, SRAM4AMEN))    /*!< Mask  0x20000000 */
 
-#define RCC_D3AM_BCKRAMEN_OFFSET     (28U)
-#define RCC_D3AM_BCKRAMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, BCKRAMEN))    /*!< Mask  0x10000000 */
+#define RCC_D3AMR_BKPRAMAMEN_OFFSET   (28U)
+#define RCC_D3AMR_BKPRAMAMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, BKPRAMAMEN))   /*!< Mask  0x10000000 */
 
-#define RCC_D3AM_ADC3EN_OFFSET       (24U)
-#define RCC_D3AM_ADC3EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, ADC3EN))      /*!< Mask  0x01000000 */
+#define RCC_D3AMR_ADC3AMEN_OFFSET     (24U)
+#define RCC_D3AMR_ADC3AMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, ADC3AMEN))     /*!< Mask  0x01000000 */
 
-#define RCC_D3AM_SAI4EN_OFFSET       (21U)
-#define RCC_D3AM_SAI4EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, SAI4EN))      /*!< Mask  0x00200000 */
+#define RCC_D3AMR_SAI4AMEN_OFFSET     (21U)
+#define RCC_D3AMR_SAI4AMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, SAI4AMEN))     /*!< Mask  0x00200000 */
 
-#define RCC_D3AM_CRCEN_OFFSET        (19U)
-#define RCC_D3AM_CRCEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, CRCEN))       /*!< Mask  0x00080000 */
+#define RCC_D3AMR_CRCAMEN_OFFSET      (19U)
+#define RCC_D3AMR_CRCAMEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, CRCAMEN))      /*!< Mask  0x00080000 */
 
-#define RCC_D3AM_RTCEN_OFFSET        (16U)
-#define RCC_D3AM_RTCEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, RTCEN))       /*!< Mask  0x00010000 */
+#define RCC_D3AMR_RTCAMEN_OFFSET      (16U)
+#define RCC_D3AMR_RTCAMEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, RTCAMEN))      /*!< Mask  0x00010000 */
 
-#define RCC_D3AM_VREFEN_OFFSET       (15U)
-#define RCC_D3AM_VREFEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, VREFEN))      /*!< Mask  0x00008000 */
+#define RCC_D3AMR_VREFAMEN_OFFSET     (15U)
+#define RCC_D3AMR_VREFAMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, VREFAMEN))     /*!< Mask  0x00008000 */
 
-#define RCC_D3AM_COMP12EN_OFFSET     (14U)
-#define RCC_D3AM_COMP12EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, COMP12EN))    /*!< Mask  0x00004000 */
+#define RCC_D3AMR_COMP12AMEN_OFFSET   (14U)
+#define RCC_D3AMR_COMP12AMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, COMP12AMEN))   /*!< Mask  0x00004000 */
 
-#define RCC_D3AM_LPTIMER5EN_OFFSET   (12U)
-#define RCC_D3AM_LPTIMER5EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, LPTIMER5EN))  /*!< Mask  0x00001000 */
+#define RCC_D3AMR_LPTIM5AMEN_OFFSET   (12U)
+#define RCC_D3AMR_LPTIM5AMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, LPTIM5AMEN))   /*!< Mask  0x00001000 */
 
-#define RCC_D3AM_LPTIMER4EN_OFFSET   (11U)
-#define RCC_D3AM_LPTIMER4EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, LPTIMER4EN))  /*!< Mask  0x00000800 */
+#define RCC_D3AMR_LPTIM4AMEN_OFFSET   (11U)
+#define RCC_D3AMR_LPTIM4AMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, LPTIM4AMEN))   /*!< Mask  0x00000800 */
 
-#define RCC_D3AM_LPTIMER3EN_OFFSET   (10U)
-#define RCC_D3AM_LPTIMER3EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, LPTIMER3EN))  /*!< Mask  0x00000400 */
+#define RCC_D3AMR_LPTIM3AMEN_OFFSET   (10U)
+#define RCC_D3AMR_LPTIM3AMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, LPTIM3AMEN))   /*!< Mask  0x00000400 */
 
-#define RCC_D3AM_LPTIMER2EN_OFFSET   (9U)
-#define RCC_D3AM_LPTIMER2EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, LPTIMER2EN))  /*!< Mask  0x00000200 */
+#define RCC_D3AMR_LPTIM2AMEN_OFFSET   (9U)
+#define RCC_D3AMR_LPTIM2AMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, LPTIM2AMEN))   /*!< Mask  0x00000200 */
 
-#define RCC_D3AM_I2C4EN_OFFSET       (7U)
-#define RCC_D3AM_I2C4EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, I2C4EN))      /*!< Mask  0x00000080 */
+#define RCC_D3AMR_I2C4AMEN_OFFSET     (7U)
+#define RCC_D3AMR_I2C4AMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, I2C4AMEN))     /*!< Mask  0x00000080 */
 
-#define RCC_D3AM_SPI6EN_OFFSET       (5U)
-#define RCC_D3AM_SPI6EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, SPI6EN))      /*!< Mask  0x00000020 */
+#define RCC_D3AMR_SPI6AMEN_OFFSET     (5U)
+#define RCC_D3AMR_SPI6AMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, SPI6AMEN))     /*!< Mask  0x00000020 */
 
-#define RCC_D3AM_LPUART1EN_OFFSET    (3U)
-#define RCC_D3AM_LPUART1EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, LPUART1EN))   /*!< Mask  0x00000008 */
+#define RCC_D3AMR_LPUART1AMEN_OFFSET  (3U)
+#define RCC_D3AMR_LPUART1AMEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, LPUART1AMEN))  /*!< Mask  0x00000008 */
 
-#define RCC_D3AM_BDMAEN_OFFSET       (0U)
-#define RCC_D3AM_BDMAEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AM, BDMAEN))      /*!< Mask  0x00000001 */
+#define RCC_D3AMR_BDMAAMEN_OFFSET     (0U)
+#define RCC_D3AMR_BDMAAMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, D3AMR, BDMAAMEN))     /*!< Mask  0x00000001 */
 
 // Values of autonomous mode enable bit
 #define RCC_AUTOMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define RCC_AUTOMODE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Reset status register */
-#define RCC_RSTSTATUS_LPSECRST2FLAG_OFFSET         (31U)
-#define RCC_RSTSTATUS_LPSECRST2FLAG_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, LPSECRST2FLAG))         /*!< Mask  0x80000000 */
+#define RCC_RSR_LPWR2RSTF_OFFSET  (31U)
+#define RCC_RSR_LPWR2RSTF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, LPWR2RSTF))  /*!< Mask  0x80000000 */
 
-#define RCC_RSTSTATUS_LPSECRST1FLAG_OFFSET         (30U)
-#define RCC_RSTSTATUS_LPSECRST1FLAG_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, LPSECRST1FLAG))         /*!< Mask  0x40000000 */
+#define RCC_RSR_LPWR1RSTF_OFFSET  (30U)
+#define RCC_RSR_LPWR1RSTF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, LPWR1RSTF))  /*!< Mask  0x40000000 */
 
-#define RCC_RSTSTATUS_SYSWINWATCHDOGC2FLAG_OFFSET  (29U)
-#define RCC_RSTSTATUS_SYSWINWATCHDOGC2FLAG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, SYSWINWATCHDOGC2FLAG))  /*!< Mask  0x20000000 */
+#define RCC_RSR_WWDG2RSTF_OFFSET  (29U)
+#define RCC_RSR_WWDG2RSTF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, WWDG2RSTF))  /*!< Mask  0x20000000 */
 
-#define RCC_RSTSTATUS_SYSWINWATCHDOGC1FLAG_OFFSET  (28U)
-#define RCC_RSTSTATUS_SYSWINWATCHDOGC1FLAG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, SYSWINWATCHDOGC1FLAG))  /*!< Mask  0x10000000 */
+#define RCC_RSR_WWDG1RSTF_OFFSET  (28U)
+#define RCC_RSR_WWDG1RSTF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, WWDG1RSTF))  /*!< Mask  0x10000000 */
 
-#define RCC_RSTSTATUS_INDWATCHDOGC2FLAG_OFFSET     (27U)
-#define RCC_RSTSTATUS_INDWATCHDOGC2FLAG_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, INDWATCHDOGC2FLAG))     /*!< Mask  0x08000000 */
+#define RCC_RSR_IWDG2RSTF_OFFSET  (27U)
+#define RCC_RSR_IWDG2RSTF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, IWDG2RSTF))  /*!< Mask  0x08000000 */
 
-#define RCC_RSTSTATUS_INDWATCHDOGC1FLAG_OFFSET     (26U)
-#define RCC_RSTSTATUS_INDWATCHDOGC1FLAG_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, INDWATCHDOGC1FLAG))     /*!< Mask  0x04000000 */
+#define RCC_RSR_IWDG1RSTF_OFFSET  (26U)
+#define RCC_RSR_IWDG1RSTF_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, IWDG1RSTF))  /*!< Mask  0x04000000 */
 
-#define RCC_RSTSTATUS_SYSRSTC2FLAG_OFFSET          (25U)
-#define RCC_RSTSTATUS_SYSRSTC2FLAG_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, SYSRSTC2FLAG))          /*!< Mask  0x02000000 */
+#define RCC_RSR_SFT2RSTF_OFFSET   (25U)
+#define RCC_RSR_SFT2RSTF_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, SFT2RSTF))   /*!< Mask  0x02000000 */
 
-#define RCC_RSTSTATUS_SYSRSTC1FLAG_OFFSET          (24U)
-#define RCC_RSTSTATUS_SYSRSTC1FLAG_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, SYSRSTC1FLAG))          /*!< Mask  0x01000000 */
+#define RCC_RSR_SFT1RSTF_OFFSET   (24U)
+#define RCC_RSR_SFT1RSTF_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, SFT1RSTF))   /*!< Mask  0x01000000 */
 
-#define RCC_RSTSTATUS_PWRONDWNFLAG_OFFSET          (23U)
-#define RCC_RSTSTATUS_PWRONDWNFLAG_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, PWRONDWNFLAG))          /*!< Mask  0x00800000 */
+#define RCC_RSR_PORRSTF_OFFSET    (23U)
+#define RCC_RSR_PORRSTF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, PORRSTF))    /*!< Mask  0x00800000 */
 
-#define RCC_RSTSTATUS_PINFLAG_OFFSET               (22U)
-#define RCC_RSTSTATUS_PINFLAG_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, PINFLAG))               /*!< Mask  0x00400000 */
+#define RCC_RSR_PINRSTF_OFFSET    (22U)
+#define RCC_RSR_PINRSTF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, PINRSTF))    /*!< Mask  0x00400000 */
 
-#define RCC_RSTSTATUS_BRWOFLAG_OFFSET              (21U)
-#define RCC_RSTSTATUS_BRWOFLAG_MASK                (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, BRWOFLAG))              /*!< Mask  0x00200000 */
+#define RCC_RSR_BORRSTF_OFFSET    (21U)
+#define RCC_RSR_BORRSTF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, BORRSTF))    /*!< Mask  0x00200000 */
 
-#define RCC_RSTSTATUS_D2PWRSWITCHFLAG_OFFSET       (20U)
-#define RCC_RSTSTATUS_D2PWRSWITCHFLAG_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, D2PWRSWITCHFLAG))       /*!< Mask  0x00100000 */
+#define RCC_RSR_D2RSTF_OFFSET     (20U)
+#define RCC_RSR_D2RSTF_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, D2RSTF))     /*!< Mask  0x00100000 */
 
-#define RCC_RSTSTATUS_D1PWRSWITCHFLAG_OFFSET       (19U)
-#define RCC_RSTSTATUS_D1PWRSWITCHFLAG_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, D1PWRSWITCHFLAG))       /*!< Mask  0x00080000 */
+#define RCC_RSR_D1RSTF_OFFSET     (19U)
+#define RCC_RSR_D1RSTF_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, D1RSTF))     /*!< Mask  0x00080000 */
 
-#define RCC_RSTSTATUS_C2FLAG_OFFSET                (18U)
-#define RCC_RSTSTATUS_C2FLAG_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, C2FLAG))                /*!< Mask  0x00040000 */
+#define RCC_RSR_C2RSTF_OFFSET     (18U)
+#define RCC_RSR_C2RSTF_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, C2RSTF))     /*!< Mask  0x00040000 */
 
-#define RCC_RSTSTATUS_C1FLAG_OFFSET                (17U)
-#define RCC_RSTSTATUS_C1FLAG_MASK                  (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, C1FLAG))                /*!< Mask  0x00020000 */
+#define RCC_RSR_C1RSTF_OFFSET     (17U)
+#define RCC_RSR_C1RSTF_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, C1RSTF))     /*!< Mask  0x00020000 */
 
-#define RCC_RSTSTATUS_RMVFLAG_OFFSET               (16U)
-#define RCC_RSTSTATUS_RMVFLAG_MASK                 (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSTSTATUS, RMVFLAG))               /*!< Mask  0x00010000 */
+#define RCC_RSR_RMVF_OFFSET       (16U)
+#define RCC_RSR_RMVF_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, RSR, RMVF))       /*!< Mask  0x00010000 */
 
 // Values of reset status bit
 #define RCC_RSTSTATUS_ILLEGAL  (0x0UL)  /*!< Value 0x00000000 */
 #define RCC_RSTSTATUS_VALID    (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< AHB3 clock register */
-#define RCC_AHB3CLKEN_AXISRAM_OFFSET     (31U)
-#define RCC_AHB3CLKEN_AXISRAM_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, AXISRAM))    /*!< Mask  0x80000000 */
+#define RCC_AHB3ENR_AXISRAMEN_OFFSET     (31U)
+#define RCC_AHB3ENR_AXISRAMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, AXISRAMEN))    /*!< Mask  0x80000000 */
 
-#define RCC_AHB3CLKEN_ITCM1_OFFSET       (30U)
-#define RCC_AHB3CLKEN_ITCM1_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, ITCM1))      /*!< Mask  0x40000000 */
+#define RCC_AHB3ENR_ITCM1EN_OFFSET       (30U)
+#define RCC_AHB3ENR_ITCM1EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, ITCM1EN))      /*!< Mask  0x40000000 */
 
-#define RCC_AHB3CLKEN_DTCM2_OFFSET       (29U)
-#define RCC_AHB3CLKEN_DTCM2_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, DTCM2))      /*!< Mask  0x20000000 */
+#define RCC_AHB3ENR_DTCM2EN_OFFSET       (29U)
+#define RCC_AHB3ENR_DTCM2EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, DTCM2EN))      /*!< Mask  0x20000000 */
 
-#define RCC_AHB3CLKEN_DTCM1_OFFSET       (28U)
-#define RCC_AHB3CLKEN_DTCM1_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, DTCM1))      /*!< Mask  0x10000000 */
+#define RCC_AHB3ENR_DTCM1EN_OFFSET       (28U)
+#define RCC_AHB3ENR_DTCM1EN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, DTCM1EN))      /*!< Mask  0x10000000 */
 
-#define RCC_AHB3CLKEN_SDMMC1_OFFSET      (16U)
-#define RCC_AHB3CLKEN_SDMMC1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, SDMMC1))     /*!< Mask  0x00010000 */
+#define RCC_AHB3ENR_SDMMC1EN_OFFSET      (16U)
+#define RCC_AHB3ENR_SDMMC1EN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, SDMMC1EN))     /*!< Mask  0x00010000 */
 
-#define RCC_AHB3CLKEN_QSPI_OFFSET        (14U)
-#define RCC_AHB3CLKEN_QSPI_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, QSPI))       /*!< Mask  0x00004000 */
+#define RCC_AHB3ENR_QSPIEN_OFFSET        (14U)
+#define RCC_AHB3ENR_QSPIEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, QSPIEN))       /*!< Mask  0x00004000 */
 
-#define RCC_AHB3CLKEN_FMC_OFFSET         (12U)
-#define RCC_AHB3CLKEN_FMC_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, FMC))        /*!< Mask  0x00001000 */
+#define RCC_AHB3ENR_FMCEN_OFFSET         (12U)
+#define RCC_AHB3ENR_FMCEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, FMCEN))        /*!< Mask  0x00001000 */
 
-#define RCC_AHB3CLKEN_FLASHINTC_OFFSET   (8U)
-#define RCC_AHB3CLKEN_FLASHINTC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, FLASHINTC))  /*!< Mask  0x00000100 */
+#define RCC_AHB3ENR_FLITFEN_OFFSET   (8U)
+#define RCC_AHB3ENR_FLITFEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, FLITFEN))  /*!< Mask  0x00000100 */
 
-#define RCC_AHB3CLKEN_JPGDEC_OFFSET      (5U)
-#define RCC_AHB3CLKEN_JPGDEC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, JPGDEC))     /*!< Mask  0x00000020 */
+#define RCC_AHB3ENR_JPGDECEN_OFFSET      (5U)
+#define RCC_AHB3ENR_JPGDECEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, JPGDECEN))     /*!< Mask  0x00000020 */
 
-#define RCC_AHB3CLKEN_DMA2D_OFFSET       (4U)
-#define RCC_AHB3CLKEN_DMA2D_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, DMA2D))      /*!< Mask  0x00000010 */
+#define RCC_AHB3ENR_DMA2DEN_OFFSET       (4U)
+#define RCC_AHB3ENR_DMA2DEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, DMA2DEN))      /*!< Mask  0x00000010 */
 
-#define RCC_AHB3CLKEN_MDMA_OFFSET        (0U)
-#define RCC_AHB3CLKEN_MDMA_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3CLKEN, MDMA))       /*!< Mask  0x00000001 */
+#define RCC_AHB3ENR_MDMAEN_OFFSET        (0U)
+#define RCC_AHB3ENR_MDMAEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3ENR, MDMAEN))       /*!< Mask  0x00000001 */
 
 /*!< AHB1 clock register */
-#define RCC_AHB1CLKEN_USB2OTG_OFFSET   (27U)
-#define RCC_AHB1CLKEN_USB2OTG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, USB2OTG))  /*!< Mask  0x08000000 */
+#define RCC_AHB1ENR_USB2OTGHEN_OFFSET   (27U)
+#define RCC_AHB1ENR_USB2OTGHEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, USB2OTGHEN))  /*!< Mask  0x08000000 */
 
-#define RCC_AHB1CLKEN_USBPHY1_OFFSET   (26U)
-#define RCC_AHB1CLKEN_USBPHY1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, USBPHY1))  /*!< Mask  0x04000000 */
+#define RCC_AHB1ENR_USB1OTGHSULPIEN_OFFSET   (26U)
+#define RCC_AHB1ENR_USB1OTGHSULPIEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, USB1OTGHSULPIEN))  /*!< Mask  0x04000000 */
 
-#define RCC_AHB1CLKEN_USB1OTG_OFFSET   (25U)
-#define RCC_AHB1CLKEN_USB1OTG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, USB1OTG))  /*!< Mask  0x02000000 */
+#define RCC_AHB1ENR_USB1OTGHEN_OFFSET   (25U)
+#define RCC_AHB1ENR_USB1OTGHEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, USB1OTGHEN))  /*!< Mask  0x02000000 */
 
-#define RCC_AHB1CLKEN_USBPHY2_OFFSET   (18U)
-#define RCC_AHB1CLKEN_USBPHY2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, USBPHY2))  /*!< Mask  0x00040000 */
+#define RCC_AHB1ENR_USB2OTGHSULPIEN_OFFSET   (18U)
+#define RCC_AHB1ENR_USB2OTGHSULPIEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, USB2OTGHSULPIEN))  /*!< Mask  0x00040000 */
 
-#define RCC_AHB1CLKEN_ETH1RX_OFFSET    (17U)
-#define RCC_AHB1CLKEN_ETH1RX_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, ETH1RX))   /*!< Mask  0x00020000 */
+#define RCC_AHB1ENR_ETH1RXEN_OFFSET    (17U)
+#define RCC_AHB1ENR_ETH1RXEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, ETH1RXEN))   /*!< Mask  0x00020000 */
 
-#define RCC_AHB1CLKEN_ETH1TX_OFFSET    (16U)
-#define RCC_AHB1CLKEN_ETH1TX_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, ETH1TX))   /*!< Mask  0x00010000 */
+#define RCC_AHB1ENR_ETH1TXEN_OFFSET    (16U)
+#define RCC_AHB1ENR_ETH1TXEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, ETH1TXEN))   /*!< Mask  0x00010000 */
 
-#define RCC_AHB1CLKEN_ETH1MAC_OFFSET   (15U)
-#define RCC_AHB1CLKEN_ETH1MAC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, ETH1MAC))  /*!< Mask  0x00008000 */
+#define RCC_AHB1ENR_ETH1MACEN_OFFSET   (15U)
+#define RCC_AHB1ENR_ETH1MACEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, ETH1MACEN))  /*!< Mask  0x00008000 */
 
-#define RCC_AHB1CLKEN_ART_OFFSET       (14U)
-#define RCC_AHB1CLKEN_ART_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, ART))      /*!< Mask  0x00004000 */
+#define RCC_AHB1ENR_ARTEN_OFFSET       (14U)
+#define RCC_AHB1ENR_ARTEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, ARTEN))      /*!< Mask  0x00004000 */
 
-#define RCC_AHB1CLKEN_ADC12_OFFSET     (5U)
-#define RCC_AHB1CLKEN_ADC12_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, ADC12))    /*!< Mask  0x00000020 */
+#define RCC_AHB1ENR_ADC12EN_OFFSET     (5U)
+#define RCC_AHB1ENR_ADC12EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, ADC12EN))    /*!< Mask  0x00000020 */
 
-#define RCC_AHB1CLKEN_DMA2_OFFSET      (1U)
-#define RCC_AHB1CLKEN_DMA2_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, DMA2))     /*!< Mask  0x00000002 */
+#define RCC_AHB1ENR_DMA2EN_OFFSET      (1U)
+#define RCC_AHB1ENR_DMA2EN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, DMA2EN))     /*!< Mask  0x00000002 */
 
-#define RCC_AHB1CLKEN_DMA1_OFFSET      (0U)
-#define RCC_AHB1CLKEN_DMA1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1CLKEN, DMA1))     /*!< Mask  0x00000001 */
+#define RCC_AHB1ENR_DMA1EN_OFFSET      (0U)
+#define RCC_AHB1ENR_DMA1EN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1ENR, DMA1EN))     /*!< Mask  0x00000001 */
 
 /*!< AHB2 clock register */
-#define RCC_AHB2CLKEN_SRAM3_OFFSET    (31U)
-#define RCC_AHB2CLKEN_SRAM3_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, SRAM3))   /*!< Mask  0x80000000 */
+#define RCC_AHB2ENR_SRAM3EN_OFFSET    (31U)
+#define RCC_AHB2ENR_SRAM3EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, SRAM3EN))   /*!< Mask  0x80000000 */
 
-#define RCC_AHB2CLKEN_SRAM2_OFFSET    (30U)
-#define RCC_AHB2CLKEN_SRAM2_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, SRAM2))   /*!< Mask  0x40000000 */
+#define RCC_AHB2ENR_SRAM2EN_OFFSET    (30U)
+#define RCC_AHB2ENR_SRAM2EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, SRAM2EN))   /*!< Mask  0x40000000 */
 
-#define RCC_AHB2CLKEN_SRAM1_OFFSET    (29U)
-#define RCC_AHB2CLKEN_SRAM1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, SRAM1))   /*!< Mask  0x20000000 */
+#define RCC_AHB2ENR_SRAM1EN_OFFSET    (29U)
+#define RCC_AHB2ENR_SRAM1EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, SRAM1EN))   /*!< Mask  0x20000000 */
 
-#define RCC_AHB2CLKEN_SDMMC2_OFFSET   (9U)
-#define RCC_AHB2CLKEN_SDMMC2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, SDMMC2))  /*!< Mask  0x00000200 */
+#define RCC_AHB2ENR_SDMMC2EN_OFFSET   (9U)
+#define RCC_AHB2ENR_SDMMC2EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, SDMMC2EN))  /*!< Mask  0x00000200 */
 
-#define RCC_AHB2CLKEN_RNG_OFFSET      (6U)
-#define RCC_AHB2CLKEN_RNG_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, RNG))     /*!< Mask  0x00000040 */
+#define RCC_AHB2ENR_RNGEN_OFFSET      (6U)
+#define RCC_AHB2ENR_RNGEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, RNGEN))     /*!< Mask  0x00000040 */
 
-#define RCC_AHB2CLKEN_HASH_OFFSET     (5U)
-#define RCC_AHB2CLKEN_HASH_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, HASH))    /*!< Mask  0x00000020 */
+#define RCC_AHB2ENR_HASHEN_OFFSET     (5U)
+#define RCC_AHB2ENR_HASHEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, HASHEN))    /*!< Mask  0x00000020 */
 
-#define RCC_AHB2CLKEN_CRYPTO_OFFSET   (4U)
-#define RCC_AHB2CLKEN_CRYPTO_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, CRYPTO))  /*!< Mask  0x00000010 */
+#define RCC_AHB2ENR_CRYPTEN_OFFSET   (4U)
+#define RCC_AHB2ENR_CRYPTEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, CRYPTEN))  /*!< Mask  0x00000010 */
 
-#define RCC_AHB2CLKEN_DCMI_OFFSET     (0U)
-#define RCC_AHB2CLKEN_DCMI_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2CLKEN, DCMI))    /*!< Mask  0x00000001 */
+#define RCC_AHB2ENR_DCMIEN_OFFSET     (0U)
+#define RCC_AHB2ENR_DCMIEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2ENR, DCMIEN))    /*!< Mask  0x00000001 */
 
 /*!< AHB4 clock register */
-#define RCC_AHB4CLKEN_BCKRAM_OFFSET   (28U)
-#define RCC_AHB4CLKEN_BCKRAM_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, BCKRAM))  /*!< Mask  0x10000000 */
+#define RCC_AHB4ENR_BKPRAMEN_OFFSET   (28U)
+#define RCC_AHB4ENR_BKPRAMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, BKPRAMEN))  /*!< Mask  0x10000000 */
 
-#define RCC_AHB4CLKEN_HSEM_OFFSET     (25U)
-#define RCC_AHB4CLKEN_HSEM_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, HSEM))    /*!< Mask  0x02000000 */
+#define RCC_AHB4ENR_HSEMEN_OFFSET     (25U)
+#define RCC_AHB4ENR_HSEMEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, HSEMEN))    /*!< Mask  0x02000000 */
 
-#define RCC_AHB4CLKEN_ADC3_OFFSET     (24U)
-#define RCC_AHB4CLKEN_ADC3_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, ADC3))    /*!< Mask  0x01000000 */
+#define RCC_AHB4ENR_ADC3EN_OFFSET     (24U)
+#define RCC_AHB4ENR_ADC3EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, ADC3EN))    /*!< Mask  0x01000000 */
 
-#define RCC_AHB4CLKEN_BDMA_OFFSET     (21U)
-#define RCC_AHB4CLKEN_BDMA_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, BDMA))    /*!< Mask  0x00200000 */
+#define RCC_AHB4ENR_BDMAEN_OFFSET     (21U)
+#define RCC_AHB4ENR_BDMAEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, BDMAEN))    /*!< Mask  0x00200000 */
 
-#define RCC_AHB4CLKEN_CRC_OFFSET      (19U)
-#define RCC_AHB4CLKEN_CRC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, CRC))     /*!< Mask  0x00080000 */
+#define RCC_AHB4ENR_CRCEN_OFFSET      (19U)
+#define RCC_AHB4ENR_CRCEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, CRCEN))     /*!< Mask  0x00080000 */
 
-#define RCC_AHB4CLKEN_GPIOK_OFFSET    (10U)
-#define RCC_AHB4CLKEN_GPIOK_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOK))   /*!< Mask  0x00000400 */
+#define RCC_AHB4ENR_GPIOKEN_OFFSET    (10U)
+#define RCC_AHB4ENR_GPIOKEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOKEN))   /*!< Mask  0x00000400 */
 
-#define RCC_AHB4CLKEN_GPIOJ_OFFSET    (9U)
-#define RCC_AHB4CLKEN_GPIOJ_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOJ))   /*!< Mask  0x00000200 */
+#define RCC_AHB4ENR_GPIOJEN_OFFSET    (9U)
+#define RCC_AHB4ENR_GPIOJEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOJEN))   /*!< Mask  0x00000200 */
 
-#define RCC_AHB4CLKEN_GPIOI_OFFSET    (8U)
-#define RCC_AHB4CLKEN_GPIOI_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOI))   /*!< Mask  0x00000100 */
+#define RCC_AHB4ENR_GPIOIEN_OFFSET    (8U)
+#define RCC_AHB4ENR_GPIOIEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOIEN))   /*!< Mask  0x00000100 */
 
-#define RCC_AHB4CLKEN_GPIOH_OFFSET    (7U)
-#define RCC_AHB4CLKEN_GPIOH_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOH))   /*!< Mask  0x00000080 */
+#define RCC_AHB4ENR_GPIOHEN_OFFSET    (7U)
+#define RCC_AHB4ENR_GPIOHEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOHEN))   /*!< Mask  0x00000080 */
 
-#define RCC_AHB4CLKEN_GPIOG_OFFSET    (6U)
-#define RCC_AHB4CLKEN_GPIOG_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOG))   /*!< Mask  0x00000040 */
+#define RCC_AHB4ENR_GPIOGEN_OFFSET    (6U)
+#define RCC_AHB4ENR_GPIOGEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOGEN))   /*!< Mask  0x00000040 */
 
-#define RCC_AHB4CLKEN_GPIOF_OFFSET    (5U)
-#define RCC_AHB4CLKEN_GPIOF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOF))   /*!< Mask  0x00000020 */
+#define RCC_AHB4ENR_GPIOFEN_OFFSET    (5U)
+#define RCC_AHB4ENR_GPIOFEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOFEN))   /*!< Mask  0x00000020 */
 
-#define RCC_AHB4CLKEN_GPIOE_OFFSET    (4U)
-#define RCC_AHB4CLKEN_GPIOE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOE))   /*!< Mask  0x00000010 */
+#define RCC_AHB4ENR_GPIOEEN_OFFSET    (4U)
+#define RCC_AHB4ENR_GPIOEEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOEEN))   /*!< Mask  0x00000010 */
 
-#define RCC_AHB4CLKEN_GPIOD_OFFSET    (3U)
-#define RCC_AHB4CLKEN_GPIOD_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOD))   /*!< Mask  0x00000008 */
+#define RCC_AHB4ENR_GPIODEN_OFFSET    (3U)
+#define RCC_AHB4ENR_GPIODEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIODEN))   /*!< Mask  0x00000008 */
 
-#define RCC_AHB4CLKEN_GPIOC_OFFSET    (2U)
-#define RCC_AHB4CLKEN_GPIOC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOC))   /*!< Mask  0x00000004 */
+#define RCC_AHB4ENR_GPIOCEN_OFFSET    (2U)
+#define RCC_AHB4ENR_GPIOCEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOCEN))   /*!< Mask  0x00000004 */
 
-#define RCC_AHB4CLKEN_GPIOB_OFFSET    (1U)
-#define RCC_AHB4CLKEN_GPIOB_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOB))   /*!< Mask  0x00000002 */
+#define RCC_AHB4ENR_GPIOBEN_OFFSET    (1U)
+#define RCC_AHB4ENR_GPIOBEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOBEN))   /*!< Mask  0x00000002 */
 
-#define RCC_AHB4CLKEN_GPIOA_OFFSET    (0U)
-#define RCC_AHB4CLKEN_GPIOA_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4CLKEN, GPIOA))   /*!< Mask  0x00000001 */
+#define RCC_AHB4ENR_GPIOAEN_OFFSET    (0U)
+#define RCC_AHB4ENR_GPIOAEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4ENR, GPIOAEN))   /*!< Mask  0x00000001 */
 
 /*!< APB3 clock register */
-#define RCC_APB3CLKEN_WINWATCHDOGC1_OFFSET   (6U)
-#define RCC_APB3CLKEN_WINWATCHDOGC1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3CLKEN, WINWATCHDOGC1))  /*!< Mask  0x00000040 */
+#define RCC_APB3ENR_WWDG1EN_OFFSET  (6U)
+#define RCC_APB3ENR_WWDG1EN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3ENR, WWDG1EN))  /*!< Mask  0x00000040 */
 
-#define RCC_APB3CLKEN_DSI_OFFSET             (4U)
-#define RCC_APB3CLKEN_DSI_MASK               (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3CLKEN, DSI))            /*!< Mask  0x00000010 */
+#define RCC_APB3ENR_DSIEN_OFFSET    (4U)
+#define RCC_APB3ENR_DSIEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3ENR, DSIEN))    /*!< Mask  0x00000010 */
 
-#define RCC_APB3CLKEN_LTDC_OFFSET            (3U)
-#define RCC_APB3CLKEN_LTDC_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3CLKEN, LTDC))           /*!< Mask  0x00000001 */
+#define RCC_APB3ENR_LTDCEN_OFFSET   (3U)
+#define RCC_APB3ENR_LTDCEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3ENR, LTDCEN))   /*!< Mask  0x00000001 */
 
-/*!< APB1 clock register */
-#define RCC_APB1LCLKEN_UART8_OFFSET           (31U)
-#define RCC_APB1LCLKEN_UART8_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, UART8))          /*!< Mask  0x80000000 */
+/*!< APB1 clock low register */
+#define RCC_APB1LENR_UART8EN_OFFSET    (31U)
+#define RCC_APB1LENR_UART8EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, UART8EN))    /*!< Mask  0x80000000 */
 
-#define RCC_APB1LCLKEN_UART7_OFFSET           (30U)
-#define RCC_APB1LCLKEN_UART7_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, UART7))          /*!< Mask  0x40000000 */
+#define RCC_APB1LENR_UART7EN_OFFSET    (30U)
+#define RCC_APB1LENR_UART7EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, UART7EN))    /*!< Mask  0x40000000 */
 
-#define RCC_APB1LCLKEN_DAC12_OFFSET           (29U)
-#define RCC_APB1LCLKEN_DAC12_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, DAC12))          /*!< Mask  0x20000000 */
+#define RCC_APB1LENR_DAC12EN_OFFSET    (29U)
+#define RCC_APB1LENR_DAC12EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, DAC12EN))    /*!< Mask  0x20000000 */
 
-#define RCC_APB1LCLKEN_HDMICEC_OFFSET         (27U)
-#define RCC_APB1LCLKEN_HDMICEC_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, HDMICEC))        /*!< Mask  0x08000000 */
+#define RCC_APB1LENR_CECEN_OFFSET      (27U)
+#define RCC_APB1LENR_CECEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, CECEN))      /*!< Mask  0x08000000 */
 
-#define RCC_APB1LCLKEN_I2C3_OFFSET            (23U)
-#define RCC_APB1LCLKEN_I2C3_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, I2C3))           /*!< Mask  0x00800000 */
+#define RCC_APB1LENR_I2C3EN_OFFSET     (23U)
+#define RCC_APB1LENR_I2C3EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, I2C3EN))     /*!< Mask  0x00800000 */
 
-#define RCC_APB1LCLKEN_I2C2_OFFSET            (22U)
-#define RCC_APB1LCLKEN_I2C2_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, I2C2))           /*!< Mask  0x00400000 */
+#define RCC_APB1LENR_I2C2EN_OFFSET     (22U)
+#define RCC_APB1LENR_I2C2EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, I2C2EN))     /*!< Mask  0x00400000 */
 
-#define RCC_APB1LCLKEN_I2C1_OFFSET            (21U)
-#define RCC_APB1LCLKEN_I2C1_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, I2C1))           /*!< Mask  0x00200000 */
+#define RCC_APB1LENR_I2C1EN_OFFSET     (21U)
+#define RCC_APB1LENR_I2C1EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, I2C1EN))     /*!< Mask  0x00200000 */
 
-#define RCC_APB1LCLKEN_UART5_OFFSET           (20U)
-#define RCC_APB1LCLKEN_UART5_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, UART5))          /*!< Mask  0x00100000 */
+#define RCC_APB1LENR_UART5EN_OFFSET    (20U)
+#define RCC_APB1LENR_UART5EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, UART5EN))    /*!< Mask  0x00100000 */
 
-#define RCC_APB1LCLKEN_UART4_OFFSET           (19U)
-#define RCC_APB1LCLKEN_UART4_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, UART4))          /*!< Mask  0x00080000 */
+#define RCC_APB1LENR_UART4EN_OFFSET    (19U)
+#define RCC_APB1LENR_UART4EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, UART4EN))    /*!< Mask  0x00080000 */
 
-#define RCC_APB1LCLKEN_UART3_OFFSET           (18U)
-#define RCC_APB1LCLKEN_UART3_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, UART3))          /*!< Mask  0x00040000 */
+#define RCC_APB1LENR_USART3EN_OFFSET   (18U)
+#define RCC_APB1LENR_USART3EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, USART3EN))   /*!< Mask  0x00040000 */
 
-#define RCC_APB1LCLKEN_UART2_OFFSET           (17U)
-#define RCC_APB1LCLKEN_UART2_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, UART2))          /*!< Mask  0x00020000 */
+#define RCC_APB1LENR_USART2EN_OFFSET   (17U)
+#define RCC_APB1LENR_USART2EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, USART2EN))   /*!< Mask  0x00020000 */
 
-#define RCC_APB1LCLKEN_SPDIFRX_OFFSET         (16U)
-#define RCC_APB1LCLKEN_SPDIFRX_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, SPDIFRX))        /*!< Mask  0x00010000 */
+#define RCC_APB1LENR_SPDIFRXEN_OFFSET  (16U)
+#define RCC_APB1LENR_SPDIFRXEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, SPDIFRXEN))  /*!< Mask  0x00010000 */
 
-#define RCC_APB1LCLKEN_SPI3_OFFSET            (15U)
-#define RCC_APB1LCLKEN_SPI3_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, SPI3))           /*!< Mask  0x00008000 */
+#define RCC_APB1LENR_SPI3EN_OFFSET     (15U)
+#define RCC_APB1LENR_SPI3EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, SPI3EN))     /*!< Mask  0x00008000 */
 
-#define RCC_APB1LCLKEN_SPI2_OFFSET            (14U)
-#define RCC_APB1LCLKEN_SPI2_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, SPI2))           /*!< Mask  0x00004000 */
+#define RCC_APB1LENR_SPI2EN_OFFSET     (14U)
+#define RCC_APB1LENR_SPI2EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, SPI2EN))     /*!< Mask  0x00004000 */
 
-#define RCC_APB1LCLKEN_WINWATCHDOGC2_OFFSET   (11U)
-#define RCC_APB1LCLKEN_WINWATCHDOGC2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, WINWATCHDOGC2))  /*!< Mask  0x00000800 */
+#define RCC_APB1LENR_WWDG2EN_OFFSET    (11U)
+#define RCC_APB1LENR_WWDG2EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, WWDG2EN))    /*!< Mask  0x00000800 */
 
-#define RCC_APB1LCLKEN_LPTIMER1_OFFSET        (9U)
-#define RCC_APB1LCLKEN_LPTIMER1_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, LPTIMER1))       /*!< Mask  0x00000200 */
+#define RCC_APB1LENR_LPTIM1EN_OFFSET   (9U)
+#define RCC_APB1LENR_LPTIM1EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, LPTIM1EN))   /*!< Mask  0x00000200 */
 
-#define RCC_APB1LCLKEN_TIMER14_OFFSET         (8U)
-#define RCC_APB1LCLKEN_TIMER14_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER14))        /*!< Mask  0x00000100 */
+#define RCC_APB1LENR_TIM14EN_OFFSET    (8U)
+#define RCC_APB1LENR_TIM14EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM14EN))    /*!< Mask  0x00000100 */
 
-#define RCC_APB1LCLKEN_TIMER13_OFFSET         (7U)
-#define RCC_APB1LCLKEN_TIMER13_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER13))        /*!< Mask  0x00000080 */
+#define RCC_APB1LENR_TIM13EN_OFFSET    (7U)
+#define RCC_APB1LENR_TIM13EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM13EN))    /*!< Mask  0x00000080 */
 
-#define RCC_APB1LCLKEN_TIMER12_OFFSET         (6U)
-#define RCC_APB1LCLKEN_TIMER12_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER12))        /*!< Mask  0x00000040 */
+#define RCC_APB1LENR_TIM12EN_OFFSET    (6U)
+#define RCC_APB1LENR_TIM12EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM12EN))    /*!< Mask  0x00000040 */
 
-#define RCC_APB1LCLKEN_TIMER7_OFFSET          (5U)
-#define RCC_APB1LCLKEN_TIMER7_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER7))         /*!< Mask  0x00000020 */
+#define RCC_APB1LENR_TIM7EN_OFFSET     (5U)
+#define RCC_APB1LENR_TIM7EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM7EN))     /*!< Mask  0x00000020 */
 
-#define RCC_APB1LCLKEN_TIMER6_OFFSET          (4U)
-#define RCC_APB1LCLKEN_TIMER6_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER6))         /*!< Mask  0x00000010 */
+#define RCC_APB1LENR_TIM6EN_OFFSET     (4U)
+#define RCC_APB1LENR_TIM6EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM6EN))     /*!< Mask  0x00000010 */
 
-#define RCC_APB1LCLKEN_TIMER5_OFFSET          (3U)
-#define RCC_APB1LCLKEN_TIMER5_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER5))         /*!< Mask  0x00000008 */
+#define RCC_APB1LENR_TIM5EN_OFFSET     (3U)
+#define RCC_APB1LENR_TIM5EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM5EN))     /*!< Mask  0x00000008 */
 
-#define RCC_APB1LCLKEN_TIMER4_OFFSET          (2U)
-#define RCC_APB1LCLKEN_TIMER4_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER4))         /*!< Mask  0x00000004 */
+#define RCC_APB1LENR_TIM4EN_OFFSET     (2U)
+#define RCC_APB1LENR_TIM4EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM4EN))     /*!< Mask  0x00000004 */
 
-#define RCC_APB1LCLKEN_TIMER3_OFFSET          (1U)
-#define RCC_APB1LCLKEN_TIMER3_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER3))         /*!< Mask  0x00000002 */
+#define RCC_APB1LENR_TIM3EN_OFFSET     (1U)
+#define RCC_APB1LENR_TIM3EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM3EN))     /*!< Mask  0x00000002 */
 
-#define RCC_APB1LCLKEN_TIMER2_OFFSET          (0U)
-#define RCC_APB1LCLKEN_TIMER2_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LCLKEN, TIMER2))         /*!< Mask  0x00000001 */
+#define RCC_APB1LENR_TIM2EN_OFFSET     (0U)
+#define RCC_APB1LENR_TIM2EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LENR, TIM2EN))     /*!< Mask  0x00000001 */
 
-#define RCC_APB1HCLKEN_FDCAN_OFFSET           (8U)
-#define RCC_APB1HCLKEN_FDCAN_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HCLKEN, FDCAN))          /*!< Mask  0x00000100 */
+/*!< APB1 clock high register */
+#define RCC_APB1HENR_FDCANEN_OFFSET  (8U)
+#define RCC_APB1HENR_FDCANEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HENR, FDCANEN))  /*!< Mask  0x00000100 */
 
-#define RCC_APB1HCLKEN_MDIOS_OFFSET           (5U)
-#define RCC_APB1HCLKEN_MDIOS_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HCLKEN, MDIOS))          /*!< Mask  0x00000020 */
+#define RCC_APB1HENR_MDIOSEN_OFFSET  (5U)
+#define RCC_APB1HENR_MDIOSEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HENR, MDIOSEN))  /*!< Mask  0x00000020 */
 
-#define RCC_APB1HCLKEN_OPAMP_OFFSET           (4U)
-#define RCC_APB1HCLKEN_OPAMP_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HCLKEN, OPAMP))          /*!< Mask  0x00000010 */
+#define RCC_APB1HENR_OPAMPEN_OFFSET  (4U)
+#define RCC_APB1HENR_OPAMPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HENR, OPAMPEN))  /*!< Mask  0x00000010 */
 
-#define RCC_APB1HCLKEN_SINGLEWIRE_OFFSET      (2U)
-#define RCC_APB1HCLKEN_SINGLEWIRE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HCLKEN, SINGLEWIRE))     /*!< Mask  0x00000004 */
+#define RCC_APB1HENR_SWPEN_OFFSET    (2U)
+#define RCC_APB1HENR_SWPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HENR, SWPEN))    /*!< Mask  0x00000004 */
 
-#define RCC_APB1HCLKEN_CLKREC_OFFSET          (1U)
-#define RCC_APB1HCLKEN_CLKREC_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HCLKEN, CLKREC))         /*!< Mask  0x00000002 */
+#define RCC_APB1HENR_CRSEN_OFFSET    (1U)
+#define RCC_APB1HENR_CRSEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HENR, CRSEN))    /*!< Mask  0x00000002 */
 
 /*!< APB2 clock register */
-#define RCC_APB2CLKEN_HRTIMER_OFFSET   (29U)
-#define RCC_APB2CLKEN_HRTIMER_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, HRTIMER))  /*!< Mask  0x20000000 */
+#define RCC_APB2ENR_HRTIMEN_OFFSET   (29U)
+#define RCC_APB2ENR_HRTIMEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, HRTIMEN))   /*!< Mask  0x20000000 */
 
-#define RCC_APB2CLKEN_DFSDM1_OFFSET    (28U)
-#define RCC_APB2CLKEN_DFSDM1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, DFSDM1))   /*!< Mask  0x10000000 */
+#define RCC_APB2ENR_DFSDM1EN_OFFSET  (28U)
+#define RCC_APB2ENR_DFSDM1EN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, DFSDM1EN))  /*!< Mask  0x10000000 */
 
-#define RCC_APB2CLKEN_SAI3_OFFSET      (24U)
-#define RCC_APB2CLKEN_SAI3_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, SAI3))     /*!< Mask  0x01000000 */
+#define RCC_APB2ENR_SAI3EN_OFFSET    (24U)
+#define RCC_APB2ENR_SAI3EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, SAI3EN))    /*!< Mask  0x01000000 */
 
-#define RCC_APB2CLKEN_SAI2_OFFSET      (23U)
-#define RCC_APB2CLKEN_SAI2_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, SAI2))     /*!< Mask  0x00800000 */
+#define RCC_APB2ENR_SAI2EN_OFFSET    (23U)
+#define RCC_APB2ENR_SAI2EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, SAI2EN))    /*!< Mask  0x00800000 */
 
-#define RCC_APB2CLKEN_SAI1_OFFSET      (22U)
-#define RCC_APB2CLKEN_SAI1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, SAI1))     /*!< Mask  0x00400000 */
+#define RCC_APB2ENR_SAI1EN_OFFSET    (22U)
+#define RCC_APB2ENR_SAI1EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, SAI1EN))    /*!< Mask  0x00400000 */
 
-#define RCC_APB2CLKEN_SPI5_OFFSET      (20U)
-#define RCC_APB2CLKEN_SPI5_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, SPI5))     /*!< Mask  0x00100000 */
+#define RCC_APB2ENR_SPI5EN_OFFSET    (20U)
+#define RCC_APB2ENR_SPI5EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, SPI5EN))    /*!< Mask  0x00100000 */
 
-#define RCC_APB2CLKEN_TIMER17_OFFSET   (18U)
-#define RCC_APB2CLKEN_TIMER17_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, TIMER17))  /*!< Mask  0x00040000 */
+#define RCC_APB2ENR_TIM17EN_OFFSET   (18U)
+#define RCC_APB2ENR_TIM17EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, TIM17EN))   /*!< Mask  0x00040000 */
 
-#define RCC_APB2CLKEN_TIMER16_OFFSET   (17U)
-#define RCC_APB2CLKEN_TIMER16_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, TIMER16))  /*!< Mask  0x00020000 */
+#define RCC_APB2ENR_TIM16EN_OFFSET   (17U)
+#define RCC_APB2ENR_TIM16EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, TIM16EN))   /*!< Mask  0x00020000 */
 
-#define RCC_APB2CLKEN_TIMER15_OFFSET   (16U)
-#define RCC_APB2CLKEN_TIMER15_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, TIMER15))  /*!< Mask  0x00010000 */
+#define RCC_APB2ENR_TIM15EN_OFFSET   (16U)
+#define RCC_APB2ENR_TIM15EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, TIM15EN))   /*!< Mask  0x00010000 */
 
-#define RCC_APB2CLKEN_SPI4_OFFSET      (13U)
-#define RCC_APB2CLKEN_SPI4_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, SPI4))     /*!< Mask  0x00002000 */
+#define RCC_APB2ENR_SPI4EN_OFFSET    (13U)
+#define RCC_APB2ENR_SPI4EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, SPI4EN))    /*!< Mask  0x00002000 */
 
-#define RCC_APB2CLKEN_SPI1_OFFSET      (12U)
-#define RCC_APB2CLKEN_SPI1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, SPI1))     /*!< Mask  0x00002000 */
+#define RCC_APB2ENR_SPI1EN_OFFSET    (12U)
+#define RCC_APB2ENR_SPI1EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, SPI1EN))    /*!< Mask  0x00002000 */
 
-#define RCC_APB2CLKEN_USART6_OFFSET    (5U)
-#define RCC_APB2CLKEN_USART6_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, USART6))   /*!< Mask  0x00000020 */
+#define RCC_APB2ENR_USART6EN_OFFSET  (5U)
+#define RCC_APB2ENR_USART6EN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, USART6EN))  /*!< Mask  0x00000020 */
 
-#define RCC_APB2CLKEN_USART1_OFFSET    (4U)
-#define RCC_APB2CLKEN_USART1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, USART1))   /*!< Mask  0x00000010 */
+#define RCC_APB2ENR_USART1EN_OFFSET  (4U)
+#define RCC_APB2ENR_USART1EN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, USART1EN))  /*!< Mask  0x00000010 */
 
-#define RCC_APB2CLKEN_TIMER8_OFFSET    (1U)
-#define RCC_APB2CLKEN_TIMER8_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, TIMER8))   /*!< Mask  0x00000002 */
+#define RCC_APB2ENR_TIM8EN_OFFSET    (1U)
+#define RCC_APB2ENR_TIM8EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, TIM8EN))    /*!< Mask  0x00000002 */
 
-#define RCC_APB2CLKEN_TIMER1_OFFSET    (0U)
-#define RCC_APB2CLKEN_TIMER1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2CLKEN, TIMER1))   /*!< Mask  0x00000001 */
+#define RCC_APB2ENR_TIM1EN_OFFSET    (0U)
+#define RCC_APB2ENR_TIM1EN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2ENR, TIM1EN))    /*!< Mask  0x00000001 */
 
 /*!< APB4 clock register */
-#define RCC_APB4CLKEN_SAI4_OFFSET       (21U)
-#define RCC_APB4CLKEN_SAI4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, SAI4))      /*!< Mask  0x00200000 */
+#define RCC_APB4ENR_SAI4EN_OFFSET     (21U)
+#define RCC_APB4ENR_SAI4EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, SAI4EN))     /*!< Mask  0x00200000 */
 
-#define RCC_APB4CLKEN_RTCAPB_OFFSET     (16U)
-#define RCC_APB4CLKEN_RTCAPB_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, RTCAPB))    /*!< Mask  0x00010000 */
+#define RCC_APB4ENR_RTCAPBEN_OFFSET   (16U)
+#define RCC_APB4ENR_RTCAPBEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, RTCAPBEN))   /*!< Mask  0x00010000 */
 
-#define RCC_APB4CLKEN_VREF_OFFSET       (15U)
-#define RCC_APB4CLKEN_VREF_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, VREF))      /*!< Mask  0x00008000 */
+#define RCC_APB4ENR_VREFEN_OFFSET     (15U)
+#define RCC_APB4ENR_VREFEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, VREFEN))     /*!< Mask  0x00008000 */
 
-#define RCC_APB4CLKEN_COMP12_OFFSET     (14U)
-#define RCC_APB4CLKEN_COMP12_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, COMP12))    /*!< Mask  0x00004000 */
+#define RCC_APB4ENR_COMP12EN_OFFSET   (14U)
+#define RCC_APB4ENR_COMP12EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, COMP12EN))   /*!< Mask  0x00004000 */
 
-#define RCC_APB4CLKEN_LPTIMER5_OFFSET   (12U)
-#define RCC_APB4CLKEN_LPTIMER5_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, LPTIMER5))  /*!< Mask  0x00001000 */
+#define RCC_APB4ENR_LPTIM5EN_OFFSET   (12U)
+#define RCC_APB4ENR_LPTIM5EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, LPTIM5EN))   /*!< Mask  0x00001000 */
 
-#define RCC_APB4CLKEN_LPTIMER4_OFFSET   (11U)
-#define RCC_APB4CLKEN_LPTIMER4_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, LPTIMER4))  /*!< Mask  0x00000800 */
+#define RCC_APB4ENR_LPTIM4EN_OFFSET   (11U)
+#define RCC_APB4ENR_LPTIM4EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, LPTIM4EN))   /*!< Mask  0x00000800 */
 
-#define RCC_APB4CLKEN_LPTIMER3_OFFSET   (10U)
-#define RCC_APB4CLKEN_LPTIMER3_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, LPTIMER3))  /*!< Mask  0x00000400 */
+#define RCC_APB4ENR_LPTIM3EN_OFFSET   (10U)
+#define RCC_APB4ENR_LPTIM3EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, LPTIM3EN))   /*!< Mask  0x00000400 */
 
-#define RCC_APB4CLKEN_LPTIMER2_OFFSET   (9U)
-#define RCC_APB4CLKEN_LPTIMER2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, LPTIMER2))  /*!< Mask  0x00000200 */
+#define RCC_APB4ENR_LPTIM2EN_OFFSET   (9U)
+#define RCC_APB4ENR_LPTIM2EN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, LPTIM2EN))   /*!< Mask  0x00000200 */
 
-#define RCC_APB4CLKEN_I2C4_OFFSET       (7U)
-#define RCC_APB4CLKEN_I2C4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, I2C4))      /*!< Mask  0x00000080 */
+#define RCC_APB4ENR_I2C4EN_OFFSET     (7U)
+#define RCC_APB4ENR_I2C4EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, I2C4EN))     /*!< Mask  0x00000080 */
 
-#define RCC_APB4CLKEN_SPI6_OFFSET       (5U)
-#define RCC_APB4CLKEN_SPI6_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, SPI6))      /*!< Mask  0x00000020 */
+#define RCC_APB4ENR_SPI6EN_OFFSET     (5U)
+#define RCC_APB4ENR_SPI6EN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, SPI6EN))     /*!< Mask  0x00000020 */
 
-#define RCC_APB4CLKEN_LPUART1_OFFSET    (3U)
-#define RCC_APB4CLKEN_LPUART1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, LPUART1))   /*!< Mask  0x00000008 */
+#define RCC_APB4ENR_LPUART1EN_OFFSET  (3U)
+#define RCC_APB4ENR_LPUART1EN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, LPUART1EN))  /*!< Mask  0x00000008 */
 
-#define RCC_APB4CLKEN_SYSCFG_OFFSET     (1U)
-#define RCC_APB4CLKEN_SYSCFG_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4CLKEN, SYSCFG))    /*!< Mask  0x00000002 */
+#define RCC_APB4ENR_SYSCFGEN_OFFSET   (1U)
+#define RCC_APB4ENR_SYSCFGEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4ENR, SYSCFGEN))   /*!< Mask  0x00000002 */
 
 /*!< AHB3 low power clock register */
-#define RCC_AHB3LPCLKEN_AXISRAM_OFFSET     (31U)
-#define RCC_AHB3LPCLKEN_AXISRAM_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, AXISRAM))    /*!< Mask  0x80000000 */
+#define RCC_AHB3LPENR_AXISRAMLPEN_OFFSET  (31U)
+#define RCC_AHB3LPENR_AXISRAMLPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, AXISRAMLPEN))  /*!< Mask  0x80000000 */
 
-#define RCC_AHB3LPCLKEN_ITCM1_OFFSET       (30U)
-#define RCC_AHB3LPCLKEN_ITCM1_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, ITCM1))      /*!< Mask  0x40000000 */
+#define RCC_AHB3LPENR_ITCMLPEN_OFFSET     (30U)
+#define RCC_AHB3LPENR_ITCMLPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, ITCMLPEN))     /*!< Mask  0x40000000 */
 
-#define RCC_AHB3LPCLKEN_DTCM2_OFFSET       (29U)
-#define RCC_AHB3LPCLKEN_DTCM2_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, DTCM2))      /*!< Mask  0x20000000 */
+#define RCC_AHB3LPENR_DTCM2LPEN_OFFSET    (29U)
+#define RCC_AHB3LPENR_DTCM2LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, DTCM2LPEN))    /*!< Mask  0x20000000 */
 
-#define RCC_AHB3LPCLKEN_DTCM1_OFFSET       (28U)
-#define RCC_AHB3LPCLKEN_DTCM1_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, DTCM1))      /*!< Mask  0x10000000 */
+#define RCC_AHB3LPENR_D1DTCM1LPEN_OFFSET  (28U)
+#define RCC_AHB3LPENR_D1DTCM1LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, D1DTCM1LPEN))  /*!< Mask  0x10000000 */
 
-#define RCC_AHB3LPCLKEN_SDMMC1_OFFSET      (16U)
-#define RCC_AHB3LPCLKEN_SDMMC1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, SDMMC1))     /*!< Mask  0x00010000 */
+#define RCC_AHB3LPENR_SDMMC1LPEN_OFFSET   (16U)
+#define RCC_AHB3LPENR_SDMMC1LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, SDMMC1LPEN))   /*!< Mask  0x00010000 */
 
-#define RCC_AHB3LPCLKEN_QSPI_OFFSET        (14U)
-#define RCC_AHB3LPCLKEN_QSPI_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, QSPI))       /*!< Mask  0x00004000 */
+#define RCC_AHB3LPENR_QSPILPEN_OFFSET     (14U)
+#define RCC_AHB3LPENR_QSPILPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, QSPILPEN))     /*!< Mask  0x00004000 */
 
-#define RCC_AHB3LPCLKEN_FMC_OFFSET         (12U)
-#define RCC_AHB3LPCLKEN_FMC_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, FMC))        /*!< Mask  0x00001000 */
+#define RCC_AHB3LPENR_FMCLPEN_OFFSET      (12U)
+#define RCC_AHB3LPENR_FMCLPEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, FMCLPEN))      /*!< Mask  0x00001000 */
 
-#define RCC_AHB3LPCLKEN_FLASHINTC_OFFSET   (8U)
-#define RCC_AHB3LPCLKEN_FLASHINTC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, FLASHINTC))  /*!< Mask  0x00000100 */
+#define RCC_AHB3LPENR_FLITFLPEN_OFFSET    (8U)
+#define RCC_AHB3LPENR_FLITFLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, FLITFLPEN))    /*!< Mask  0x00000100 */
 
-#define RCC_AHB3LPCLKEN_JPGDEC_OFFSET      (5U)
-#define RCC_AHB3LPCLKEN_JPGDEC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, JPGDEC))     /*!< Mask  0x00000020 */
+#define RCC_AHB3LPENR_JPGDECLPEN_OFFSET   (5U)
+#define RCC_AHB3LPENR_JPGDECLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, JPGDECLPEN))   /*!< Mask  0x00000020 */
 
-#define RCC_AHB3LPCLKEN_DMA2D_OFFSET       (4U)
-#define RCC_AHB3LPCLKEN_DMA2D_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, DMA2D))      /*!< Mask  0x00000010 */
+#define RCC_AHB3LPENR_DMA2DLPEN_OFFSET    (4U)
+#define RCC_AHB3LPENR_DMA2DLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, DMA2DLPEN))    /*!< Mask  0x00000010 */
 
-#define RCC_AHB3LPCLKEN_MDMA_OFFSET        (0U)
-#define RCC_AHB3LPCLKEN_MDMA_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPCLKEN, MDMA))       /*!< Mask  0x00000001 */
+#define RCC_AHB3LPENR_MDMALPEN_OFFSET     (0U)
+#define RCC_AHB3LPENR_MDMALPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB3LPENR, MDMALPEN))     /*!< Mask  0x00000001 */
 
 /*!< AHB1 low power clock register */
-#define RCC_AHB1LPCLKEN_USB2OTG_OFFSET   (27U)
-#define RCC_AHB1LPCLKEN_USB2OTG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, USB2OTG))  /*!< Mask  0x08000000 */
+#define RCC_AHB1LPENR_USB2OTGHSULPILPEN_OFFSET  (28U)
+#define RCC_AHB1LPENR_USB2OTGHSULPILPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, USB2OTGHSULPILPEN))  /*!< Mask  0x10000000 */
 
-#define RCC_AHB1LPCLKEN_USBPHY1_OFFSET   (26U)
-#define RCC_AHB1LPCLKEN_USBPHY1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, USBPHY1))  /*!< Mask  0x04000000 */
+#define RCC_AHB1LPENR_USB2OTGHLPEN_OFFSET       (27U)
+#define RCC_AHB1LPENR_USB2OTGHLPEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, USB2OTGHLPEN))       /*!< Mask  0x08000000 */
 
-#define RCC_AHB1LPCLKEN_USB1OTG_OFFSET   (25U)
-#define RCC_AHB1LPCLKEN_USB1OTG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, USB1OTG))  /*!< Mask  0x02000000 */
+#define RCC_AHB1LPENR_USB1OTGHSULPILPEN_OFFSET  (26U)
+#define RCC_AHB1LPENR_USB1OTGHSULPILPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, USB1OTGHSULPILPEN))  /*!< Mask  0x04000000 */
 
-#define RCC_AHB1LPCLKEN_USBPHY2_OFFSET   (18U)
-#define RCC_AHB1LPCLKEN_USBPHY2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, USBPHY2))  /*!< Mask  0x00040000 */
+#define RCC_AHB1LPENR_USB1OTGHLPEN_OFFSET       (25U)
+#define RCC_AHB1LPENR_USB1OTGHLPEN_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, USB1OTGHLPEN))       /*!< Mask  0x02000000 */
 
-#define RCC_AHB1LPCLKEN_ETH1RX_OFFSET    (17U)
-#define RCC_AHB1LPCLKEN_ETH1RX_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, ETH1RX))   /*!< Mask  0x00020000 */
+#define RCC_AHB1LPENR_ETH1RXLPEN_OFFSET         (17U)
+#define RCC_AHB1LPENR_ETH1RXLPEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, ETH1RXLPEN))         /*!< Mask  0x00020000 */
 
-#define RCC_AHB1LPCLKEN_ETH1TX_OFFSET    (16U)
-#define RCC_AHB1LPCLKEN_ETH1TX_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, ETH1TX))   /*!< Mask  0x00010000 */
+#define RCC_AHB1LPENR_ETH1TXLPEN_OFFSET         (16U)
+#define RCC_AHB1LPENR_ETH1TXLPEN_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, ETH1TXLPEN))         /*!< Mask  0x00010000 */
 
-#define RCC_AHB1LPCLKEN_ETH1MAC_OFFSET   (15U)
-#define RCC_AHB1LPCLKEN_ETH1MAC_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, ETH1MAC))  /*!< Mask  0x00008000 */
+#define RCC_AHB1LPENR_ETH1MACLPEN_OFFSET        (15U)
+#define RCC_AHB1LPENR_ETH1MACLPEN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, ETH1MACLPEN))        /*!< Mask  0x00008000 */
 
-#define RCC_AHB1LPCLKEN_ART_OFFSET       (14U)
-#define RCC_AHB1LPCLKEN_ART_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, ART))      /*!< Mask  0x00004000 */
+#define RCC_AHB1LPENR_ARTLPEN_OFFSET            (14U)
+#define RCC_AHB1LPENR_ARTLPEN_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, ARTLPEN))            /*!< Mask  0x00004000 */
 
-#define RCC_AHB1LPCLKEN_ADC12_OFFSET     (5U)
-#define RCC_AHB1LPCLKEN_ADC12_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, ADC12))    /*!< Mask  0x00000020 */
+#define RCC_AHB1LPENR_ADC12LPEN_OFFSET          (5U)
+#define RCC_AHB1LPENR_ADC12LPEN_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, ADC12LPEN))          /*!< Mask  0x00000020 */
 
-#define RCC_AHB1LPCLKEN_DMA2_OFFSET      (1U)
-#define RCC_AHB1LPCLKEN_DMA2_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, DMA2))     /*!< Mask  0x00000002 */
+#define RCC_AHB1LPENR_DMA2LPEN_OFFSET           (1U)
+#define RCC_AHB1LPENR_DMA2LPEN_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, DMA2LPEN))           /*!< Mask  0x00000002 */
 
-#define RCC_AHB1LPCLKEN_DMA1_OFFSET      (0U)
-#define RCC_AHB1LPCLKEN_DMA1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPCLKEN, DMA1))     /*!< Mask  0x00000001 */
+#define RCC_AHB1LPENR_DMA1LPEN_OFFSET           (0U)
+#define RCC_AHB1LPENR_DMA1LPEN_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB1LPENR, DMA1LPEN))           /*!< Mask  0x00000001 */
 
 /*!< AHB2 low power clock register */
-#define RCC_AHB2LPCLKEN_SRAM3_OFFSET    (31U)
-#define RCC_AHB2LPCLKEN_SRAM3_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, SRAM3))   /*!< Mask  0x80000000 */
+#define RCC_AHB2LPENR_SRAM3LPEN_OFFSET   (31U)
+#define RCC_AHB2LPENR_SRAM3LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, SRAM3LPEN))   /*!< Mask  0x80000000 */
 
-#define RCC_AHB2LPCLKEN_SRAM2_OFFSET    (30U)
-#define RCC_AHB2LPCLKEN_SRAM2_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, SRAM2))   /*!< Mask  0x40000000 */
+#define RCC_AHB2LPENR_SRAM2LPEN_OFFSET   (30U)
+#define RCC_AHB2LPENR_SRAM2LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, SRAM2LPEN))   /*!< Mask  0x40000000 */
 
-#define RCC_AHB2LPCLKEN_SRAM1_OFFSET    (29U)
-#define RCC_AHB2LPCLKEN_SRAM1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, SRAM1))   /*!< Mask  0x20000000 */
+#define RCC_AHB2LPENR_SRAM1LPEN_OFFSET   (29U)
+#define RCC_AHB2LPENR_SRAM1LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, SRAM1LPEN))   /*!< Mask  0x20000000 */
 
-#define RCC_AHB2LPCLKEN_SDMMC2_OFFSET   (9U)
-#define RCC_AHB2LPCLKEN_SDMMC2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, SDMMC2))  /*!< Mask  0x00000200 */
+#define RCC_AHB2LPENR_SDMMC2LPEN_OFFSET  (9U)
+#define RCC_AHB2LPENR_SDMMC2LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, SDMMC2LPEN))  /*!< Mask  0x00000200 */
 
-#define RCC_AHB2LPCLKEN_RNG_OFFSET      (6U)
-#define RCC_AHB2LPCLKEN_RNG_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, RNG))     /*!< Mask  0x00000040 */
+#define RCC_AHB2LPENR_RNGLPEN_OFFSET     (6U)
+#define RCC_AHB2LPENR_RNGLPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, RNGLPEN))     /*!< Mask  0x00000040 */
 
-#define RCC_AHB2LPCLKEN_HASH_OFFSET     (5U)
-#define RCC_AHB2LPCLKEN_HASH_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, HASH))    /*!< Mask  0x00000020 */
+#define RCC_AHB2LPENR_HASHLPEN_OFFSET    (5U)
+#define RCC_AHB2LPENR_HASHLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, HASHLPEN))    /*!< Mask  0x00000020 */
 
-#define RCC_AHB2LPCLKEN_CRYPTO_OFFSET   (4U)
-#define RCC_AHB2LPCLKEN_CRYPTO_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, CRYPTO))  /*!< Mask  0x00000010 */
+#define RCC_AHB2LPENR_CRYPTLPEN_OFFSET   (4U)
+#define RCC_AHB2LPENR_CRYPTLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, CRYPTLPEN))   /*!< Mask  0x00000010 */
 
-#define RCC_AHB2LPCLKEN_DCMI_OFFSET     (0U)
-#define RCC_AHB2LPCLKEN_DCMI_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPCLKEN, DCMI))    /*!< Mask  0x00000001 */
+#define RCC_AHB2LPENR_DCMILPEN_OFFSET    (0U)
+#define RCC_AHB2LPENR_DCMILPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB2LPENR, DCMILPEN))    /*!< Mask  0x00000001 */
 
 /*!< AHB4 low power clock register */
-#define RCC_AHB4LPCLKEN_BCKRAM_OFFSET   (28U)
-#define RCC_AHB4LPCLKEN_BCKRAM_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, BCKRAM))  /*!< Mask  0x10000000 */
+#define RCC_AHB4LPENR_SRAM4LPEN_OFFSET    (29U)
+#define RCC_AHB4LPENR_SRAM4LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, SRAM1LPEN))   /*!< Mask  0x20000000 */
 
-#define RCC_AHB4LPCLKEN_HSEM_OFFSET     (25U)
-#define RCC_AHB4LPCLKEN_HSEM_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, HSEM))    /*!< Mask  0x02000000 */
+#define RCC_AHB4LPENR_BKPRAMLPEN_OFFSET   (28U)
+#define RCC_AHB4LPENR_BKPRAMLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, BKPRAMLPEN))  /*!< Mask  0x10000000 */
 
-#define RCC_AHB4LPCLKEN_ADC3_OFFSET     (24U)
-#define RCC_AHB4LPCLKEN_ADC3_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, ADC3))    /*!< Mask  0x01000000 */
+#define RCC_AHB4LPENR_ADC3LPEN_OFFSET     (24U)
+#define RCC_AHB4LPENR_ADC3LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, ADC3LPEN))    /*!< Mask  0x01000000 */
 
-#define RCC_AHB4LPCLKEN_BDMA_OFFSET     (21U)
-#define RCC_AHB4LPCLKEN_BDMA_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, BDMA))    /*!< Mask  0x00200000 */
+#define RCC_AHB4LPENR_BDMALPEN_OFFSET     (21U)
+#define RCC_AHB4LPENR_BDMALPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, BDMALPEN))    /*!< Mask  0x00200000 */
 
-#define RCC_AHB4LPCLKEN_CRC_OFFSET      (19U)
-#define RCC_AHB4LPCLKEN_CRC_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, CRC))     /*!< Mask  0x00080000 */
+#define RCC_AHB4LPENR_CRCLPEN_OFFSET      (19U)
+#define RCC_AHB4LPENR_CRCLPEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, CRCLPEN))     /*!< Mask  0x00080000 */
 
-#define RCC_AHB4LPCLKEN_GPIOK_OFFSET    (10U)
-#define RCC_AHB4LPCLKEN_GPIOK_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOK))   /*!< Mask  0x00000400 */
+#define RCC_AHB4LPENR_GPIOKLPEN_OFFSET    (10U)
+#define RCC_AHB4LPENR_GPIOKLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOKLPEN))   /*!< Mask  0x00000400 */
 
-#define RCC_AHB4LPCLKEN_GPIOJ_OFFSET    (9U)
-#define RCC_AHB4LPCLKEN_GPIOJ_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOJ))   /*!< Mask  0x00000200 */
+#define RCC_AHB4LPENR_GPIOJLPEN_OFFSET    (9U)
+#define RCC_AHB4LPENR_GPIOJLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOJLPEN))   /*!< Mask  0x00000200 */
 
-#define RCC_AHB4LPCLKEN_GPIOI_OFFSET    (8U)
-#define RCC_AHB4LPCLKEN_GPIOI_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOI))   /*!< Mask  0x00000100 */
+#define RCC_AHB4LPENR_GPIOILPEN_OFFSET    (8U)
+#define RCC_AHB4LPENR_GPIOILPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOILPEN))   /*!< Mask  0x00000100 */
 
-#define RCC_AHB4LPCLKEN_GPIOH_OFFSET    (7U)
-#define RCC_AHB4LPCLKEN_GPIOH_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOH))   /*!< Mask  0x00000080 */
+#define RCC_AHB4LPENR_GPIOHLPEN_OFFSET    (7U)
+#define RCC_AHB4LPENR_GPIOHLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOHLPEN))   /*!< Mask  0x00000080 */
 
-#define RCC_AHB4LPCLKEN_GPIOG_OFFSET    (6U)
-#define RCC_AHB4LPCLKEN_GPIOG_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOG))   /*!< Mask  0x00000040 */
+#define RCC_AHB4LPENR_GPIOGLPEN_OFFSET    (6U)
+#define RCC_AHB4LPENR_GPIOGLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOGLPEN))   /*!< Mask  0x00000040 */
 
-#define RCC_AHB4LPCLKEN_GPIOF_OFFSET    (5U)
-#define RCC_AHB4LPCLKEN_GPIOF_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOF))   /*!< Mask  0x00000020 */
+#define RCC_AHB4LPENR_GPIOFLPEN_OFFSET    (5U)
+#define RCC_AHB4LPENR_GPIOFLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOFLPEN))   /*!< Mask  0x00000020 */
 
-#define RCC_AHB4LPCLKEN_GPIOE_OFFSET    (4U)
-#define RCC_AHB4LPCLKEN_GPIOE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOE))   /*!< Mask  0x00000010 */
+#define RCC_AHB4LPENR_GPIOELPEN_OFFSET    (4U)
+#define RCC_AHB4LPENR_GPIOELPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOELPEN))   /*!< Mask  0x00000010 */
 
-#define RCC_AHB4LPCLKEN_GPIOD_OFFSET    (3U)
-#define RCC_AHB4LPCLKEN_GPIOD_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOD))   /*!< Mask  0x00000008 */
+#define RCC_AHB4LPENR_GPIODLPEN_OFFSET    (3U)
+#define RCC_AHB4LPENR_GPIODLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIODLPEN))   /*!< Mask  0x00000008 */
 
-#define RCC_AHB4LPCLKEN_GPIOC_OFFSET    (2U)
-#define RCC_AHB4LPCLKEN_GPIOC_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOC))   /*!< Mask  0x00000004 */
+#define RCC_AHB4LPENR_GPIOCLPEN_OFFSET    (2U)
+#define RCC_AHB4LPENR_GPIOCLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOCLPEN))   /*!< Mask  0x00000004 */
 
-#define RCC_AHB4LPCLKEN_GPIOB_OFFSET    (1U)
-#define RCC_AHB4LPCLKEN_GPIOB_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOB))   /*!< Mask  0x00000002 */
+#define RCC_AHB4LPENR_GPIOBLPEN_OFFSET    (1U)
+#define RCC_AHB4LPENR_GPIOBLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOBLPEN))   /*!< Mask  0x00000002 */
 
-#define RCC_AHB4LPCLKEN_GPIOA_OFFSET    (0U)
-#define RCC_AHB4LPCLKEN_GPIOA_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPCLKEN, GPIOA))   /*!< Mask  0x00000001 */
+#define RCC_AHB4LPENR_GPIOALPEN_OFFSET    (0U)
+#define RCC_AHB4LPENR_GPIOALPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, AHB4LPENR, GPIOALPEN))   /*!< Mask  0x00000001 */
 
 /*!< APB3 low power clock register */
-#define RCC_APB3LPCLKEN_WINWATCHDOGC1_OFFSET   (6U)
-#define RCC_APB3LPCLKEN_WINWATCHDOGC1_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3LPCLKEN, WINWATCHDOGC1))  /*!< Mask  0x00000040 */
+#define RCC_APB3LPENR_WWDG1LPEN_OFFSET  (6U)
+#define RCC_APB3LPENR_WWDG1LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3LPENR, WWDG1LPEN))  /*!< Mask  0x00000040 */
 
-#define RCC_APB3LPCLKEN_DSI_OFFSET             (4U)
-#define RCC_APB3LPCLKEN_DSI_MASK               (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3LPCLKEN, DSI))            /*!< Mask  0x00000010 */
+#define RCC_APB3LPENR_DSILPEN_OFFSET    (4U)
+#define RCC_APB3LPENR_DSILPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3LPENR, DSILPEN))    /*!< Mask  0x00000010 */
 
-#define RCC_APB3LPCLKEN_LTDC_OFFSET            (3U)
-#define RCC_APB3LPCLKEN_LTDC_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3LPCLKEN, LTDC))           /*!< Mask  0x00000001 */
+#define RCC_APB3LPENR_LTDCLPEN_OFFSET   (3U)
+#define RCC_APB3LPENR_LTDCLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB3LPENR, LTDCLPEN))   /*!< Mask  0x00000001 */
 
-/*!< APB1 low power clock register */
-#define RCC_APB1LLPCLKEN_UART8_OFFSET           (31U)
-#define RCC_APB1LLPCLKEN_UART8_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, UART8))           /*!< Mask  0x80000000 */
+/*!< APB1 low power clock low register */
+#define RCC_APB1LLPENR_UART8LPEN_OFFSET    (31U)
+#define RCC_APB1LLPENR_UART8LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, UART8LPEN))    /*!< Mask  0x80000000 */
 
-#define RCC_APB1LLPCLKEN_UART7_OFFSET           (30U)
-#define RCC_APB1LLPCLKEN_UART7_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, UART7))           /*!< Mask  0x40000000 */
+#define RCC_APB1LLPENR_UART7LPEN_OFFSET    (30U)
+#define RCC_APB1LLPENR_UART7LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, UART7LPEN))    /*!< Mask  0x40000000 */
 
-#define RCC_APB1LLPCLKEN_DAC12_OFFSET           (29U)
-#define RCC_APB1LLPCLKEN_DAC12_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, DAC12))           /*!< Mask  0x20000000 */
+#define RCC_APB1LLPENR_DAC12LPEN_OFFSET    (29U)
+#define RCC_APB1LLPENR_DAC12LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, DAC12LPEN))    /*!< Mask  0x20000000 */
 
-#define RCC_APB1LLPCLKEN_HDMICEC_OFFSET         (27U)
-#define RCC_APB1LLPCLKEN_HDMICEC_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, HDMICEC))         /*!< Mask  0x08000000 */
+#define RCC_APB1LLPENR_CECLPEN_OFFSET      (27U)
+#define RCC_APB1LLPENR_CECLPEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, CECLPEN))      /*!< Mask  0x08000000 */
 
-#define RCC_APB1LLPCLKEN_I2C3_OFFSET            (23U)
-#define RCC_APB1LLPCLKEN_I2C3_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, I2C3))            /*!< Mask  0x00800000 */
+#define RCC_APB1LLPENR_I2C3LPEN_OFFSET     (23U)
+#define RCC_APB1LLPENR_I2C3LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, I2C3LPEN))     /*!< Mask  0x00800000 */
 
-#define RCC_APB1LLPCLKEN_I2C2_OFFSET            (22U)
-#define RCC_APB1LLPCLKEN_I2C2_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, I2C2))            /*!< Mask  0x00400000 */
+#define RCC_APB1LLPENR_I2C2LPEN_OFFSET     (22U)
+#define RCC_APB1LLPENR_I2C2LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, I2C2LPEN))     /*!< Mask  0x00400000 */
 
-#define RCC_APB1LLPCLKEN_I2C1_OFFSET            (21U)
-#define RCC_APB1LLPCLKEN_I2C1_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, I2C1))            /*!< Mask  0x00200000 */
+#define RCC_APB1LLPENR_I2C1LPEN_OFFSET     (21U)
+#define RCC_APB1LLPENR_I2C1LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, I2C1LPEN))     /*!< Mask  0x00200000 */
 
-#define RCC_APB1LLPCLKEN_UART5_OFFSET           (20U)
-#define RCC_APB1LLPCLKEN_UART5_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, UART5))           /*!< Mask  0x00100000 */
+#define RCC_APB1LLPENR_UART5LPEN_OFFSET    (20U)
+#define RCC_APB1LLPENR_UART5LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, UART5LPEN))    /*!< Mask  0x00100000 */
 
-#define RCC_APB1LLPCLKEN_UART4_OFFSET           (19U)
-#define RCC_APB1LLPCLKEN_UART4_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, UART4))           /*!< Mask  0x00080000 */
+#define RCC_APB1LLPENR_UART4LPEN_OFFSET    (19U)
+#define RCC_APB1LLPENR_UART4LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, UART4LPEN))    /*!< Mask  0x00080000 */
 
-#define RCC_APB1LLPCLKEN_UART3_OFFSET           (18U)
-#define RCC_APB1LLPCLKEN_UART3_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, UART3))           /*!< Mask  0x00040000 */
+#define RCC_APB1LLPENR_USART3LPEN_OFFSET   (18U)
+#define RCC_APB1LLPENR_USART3LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, USART3LPEN))   /*!< Mask  0x00040000 */
 
-#define RCC_APB1LLPCLKEN_UART2_OFFSET           (17U)
-#define RCC_APB1LLPCLKEN_UART2_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, UART2))           /*!< Mask  0x00020000 */
+#define RCC_APB1LLPENR_USART2LPEN_OFFSET   (17U)
+#define RCC_APB1LLPENR_USART2LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, USART2LPEN))   /*!< Mask  0x00020000 */
 
-#define RCC_APB1LLPCLKEN_SPDIFRX_OFFSET         (16U)
-#define RCC_APB1LLPCLKEN_SPDIFRX_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, SPDIFRX))         /*!< Mask  0x00010000 */
+#define RCC_APB1LLPENR_SPDIFRXLPEN_OFFSET  (16U)
+#define RCC_APB1LLPENR_SPDIFRXLPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, SPDIFRXLPEN))  /*!< Mask  0x00010000 */
 
-#define RCC_APB1LLPCLKEN_SPI3_OFFSET            (15U)
-#define RCC_APB1LLPCLKEN_SPI3_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, SPI3))            /*!< Mask  0x00008000 */
+#define RCC_APB1LLPENR_SPI3LPEN_OFFSET     (15U)
+#define RCC_APB1LLPENR_SPI3LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, SPI3LPEN))     /*!< Mask  0x00008000 */
 
-#define RCC_APB1LLPCLKEN_SPI2_OFFSET            (14U)
-#define RCC_APB1LLPCLKEN_SPI2_MASK              (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, SPI2))            /*!< Mask  0x00004000 */
+#define RCC_APB1LLPENR_SPI2LPEN_OFFSET     (14U)
+#define RCC_APB1LLPENR_SPI2LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, SPI2LPEN))     /*!< Mask  0x00004000 */
 
-#define RCC_APB1LLPCLKEN_WINWATCHDOGC2_OFFSET   (11U)
-#define RCC_APB1LLPCLKEN_WINWATCHDOGC2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, WINWATCHDOGC2))   /*!< Mask  0x00000800 */
+#define RCC_APB1LLPENR_WWDG2LPEN_OFFSET    (11U)
+#define RCC_APB1LLPENR_WWDG2LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, WWDG2LPEN))    /*!< Mask  0x00000800 */
 
-#define RCC_APB1LLPCLKEN_LPTIMER1_OFFSET        (9U)
-#define RCC_APB1LLPCLKEN_LPTIMER1_MASK          (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, LPTIMER1))        /*!< Mask  0x00000200 */
+#define RCC_APB1LLPENR_LPTIM1LPEN_OFFSET   (9U)
+#define RCC_APB1LLPENR_LPTIM1LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, LPTIM1LPEN))   /*!< Mask  0x00000200 */
 
-#define RCC_APB1LLPCLKEN_TIMER14_OFFSET         (8U)
-#define RCC_APB1LLPCLKEN_TIMER14_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER14))         /*!< Mask  0x00000100 */
+#define RCC_APB1LLPENR_TIM14LPEN_OFFSET    (8U)
+#define RCC_APB1LLPENR_TIM14LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM14LPEN))    /*!< Mask  0x00000100 */
 
-#define RCC_APB1LLPCLKEN_TIMER13_OFFSET         (7U)
-#define RCC_APB1LLPCLKEN_TIMER13_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER13))         /*!< Mask  0x00000080 */
+#define RCC_APB1LLPENR_TIM13LPEN_OFFSET    (7U)
+#define RCC_APB1LLPENR_TIM13LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM13LPEN))    /*!< Mask  0x00000080 */
 
-#define RCC_APB1LLPCLKEN_TIMER12_OFFSET         (6U)
-#define RCC_APB1LLPCLKEN_TIMER12_MASK           (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER12))         /*!< Mask  0x00000040 */
+#define RCC_APB1LLPENR_TIM12LPEN_OFFSET    (6U)
+#define RCC_APB1LLPENR_TIM12LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM12LPEN))    /*!< Mask  0x00000040 */
 
-#define RCC_APB1LLPCLKEN_TIMER7_OFFSET          (5U)
-#define RCC_APB1LLPCLKEN_TIMER7_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER7))          /*!< Mask  0x00000020 */
+#define RCC_APB1LLPENR_TIM7LPEN_OFFSET     (5U)
+#define RCC_APB1LLPENR_TIM7LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM7LPEN))     /*!< Mask  0x00000020 */
 
-#define RCC_APB1LLPCLKEN_TIMER6_OFFSET          (4U)
-#define RCC_APB1LLPCLKEN_TIMER6_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER6))          /*!< Mask  0x00000010 */
+#define RCC_APB1LLPENR_TIM6LPEN_OFFSET     (4U)
+#define RCC_APB1LLPENR_TIM6LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM6LPEN))     /*!< Mask  0x00000010 */
 
-#define RCC_APB1LLPCLKEN_TIMER5_OFFSET          (3U)
-#define RCC_APB1LLPCLKEN_TIMER5_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER5))          /*!< Mask  0x00000008 */
+#define RCC_APB1LLPENR_TIM5LPEN_OFFSET     (3U)
+#define RCC_APB1LLPENR_TIM5LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM5LPEN))     /*!< Mask  0x00000008 */
 
-#define RCC_APB1LLPCLKEN_TIMER4_OFFSET          (2U)
-#define RCC_APB1LLPCLKEN_TIMER4_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER4))          /*!< Mask  0x00000004 */
+#define RCC_APB1LLPENR_TIM4LPEN_OFFSET     (2U)
+#define RCC_APB1LLPENR_TIM4LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM4LPEN))     /*!< Mask  0x00000004 */
 
-#define RCC_APB1LLPCLKEN_TIMER3_OFFSET          (1U)
-#define RCC_APB1LLPCLKEN_TIMER3_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER3))          /*!< Mask  0x00000002 */
+#define RCC_APB1LLPENR_TIM3LPEN_OFFSET     (1U)
+#define RCC_APB1LLPENR_TIM3LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM3LPEN))     /*!< Mask  0x00000002 */
 
-#define RCC_APB1LLPCLKEN_TIMER2_OFFSET          (0U)
-#define RCC_APB1LLPCLKEN_TIMER2_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPCLKEN, TIMER2))          /*!< Mask  0x00000001 */
+#define RCC_APB1LLPENR_TIM2LPEN_OFFSET     (0U)
+#define RCC_APB1LLPENR_TIM2LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1LLPENR, TIM2LPEN))     /*!< Mask  0x00000001 */
 
-#define RCC_APB1HLPCLKEN_FDCAN_OFFSET           (8U)
-#define RCC_APB1HLPCLKEN_FDCAN_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPCLKEN, FDCAN))           /*!< Mask  0x00000100 */
+/*!< APB1 low power clock high register */
+#define RCC_APB1HLPENR_FDCANLPEN_OFFSET  (8U)
+#define RCC_APB1HLPENR_FDCANLPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPENR, FDCANLPEN))  /*!< Mask  0x00000100 */
 
-#define RCC_APB1HLPCLKEN_MDIOS_OFFSET           (5U)
-#define RCC_APB1HLPCLKEN_MDIOS_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPCLKEN, MDIOS))           /*!< Mask  0x00000020 */
+#define RCC_APB1HLPENR_MDIOSLPEN_OFFSET  (5U)
+#define RCC_APB1HLPENR_MDIOSLPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPENR, MDIOSLPEN))  /*!< Mask  0x00000020 */
 
-#define RCC_APB1HLPCLKEN_OPAMP_OFFSET           (4U)
-#define RCC_APB1HLPCLKEN_OPAMP_MASK             (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPCLKEN, OPAMP))           /*!< Mask  0x00000010 */
+#define RCC_APB1HLPENR_OPAMPLPEN_OFFSET  (4U)
+#define RCC_APB1HLPENR_OPAMPLPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPENR, OPAMPLPEN))  /*!< Mask  0x00000010 */
 
-#define RCC_APB1HLPCLKEN_SINGLEWIRE_OFFSET      (2U)
-#define RCC_APB1HLPCLKEN_SINGLEWIRE_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPCLKEN, SINGLEWIRE))      /*!< Mask  0x00000004 */
+#define RCC_APB1HLPENR_SWPLPEN_OFFSET    (2U)
+#define RCC_APB1HLPENR_SWPLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPENR, SWPLPEN))    /*!< Mask  0x00000004 */
 
-#define RCC_APB1HLPCLKEN_CLKREC_OFFSET          (1U)
-#define RCC_APB1HLPCLKEN_CLKREC_MASK            (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPCLKEN, CLKREC))          /*!< Mask  0x00000002 */
+#define RCC_APB1HLPENR_CRSLPEN_OFFSET    (1U)
+#define RCC_APB1HLPENR_CRSLPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB1HLPENR, CRSLPEN))    /*!< Mask  0x00000002 */
 
 /*!< APB2 low power clock register */
-#define RCC_APBLPCLKEN_HRTIMER_OFFSET   (29U)
-#define RCC_APBLPCLKEN_HRTIMER_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, HRTIMER))  /*!< Mask  0x20000000 */
+#define RCC_APB2LPENR_HRTIMLPEN_OFFSET   (29U)
+#define RCC_APB2LPENR_HRTIMLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, HRTIMLPEN))   /*!< Mask  0x20000000 */
 
-#define RCC_APBLPCLKEN_DFSDM1_OFFSET    (28U)
-#define RCC_APBLPCLKEN_DFSDM1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, DFSDM1))   /*!< Mask  0x10000000 */
+#define RCC_APB2LPENR_DFSDM1LPEN_OFFSET  (28U)
+#define RCC_APB2LPENR_DFSDM1LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, DFSDM1LPEN))  /*!< Mask  0x10000000 */
 
-#define RCC_APBLPCLKEN_SAI3_OFFSET      (24U)
-#define RCC_APBLPCLKEN_SAI3_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SAI3))     /*!< Mask  0x01000000 */
+#define RCC_APB2LPENR_SAI3LPEN_OFFSET    (24U)
+#define RCC_APB2LPENR_SAI3LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, SAI3LPEN))    /*!< Mask  0x01000000 */
 
-#define RCC_APBLPCLKEN_SAI2_OFFSET      (23U)
-#define RCC_APBLPCLKEN_SAI2_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SAI2))     /*!< Mask  0x00800000 */
+#define RCC_APB2LPENR_SAI2LPEN_OFFSET    (23U)
+#define RCC_APB2LPENR_SAI2LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, SAI2LPEN))    /*!< Mask  0x00800000 */
 
-#define RCC_APBLPCLKEN_SAI1_OFFSET      (22U)
-#define RCC_APBLPCLKEN_SAI1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SAI1))     /*!< Mask  0x00400000 */
+#define RCC_APB2LPENR_SAI1LPEN_OFFSET    (22U)
+#define RCC_APB2LPENR_SAI1LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, SAI1LPEN))    /*!< Mask  0x00400000 */
 
-#define RCC_APBLPCLKEN_SPI5_OFFSET      (20U)
-#define RCC_APBLPCLKEN_SPI5_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SPI5))     /*!< Mask  0x00100000 */
+#define RCC_APB2LPENR_SPI5LPEN_OFFSET    (20U)
+#define RCC_APB2LPENR_SPI5LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, SPI5LPEN))    /*!< Mask  0x00100000 */
 
-#define RCC_APBLPCLKEN_TIMER17_OFFSET   (18U)
-#define RCC_APBLPCLKEN_TIMER17_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, TIMER17))  /*!< Mask  0x00040000 */
+#define RCC_APB2LPENR_TIM17LPEN_OFFSET   (18U)
+#define RCC_APB2LPENR_TIM17LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, TIM17LPEN))   /*!< Mask  0x00040000 */
 
-#define RCC_APBLPCLKEN_TIMER16_OFFSET   (17U)
-#define RCC_APBLPCLKEN_TIMER16_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, TIMER16))  /*!< Mask  0x00020000 */
+#define RCC_APB2LPENR_TIM16LPEN_OFFSET   (17U)
+#define RCC_APB2LPENR_TIM16LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, TIM16LPEN))   /*!< Mask  0x00020000 */
 
-#define RCC_APBLPCLKEN_TIMER15_OFFSET   (16U)
-#define RCC_APBLPCLKEN_TIMER15_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, TIMER15))  /*!< Mask  0x00010000 */
+#define RCC_APB2LPENR_TIM15LPEN_OFFSET   (16U)
+#define RCC_APB2LPENR_TIM15LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, TIM15LPEN))   /*!< Mask  0x00010000 */
 
-#define RCC_APBLPCLKEN_SPI4_OFFSET      (13U)
-#define RCC_APBLPCLKEN_SPI4_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SPI4))     /*!< Mask  0x00002000 */
+#define RCC_APB2LPENR_SPI4LPEN_OFFSET    (13U)
+#define RCC_APB2LPENR_SPI4LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, SPI4LPEN))    /*!< Mask  0x00002000 */
 
-#define RCC_APBLPCLKEN_SPI1_OFFSET      (12U)
-#define RCC_APBLPCLKEN_SPI1_MASK        (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SPI1))     /*!< Mask  0x00002000 */
+#define RCC_APB2LPENR_SPI1LPEN_OFFSET    (12U)
+#define RCC_APB2LPENR_SPI1LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, SPI1LPEN))    /*!< Mask  0x00002000 */
 
-#define RCC_APBLPCLKEN_USART6_OFFSET    (5U)
-#define RCC_APBLPCLKEN_USART6_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, USART6))   /*!< Mask  0x00000020 */
+#define RCC_APB2LPENR_USART6LPEN_OFFSET  (5U)
+#define RCC_APB2LPENR_USART6LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, USART6LPEN))  /*!< Mask  0x00000020 */
 
-#define RCC_APBLPCLKEN_USART1_OFFSET    (4U)
-#define RCC_APBLPCLKEN_USART1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, USART1))   /*!< Mask  0x00000010 */
+#define RCC_APB2LPENR_USART1LPEN_OFFSET  (4U)
+#define RCC_APB2LPENR_USART1LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, USART1LPEN))  /*!< Mask  0x00000010 */
 
-#define RCC_APBLPCLKEN_TIMER8_OFFSET    (1U)
-#define RCC_APBLPCLKEN_TIMER8_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, TIMER8))   /*!< Mask  0x00000002 */
+#define RCC_APB2LPENR_TIM8LPEN_OFFSET    (1U)
+#define RCC_APB2LPENR_TIM8LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, TIM8LPEN))    /*!< Mask  0x00000002 */
 
-#define RCC_APBLPCLKEN_TIMER1_OFFSET    (0U)
-#define RCC_APBLPCLKEN_TIMER1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, TIMER1))   /*!< Mask  0x00000001 */
+#define RCC_APB2LPENR_TIM1LPEN_OFFSET    (0U)
+#define RCC_APB2LPENR_TIM1LPEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB2LPENR, TIM1LPEN))    /*!< Mask  0x00000001 */
 
 /*!< APB4 low power clock register */
-#define RCC_APBLPCLKEN_SAI4_OFFSET       (21U)
-#define RCC_APBLPCLKEN_SAI4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SAI4))      /*!< Mask  0x00200000 */
+#define RCC_APB4LPENR_SAI4LPEN_OFFSET     (21U)
+#define RCC_APB4LPENR_SAI4LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, SAI4LPEN))     /*!< Mask  0x00200000 */
 
-#define RCC_APBLPCLKEN_RTCAPB_OFFSET     (16U)
-#define RCC_APBLPCLKEN_RTCAPB_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, RTCAPB))    /*!< Mask  0x00010000 */
+#define RCC_APB4LPENR_RTCAPBLPEN_OFFSET   (16U)
+#define RCC_APB4LPENR_RTCAPBLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, RTCAPBLPEN))   /*!< Mask  0x00010000 */
 
-#define RCC_APBLPCLKEN_VREF_OFFSET       (15U)
-#define RCC_APBLPCLKEN_VREF_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, VREF))      /*!< Mask  0x00008000 */
+#define RCC_APB4LPENR_VREFLPEN_OFFSET     (15U)
+#define RCC_APB4LPENR_VREFLPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, VREFLPEN))     /*!< Mask  0x00008000 */
 
-#define RCC_APBLPCLKEN_COMP12_OFFSET     (14U)
-#define RCC_APBLPCLKEN_COMP12_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, COMP12))    /*!< Mask  0x00004000 */
+#define RCC_APB4LPENR_COMP12LPEN_OFFSET   (14U)
+#define RCC_APB4LPENR_COMP12LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, COMP12LPEN))   /*!< Mask  0x00004000 */
 
-#define RCC_APBLPCLKEN_LPTIMER5_OFFSET   (12U)
-#define RCC_APBLPCLKEN_LPTIMER5_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, LPTIMER5))  /*!< Mask  0x00001000 */
+#define RCC_APB4LPENR_LPTIM5LPEN_OFFSET   (12U)
+#define RCC_APB4LPENR_LPTIM5LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, LPTIM5LPEN))   /*!< Mask  0x00001000 */
 
-#define RCC_APBLPCLKEN_LPTIMER4_OFFSET   (11U)
-#define RCC_APBLPCLKEN_LPTIMER4_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, LPTIMER4))  /*!< Mask  0x00000800 */
+#define RCC_APB4LPENR_LPTIM4LPEN_OFFSET   (11U)
+#define RCC_APB4LPENR_LPTIM4LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, LPTIM4LPEN))   /*!< Mask  0x00000800 */
 
-#define RCC_APBLPCLKEN_LPTIMER3_OFFSET   (10U)
-#define RCC_APBLPCLKEN_LPTIMER3_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, LPTIMER3))  /*!< Mask  0x00000400 */
+#define RCC_APB4LPENR_LPTIM3LPEN_OFFSET   (10U)
+#define RCC_APB4LPENR_LPTIM3LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, LPTIM3LPEN))   /*!< Mask  0x00000400 */
 
-#define RCC_APBLPCLKEN_LPTIMER2_OFFSET   (9U)
-#define RCC_APBLPCLKEN_LPTIMER2_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, LPTIMER2))  /*!< Mask  0x00000200 */
+#define RCC_APB4LPENR_LPTIM2LPEN_OFFSET   (9U)
+#define RCC_APB4LPENR_LPTIM2LPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, LPTIM2LPEN))   /*!< Mask  0x00000200 */
 
-#define RCC_APBLPCLKEN_I2C4_OFFSET       (7U)
-#define RCC_APBLPCLKEN_I2C4_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, I2C4))      /*!< Mask  0x00000080 */
+#define RCC_APB4LPENR_I2C4LPEN_OFFSET     (7U)
+#define RCC_APB4LPENR_I2C4LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, I2C4LPEN))     /*!< Mask  0x00000080 */
 
-#define RCC_APBLPCLKEN_SPI6_OFFSET       (5U)
-#define RCC_APBLPCLKEN_SPI6_MASK         (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SPI6))      /*!< Mask  0x00000020 */
+#define RCC_APB4LPENR_SPI6LPEN_OFFSET     (5U)
+#define RCC_APB4LPENR_SPI6LPEN_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, SPI6LPEN))     /*!< Mask  0x00000020 */
 
-#define RCC_APBLPCLKEN_LPUART1_OFFSET    (3U)
-#define RCC_APBLPCLKEN_LPUART1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, LPUART1))   /*!< Mask  0x00000008 */
+#define RCC_APB4LPENR_LPUART1LPEN_OFFSET  (3U)
+#define RCC_APB4LPENR_LPUART1LPEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, LPUART1LPEN))  /*!< Mask  0x00000008 */
 
-#define RCC_APBLPCLKEN_SYSCFG_OFFSET     (1U)
-#define RCC_APBLPCLKEN_SYSCFG_MASK       (0x1UL << REGISTER_FIELD_OFFSET(RCC, APBLPCLKEN, SYSCFG))    /*!< Mask  0x00000002 */
+#define RCC_APB4LPENR_SYSCFGLPEN_OFFSET   (1U)
+#define RCC_APB4LPENR_SYSCFGLPEN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(RCC, APB4LPENR, SYSCFGLPEN))   /*!< Mask  0x00000002 */
 
 // Value of clock enable bit
 #define RCC_PERIPHERALCLK_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
