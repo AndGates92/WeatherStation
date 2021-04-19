@@ -91,11 +91,11 @@ typedef struct {
 #define SYSCTRL_ACTLR_DISFOLD_MASK              (0x1UL << REGISTER_FIELD_OFFSET(SYSCTRL, ACTLR, DISFOLD))            /*!< Mask  0x00000004 */
 
 // Values of dual issue bits
-#define SYSCTRL_DUALISSUE_DIRECTBRANCH     (0x01UL)  /*!< Value 0x00000001 */
-#define SYSCTRL_DUALISSUE_INDIRECTBRANCH   (0x02UL)  /*!< Value 0x00000002 */
-#define SYSCTRL_DUALISSUE_LOADPC           (0x04UL)  /*!< Value 0x00000004 */
-#define SYSCTRL_DUALISSUE_INTMACMUL        (0x08UL)  /*!< Value 0x00000008 */
-#define SYSCTRL_DUALISSUE_VFP              (0x10UL)  /*!< Value 0x00000010 */
+#define SYSCTRL_DUALISSUE_VFP              (4U)
+#define SYSCTRL_DUALISSUE_INTMACMUL        (3U)
+#define SYSCTRL_DUALISSUE_LOADPC           (2U)
+#define SYSCTRL_DUALISSUE_INDIRECTBRANCH   (1U)
+#define SYSCTRL_DUALISSUE_DIRECTBRANCH     (0U)
 
 // Values of dual issue in channel 1 register bits
 #define SYSCTRL_DUALISSUECH1_VPF_OFFSET             (REGISTER_FIELD_OFFSET(SYSCTRL, ACTLR, DISDI) + SYSCTRL_DUALISSUE_VFP)
