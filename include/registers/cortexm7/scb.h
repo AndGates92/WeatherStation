@@ -2,7 +2,7 @@
 #define SCB_REGISTERS_H
 /**
  * @copyright
- * @file sysctrlscs.h
+ * @file scb.h
  * @author Andrea Gianarda
  * @date 30th of March 2021
  * @brief System control block (SCB) registers in system control space (SCS) register
@@ -1923,8 +1923,8 @@ typedef struct {
 #define SCB_COPROCESSORACCESSPRIVILEGES_PRIVILEGEDACCESS  (0x1UL)  /*!< Value 0x00000001 */
 #define SCB_COPROCESSORACCESSPRIVILEGES_FULLACCESS        (0x3UL)  /*!< Value 0x00000003 */
 
-#define SCB_OFFSET 0xD00
-#define SCB_BASE (SCS_BASE + SCB_OFFSET)
+#define SCB_OFFSET 0xD00UL
+#define SCB_BASE OFFSET_ADDRESS(SCS_BASE, SCB_OFFSET)
 #define SCB REGISTER_PTR(scs_scb_regs, SCB_BASE)
 
 /** @} */ // End of SCB group

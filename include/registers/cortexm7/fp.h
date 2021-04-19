@@ -267,8 +267,8 @@ typedef struct {
 #define SCBFP_MISCFEATURES_NONE                (0x0UL)  /*!< Value 0x00000000 */
 #define SCBFP_MISCFEATURES_FPSELINTCONVMAXMIN  (0x4UL)  /*!< Value 0x00000004 */
 
-#define SCBFP_OFFSET 0xF34
-#define SCBFP_BASE (SCS_BASE + SCBFP_OFFSET)
+#define SCBFP_OFFSET 0xF34UL
+#define SCBFP_BASE OFFSET_ADDRESS(SCS_BASE, SCBFP_OFFSET)
 #define SCBFP REGISTER_PTR(scs_scbfp_regs, SCBFP_BASE)
 
 /** @} */ // End of SysCtrl group

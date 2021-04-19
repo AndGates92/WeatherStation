@@ -517,11 +517,9 @@ typedef struct {
 #define NVIC_IPR_PRIORITY254  (0xFEUL)  /*!< Value 0x000000FE */
 #define NVIC_IPR_PRIORITY255  (0xFFUL)  /*!< Value 0x000000FF */
 
-#define NVIC_OFFSET 0x100
-#define NVIC_BASE (SCS_BASE + NVIC_OFFSET)
-#define NVIC_ADDRESS_RANGE 0x100
-
-#define NVIC_BANK1 REGISTER_PTR(scs_nvic_regs, NVIC_BASE)
+#define NVIC_OFFSET 0x100UL
+#define NVIC_BASE OFFSET_ADDRESS(SCS_BASE, NVIC_OFFSET)
+#define NVIC REGISTER_PTR(scs_nvic_regs, NVIC_BASE)
 
 /** @} */ // End of NVIC group
 

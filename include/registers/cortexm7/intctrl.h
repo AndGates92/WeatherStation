@@ -2,7 +2,7 @@
 #define INTCTRL_REGISTERS_H
 /**
  * @copyright
- * @file intctrlscs.h
+ * @file intctrl.h
  * @author Andrea Gianarda
  * @date 30th of March 2021
  * @brief Interrupt control registers in system control space (SCS) register
@@ -291,8 +291,8 @@ typedef struct {
 #define SCS_INTID_254  (0xFEUL)  /*!< Value 0x000000FE */
 #define SCS_INTID_255  (0xFFUL)  /*!< Value 0x000000FF */
 
-#define INTCTRL_OFFSET 0xF00
-#define INTCTRL_BASE (SCS_BASE + INTCTRL_OFFSET)
+#define INTCTRL_OFFSET 0xF00UL
+#define INTCTRL_BASE OFFSET_ADDRESS(SCS_BASE, INTCTRL_OFFSET)
 #define INTCTRL REGISTER_PTR(scs_int_regs, INTCTRL_BASE)
 
 /** @} */ // End of IntCtrl group

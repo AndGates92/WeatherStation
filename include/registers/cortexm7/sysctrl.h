@@ -2,7 +2,7 @@
 #define SYSCTRL_REGISTERS_H
 /**
  * @copyright
- * @file sysctrlscs.h
+ * @file sysctrl.h
  * @author Andrea Gianarda
  * @date 30th of March 2021
  * @brief System control registers in system control space (SCS) register
@@ -133,8 +133,8 @@ typedef struct {
 #define SYSCTRL_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
 #define SYSCTRL_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
 
-#define SYSCTRL_OFFSET 0x0
-#define SYSCTRL_BASE (SCS_BASE + SYSCTRL_OFFSET)
+#define SYSCTRL_OFFSET 0x0UL
+#define SYSCTRL_BASE OFFSET_ADDRESS(SCS_BASE, SYSCTRL_OFFSET)
 #define SYSCTRL REGISTER_PTR(scs_sysctrl_regs, SYSCTRL_BASE)
 
 /** @} */ // End of SysCtrl group
