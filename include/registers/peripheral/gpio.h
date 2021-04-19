@@ -589,9 +589,9 @@ typedef struct {
 #define GPIO_ALTFUNC14  (0xEUL)  /*!< Value 0x0000000E */
 #define GPIO_ALTFUNC15  (0xFUL)  /*!< Value 0x0000000F */
 
-#define GPIO_OFFSET 0x0
+#define GPIO_OFFSET 0x0UL
 #define GPIO_BASE (D3_AHB4_BASE + GPIO_OFFSET)
-#define GPIO_ADDRESS_RANGE 0x3FF
+#define GPIO_ADDRESS_RANGE 0x400UL
 
 /*!< GPIO registers for GPIO A */
 #define GPIO_GPIOA_OFFSET (0*GPIO_ADDRESS_RANGE)
