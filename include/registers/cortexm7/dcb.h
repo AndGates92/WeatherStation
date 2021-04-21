@@ -33,41 +33,41 @@ typedef struct {
 
 /*!< Debug control block (DCB) registers in system control space (SCS) registers */
 /*!< Debug halting control and status register */
-#define DCB_DHCSR_S_RESET_ST_OFFSET       (25U)
-#define DCB_DHCSR_S_RESET_ST_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_RESET_ST))       /*!< Mask  0x02000000 - read only field */
+#define DCB_DHCSR_S_RESET_ST_OFFSET   (25U)
+#define DCB_DHCSR_S_RESET_ST_MASK     (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_RESET_ST))   /*!< Mask  0x02000000 - read only field */
 
-#define DCB_DHCSR_S_RETIRE_ST_OFFSET       (24U)
-#define DCB_DHCSR_S_RETIRE_ST_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_RETIRE_ST))       /*!< Mask  0x01000000 - read only field */
+#define DCB_DHCSR_S_RETIRE_ST_OFFSET  (24U)
+#define DCB_DHCSR_S_RETIRE_ST_MASK    (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_RETIRE_ST))  /*!< Mask  0x01000000 - read only field */
 
-#define DCB_DHCSR_S_LOCKUP_OFFSET       (19U)
-#define DCB_DHCSR_S_LOCKUP_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_LOCKUP))       /*!< Mask  0x00080000 - read only field */
+#define DCB_DHCSR_S_LOCKUP_OFFSET     (19U)
+#define DCB_DHCSR_S_LOCKUP_MASK       (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_LOCKUP))     /*!< Mask  0x00080000 - read only field */
 
-#define DCB_DHCSR_S_SLEEP_OFFSET       (18U)
-#define DCB_DHCSR_S_SLEEP_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_SLEEP))       /*!< Mask  0x00040000 - read only field */
+#define DCB_DHCSR_S_SLEEP_OFFSET      (18U)
+#define DCB_DHCSR_S_SLEEP_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_SLEEP))      /*!< Mask  0x00040000 - read only field */
 
 #define DCB_DHCSR_S_HARD_OFFSET       (17U)
 #define DCB_DHCSR_S_HARD_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_HARD))       /*!< Mask  0x00020000 - read only field */
 
-#define DCB_DHCSR_S_REGRDY_OFFSET       (16U)
-#define DCB_DHCSR_S_REGRDY_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_REGRDY))       /*!< Mask  0x00010000 - read only field */
+#define DCB_DHCSR_S_REGRDY_OFFSET     (16U)
+#define DCB_DHCSR_S_REGRDY_MASK       (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, S_REGRDY))     /*!< Mask  0x00010000 - read only field */
 
-#define DCB_DHCSR_DBGKEY_OFFSET   (16U)
-#define DCB_DHCSR_DBGKEY_MASK     (0xFFFFUL << REGISTER_FIELD_OFFSET(DCB, DHCSR, DBGKEY))  /*!< Mask  0xFFFF0000  - write only field */
+#define DCB_DHCSR_DBGKEY_OFFSET       (16U)
+#define DCB_DHCSR_DBGKEY_MASK         (0xFFFFUL << REGISTER_FIELD_OFFSET(DCB, DHCSR, DBGKEY))    /*!< Mask  0xFFFF0000  - write only field */
 
-#define DCB_DHCSR_C_SNAPSTALL_OFFSET       (5U)
-#define DCB_DHCSR_C_SNAPSTALL_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_SNAPSTALL))       /*!< Mask  0x00000020 */
+#define DCB_DHCSR_C_SNAPSTALL_OFFSET  (5U)
+#define DCB_DHCSR_C_SNAPSTALL_MASK    (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_SNAPSTALL))  /*!< Mask  0x00000020 */
 
-#define DCB_DHCSR_C_MASKINTS_OFFSET        (3U)
-#define DCB_DHCSR_C_MASKINTS_MASK          (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_MASKINTS))      /*!< Mask  0x00000008 */
+#define DCB_DHCSR_C_MASKINTS_OFFSET   (3U)
+#define DCB_DHCSR_C_MASKINTS_MASK     (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_MASKINTS))   /*!< Mask  0x00000008 */
 
-#define DCB_DHCSR_C_STEP_OFFSET      (2U)
-#define DCB_DHCSR_C_STEP_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_STEP))      /*!< Mask  0x00000004 */
+#define DCB_DHCSR_C_STEP_OFFSET       (2U)
+#define DCB_DHCSR_C_STEP_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_STEP))       /*!< Mask  0x00000004 */
 
-#define DCB_DHCSR_C_HALT_OFFSET      (1U)
-#define DCB_DHCSR_C_HALT_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_HALT))      /*!< Mask  0x00000002 */
+#define DCB_DHCSR_C_HALT_OFFSET       (1U)
+#define DCB_DHCSR_C_HALT_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_HALT))       /*!< Mask  0x00000002 */
 
-#define DCB_DHCSR_C_DEBUGEN_OFFSET      (0U)
-#define DCB_DHCSR_C_DEBUGEN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_DEBUGEN))      /*!< Mask  0x00000001 */
+#define DCB_DHCSR_C_DEBUGEN_OFFSET    (0U)
+#define DCB_DHCSR_C_DEBUGEN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(DCB, DHCSR, C_DEBUGEN))    /*!< Mask  0x00000001 */
 
 // Values of the register field indicating whether the processor was reset since the last read of DHCSR
 #define DCB_RESETSINCELASTRST_NONE        (0x0UL)  /*!< Value 0x00000000 */
@@ -143,11 +143,14 @@ typedef struct {
 #define DCB_REGISTER_R12                (0x0CUL)  /*!< Value 0x0000000C */
 #define DCB_REGISTER_SP                 (0x0DUL)  /*!< Value 0x0000000D */
 #define DCB_REGISTER_LR                 (0x0EUL)  /*!< Value 0x0000000E */
-#define DCB_REGISTER_DEBUGRETURNACCESS  (0x0FUL)  /*!< Value 0x0000000F */
+#define DCB_REGISTER_DEBUGRETURNACCESS  (0x0FUL)  /*!< Value 0x0000000F - address of the first instruction to be executed on exit from debug state */
 #define DCB_REGISTER_xPSR               (0x10UL)  /*!< Value 0x00000010 */
 #define DCB_REGISTER_MSP                (0x11UL)  /*!< Value 0x00000011 - main stack pointer */
 #define DCB_REGISTER_PSP                (0x12UL)  /*!< Value 0x00000012 - process stack pointer  */
-#define DCB_REGISTER_VALDIBITS          (0x14UL)  /*!< Value 0x00000014 */
+#define DCB_REGISTER_CONTROL            (0x14UL)  /*!< Value 0x00000014 - DCRDR[24] is 1 and DCRDR[31:25] is 0b0000000 */
+#define DCB_REGISTER_FAULTMASK          (0x14UL)  /*!< Value 0x00000014 - DCRDR[16] is 1 and DCRDR[31:17] is 0b000000000000000 */
+#define DCB_REGISTER_BASEPRI            (0x14UL)  /*!< Value 0x00000014 - DCRDR[8] is 1 and DCRDR[31:9] is 0b00000000000000000000000 */
+#define DCB_REGISTER_PRIMASK            (0x14UL)  /*!< Value 0x00000014 - DCRDR[0] is 1 and DCRDR[31:1] is 0b0000000000000000000000000000000 */
 #define DCB_REGISTER_FPSCR              (0x21UL)  /*!< Value 0x00000021 - floating point status and control register */
 #define DCB_REGISTER_S0                 (0x40UL)  /*!< Value 0x00000040 */
 #define DCB_REGISTER_S1                 (0x41UL)  /*!< Value 0x00000041 */
@@ -181,6 +184,134 @@ typedef struct {
 #define DCB_REGISTER_S29                (0x5FUL)  /*!< Value 0x0000005D */
 #define DCB_REGISTER_S30                (0x5EUL)  /*!< Value 0x0000005E */
 #define DCB_REGISTER_S31                (0x5FUL)  /*!< Value 0x0000005F */
+
+/*!< Debug core register data register */
+#define DCB_DCRDR_DBGTMP_OFFSET  (0U)
+#define DCB_DCRDR_DBGTMP_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Mask  0xFFFFFFFF */
+#define DCB_DCRDR_DBGTMP_0       (0x00000001UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000001 */
+#define DCB_DCRDR_DBGTMP_1       (0x00000002UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000002 */
+#define DCB_DCRDR_DBGTMP_2       (0x00000004UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000004 */
+#define DCB_DCRDR_DBGTMP_3       (0x00000008UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000008 */
+#define DCB_DCRDR_DBGTMP_4       (0x00000010UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000010 */
+#define DCB_DCRDR_DBGTMP_5       (0x00000020UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000020 */
+#define DCB_DCRDR_DBGTMP_6       (0x00000040UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000040 */
+#define DCB_DCRDR_DBGTMP_7       (0x00000080UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000080 */
+#define DCB_DCRDR_DBGTMP_8       (0x00000100UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000100 */
+#define DCB_DCRDR_DBGTMP_9       (0x00000200UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000200 */
+#define DCB_DCRDR_DBGTMP_10      (0x00000400UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000400 */
+#define DCB_DCRDR_DBGTMP_11      (0x00000800UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00000800 */
+#define DCB_DCRDR_DBGTMP_12      (0x00001000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00001000 */
+#define DCB_DCRDR_DBGTMP_13      (0x00002000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00002000 */
+#define DCB_DCRDR_DBGTMP_14      (0x00004000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00004000 */
+#define DCB_DCRDR_DBGTMP_15      (0x00008000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00008000 */
+#define DCB_DCRDR_DBGTMP_16      (0x00010000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00010000 */
+#define DCB_DCRDR_DBGTMP_17      (0x00020000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00020000 */
+#define DCB_DCRDR_DBGTMP_18      (0x00040000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00040000 */
+#define DCB_DCRDR_DBGTMP_19      (0x00080000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00080000 */
+#define DCB_DCRDR_DBGTMP_20      (0x00100000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00100000 */
+#define DCB_DCRDR_DBGTMP_21      (0x00200000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00200000 */
+#define DCB_DCRDR_DBGTMP_22      (0x00400000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00400000 */
+#define DCB_DCRDR_DBGTMP_23      (0x00800000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x00800000 */
+#define DCB_DCRDR_DBGTMP_24      (0x01000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x01000000 */
+#define DCB_DCRDR_DBGTMP_25      (0x02000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x02000000 */
+#define DCB_DCRDR_DBGTMP_26      (0x04000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x04000000 */
+#define DCB_DCRDR_DBGTMP_27      (0x08000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x08000000 */
+#define DCB_DCRDR_DBGTMP_28      (0x10000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x10000000 */
+#define DCB_DCRDR_DBGTMP_29      (0x20000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x20000000 */
+#define DCB_DCRDR_DBGTMP_30      (0x40000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x40000000 */
+#define DCB_DCRDR_DBGTMP_31      (0x80000000UL << REGISTER_FIELD_OFFSET(DCB, DCRDR, DBGTMP))      /*!< Value 0x80000000 */
+
+/*!< Debug exception and monitor control register */
+#define DCB_DEMCR_TRCENA_OFFSET        (24U)
+#define DCB_DEMCR_TRCENA_MASK          (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, TRCENA))        /*!< Mask  0x01000000 */
+
+#define DCB_DEMCR_MON_REQ_OFFSET       (19U)
+#define DCB_DEMCR_MON_REQ_MASK         (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, MON_REQ))       /*!< Mask  0x00080000 */
+
+#define DCB_DEMCR_MON_STEP_OFFSET      (18U)
+#define DCB_DEMCR_MON_STEP_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, MON_STEP))      /*!< Mask  0x00040000 */
+
+#define DCB_DEMCR_MON_PEND_OFFSET      (17U)
+#define DCB_DEMCR_MON_PEND_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, MON_PEND))      /*!< Mask  0x00020000 */
+
+#define DCB_DEMCR_MON_EN_OFFSET        (16U)
+#define DCB_DEMCR_MON_EN_MASK          (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, MON_EN))        /*!< Mask  0x00010000 */
+
+#define DCB_DEMCR_VC_HARDERR_OFFSET    (10U)
+#define DCB_DEMCR_VC_HARDERR_MASK      (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_HARDERR))    /*!< Mask  0x00000400 */
+
+#define DCB_DEMCR_VC_INTERR_OFFSET     (9U)
+#define DCB_DEMCR_VC_INTERR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_INTERR))     /*!< Mask  0x00000200 */
+
+#define DCB_DEMCR_VC_BUSERR_OFFSET     (8U)
+#define DCB_DEMCR_VC_BUSERR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_BUSERR))     /*!< Mask  0x00000100 */
+
+#define DCB_DEMCR_VC_STATERR_OFFSET    (7U)
+#define DCB_DEMCR_VC_STATERR_MASK      (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_STATERR))    /*!< Mask  0x00000080 */
+
+#define DCB_DEMCR_VC_CHKERR_OFFSET     (6U)
+#define DCB_DEMCR_VC_CHKERR_MASK       (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_CHKERR))     /*!< Mask  0x00000040 */
+
+#define DCB_DEMCR_VC_NOCPERR_OFFSET    (5U)
+#define DCB_DEMCR_VC_NOCPERR_MASK      (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_NOCPERR))    /*!< Mask  0x00000020 */
+
+#define DCB_DEMCR_VC_MMERR_OFFSET      (4U)
+#define DCB_DEMCR_VC_MMERR_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_MMERR))      /*!< Mask  0x00000010 */
+
+#define DCB_DEMCR_VC_CORERESET_OFFSET  (0U)
+#define DCB_DEMCR_VC_CORERESET_MASK    (0x1UL << REGISTER_FIELD_OFFSET(DCB, DEMCR, VC_CORERESET))  /*!< Mask  0x00000001 */
+
+// Values of data watchpoint and trace (DWT) and instrumentatio trace macrocell (ITM) enable bit
+#define DCB_TRACE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_TRACE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of enable bit to step the processor
+#define DCB_MONITORSTEP_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_MONITORSTEP_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of set or clear pending exception control bit
+#define DCB_MONITOREXCEPTION_CLEAR  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_MONITOREXCEPTION_SET    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of debug monitor enable bit
+#define DCB_MONITOR_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_MONITOR_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a HardFault exception enable bit
+#define DCB_HARDFAULT_NOTRAP  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_HARDFAULT_TRAP    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a HardFault exception enable bit
+#define DCB_HARDFAULT_NOTRAP  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_HARDFAULT_TRAP    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a fault occurring during exception entry or return enable bit
+#define DCB_INTERRUPT_NOTRAP  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_INTERRUPT_TRAP    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a BusFault exception enable bit
+#define DCB_BUSFAULT_NOTRAP  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_BUSFAULT_TRAP    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a UsageFault exception caused by a state information error enable bit
+#define DCB_USAGEFAULT_NOTRAPONSTATEINFOERR  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_USAGEFAULT_TRAPONSTATEINFOERR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a UsageFault exception caused by a checking error enable bit
+#define DCB_USAGEFAULT_NOTRAPONCHECKERR  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_USAGEFAULT_TRAPONCHECKERR    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a UsageFault exception caused by an access to a coprocessor enable bit
+#define DCB_USAGEFAULT_NOTRAPONCOPROCESSORACCESS  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_USAGEFAULT_TRAPONCOPROCESSORACCESS    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of halting debug trap on a MemManage exception enable bit
+#define DCB_MEMMANAGE_NOTRAP  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_MEMMANAGE_TRAP    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of reset vector catch (VC) enable bit
+#define DCB_RSTVECTORCATCH_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define DCB_RSTVECTORCATCH_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 #define DCB_OFFSET 0xDF0UL
 #define DCB_BASE OFFSET_ADDRESS(SCS_BASE, DCB_OFFSET)
