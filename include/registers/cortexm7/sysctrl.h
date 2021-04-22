@@ -24,10 +24,10 @@
  */
 
 typedef struct {
-	   uint32_t reserved0;  /*!< Reserved                            (Offset 0x0)  */
+	   uint32_t reserved0;  /*!< Reserved                             (Offset 0x0)  */
 	RO uint32_t ICTR;        /*!< Interrupt controller type register  (Offset 0x4)  */
 	RW uint32_t ACTLR;       /*!< Auxiliary control register          (Offset 0x8)  */
-	   uint32_t reserved1;  /*!< Reserved                            (Offset 0xC)  */
+	   uint32_t reserved1;  /*!< Reserved                             (Offset 0xC)  */
 } scs_sysctrl_regs;
 
 /*!< System control registers in system control space (SCS) registers */
