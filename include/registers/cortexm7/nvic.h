@@ -24,18 +24,18 @@
  */
 
 typedef struct {
-	RW uint32_t ISER[8U];        /*!< Interrupt set enable rgister      (Offset 0x000 to 0x01C)  */
-	   uint32_t reserved0[24U];  /*!< Reserved                          (Offset 0x020 to 0x07C)  */
-	RW uint32_t ICER[8U];        /*!< Interrupt clear enable register   (Offset 0x080 to 0x09C)  */
-	   uint32_t reserved1[24U];  /*!< Reserved                          (Offset 0x0A0 to 0x0FC)  */
-	RW uint32_t ISPR[8U];        /*!< Interrupt set pending register    (Offset 0x100 to 0x11C)  */
-	   uint32_t reserved2[24U];  /*!< Reserved                          (Offset 0x120 to 0x17C)  */
-	RW uint32_t ICPR[8U];        /*!< Interrupt clear pending register  (Offset 0x180 to 0x19C)  */
-	   uint32_t reserved3[24U];  /*!< Reserved                          (Offset 0x1A0 to 0x1FC)  */
-	RO uint32_t IABR[8U];        /*!< Interrupt active bit register     (Offset 0x200 to 0x21C)  */
-	   uint32_t reserved4[56U];  /*!< Reserved                          (Offset 0x220 to 0x3FC)  */
-	RW uint8_t  IPR[240U];       /*!< Interrupt priority register       (Offset 0x400 to 0x5EC)  */
-	   uint32_t reserved5[56U];  /*!< Reserved                          (Offset 0x5F0 to 0xCFC)  */
+	RW uint32_t ISER[8U];        /*!< Interrupt set enable rgister      (Offset 0x000 to 0x01C) */
+	   uint32_t reserved0[24U];  /*!< Reserved                          (Offset 0x020 to 0x07C) */
+	RW uint32_t ICER[8U];        /*!< Interrupt clear enable register   (Offset 0x080 to 0x09C) */
+	   uint32_t reserved1[24U];  /*!< Reserved                          (Offset 0x0A0 to 0x0FC) */
+	RW uint32_t ISPR[8U];        /*!< Interrupt set pending register    (Offset 0x100 to 0x11C) */
+	   uint32_t reserved2[24U];  /*!< Reserved                          (Offset 0x120 to 0x17C) */
+	RW uint32_t ICPR[8U];        /*!< Interrupt clear pending register  (Offset 0x180 to 0x19C) */
+	   uint32_t reserved3[24U];  /*!< Reserved                          (Offset 0x1A0 to 0x1FC) */
+	RO uint32_t IABR[8U];        /*!< Interrupt active bit register     (Offset 0x200 to 0x21C) */
+	   uint32_t reserved4[56U];  /*!< Reserved                          (Offset 0x220 to 0x3FC) */
+	RW uint8_t  IPR[240U];       /*!< Interrupt priority register       (Offset 0x400 to 0x5EC) */
+	   uint32_t reserved5[56U];  /*!< Reserved                          (Offset 0x5F0 to 0xCFC) */
 } scs_nvic_regs;
 
 /*!< Nested vector interrupt controller (NVIC) registers */

@@ -24,40 +24,40 @@
  */
 
 typedef struct {
-	RO uint32_t CPUID;      /*!< CPU ID register                                   (Offset 0x0)          */
-	RW uint32_t ICSR;       /*!< Interrupt control and state register              (Offset 0x4)          */
-	RW uint32_t VTOR;       /*!< Interrupt vector table offset register            (Offset 0x8)          */
-	RW uint32_t AIRCR;      /*!< Application interrupt and reset control register  (Offset 0xC)          */
-	RW uint32_t SCR;        /*!< System control register                           (Offset 0x10)         */
-	RW uint32_t CCR;        /*!< Configuration and control register                (Offset 0x14)         */
-	RW uint8_t  SHPR[12U];  /*!< System handler priority register                  (Offset 0x18 - 0x20)  */
-	RW uint32_t SHCSR;      /*!< System handler control and state register         (Offset 0x24)         */
-	RW uint32_t CFSR;       /*!< Configurable fault status register                (Offset 0x28)         */
-	RW uint32_t HFSR;       /*!< Hard fault status register                        (Offset 0x2C)         */
-	RW uint32_t DFSR;       /*!< Debug fault status register                       (Offset 0x30)         */
-	RW uint32_t MMFAR;      /*!< MemManage address register                        (Offset 0x34)         */
-	RW uint32_t BFAR;       /*!< Bus fault address register                        (Offset 0x38)         */
-	RW uint32_t AFSR;       /*!< Auxiliary fault status register                   (Offset 0x3C)         */
-	RO uint32_t ID_PFR0;    /*!< Processor feature 0 register                      (Offset 0x40)         */
-	RO uint32_t ID_PFR1;    /*!< Processor feature 1 register                      (Offset 0x44)         */
-	RO uint32_t ID_DFR0;    /*!< Debug feature register                            (Offset 0x48)         */
-	RO uint32_t ID_AFR0;    /*!< Auxiliary feature register                        (Offset 0x4C)         */
-	RO uint32_t ID_MMFR0;   /*!< Model memory feature 0 register                   (Offset 0x50)         */
-	RO uint32_t ID_MMFR1;   /*!< Model memory feature 1 register                   (Offset 0x54)         */
-	RO uint32_t ID_MMFR2;   /*!< Model memory feature 2 register                   (Offset 0x58)         */
-	RO uint32_t ID_MMFR3;   /*!< Model memory feature 3 register                   (Offset 0x5C)         */
-	RO uint32_t ID_ISAR0;   /*!< Instruction set attribute 0 register              (Offset 0x60)         */
-	RO uint32_t ID_ISAR1;   /*!< Instruction set attribute 1 register              (Offset 0x64)         */
-	RO uint32_t ID_ISAR2;   /*!< Instruction set attribute 2 register              (Offset 0x68)         */
-	RO uint32_t ID_ISAR3;   /*!< Instruction set attribute 3 register              (Offset 0x6C)         */
-	RO uint32_t ID_ISAR4;   /*!< Instruction set attribute 4 register              (Offset 0x70)         */
-	RO uint32_t ID_ISAR5;   /*!< Instruction set attribute 5 register              (Offset 0x74)         */
-	RO uint32_t CLIDR;      /*!< Cache level ID register                           (Offset 0x78)         */
-	RO uint32_t CTR;        /*!< Cache type register                               (Offset 0x7C)         */
-	RO uint32_t CCSIDR;     /*!< Cache size ID register                            (Offset 0x80)         */
-	RO uint32_t CCSELR;     /*!< Cache size selection register                     (Offset 0x84)         */
-	RO uint32_t CPACR;      /*!< Coprocessor access control register               (Offset 0x88)         */
-	   uint32_t reserved;   /*!< Reserved                                          (Offset 0x8C)         */
+	RO uint32_t CPUID;      /*!< CPU ID register                                   (Offset 0x0)         */
+	RW uint32_t ICSR;       /*!< Interrupt control and state register              (Offset 0x4)         */
+	RW uint32_t VTOR;       /*!< Interrupt vector table offset register            (Offset 0x8)         */
+	RW uint32_t AIRCR;      /*!< Application interrupt and reset control register  (Offset 0xC)         */
+	RW uint32_t SCR;        /*!< System control register                           (Offset 0x10)        */
+	RW uint32_t CCR;        /*!< Configuration and control register                (Offset 0x14)        */
+	RW uint8_t  SHPR[12U];  /*!< System handler priority register                  (Offset 0x18 - 0x20) */
+	RW uint32_t SHCSR;      /*!< System handler control and state register         (Offset 0x24)        */
+	RW uint32_t CFSR;       /*!< Configurable fault status register                (Offset 0x28)        */
+	RW uint32_t HFSR;       /*!< Hard fault status register                        (Offset 0x2C)        */
+	RW uint32_t DFSR;       /*!< Debug fault status register                       (Offset 0x30)        */
+	RW uint32_t MMFAR;      /*!< MemManage address register                        (Offset 0x34)        */
+	RW uint32_t BFAR;       /*!< Bus fault address register                        (Offset 0x38)        */
+	RW uint32_t AFSR;       /*!< Auxiliary fault status register                   (Offset 0x3C)        */
+	RO uint32_t ID_PFR0;    /*!< Processor feature 0 register                      (Offset 0x40)        */
+	RO uint32_t ID_PFR1;    /*!< Processor feature 1 register                      (Offset 0x44)        */
+	RO uint32_t ID_DFR0;    /*!< Debug feature register                            (Offset 0x48)        */
+	RO uint32_t ID_AFR0;    /*!< Auxiliary feature register                        (Offset 0x4C)        */
+	RO uint32_t ID_MMFR0;   /*!< Model memory feature 0 register                   (Offset 0x50)        */
+	RO uint32_t ID_MMFR1;   /*!< Model memory feature 1 register                   (Offset 0x54)        */
+	RO uint32_t ID_MMFR2;   /*!< Model memory feature 2 register                   (Offset 0x58)        */
+	RO uint32_t ID_MMFR3;   /*!< Model memory feature 3 register                   (Offset 0x5C)        */
+	RO uint32_t ID_ISAR0;   /*!< Instruction set attribute 0 register              (Offset 0x60)        */
+	RO uint32_t ID_ISAR1;   /*!< Instruction set attribute 1 register              (Offset 0x64)        */
+	RO uint32_t ID_ISAR2;   /*!< Instruction set attribute 2 register              (Offset 0x68)        */
+	RO uint32_t ID_ISAR3;   /*!< Instruction set attribute 3 register              (Offset 0x6C)        */
+	RO uint32_t ID_ISAR4;   /*!< Instruction set attribute 4 register              (Offset 0x70)        */
+	RO uint32_t ID_ISAR5;   /*!< Instruction set attribute 5 register              (Offset 0x74)        */
+	RO uint32_t CLIDR;      /*!< Cache level ID register                           (Offset 0x78)        */
+	RO uint32_t CTR;        /*!< Cache type register                               (Offset 0x7C)        */
+	RO uint32_t CCSIDR;     /*!< Cache size ID register                            (Offset 0x80)        */
+	RO uint32_t CCSELR;     /*!< Cache size selection register                     (Offset 0x84)        */
+	RO uint32_t CPACR;      /*!< Coprocessor access control register               (Offset 0x88)        */
+	   uint32_t reserved;   /*!< Reserved                                          (Offset 0x8C)        */
 } scs_scb_regs;
 
 /*!< System control block (SCB) registers in system control space (SCS) registers */

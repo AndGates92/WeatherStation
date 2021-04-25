@@ -24,11 +24,11 @@
  */
 
 typedef struct {
-	RW uint32_t DHCSR;          /*!< Debug halting control and status register     (Offset 0x0)           */
-	WO uint32_t DCRSR;          /*!< Debug core regiser selector register          (Offset 0x4)           */
-	RW uint32_t DCRDR;          /*!< Debug core register data register             (Offset 0x8)           */
-	RW uint32_t DEMCR;          /*!< Debug exception and monitor control register  (Offset 0xC)           */
-	   uint32_t reserved[64U];  /*!< Reserved                                      (Offset 0x10 to 0x8C)  */
+	RW uint32_t DHCSR;          /*!< Debug halting control and status register     (Offset 0x0)          */
+	WO uint32_t DCRSR;          /*!< Debug core regiser selector register          (Offset 0x4)          */
+	RW uint32_t DCRDR;          /*!< Debug core register data register             (Offset 0x8)          */
+	RW uint32_t DEMCR;          /*!< Debug exception and monitor control register  (Offset 0xC)          */
+	   uint32_t reserved[64U];  /*!< Reserved                                      (Offset 0x10 to 0x8C) */
 } scs_dcb_regs;
 
 /*!< Debug control block (DCB) registers in system control space (SCS) registers */

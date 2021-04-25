@@ -24,76 +24,76 @@
  */
 
 typedef struct {
-	RW uint32_t STIM[32U];        /*!< Stimulus port register                      (Offset 0x0 to 0x7C)     */
-	   uint32_t reserved0[864U];  /*!< Reserved                                    (Offset 0x80 to 0xDFC)   */
-	WO uint32_t TER;              /*!< Trace enable register                       (Offset 0xE00)           */
-	   uint32_t reserved1[15U];   /*!< Reserved                                    (Offset 0xE04 to 0xE3C)  */
-	RW uint32_t TPR;              /*!< Trace privilege register                    (Offset 0xE40)           */
-	   uint32_t reserved1[15U];   /*!< Reserved                                    (Offset 0xE44 to 0xE7C)  */
-	RW uint32_t TCR;              /*!< Trace control register                      (Offset 0xE80)           */
-	   uint32_t reserved1[27U];   /*!< Reserved                                    (Offset 0xE84 to 0xEEC)  */
-	RO uint32_t ITATRDY;          /*!< Integration mode: Read ATB ready register   (Offset 0xEF0)           */
-	   uint32_t reserved1;        /*!< Reserved                                    (Offset 0xEF4)           */
-	WO uint32_t ITATVAL;          /*!< Integration mode: Write ATB valid register  (Offset 0xEF8)           */
-	   uint32_t reserved1;        /*!< Reserved                                    (Offset 0xEFC)           */
-	RW uint32_t TCTRL;            /*!< Integration mode control register           (Offset 0xF00)           */
-	   uint32_t reserved1[43U];   /*!< Reserved                                    (Offset 0xF04 to 0xFAC)  */
-	RW uint32_t LAR;              /*!< CoreSight lock access register              (Offset 0xFB0)           */
-	RW uint32_t LSR;              /*!< CoreSight lock status register              (Offset 0xFB4)           */
-	   uint32_t reserved1[6U];    /*!< Reserved                                    (Offset 0xFB8 to 0xFCF)  */
-	RW uint32_t PID4;             /*!< Peripheral identification 4 register        (Offset 0xFD0)           */
-	RW uint32_t PID5;             /*!< Peripheral identification 5 register        (Offset 0xFD4)           */
-	RW uint32_t PID6;             /*!< Peripheral identification 6 register        (Offset 0xFD8)           */
-	RW uint32_t PID7;             /*!< Peripheral identification 7 register        (Offset 0xFDC)           */
-	RW uint32_t PID0;             /*!< Peripheral identification 0 register        (Offset 0xFE0)           */
-	RW uint32_t PID1;             /*!< Peripheral identification 1 register        (Offset 0xFE4)           */
-	RW uint32_t PID2;             /*!< Peripheral identification 2 register        (Offset 0xFE8)           */
-	RW uint32_t PID3;             /*!< Peripheral identification 3 register        (Offset 0xFEC)           */
-	RW uint32_t CID0;             /*!< Component identification 0 register         (Offset 0xFF0)           */
-	RW uint32_t CID1;             /*!< Component identification 1 register         (Offset 0xFF4)           */
-	RW uint32_t CID2;             /*!< Component identification 2 register         (Offset 0xFF8)           */
-	RW uint32_t CID3;             /*!< Component identification 3 register         (Offset 0xFFC)           */
+	RW uint32_t STIM[32U];        /*!< Stimulus port register                      (Offset 0x0 to 0x7C)    */
+	   uint32_t reserved0[864U];  /*!< Reserved                                    (Offset 0x80 to 0xDFC)  */
+	WO uint32_t TER;              /*!< Trace enable register                       (Offset 0xE00)          */
+	   uint32_t reserved1[15U];   /*!< Reserved                                    (Offset 0xE04 to 0xE3C) */
+	RW uint32_t TPR;              /*!< Trace privilege register                    (Offset 0xE40)          */
+	   uint32_t reserved2[15U];   /*!< Reserved                                    (Offset 0xE44 to 0xE7C) */
+	RW uint32_t TCR;              /*!< Trace control register                      (Offset 0xE80)          */
+	   uint32_t reserved3[27U];   /*!< Reserved                                    (Offset 0xE84 to 0xEEC) */
+	RO uint32_t ITATRDY;          /*!< Integration mode: Read ATB ready register   (Offset 0xEF0)          */
+	   uint32_t reserved4;        /*!< Reserved                                    (Offset 0xEF4)          */
+	WO uint32_t ITATVAL;          /*!< Integration mode: Write ATB valid register  (Offset 0xEF8)          */
+	   uint32_t reserved5;        /*!< Reserved                                    (Offset 0xEFC)          */
+	RW uint32_t TCTRL;            /*!< Integration mode control register           (Offset 0xF00)          */
+	   uint32_t reserved6[43U];   /*!< Reserved                                    (Offset 0xF04 to 0xFAC) */
+	RW uint32_t LAR;              /*!< CoreSight lock access register              (Offset 0xFB0)          */
+	RW uint32_t LSR;              /*!< CoreSight lock status register              (Offset 0xFB4)          */
+	   uint32_t reserved7[6U];    /*!< Reserved                                    (Offset 0xFB8 to 0xFCF) */
+	R0 uint32_t PID4;             /*!< Peripheral identification 4 register        (Offset 0xFD0)          */
+	R0 uint32_t PID5;             /*!< Peripheral identification 5 register        (Offset 0xFD4)          */
+	R0 uint32_t PID6;             /*!< Peripheral identification 6 register        (Offset 0xFD8)          */
+	R0 uint32_t PID7;             /*!< Peripheral identification 7 register        (Offset 0xFDC)          */
+	R0 uint32_t PID0;             /*!< Peripheral identification 0 register        (Offset 0xFE0)          */
+	R0 uint32_t PID1;             /*!< Peripheral identification 1 register        (Offset 0xFE4)          */
+	R0 uint32_t PID2;             /*!< Peripheral identification 2 register        (Offset 0xFE8)          */
+	R0 uint32_t PID3;             /*!< Peripheral identification 3 register        (Offset 0xFEC)          */
+	R0 uint32_t CID0;             /*!< Component identification 0 register         (Offset 0xFF0)          */
+	R0 uint32_t CID1;             /*!< Component identification 1 register         (Offset 0xFF4)          */
+	R0 uint32_t CID2;             /*!< Component identification 2 register         (Offset 0xFF8)          */
+	R0 uint32_t CID3;             /*!< Component identification 3 register         (Offset 0xFFC)          */
 } ppb_itm_regs;
 
 /*!< Instrumentation trace macrocell (ITM) registers in private peripheral bus (PPB) registers */
 /*!< Stimulus port register */
 #define ITM_STIM_STIMULUS_OFFSET  (0U)
 #define ITM_STIM_STIMULUS_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Mask  0xFFFFFFFF - write bit assignments */
-#define ITM_STIM_STIMULUS_0       (0x00000001UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000001 */
-#define ITM_STIM_STIMULUS_1       (0x00000002UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000002 */
-#define ITM_STIM_STIMULUS_2       (0x00000004UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000004 */
-#define ITM_STIM_STIMULUS_3       (0x00000008UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000008 */
-#define ITM_STIM_STIMULUS_4       (0x00000010UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000010 */
-#define ITM_STIM_STIMULUS_5       (0x00000020UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000020 */
-#define ITM_STIM_STIMULUS_6       (0x00000040UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000040 */
-#define ITM_STIM_STIMULUS_7       (0x00000080UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000080 */
-#define ITM_STIM_STIMULUS_8       (0x00000100UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000100 */
-#define ITM_STIM_STIMULUS_9       (0x00000200UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000200 */
-#define ITM_STIM_STIMULUS_10      (0x00000400UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000400 */
-#define ITM_STIM_STIMULUS_11      (0x00000800UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000800 */
-#define ITM_STIM_STIMULUS_12      (0x00001000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00001000 */
-#define ITM_STIM_STIMULUS_13      (0x00002000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00002000 */
-#define ITM_STIM_STIMULUS_14      (0x00004000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00004000 */
-#define ITM_STIM_STIMULUS_15      (0x00008000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00008000 */
-#define ITM_STIM_STIMULUS_16      (0x00010000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00010000 */
-#define ITM_STIM_STIMULUS_17      (0x00020000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00020000 */
-#define ITM_STIM_STIMULUS_18      (0x00040000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00040000 */
-#define ITM_STIM_STIMULUS_19      (0x00080000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00080000 */
-#define ITM_STIM_STIMULUS_20      (0x00100000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00100000 */
-#define ITM_STIM_STIMULUS_21      (0x00200000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00200000 */
-#define ITM_STIM_STIMULUS_22      (0x00400000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00400000 */
-#define ITM_STIM_STIMULUS_23      (0x00800000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00800000 */
-#define ITM_STIM_STIMULUS_24      (0x01000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x01000000 */
-#define ITM_STIM_STIMULUS_25      (0x02000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x02000000 */
-#define ITM_STIM_STIMULUS_26      (0x04000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x04000000 */
-#define ITM_STIM_STIMULUS_27      (0x08000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x08000000 */
-#define ITM_STIM_STIMULUS_28      (0x10000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x10000000 */
-#define ITM_STIM_STIMULUS_29      (0x20000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x20000000 */
-#define ITM_STIM_STIMULUS_30      (0x40000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x40000000 */
-#define ITM_STIM_STIMULUS_31      (0x80000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x80000000 */
+#define ITM_STIM_STIMULUS_0       (0x00000001UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000001                         */
+#define ITM_STIM_STIMULUS_1       (0x00000002UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000002                         */
+#define ITM_STIM_STIMULUS_2       (0x00000004UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000004                         */
+#define ITM_STIM_STIMULUS_3       (0x00000008UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000008                         */
+#define ITM_STIM_STIMULUS_4       (0x00000010UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000010                         */
+#define ITM_STIM_STIMULUS_5       (0x00000020UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000020                         */
+#define ITM_STIM_STIMULUS_6       (0x00000040UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000040                         */
+#define ITM_STIM_STIMULUS_7       (0x00000080UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000080                         */
+#define ITM_STIM_STIMULUS_8       (0x00000100UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000100                         */
+#define ITM_STIM_STIMULUS_9       (0x00000200UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000200                         */
+#define ITM_STIM_STIMULUS_10      (0x00000400UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000400                         */
+#define ITM_STIM_STIMULUS_11      (0x00000800UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00000800                         */
+#define ITM_STIM_STIMULUS_12      (0x00001000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00001000                         */
+#define ITM_STIM_STIMULUS_13      (0x00002000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00002000                         */
+#define ITM_STIM_STIMULUS_14      (0x00004000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00004000                         */
+#define ITM_STIM_STIMULUS_15      (0x00008000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00008000                         */
+#define ITM_STIM_STIMULUS_16      (0x00010000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00010000                         */
+#define ITM_STIM_STIMULUS_17      (0x00020000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00020000                         */
+#define ITM_STIM_STIMULUS_18      (0x00040000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00040000                         */
+#define ITM_STIM_STIMULUS_19      (0x00080000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00080000                         */
+#define ITM_STIM_STIMULUS_20      (0x00100000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00100000                         */
+#define ITM_STIM_STIMULUS_21      (0x00200000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00200000                         */
+#define ITM_STIM_STIMULUS_22      (0x00400000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00400000                         */
+#define ITM_STIM_STIMULUS_23      (0x00800000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x00800000                         */
+#define ITM_STIM_STIMULUS_24      (0x01000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x01000000                         */
+#define ITM_STIM_STIMULUS_25      (0x02000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x02000000                         */
+#define ITM_STIM_STIMULUS_26      (0x04000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x04000000                         */
+#define ITM_STIM_STIMULUS_27      (0x08000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x08000000                         */
+#define ITM_STIM_STIMULUS_28      (0x10000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x10000000                         */
+#define ITM_STIM_STIMULUS_29      (0x20000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x20000000                         */
+#define ITM_STIM_STIMULUS_30      (0x40000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x40000000                         */
+#define ITM_STIM_STIMULUS_31      (0x80000000UL << REGISTER_FIELD_OFFSET(ITM, STIM, STIMULUS))  /*!< Value 0x80000000                         */
 
-#define ITM_STIM_FIFOREADY  (0U)
-#define ITM_STIM_FIFOREADY  (0x1UL << REGISTER_FIELD_OFFSET(ITM, STIM, FIFOREADY))  /*!< Mask  0x1 - read bit assignments */
+#define ITM_STIM_FIFOREADY_OFFSET (0U)
+#define ITM_STIM_FIFOREADY_MASK   (0x1UL << REGISTER_FIELD_OFFSET(ITM, STIM, FIFOREADY))        /*!< Mask  0x00000001 - read bit assignments  */
 
 // Values of fifo ready status bit
 #define ITM_FIFO_FULL        (0x0UL)  /*!< Value 0x00000000 */
