@@ -4,7 +4,7 @@
  * @copyright
  * @file dwt.h
  * @author Andrea Gianarda
- * @date 30th of March 2021
+ * @date 25th of April 2021
  * @brief Data watchpoint and trace unit (DWT) registers in private peripheral bus (PPB) register
 */
 
@@ -113,8 +113,8 @@ typedef struct {
 
 #define DWT_CTRL_SYNCTAP_OFFSET     (10U)
 #define DWT_CTRL_SYNCTAP_MASK       (0x3UL << REGISTER_FIELD_OFFSET(DWT, CTRL, SYNCTAP))      /*!< Mask  0x00000C00 */
-#define DWT_CTRL_POSTINIT_0         (0x1UL << REGISTER_FIELD_OFFSET(DWT, CTRL, POSTINIT))     /*!< Value 0x00000400 */
-#define DWT_CTRL_POSTINIT_1         (0x2UL << REGISTER_FIELD_OFFSET(DWT, CTRL, POSTINIT))     /*!< Value 0x00000800 */
+#define DWT_CTRL_SYNCTAP_0          (0x1UL << REGISTER_FIELD_OFFSET(DWT, CTRL, SYNCTAP))      /*!< Value 0x00000400 */
+#define DWT_CTRL_SYNCTAP_1          (0x2UL << REGISTER_FIELD_OFFSET(DWT, CTRL, SYNCTAP))      /*!< Value 0x00000800 */
 
 #define DWT_CTRL_CYCTAP_OFFSET      (9U)
 #define DWT_CTRL_CYCTAP_MASK        (0x1UL << REGISTER_FIELD_OFFSET(DWT, CTRL, CYCTAP))       /*!< Mask  0x00000200 */
@@ -1384,7 +1384,7 @@ typedef struct {
 #define DWT_FOLDCNT_FOLDCNT_6       (0x40UL << REGISTER_FIELD_OFFSET(DWT, FOLDCNT, FOLDCNT))  /*!< Value 0x00000040 */
 #define DWT_FOLDCNT_FOLDCNT_7       (0x80UL << REGISTER_FIELD_OFFSET(DWT, FOLDCNT, FOLDCNT))  /*!< Value 0x00000080 */
 
-/*!< Values of folded instruction overhead counter register */
+// Values of folded instruction overhead counter register
 #define DWT_FOLDINSTRCNT_0    (0x00UL)  /*!< Value 0x00000000 */
 #define DWT_FOLDINSTRCNT_1    (0x01UL)  /*!< Value 0x00000001 */
 #define DWT_FOLDINSTRCNT_2    (0x02UL)  /*!< Value 0x00000002 */
@@ -1714,6 +1714,159 @@ typedef struct {
 #define DWT_COMP_COMP_30      (0x40000000UL << REGISTER_FIELD_OFFSET(DWT, COMP, COMP))  /*!< Value 0x40000000 */
 #define DWT_COMP_COMP_31      (0x80000000UL << REGISTER_FIELD_OFFSET(DWT, COMP, COMP))  /*!< Value 0x80000000 */
 
+/*!< Mask register (Macros valid for registers MASK0, MASK1, MASK2 and MASK3) */
+#define DWT_MASK_MASK_OFFSET  (0U)
+#define DWT_MASK_MASK_MASK    (0x1FUL << REGISTER_FIELD_OFFSET(DWT, MASK, MASK))  /*!< Mask  0x0000001F */
+#define DWT_MASK_MASK_0       (0x01UL << REGISTER_FIELD_OFFSET(DWT, MASK, MASK))  /*!< Value 0x00000001 */
+#define DWT_MASK_MASK_1       (0x02UL << REGISTER_FIELD_OFFSET(DWT, MASK, MASK))  /*!< Value 0x00000002 */
+#define DWT_MASK_MASK_2       (0x04UL << REGISTER_FIELD_OFFSET(DWT, MASK, MASK))  /*!< Value 0x00000004 */
+#define DWT_MASK_MASK_3       (0x08UL << REGISTER_FIELD_OFFSET(DWT, MASK, MASK))  /*!< Value 0x00000008 */
+#define DWT_MASK_MASK_4       (0x10UL << REGISTER_FIELD_OFFSET(DWT, MASK, MASK))  /*!< Value 0x00000010 */
+
+// Values of the register storing the size of the ignore mask applied to the address range matching
+#define DWT_IGNOREMASK_0    (0x00UL)  /*!< Value 0x00000000 */
+#define DWT_IGNOREMASK_1    (0x01UL)  /*!< Value 0x00000001 */
+#define DWT_IGNOREMASK_2    (0x02UL)  /*!< Value 0x00000002 */
+#define DWT_IGNOREMASK_3    (0x03UL)  /*!< Value 0x00000003 */
+#define DWT_IGNOREMASK_4    (0x04UL)  /*!< Value 0x00000004 */
+#define DWT_IGNOREMASK_5    (0x05UL)  /*!< Value 0x00000005 */
+#define DWT_IGNOREMASK_6    (0x06UL)  /*!< Value 0x00000006 */
+#define DWT_IGNOREMASK_7    (0x07UL)  /*!< Value 0x00000007 */
+#define DWT_IGNOREMASK_8    (0x08UL)  /*!< Value 0x00000008 */
+#define DWT_IGNOREMASK_9    (0x09UL)  /*!< Value 0x00000009 */
+#define DWT_IGNOREMASK_10   (0x0AUL)  /*!< Value 0x0000000A */
+#define DWT_IGNOREMASK_11   (0x0BUL)  /*!< Value 0x0000000B */
+#define DWT_IGNOREMASK_12   (0x0CUL)  /*!< Value 0x0000000C */
+#define DWT_IGNOREMASK_13   (0x0DUL)  /*!< Value 0x0000000D */
+#define DWT_IGNOREMASK_14   (0x0EUL)  /*!< Value 0x0000000E */
+#define DWT_IGNOREMASK_15   (0x0FUL)  /*!< Value 0x0000000F */
+#define DWT_IGNOREMASK_16   (0x10UL)  /*!< Value 0x00000010 */
+#define DWT_IGNOREMASK_17   (0x11UL)  /*!< Value 0x00000011 */
+#define DWT_IGNOREMASK_18   (0x12UL)  /*!< Value 0x00000012 */
+#define DWT_IGNOREMASK_19   (0x13UL)  /*!< Value 0x00000013 */
+#define DWT_IGNOREMASK_20   (0x14UL)  /*!< Value 0x00000014 */
+#define DWT_IGNOREMASK_21   (0x15UL)  /*!< Value 0x00000015 */
+#define DWT_IGNOREMASK_22   (0x16UL)  /*!< Value 0x00000016 */
+#define DWT_IGNOREMASK_23   (0x17UL)  /*!< Value 0x00000017 */
+#define DWT_IGNOREMASK_24   (0x18UL)  /*!< Value 0x00000018 */
+#define DWT_IGNOREMASK_25   (0x19UL)  /*!< Value 0x00000019 */
+#define DWT_IGNOREMASK_26   (0x1AUL)  /*!< Value 0x0000001A */
+#define DWT_IGNOREMASK_27   (0x1BUL)  /*!< Value 0x0000001B */
+#define DWT_IGNOREMASK_28   (0x1CUL)  /*!< Value 0x0000001C */
+#define DWT_IGNOREMASK_29   (0x1DUL)  /*!< Value 0x0000001D */
+#define DWT_IGNOREMASK_30   (0x1EUL)  /*!< Value 0x0000001E */
+#define DWT_IGNOREMASK_31   (0x1FUL)  /*!< Value 0x0000001F */
+
+/*!< Comparator function register (Macros valid for registers FUCNTION0, FUNCTION1, FUNCTION2 and FUNCTION3) */
+#define DWT_FUNCTION_MATCHED_OFFSET     (24U)
+#define DWT_FUNCTION_MATCHED_MASK       (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, MATCHED))     /*!< Mask  0x01000000 */
+
+#define DWT_FUNCTION_DATAVADDR1_OFFSET  (16U)
+#define DWT_FUNCTION_DATAVADDR1_MASK    (0xFUL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR1))  /*!< Mask  0x000F0000 */
+#define DWT_FUNCTION_DATAVADDR1_0       (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR1))  /*!< Mask  0x00010000 */
+#define DWT_FUNCTION_DATAVADDR1_1       (0x2UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR1))  /*!< Mask  0x00020000 */
+#define DWT_FUNCTION_DATAVADDR1_2       (0x4UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR1))  /*!< Mask  0x00040000 */
+#define DWT_FUNCTION_DATAVADDR1_3       (0x8UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR1))  /*!< Mask  0x00080000 */
+
+#define DWT_FUNCTION_DATAVADDR0_OFFSET  (12U)
+#define DWT_FUNCTION_DATAVADDR0_MASK    (0xFUL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR0))  /*!< Mask  0x0000F000 */
+#define DWT_FUNCTION_DATAVADDR0_0       (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR0))  /*!< Mask  0x00001000 */
+#define DWT_FUNCTION_DATAVADDR0_1       (0x2UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR0))  /*!< Mask  0x00002000 */
+#define DWT_FUNCTION_DATAVADDR0_2       (0x4UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR0))  /*!< Mask  0x00004000 */
+#define DWT_FUNCTION_DATAVADDR0_3       (0x8UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVADDR0))  /*!< Mask  0x00008000 */
+
+#define DWT_FUNCTION_DATAVSIZE_OFFSET   (10U)
+#define DWT_FUNCTION_DATAVSIZE_MASK     (0x3UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVSIZE))   /*!< Mask  0x00000C00 */
+#define DWT_FUNCTION_DATAVSIZE_0        (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVSIZE))   /*!< Value 0x00000400 */
+#define DWT_FUNCTION_DATAVSIZE_1        (0x2UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVSIZE))   /*!< Value 0x00000800 */
+
+#define DWT_FUNCTION_LINK1ENA_OFFSET    (9U)
+#define DWT_FUNCTION_LINK1ENA_MASK      (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, LINK1ENA))    /*!< Mask  0x00000200 */
+
+#define DWT_FUNCTION_DATAVMATCH_OFFSET  (8U)
+#define DWT_FUNCTION_DATAVMATCH_MASK    (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, DATAVMATCH))  /*!< Mask  0x00000100 */
+
+#define DWT_FUNCTION_CYCMATCH_OFFSET    (7U)
+#define DWT_FUNCTION_CYCMATCH_MASK      (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, CYCMATCH))    /*!< Mask  0x00000080 */
+
+#define DWT_FUNCTION_EMITRANGE_OFFSET   (5U)
+#define DWT_FUNCTION_EMITRANGE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, EMITRANGE))   /*!< Mask  0x00000020 - implemented on FUNCTION0 only */
+
+#define DWT_FUNCTION_FUNCTION_OFFSET    (0U)
+#define DWT_FUNCTION_FUNCTION_MASK      (0xFUL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, FUNCTION))    /*!< Mask  0x0000000F */
+#define DWT_FUNCTION_FUNCTION_0         (0x1UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, FUNCTION))    /*!< Value 0x00000001 */
+#define DWT_FUNCTION_FUNCTION_1         (0x2UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, FUNCTION))    /*!< Value 0x00000002 */
+#define DWT_FUNCTION_FUNCTION_2         (0x4UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, FUNCTION))    /*!< Value 0x00000004 */
+#define DWT_FUNCTION_FUNCTION_3         (0x8UL << REGISTER_FIELD_OFFSET(DWT, FUNCTION, FUNCTION))    /*!< Value 0x00000008 */
+
+// Values of comparator match bit
+#define DWT_COMPFUNCTIONOP_NOTOCCURRED  (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_COMPFUNCTIONOP_OCCURRED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the register storing the comparator number of a comparator for to use linked address comparison (Macros valid for register fields DATAVADDR1 and DATAVADDR0)
+#define DWT_DATAVALUELINKEDADDRCOMP_0    (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_DATAVALUELINKEDADDRCOMP_1    (0x1UL)  /*!< Value 0x00000001 */
+#define DWT_DATAVALUELINKEDADDRCOMP_2    (0x2UL)  /*!< Value 0x00000002 */
+#define DWT_DATAVALUELINKEDADDRCOMP_3    (0x3UL)  /*!< Value 0x00000003 */
+#define DWT_DATAVALUELINKEDADDRCOMP_4    (0x4UL)  /*!< Value 0x00000004 */
+#define DWT_DATAVALUELINKEDADDRCOMP_5    (0x5UL)  /*!< Value 0x00000005 */
+#define DWT_DATAVALUELINKEDADDRCOMP_6    (0x6UL)  /*!< Value 0x00000006 */
+#define DWT_DATAVALUELINKEDADDRCOMP_7    (0x7UL)  /*!< Value 0x00000007 */
+#define DWT_DATAVALUELINKEDADDRCOMP_8    (0x8UL)  /*!< Value 0x00000008 */
+#define DWT_DATAVALUELINKEDADDRCOMP_9    (0x9UL)  /*!< Value 0x00000009 */
+#define DWT_DATAVALUELINKEDADDRCOMP_10   (0xAUL)  /*!< Value 0x0000000A */
+#define DWT_DATAVALUELINKEDADDRCOMP_11   (0xBUL)  /*!< Value 0x0000000B */
+#define DWT_DATAVALUELINKEDADDRCOMP_12   (0xCUL)  /*!< Value 0x0000000C */
+#define DWT_DATAVALUELINKEDADDRCOMP_13   (0xDUL)  /*!< Value 0x0000000D */
+#define DWT_DATAVALUELINKEDADDRCOMP_14   (0xEUL)  /*!< Value 0x0000000E */
+#define DWT_DATAVALUELINKEDADDRCOMP_15   (0xFUL)  /*!< Value 0x0000000F */
+
+// Values of the register storing the size of the required data comparison for data value matching
+#define DWT_DATAVALUEMATCHSIZE_BYTE      (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_DATAVALUEMATCHSIZE_HALFWORD  (0x1UL)  /*!< Value 0x00000001 */
+#define DWT_DATAVALUEMATCHSIZE_WORD      (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of second linked comparator support bit
+#define DWT_SECONDLINKEDCOMP_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_SECONDLINKEDCOMP_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of comparison type select bit
+#define DWT_COMPTYPE_ADDRESS    (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_COMPTYPE_DATAVALUE  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of cycle count comparison enable bit (Macros valid for register FUNCTION0)
+#define DWT_CYCLECOUNTCOMP_DISABLED  (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_CYCLECOUNTCOMP_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of data trace addess packets enable bit
+#define DWT_DATATRACEADDRPACKET_DISABLED  (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_DATATRACEADDRPACKET_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of the register storing the action to be taken on comparator match
+#define DWT_FUNCTION_DISABLED                                   (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_FUNCTION_LINKADDR                                   (0x0UL)  /*!< Value 0x00000000 */
+#define DWT_FUNCTION_RDWRACCESS_DATATRACEPCVALUEPACKET          (0x1UL)  /*!< Value 0x00000001 */
+#define DWT_FUNCTION_RDWRACCESS_DATATRACEADDRPACKET             (0x1UL)  /*!< Value 0x00000001 */
+#define DWT_FUNCTION_RDWRACCESS_DATATRACEDATAVALUEPACKET        (0x2UL)  /*!< Value 0x00000002 */
+#define DWT_FUNCTION_RDWRACCESS_DATATRACEADDRDATAVALUEPACKET_2  (0x2UL)  /*!< Value 0x00000002 */
+#define DWT_FUNCTION_RDWRACCESS_DATATRACEPCDATAVALUEPACKET      (0x3UL)  /*!< Value 0x00000003 */
+#define DWT_FUNCTION_RDWRACCESS_DATATRACEADDRDATAVALUEPACKET_3  (0x3UL)  /*!< Value 0x00000003 */
+#define DWT_FUNCTION_WATCHDOGDEBUGEVT                           (0x4UL)  /*!< Value 0x00000004 */
+#define DWT_FUNCTION_RDACCESS_WATCHDOGDEBUGEVT                  (0x5UL)  /*!< Value 0x00000005 */
+#define DWT_FUNCTION_WRACCESS_WATCHDOGDEBUGEVT                  (0x6UL)  /*!< Value 0x00000006 */
+#define DWT_FUNCTION_RDWRACCESS_WATCHDOGDEBUGEVT                (0x7UL)  /*!< Value 0x00000007 */
+#define DWT_FUNCTION_CMPMATCHEVT                                (0x8UL)  /*!< Value 0x00000008 */
+#define DWT_FUNCTION_RDACCESS_CMPMATCHEVT                       (0x9UL)  /*!< Value 0x00000009 */
+#define DWT_FUNCTION_WRACCESS_CMPMATCHEVT                       (0xAUL)  /*!< Value 0x0000000A */
+#define DWT_FUNCTION_RDWRACCESS_CMPMATCHEVT                     (0xBUL)  /*!< Value 0x0000000B */
+#define DWT_FUNCTION_RDACCESS_DATATRACEDATAVALUEPACKET          (0xCUL)  /*!< Value 0x0000000C */
+#define DWT_FUNCTION_RDACCESS_DATATRACEADDRVALUEPACKET          (0xCUL)  /*!< Value 0x0000000C */
+#define DWT_FUNCTION_RDACCESS_DATATRACEPCDATAVALUEPACKET        (0xDUL)  /*!< Value 0x0000000D */
+#define DWT_FUNCTION_RDACCESS_DATATRACEADDRDATAVALUEPACKET      (0xDUL)  /*!< Value 0x0000000D */
+#define DWT_FUNCTION_WRACCESS_DATATRACEDATAVALUEPACKET          (0xEUL)  /*!< Value 0x0000000E */
+#define DWT_FUNCTION_WRACCESS_DATATRACEADDRVALUEPACKET          (0xEUL)  /*!< Value 0x0000000E */
+#define DWT_FUNCTION_WRACCESS_DATATRACEPCDATAVALUEPACKET        (0xFUL)  /*!< Value 0x0000000F */
+#define DWT_FUNCTION_WRACCESS_DATATRACEADDRDATAVALUEPACKET      (0xFUL)  /*!< Value 0x0000000F */
 
 /*!< CoreSight lock access register */
 #define DWT_LAR_KEY_OFFSET  (0U)
@@ -1932,7 +2085,7 @@ typedef struct {
 #define DWT_PID0_PARTNUM_7       (0x80UL << REGISTER_FIELD_OFFSET(DWT, PID0, PARTNUM))  /*!< Value 0x00000080 */
 
 // Values of part number register
-#define DWT_PID0PARTNUM_ST   (0x01UL)  /*!< Value 0x00000001 */
+#define DWT_PID0PARTNUM_ST   (0x02UL)  /*!< Value 0x00000002 */
 #define DWT_PID0PARTNUM_ARM  (0x75UL)  /*!< Value 0x00000075 */
 
 /*!< Peripheral identitication 1 register */
