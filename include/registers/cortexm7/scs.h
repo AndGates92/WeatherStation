@@ -148,8 +148,8 @@ typedef struct {
 #define SCS_DUALISSUECH0_DIRECTBRANCH_MASK      (0x1UL << REGISTER_FIELD_OFFSET(SCS, DUALISSUECH0, DIRECTBRANCH))    /*!< Mask  0x00010000 */
 
 // Values of enable bits
-#define SCS_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
-#define SCS_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
+#define SCS_ACTLR_ENABLE   (0x0UL)  /*!< Value 0x00000000 */
+#define SCS_ACTLR_DISABLE  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Software trigger interrupt register */
 #define SCS_STIR_INTID_OFFSET  (0U)
