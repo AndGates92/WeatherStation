@@ -24,12 +24,12 @@
  */
 
 typedef struct {
-	RW uint32_t FPCCR;   /*!< Floating point context control register         (Offset 0x00)  */
-	RW uint32_t FPCAR;   /*!< Floating point context address register         (Offset 0x04)  */
-	RW uint32_t FPDSCR;  /*!< Floating point default status control register  (Offset 0x08)  */
-	RO uint32_t MVFR0;   /*!< Media and floating point feature 0 register     (Offset 0x0C)  */
-	RO uint32_t MVFR1;   /*!< Media and floating point feature 1 register     (Offset 0x10)  */
-	RO uint32_t MVFR2;   /*!< Media and floating point feature 2 register     (Offset 0x14)  */
+	RW uint32_t FPCCR;   /*!< Floating point context control register         (Offset 0x00) */
+	RW uint32_t FPCAR;   /*!< Floating point context address register         (Offset 0x04) */
+	RW uint32_t FPDSCR;  /*!< Floating point default status control register  (Offset 0x08) */
+	RO uint32_t MVFR0;   /*!< Media and floating point feature 0 register     (Offset 0x0C) */
+	RO uint32_t MVFR1;   /*!< Media and floating point feature 1 register     (Offset 0x10) */
+	RO uint32_t MVFR2;   /*!< Media and floating point feature 2 register     (Offset 0x14) */
 } scb_fpu_regs;
 
 /*!< Floating point unit (FPU) extension of system control block (SCB) registers */
