@@ -36,7 +36,7 @@ typedef struct {
 	   uint32_t reserved4[56U];  /*!< Reserved                          (Offset 0x220 to 0x3FC) */
 	RW uint8_t  IPR[240U];       /*!< Interrupt priority register       (Offset 0x400 to 0x5EC) */
 	   uint32_t reserved5[56U];  /*!< Reserved                          (Offset 0x5F0 to 0xCFC) */
-} scs_nvic_regs;
+} nvic_regs;
 
 /*!< Nested vector interrupt controller (NVIC) registers */
 /*!< Interrupt set enable register */
@@ -519,7 +519,7 @@ typedef struct {
 
 #define NVIC_OFFSET 0x100UL
 #define NVIC_BASE OFFSET_ADDRESS(SCS_BASE, NVIC_OFFSET)
-#define NVIC REGISTER_PTR(scs_nvic_regs, NVIC_BASE)
+#define NVIC REGISTER_PTR(nvic_regs, NVIC_BASE)
 
 /** @} */ // End of NVIC group
 
