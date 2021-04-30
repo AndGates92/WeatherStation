@@ -1861,6 +1861,18 @@ typedef struct {
 #define SCB_CACHEWRITEALLOCATION_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define SCB_CACHEWRITEALLOCATION_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
+// Values of number of sets register
+#define SCB_CACHENUMSETS_32    (0x01FUL)  /*!< Value 0x0000001F */
+#define SCB_CACHENUMSETS_64    (0x03FUL)  /*!< Value 0x0000003F */
+#define SCB_CACHENUMSETS_128   (0x07FUL)  /*!< Value 0x0000007F */
+#define SCB_CACHENUMSETS_256   (0x0FFUL)  /*!< Value 0x000000FF */
+#define SCB_CACHENUMSETS_512   (0x1FFUL)  /*!< Value 0x000001FF */
+#define SCB_CACHENUMSETS_1024  (0x3FFUL)  /*!< Value 0x000003FF */
+
+// Values of associativity register
+#define SCB_CACHEASSOCIATIVITY_2WAYS  (0x1UL)  /*!< Value 0x00000001 - used for instruction cache */
+#define SCB_CACHEASSOCIATIVITY_4WAYS  (0x3UL)  /*!< Value 0x00000003 - used for data cache */
+
 // Values of line size register
 #define SCB_CACHELINESIZE_4WORDS    (0x0UL)  /*!< Value 0x00000000 */
 #define SCB_CACHELINESIZE_8WORDS    (0x1UL)  /*!< Value 0x00000001 */
