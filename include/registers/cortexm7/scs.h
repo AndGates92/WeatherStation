@@ -155,7 +155,7 @@ typedef struct {
 #define SCS_STIR_INTID_OFFSET  (0U)
 #define SCS_STIR_INTID_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(SCS, STIR, INTID))  /*!< Mask  0x000000FF */
 
-/*!< Available interrupts IDs */
+// Value of interrupts ID register
 #define SCS_INTID_0    (0x00UL)  /*!< Value 0x00000000 */
 #define SCS_INTID_1    (0x01UL)  /*!< Value 0x00000001 */
 #define SCS_INTID_2    (0x02UL)  /*!< Value 0x00000002 */
