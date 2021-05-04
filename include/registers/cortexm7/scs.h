@@ -109,11 +109,11 @@ typedef struct {
 #define SCS_ACTLR_DISFOLD_MASK           (0x1UL << REGISTER_FIELD_OFFSET(SCS, ACTLR, DISFOLD))         /*!< Mask  0x00000004 */
 
 // Values of dual issue bits
-#define SCS_DUALISSUE_VFP              (4U)
-#define SCS_DUALISSUE_INTMACMUL        (3U)
-#define SCS_DUALISSUE_LOADPC           (2U)
-#define SCS_DUALISSUE_INDIRECTBRANCH   (1U)
-#define SCS_DUALISSUE_DIRECTBRANCH     (0U)
+#define SCS_DUALISSUE_VFP             (4U)
+#define SCS_DUALISSUE_INTMACMUL       (3U)
+#define SCS_DUALISSUE_LOADPC          (2U)
+#define SCS_DUALISSUE_INDIRECTBRANCH  (1U)
+#define SCS_DUALISSUE_DIRECTBRANCH    (0U)
 
 // Values of dual issue in channel 1 register bits
 #define SCS_DUALISSUECH1_VPF_OFFSET             (REGISTER_FIELD_OFFSET(SCS, ACTLR, DISDI) + SCS_DUALISSUE_VFP)
