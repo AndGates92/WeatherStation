@@ -1064,7 +1064,6 @@ typedef struct {
 #define MPU_REGION_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define MPU_REGION_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
-
 #define MPU_OFFSET 0xD90UL
 #define MPU_BASE OFFSET_ADDRESS(SCS_BASE, MPU_OFFSET)
 #define MPU REGISTER_PTR(mpu_regs, MPU_BASE)
