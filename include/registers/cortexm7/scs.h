@@ -766,8 +766,6 @@ typedef struct {
 // Values of component identifier in component identification 3 register
 #define SCS_CID3PREAMBLE_VALUE  (0xB1UL)  /*!< Value 0x000000B1 */
 
-#define SCS_OFFSET 0x0UL
-#define SCS_BASE OFFSET_ADDRESS(SCS_BASE, SCS_OFFSET)
 #define SCS REGISTER_PTR(scs_regs, SCS_BASE)
 
 /** @} */ // End of SCS group
