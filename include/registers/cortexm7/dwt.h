@@ -5,7 +5,7 @@
  * @file dwt.h
  * @author Andrea Gianarda
  * @date 25th of April 2021
- * @brief Data watchpoint and trace unit (DWT) registers in private peripheral bus (PPB) register
+ * @brief Data watchpoint and trace (DWT) unit registers in private peripheral bus (PPB) register
 */
 
 #include <stdint.h>
@@ -18,8 +18,8 @@
 
 /**
  *  @ingroup RegisterGroup
- *  @defgroup DWT Data watchpoint and trace unit (DWT) registers in private peripheral bus (PPB)
- *  @brief Data watchpoint and trace unit (DWT) registers in private peripheral bus (PPB) macros and structures
+ *  @defgroup DWT Data watchpoint and trace (DWT) unit registers in private peripheral bus (PPB)
+ *  @brief Data watchpoint and trace (DWT) unit registers in private peripheral bus (PPB) macros and structures
  *  @{
  */
 
@@ -66,7 +66,7 @@ typedef struct {
 	RO uint32_t CID3;             /*!< Component identification 3 register          (Offset 0xFFC)          */
 } ppb_dwt_regs;
 
-/*!< Data watchpoint and trace unit (DWT) registers in private peripheral bus (PPB) registers */
+/*!< Data watchpoint and trace (DWT) unit registers in private peripheral bus (PPB) registers */
 /*!< Control register */
 #define DWT_CTRL_NUMCOMP_OFFSET     (28U)
 #define DWT_CTRL_NUMCOMP_MASK       (0xFUL << REGISTER_FIELD_OFFSET(DWT, CTRL, NUMCOMP))      /*!< Mask  0xF0000000 */
