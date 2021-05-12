@@ -464,27 +464,27 @@ typedef struct {
 #define TPIU_SUPTPM_PATW1_OFFSET    (0U)
 #define TPIU_SUPTPM_PATW1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PATW1))    /*!< Mask  0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 65536
+// Values of register bit stating whether the continuous mode is supported
 #define TPIU_CONTINUOUSMODE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_CONTINUOUSMODE_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 65536
+// Values of register bit stating whether the timed mode is supported
 #define TPIU_TIMEDMODE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_TIMEDMODE_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 256
+// Values of register bit stating whether pattern FF00 is supported
 #define TPIU_PATTERNFF00_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_PATTERNFF00_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 16
+// Values of register bit stating whether pattern AA55 is supported
 #define TPIU_PATTERNAA55_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_PATTERNAA55_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 4
+// Values of register bit stating whether pattern 0000 is supported
 #define TPIU_WALKING0_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_WALKING0_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 2
+// Values of register bit stating whether pattern 1111 is supported
 #define TPIU_WALKING1_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_WALKING1_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
@@ -507,27 +507,27 @@ typedef struct {
 #define TPIU_CURTPM_PATW1_OFFSET    (0U)
 #define TPIU_CURTPM_PATW1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PATW1))    /*!< Mask  0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 65536
+// Values of continuous mode enable bit
 #define TPIU_CONTINUOUSMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_CONTINUOUSMODE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 65536
+// Values of timed mode enable bit
 #define TPIU_TIMEDMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_TIMEDMODE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 256
+// Values of pattern FF00 enable bit
 #define TPIU_PATTERNFF00_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_PATTERNFF00_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 16
+// Values of pattern AA55 enable bit
 #define TPIU_PATTERNAA55_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_PATTERNAA55_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 4
+// Values of pattern 0000 enable bit
 #define TPIU_WALKING0_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_WALKING0_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of register bit enabling the multiplication of the trigger counter by 2
+// Values of pattern 1111 enable bit
 #define TPIU_WALKING1_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_WALKING1_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
@@ -542,6 +542,28 @@ typedef struct {
 #define TPIU_TPRCR_PATTCOUNT_5       (0x20UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000020 */
 #define TPIU_TPRCR_PATTCOUNT_6       (0x40UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000040 */
 #define TPIU_TPRCR_PATTCOUNT_7       (0x80UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000080 */
+
+/*!< Formatter and flush status register */
+#define TPIU_CURTPM_TCPRESENT_OFFSET  (2U)
+#define TPIU_CURTPM_TCPRESENT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, TCPRESENT))  /*!< Mask  0x00000004 */
+
+#define TPIU_CURTPM_FTSTOPPED_OFFSET  (1U)
+#define TPIU_CURTPM_FTSTOPPED_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, FTSTOPPED))  /*!< Mask  0x00000002 */
+
+#define TPIU_CURTPM_FLINPROG_OFFSET   (0U)
+#define TPIU_CURTPM_FLINPROG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, FLINPROG))   /*!< Mask  0x00000001 */
+
+// Values of register bit stating whether TRACECTL output pin is available
+#define TPIU_TRACECTLPIN_NOTPRESENT  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRACECTLPIN_PRESENT     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether the formatter has stopped
+#define TPIU_FORMATTER_NOTSTOPPED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_FORMATTER_STOPPED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether a flush is in progress
+#define TPIU_ATBPORTFLUSH_NOTINPROGRESS  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_ATBPORTFLUSH_PROGRESS       (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< CoreSight lock access register */
 #define TPIU_LAR_KEY_OFFSET  (0U)
