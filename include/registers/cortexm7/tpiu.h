@@ -311,6 +311,238 @@ typedef struct {
 #define TPIU_TRACEPORTWIDTH_NOTSELECTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_TRACEPORTWIDTH_SELECTED     (0x1UL)  /*!< Value 0x00000001 */
 
+/*!< Asynchronous clock prescaler register */
+#define TPIU_ACPR_SWOSCALER_OFFSET  (0U)
+#define TPIU_ACPR_SWOSCALER_MASK    (0xFFFFUL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Mask  0x0000FFFF */
+#define TPIU_ACPR_SWOSCALER_0       (0x0001UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000001 */
+#define TPIU_ACPR_SWOSCALER_1       (0x0002UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000002 */
+#define TPIU_ACPR_SWOSCALER_2       (0x0004UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000004 */
+#define TPIU_ACPR_SWOSCALER_3       (0x0008UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000008 */
+#define TPIU_ACPR_SWOSCALER_4       (0x0010UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000010 */
+#define TPIU_ACPR_SWOSCALER_5       (0x0020UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000020 */
+#define TPIU_ACPR_SWOSCALER_6       (0x0040UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000040 */
+#define TPIU_ACPR_SWOSCALER_7       (0x0080UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000080 */
+#define TPIU_ACPR_SWOSCALER_8       (0x0100UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000100 */
+#define TPIU_ACPR_SWOSCALER_9       (0x0200UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000200 */
+#define TPIU_ACPR_SWOSCALER_10      (0x0400UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000400 */
+#define TPIU_ACPR_SWOSCALER_11      (0x0800UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00000800 */
+#define TPIU_ACPR_SWOSCALER_12      (0x1000UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00001000 */
+#define TPIU_ACPR_SWOSCALER_13      (0x2000UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00002000 */
+#define TPIU_ACPR_SWOSCALER_14      (0x4000UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00004000 */
+#define TPIU_ACPR_SWOSCALER_15      (0x8000UL << REGISTER_FIELD_OFFSET(TPIU, ACPR, SWOSCALER))  /*!< Value 0x00008000 */
+
+/*!< Selected pin protocol register */
+#define TPIU_SPPR_TXMODE_OFFSET  (0U)
+#define TPIU_SPPR_TXMODE_MASK    (0x3UL << REGISTER_FIELD_OFFSET(TPIU, SPPR, TXMODE))  /*!< Mask  0x00000003 */
+
+// Values of register storing the protocol for trace output from the TPIU
+#define TPIU_TRACEOUTPUTPROTOCOL_PARALLELTRACEPORT   (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRACEOUTPUTPROTOCOL_MANCHESTERASYNCSWO  (0x1UL)  /*!< Value 0x00000001 */
+#define TPIU_TRACEOUTPUTPROTOCOL_NRZASYCSWO          (0x2UL)  /*!< Value 0x00000002 */
+
+/*!< Supported trigger modes register */
+#define TPIU_SUPTRGM_TRGRUN_OFFSET   (17U)
+#define TPIU_SUPTRGM_TRGRUN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, TRGRUN))   /*!< Mask  0x00020000 */
+
+#define TPIU_SUPTRGM_TRGD_OFFSET     (16U)
+#define TPIU_SUPTRGM_TRGD_MASK       (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, TRGD))     /*!< Mask  0x00010000 */
+
+#define TPIU_SUPTRGM_TCOUNT8_OFFSET  (8U)
+#define TPIU_SUPTRGM_TCOUNT8_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, TCOUNT8))  /*!< Mask  0x00000100 */
+
+#define TPIU_SUPTRGM_MULT64K_OFFSET  (4U)
+#define TPIU_SUPTRGM_MULT64K_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, MULT64K))  /*!< Mask  0x00000010 */
+
+#define TPIU_SUPTRGM_MULT256_OFFSET  (3U)
+#define TPIU_SUPTRGM_MULT256_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, MULT256))  /*!< Mask  0x00000008 */
+
+#define TPIU_SUPTRGM_MULT16_OFFSET   (2U)
+#define TPIU_SUPTRGM_MULT16_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, MULT16))   /*!< Mask  0x00000004 */
+
+#define TPIU_SUPTRGM_MULT4_OFFSET    (1U)
+#define TPIU_SUPTRGM_MULT4_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, MULT4))    /*!< Mask  0x00000002 */
+
+#define TPIU_SUPTRGM_MULT2_OFFSET    (0U)
+#define TPIU_SUPTRGM_MULT2_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTRGM, MULT2))    /*!< Mask  0x00000001 */
+
+// Values of counter trigger running bit
+#define TPIU_TRIGGERCNT_NOTTRIGGEDORCNT0     (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_TRIGGEREDANDCNTNOT0  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of counter triggered bit
+#define TPIU_TRIGGERCNT_NOTTRIGGED        (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_TRIGGEREDANDCNT0  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether the 8-bit counter is implemented
+#define TPIU_8BITTRIGGERCNT_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_8BITTRIGGERCNT_IMPLEMENTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether it is supported to multiply the trigger counter by 65536
+#define TPIU_TRIGGERCNT_MULTBY64KNOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY64KSUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether it is supported to multiply the trigger counter by 256
+#define TPIU_TRIGGERCNT_MULTBY256NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY256SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether it is supported to multiply the trigger counter by 16
+#define TPIU_TRIGGERCNT_MULTBY16NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY16SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether it is supported to multiply the trigger counter by 4
+#define TPIU_TRIGGERCNT_MULTBY4NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY4SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit stating whether it is supported to multiply the trigger counter by 2
+#define TPIU_TRIGGERCNT_MULTBY2NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY2SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Trigger counter value register */
+#define TPIU_TRGCNT_TRIGCOUNT_OFFSET  (0U)
+#define TPIU_TRGCNT_TRIGCOUNT_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Mask  0x000000FF */
+#define TPIU_TRGCNT_TRIGCOUNT_0       (0x01UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000001 */
+#define TPIU_TRGCNT_TRIGCOUNT_1       (0x02UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000002 */
+#define TPIU_TRGCNT_TRIGCOUNT_2       (0x04UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000004 */
+#define TPIU_TRGCNT_TRIGCOUNT_3       (0x08UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000008 */
+#define TPIU_TRGCNT_TRIGCOUNT_4       (0x10UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000010 */
+#define TPIU_TRGCNT_TRIGCOUNT_5       (0x20UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000020 */
+#define TPIU_TRGCNT_TRIGCOUNT_6       (0x40UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000040 */
+#define TPIU_TRGCNT_TRIGCOUNT_7       (0x80UL << REGISTER_FIELD_OFFSET(TPIU, TRGCNT, TRIGCOUNT))  /*!< Value 0x00000080 */
+
+/*!< Trigger multiplier register */
+#define TPIU_TRGMULT_MULT64K_OFFSET  (4U)
+#define TPIU_TRGMULT_MULT64K_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, TRGMULT, MULT64K))  /*!< Mask  0x00000010 */
+
+#define TPIU_TRGMULT_MULT256_OFFSET  (3U)
+#define TPIU_TRGMULT_MULT256_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, TRGMULT, MULT256))  /*!< Mask  0x00000008 */
+
+#define TPIU_TRGMULT_MULT16_OFFSET   (2U)
+#define TPIU_TRGMULT_MULT16_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, TRGMULT, MULT16))   /*!< Mask  0x00000004 */
+
+#define TPIU_TRGMULT_MULT4_OFFSET    (1U)
+#define TPIU_TRGMULT_MULT4_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, TRGMULT, MULT4))    /*!< Mask  0x00000002 */
+
+#define TPIU_TRGMULT_MULT2_OFFSET    (0U)
+#define TPIU_TRGMULT_MULT2_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, TRGMULT, MULT2))    /*!< Mask  0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 65536
+#define TPIU_TRIGGERCNT_MULTBY64KDISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY64KENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 256
+#define TPIU_TRIGGERCNT_MULTBY256DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY256ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 16
+#define TPIU_TRIGGERCNT_MULTBY16DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY16ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 4
+#define TPIU_TRIGGERCNT_MULTBY4DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY4ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 2
+#define TPIU_TRIGGERCNT_MULTBY2DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERCNT_MULTBY2ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Supported test patterns/modes register */
+#define TPIU_SUPTPM_PCONTEN_OFFSET  (17U)
+#define TPIU_SUPTPM_PCONTEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PCONTEN))  /*!< Mask  0x00020000 */
+
+#define TPIU_SUPTPM_PTIMEEN_OFFSET  (16U)
+#define TPIU_SUPTPM_PTIMEEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PTIMEEN))  /*!< Mask  0x00010000 */
+
+#define TPIU_SUPTPM_PATF0_OFFSET    (3U)
+#define TPIU_SUPTPM_PATF0_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PATF0))    /*!< Mask  0x00000008 */
+
+#define TPIU_SUPTPM_PATA5_OFFSET    (2U)
+#define TPIU_SUPTPM_PATA5_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PATA5))    /*!< Mask  0x00000004 */
+
+#define TPIU_SUPTPM_PATW0_OFFSET    (1U)
+#define TPIU_SUPTPM_PATW0_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PATW0))    /*!< Mask  0x00000002 */
+
+#define TPIU_SUPTPM_PATW1_OFFSET    (0U)
+#define TPIU_SUPTPM_PATW1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, SUPTPM, PATW1))    /*!< Mask  0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 65536
+#define TPIU_CONTINUOUSMODE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_CONTINUOUSMODE_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 65536
+#define TPIU_TIMEDMODE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TIMEDMODE_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 256
+#define TPIU_PATTERNFF00_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_PATTERNFF00_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 16
+#define TPIU_PATTERNAA55_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_PATTERNAA55_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 4
+#define TPIU_WALKING0_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_WALKING0_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 2
+#define TPIU_WALKING1_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_WALKING1_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Current test patterns/modes register */
+#define TPIU_CURTPM_PCONTEN_OFFSET  (17U)
+#define TPIU_CURTPM_PCONTEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PCONTEN))  /*!< Mask  0x00020000 */
+
+#define TPIU_CURTPM_PTIMEEN_OFFSET  (16U)
+#define TPIU_CURTPM_PTIMEEN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PTIMEEN))  /*!< Mask  0x00010000 */
+
+#define TPIU_CURTPM_PATF0_OFFSET    (3U)
+#define TPIU_CURTPM_PATF0_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PATF0))    /*!< Mask  0x00000008 */
+
+#define TPIU_CURTPM_PATA5_OFFSET    (2U)
+#define TPIU_CURTPM_PATA5_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PATA5))    /*!< Mask  0x00000004 */
+
+#define TPIU_CURTPM_PATW0_OFFSET    (1U)
+#define TPIU_CURTPM_PATW0_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PATW0))    /*!< Mask  0x00000002 */
+
+#define TPIU_CURTPM_PATW1_OFFSET    (0U)
+#define TPIU_CURTPM_PATW1_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, PATW1))    /*!< Mask  0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 65536
+#define TPIU_CONTINUOUSMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_CONTINUOUSMODE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 65536
+#define TPIU_TIMEDMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TIMEDMODE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 256
+#define TPIU_PATTERNFF00_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_PATTERNFF00_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 16
+#define TPIU_PATTERNAA55_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_PATTERNAA55_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 4
+#define TPIU_WALKING0_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_WALKING0_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling the multiplication of the trigger counter by 2
+#define TPIU_WALKING1_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_WALKING1_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Test pattern repeat counter register */
+#define TPIU_TPRCR_PATTCOUNT_OFFSET  (0U)
+#define TPIU_TPRCR_PATTCOUNT_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Mask  0x000000FF */
+#define TPIU_TPRCR_PATTCOUNT_0       (0x01UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000001 */
+#define TPIU_TPRCR_PATTCOUNT_1       (0x02UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000002 */
+#define TPIU_TPRCR_PATTCOUNT_2       (0x04UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000004 */
+#define TPIU_TPRCR_PATTCOUNT_3       (0x08UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000008 */
+#define TPIU_TPRCR_PATTCOUNT_4       (0x10UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000010 */
+#define TPIU_TPRCR_PATTCOUNT_5       (0x20UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000020 */
+#define TPIU_TPRCR_PATTCOUNT_6       (0x40UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000040 */
+#define TPIU_TPRCR_PATTCOUNT_7       (0x80UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000080 */
+
 /*!< CoreSight lock access register */
 #define TPIU_LAR_KEY_OFFSET  (0U)
 #define TPIU_LAR_KEY_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(TPIU, LAR, KEY))  /*!< Mask  0xFFFFFFFF */
