@@ -24,46 +24,58 @@
  */
 
 typedef struct {
-	RO uint32_t SSPSR;           /*!< Supported parallel port sizes register     (Offset 0x0)            */
-	RW uint32_t CSPSR;           /*!< Current parallel port size register        (Offset 0x4)            */
-	   uint32_t reserved0[2U];   /*!< Reserved                                   (Offset 0x8 to 0xC)     */
-	RW uint32_t ACPR;            /*!< Asynchronous clock prescaler register      (Offset 0x10)           */
-	   uint32_t reserved1[55U];  /*!< Reserved                                   (Offset 0x14 to 0xEC)   */
-	RW uint32_t SPPR;            /*!< Select pin protocol register               (Offset 0xF0)           */
-	   uint32_t reserved2[3U];   /*!< Reserved                                   (Offset 0xF4 to 0xFC)   */
-	RO uint32_t SUPTRGM;         /*!< Supported trigger modes register           (Offset 0x100)          */
-	RW uint32_t TRGCNT;          /*!< Trigger counter value register             (Offset 0x104)          */
-	RW uint32_t TRGMUL;          /*!< Trigger multiplier register                (Offset 0x108)          */
-	   uint32_t reserved3[61U];  /*!< Reserved                                   (Offset 0x10C to 0x1FC) */
-	RO uint32_t SUPTMP;          /*!< Supported test patterns/modes register     (Offset 0x200)          */
-	RW uint32_t CURTMP;          /*!< Current test patterns/modes register       (Offset 0x204)          */
-	RW uint32_t TPRCR;           /*!< Test pattern repeat counter register       (Offset 0x208)          */
-	   uint32_t reserved4[61U];  /*!< Reserved                                   (Offset 0x20C to 0x2FC) */
-	RO uint32_t FFSR;            /*!< Formatter and flush status register        (Offset 0x300)          */
-	RW uint32_t FFCR;            /*!< Formatter and flush control register       (Offset 0x304)          */
-	RW uint32_t FSCR;            /*!< Formatter sychronization counter register  (Offset 0x308)          */
-	   uint32_t reserved5[61U];  /*!< Reserved                                   (Offset 0x30C to 0xF9C) */
-	RW uint32_t CLAIMSET;        /*!< Claim tag set register                     (Offset 0xFA0)          */
-	RW uint32_t CLAIMCLR;        /*!< Claim tag clear register                   (Offset 0xFA4)          */
-	   uint32_t reserved6[2U];   /*!< Reserved                                   (Offset 0xFA8 to 0xFAC) */
-	RO uint32_t LAR;             /*!< CoreSight lock access register             (Offset 0xFB0)          */
-	RO uint32_t LSR;             /*!< CoreSight lock status register             (Offset 0xFB4)          */
-	RO uint32_t AUTHSTAT;        /*!< Authentication status register             (Offset 0xFB8)          */
-	   uint32_t reserved7[3U];   /*!< Reserved                                   (Offset 0xFBC to 0xFC4) */
-	RO uint32_t DEVID;           /*!< Device configuration register              (Offset 0xFC8)          */
-	RO uint32_t TYPE;            /*!< Device type register                       (Offset 0xFCC)          */
-	RO uint32_t PID4;            /*!< Peripheral identification 4 register       (Offset 0xFD0)          */
-	RO uint32_t PID5;            /*!< Peripheral identification 5 register       (Offset 0xFD4)          */
-	RO uint32_t PID6;            /*!< Peripheral identification 6 register       (Offset 0xFD8)          */
-	RO uint32_t PID7;            /*!< Peripheral identification 7 register       (Offset 0xFDC)          */
-	RO uint32_t PID0;            /*!< Peripheral identification 0 register       (Offset 0xFE0)          */
-	RO uint32_t PID1;            /*!< Peripheral identification 1 register       (Offset 0xFE4)          */
-	RO uint32_t PID2;            /*!< Peripheral identification 2 register       (Offset 0xFE8)          */
-	RO uint32_t PID3;            /*!< Peripheral identification 3 register       (Offset 0xFEC)          */
-	RO uint32_t CID0;            /*!< Component identification 0 register        (Offset 0xFF0)          */
-	RO uint32_t CID1;            /*!< Component identification 1 register        (Offset 0xFF4)          */
-	RO uint32_t CID2;            /*!< Component identification 2 register        (Offset 0xFF8)          */
-	RO uint32_t CID3;            /*!< Component identification 3 register        (Offset 0xFFC)          */
+	RO uint32_t SSPSR;            /*!< Supported parallel port sizes register                         (Offset 0x0)            */
+	RW uint32_t CSPSR;            /*!< Current parallel port size register                            (Offset 0x4)            */
+	   uint32_t reserved0[2U];    /*!< Reserved                                                       (Offset 0x8 to 0xC)     */
+	RW uint32_t ACPR;             /*!< Asynchronous clock prescaler register                          (Offset 0x10)           */
+	   uint32_t reserved1[55U];   /*!< Reserved                                                       (Offset 0x14 to 0xEC)   */
+	RW uint32_t SPPR;             /*!< Select pin protocol register                                   (Offset 0xF0)           */
+	   uint32_t reserved2[3U];    /*!< Reserved                                                       (Offset 0xF4 to 0xFC)   */
+	RO uint32_t SUPTRGM;          /*!< Supported trigger modes register                               (Offset 0x100)          */
+	RW uint32_t TRGCNT;           /*!< Trigger counter value register                                 (Offset 0x104)          */
+	RW uint32_t TRGMUL;           /*!< Trigger multiplier register                                    (Offset 0x108)          */
+	   uint32_t reserved3[61U];   /*!< Reserved                                                       (Offset 0x10C to 0x1FC) */
+	RO uint32_t SUPTMP;           /*!< Supported test patterns/modes register                         (Offset 0x200)          */
+	RW uint32_t CURTMP;           /*!< Current test patterns/modes register                           (Offset 0x204)          */
+	RW uint32_t TPRCR;            /*!< Test pattern repeat counter register                           (Offset 0x208)          */
+	   uint32_t reserved4[61U];   /*!< Reserved                                                       (Offset 0x20C to 0x2FC) */
+	RO uint32_t FFSR;             /*!< Formatter and flush status register                            (Offset 0x300)          */
+	RW uint32_t FFCR;             /*!< Formatter and flush control register                           (Offset 0x304)          */
+	RW uint32_t FSCR;             /*!< Formatter sychronization counter register                      (Offset 0x308)          */
+	   uint32_t reserved5[61U];   /*!< Reserved                                                       (Offset 0x30C to 0x3FC) */
+	RO uint32_t INEXCTL;          /*!< External control (EXTCTL) input port register                  (Offset 0x400)          */
+	RW uint32_t OUTEXCTL;         /*!< External control (EXTCTL) output port register                 (Offset 0x404)          */
+	   uint32_t reserved6[694U];  /*!< Reserved                                                       (Offset 0x40C to 0xEE0) */
+	WO uint32_t ITTRFLINACK;      /*!< Integration test trigger in and flush in acknowledge register  (Offset 0xEE4)          */
+	RO uint32_t ITTRFLIN;         /*!< Integration test trigger in and flush in register              (Offset 0xEE8)          */
+	RO uint32_t ITATBDATA0;       /*!< Integration test ATB data 0 register                           (Offset 0xEEC)          */
+	WO uint32_t ITATBCTR2;        /*!< Integration test ATB control 2 register                        (Offset 0xEF0)          */
+	RO uint32_t ITATBCTR1;        /*!< Integration test ATB control 1 register                        (Offset 0xEF4)          */
+	RO uint32_t ITATBCTR0;        /*!< Integration test ATB control 0 register                        (Offset 0xEF8)          */
+	   uint32_t reserved7;        /*!< Reserved                                                       (Offset 0xEFC)          */
+	RW uint32_t ITCTRL;           /*!< Integration mode control register                              (Offset 0xF00)          */
+	   uint32_t reserved8[39U];   /*!< Reserved                                                       (Offset 0xF04 to 0xF9C) */
+	RW uint32_t CLAIMSET;         /*!< Claim tag set register                                         (Offset 0xFA0)          */
+	RW uint32_t CLAIMCLR;         /*!< Claim tag clear register                                       (Offset 0xFA4)          */
+	   uint32_t reserved9[2U];    /*!< Reserved                                                       (Offset 0xFA8 to 0xFAC) */
+	RO uint32_t LAR;              /*!< CoreSight lock access register                                 (Offset 0xFB0)          */
+	RO uint32_t LSR;              /*!< CoreSight lock status register                                 (Offset 0xFB4)          */
+	RO uint32_t AUTHSTAT;         /*!< Authentication status register                                 (Offset 0xFB8)          */
+	   uint32_t reserved10[3U];   /*!< Reserved                                                       (Offset 0xFBC to 0xFC4) */
+	RO uint32_t DEVID;            /*!< Device configuration register                                  (Offset 0xFC8)          */
+	RO uint32_t DEVTYPE;          /*!< Device type register                                           (Offset 0xFCC)          */
+	RO uint32_t PID4;             /*!< Peripheral identification 4 register                           (Offset 0xFD0)          */
+	RO uint32_t PID5;             /*!< Peripheral identification 5 register                           (Offset 0xFD4)          */
+	RO uint32_t PID6;             /*!< Peripheral identification 6 register                           (Offset 0xFD8)          */
+	RO uint32_t PID7;             /*!< Peripheral identification 7 register                           (Offset 0xFDC)          */
+	RO uint32_t PID0;             /*!< Peripheral identification 0 register                           (Offset 0xFE0)          */
+	RO uint32_t PID1;             /*!< Peripheral identification 1 register                           (Offset 0xFE4)          */
+	RO uint32_t PID2;             /*!< Peripheral identification 2 register                           (Offset 0xFE8)          */
+	RO uint32_t PID3;             /*!< Peripheral identification 3 register                           (Offset 0xFEC)          */
+	RO uint32_t CID0;             /*!< Component identification 0 register                            (Offset 0xFF0)          */
+	RO uint32_t CID1;             /*!< Component identification 1 register                            (Offset 0xFF4)          */
+	RO uint32_t CID2;             /*!< Component identification 2 register                            (Offset 0xFF8)          */
+	RO uint32_t CID3;             /*!< Component identification 3 register                            (Offset 0xFFC)          */
 } tpiu_regs;
 
 /*!< Trace port interface unit (TPIU) registers in private peripheral bus (PPB) registers */
@@ -544,14 +556,14 @@ typedef struct {
 #define TPIU_TPRCR_PATTCOUNT_7       (0x80UL << REGISTER_FIELD_OFFSET(TPIU, TPRCR, PATTCOUNT))  /*!< Value 0x00000080 */
 
 /*!< Formatter and flush status register */
-#define TPIU_CURTPM_TCPRESENT_OFFSET  (2U)
-#define TPIU_CURTPM_TCPRESENT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, TCPRESENT))  /*!< Mask  0x00000004 */
+#define TPIU_FFSR_TCPRESENT_OFFSET  (2U)
+#define TPIU_FFSR_TCPRESENT_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, TCPRESENT))  /*!< Mask  0x00000004 */
 
-#define TPIU_CURTPM_FTSTOPPED_OFFSET  (1U)
-#define TPIU_CURTPM_FTSTOPPED_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, FTSTOPPED))  /*!< Mask  0x00000002 */
+#define TPIU_FFSR_FTSTOPPED_OFFSET  (1U)
+#define TPIU_FFSR_FTSTOPPED_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, FTSTOPPED))  /*!< Mask  0x00000002 */
 
-#define TPIU_CURTPM_FLINPROG_OFFSET   (0U)
-#define TPIU_CURTPM_FLINPROG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CURTPM, FLINPROG))   /*!< Mask  0x00000001 */
+#define TPIU_FFSR_FLINPROG_OFFSET   (0U)
+#define TPIU_FFSR_FLINPROG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, FLINPROG))   /*!< Mask  0x00000001 */
 
 // Values of register bit stating whether TRACECTL output pin is available
 #define TPIU_TRACECTLPIN_NOTPRESENT  (0x0UL)  /*!< Value 0x00000000 */
@@ -564,6 +576,234 @@ typedef struct {
 // Values of register bit stating whether a flush is in progress
 #define TPIU_ATBPORTFLUSH_NOTINPROGRESS  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_ATBPORTFLUSH_PROGRESS       (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Formatter and flush status register */
+#define TPIU_FFSR_STOPTRIG_OFFSET  (13U)
+#define TPIU_FFSR_STOPTRIG_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, STOPTRIG))  /*!< Mask  0x00002000 */
+
+#define TPIU_FFSR_STOPFL_OFFSET    (12U)
+#define TPIU_FFSR_STOPFL_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, STOPFL))    /*!< Mask  0x00001000 */
+
+#define TPIU_FFSR_TRIGFL_OFFSET    (10U)
+#define TPIU_FFSR_TRIGFL_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, TRIGFL))    /*!< Mask  0x00000400 */
+
+#define TPIU_FFSR_TRIGEVT_OFFSET   (9U)
+#define TPIU_FFSR_TRIGEVT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, TRIGEVT))   /*!< Mask  0x00000200 */
+
+#define TPIU_FFSR_TRIGIN_OFFSET    (8U)
+#define TPIU_FFSR_TRIGIN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, TRIGIN))    /*!< Mask  0x00000100 */
+
+#define TPIU_FFSR_FONMAN_OFFSET    (6U)
+#define TPIU_FFSR_FONMAN_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, FONMAN))    /*!< Mask  0x00000040 */
+
+#define TPIU_FFSR_FONTRIG_OFFSET   (5U)
+#define TPIU_FFSR_FONTRIG_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, FONTRIG))   /*!< Mask  0x00000020 */
+
+#define TPIU_FFSR_FONFLIN_OFFSET   (4U)
+#define TPIU_FFSR_FONFLIN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, FONFLIN))   /*!< Mask  0x00000010 */
+
+#define TPIU_FFSR_ENFCONT_OFFSET   (1U)
+#define TPIU_FFSR_ENFCONT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, ENFCONT))   /*!< Mask  0x00000002 */
+
+#define TPIU_FFSR_ENFTC_OFFSET     (0U)
+#define TPIU_FFSR_ENFTC_MASK       (0x1UL << REGISTER_FIELD_OFFSET(TPIU, FFSR, ENFTC))     /*!< Mask  0x00000001 */
+
+// Values of stop on trigger event enable bit
+#define TPIU_STOPONTRIGGEREVENT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_STOPONTRIGGEREVENT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of stop on flush enable bit
+#define TPIU_STOPONFLUSH_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_STOPONFLUSH_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of trigger on flush enable bit
+#define TPIU_TRIGGERONFLUSH_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERONFLUSH_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of trigger on trigger event enable bit
+#define TPIU_TRIGGERONTRIGGEREVENT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERONTRIGGEREVENT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit to enable trigger in the trace stream when the TRIGIN input from system CTI is asserted
+#define TPIU_TRIGGERONTRIGCTISYSINPUT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_TRIGGERONTRIGCTISYSINPUT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of manual flush generate bit
+#define TPIU_MANUALFLUSH_NOTTRIGGERED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_MANUALFLUSH_TRIGGERED     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of flush on trigger event enable bit
+#define TPIU_FLUSHONTRIGGEREVENT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_FLUSHONTRIGGEREVENT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit to enable flush the trace if the FLUSHIN input from system CTI is asserted
+#define TPIU_FLUSHONFLUSHCTISYSINPUT_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_FLUSHONFLUSHCTISYSINPUT_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of continuous formatting enable bit
+#define TPIU_CONTINUOUSFORMATTING_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_CONTINUOUSFORMATTING_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register bit enabling embedding of triggers in formatted trace
+#define TPIU_FORMATTING_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_FORMATTING_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< Formatter synchronization counter register */
+#define TPIU_FSCR_CYCCOUNT_OFFSET  (0U)
+#define TPIU_FSCR_CYCCOUNT_MASK    (0xFFFUL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Mask  0x00000FFF */
+#define TPIU_FSCR_CYCCOUNT_0       (0x001UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000001 */
+#define TPIU_FSCR_CYCCOUNT_1       (0x002UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000002 */
+#define TPIU_FSCR_CYCCOUNT_2       (0x004UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000004 */
+#define TPIU_FSCR_CYCCOUNT_3       (0x008UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000008 */
+#define TPIU_FSCR_CYCCOUNT_4       (0x010UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000010 */
+#define TPIU_FSCR_CYCCOUNT_5       (0x020UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000020 */
+#define TPIU_FSCR_CYCCOUNT_6       (0x040UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000040 */
+#define TPIU_FSCR_CYCCOUNT_7       (0x080UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000080 */
+#define TPIU_FSCR_CYCCOUNT_8       (0x100UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000100 */
+#define TPIU_FSCR_CYCCOUNT_9       (0x200UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000200 */
+#define TPIU_FSCR_CYCCOUNT_10      (0x400UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000400 */
+#define TPIU_FSCR_CYCCOUNT_11      (0x800UL << REGISTER_FIELD_OFFSET(TPIU, FSCR, CYCCOUNT))  /*!< Value 0x00000800 */
+
+/*!< External control (EXTCTL) input port */
+#define TPIU_INEXTCTL_PORT_OFFSET  (0U)
+#define TPIU_INEXTCTL_PORT_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Mask  0xFFFFFFFF */
+#define TPIU_INEXTCTL_PORT_0       (0x00000001UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000001 */
+#define TPIU_INEXTCTL_PORT_1       (0x00000002UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000002 */
+#define TPIU_INEXTCTL_PORT_2       (0x00000004UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000004 */
+#define TPIU_INEXTCTL_PORT_3       (0x00000008UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000008 */
+#define TPIU_INEXTCTL_PORT_4       (0x00000010UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000010 */
+#define TPIU_INEXTCTL_PORT_5       (0x00000020UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000020 */
+#define TPIU_INEXTCTL_PORT_6       (0x00000040UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000040 */
+#define TPIU_INEXTCTL_PORT_7       (0x00000080UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000080 */
+#define TPIU_INEXTCTL_PORT_8       (0x00000100UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000100 */
+#define TPIU_INEXTCTL_PORT_9       (0x00000200UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000200 */
+#define TPIU_INEXTCTL_PORT_10      (0x00000400UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000400 */
+#define TPIU_INEXTCTL_PORT_11      (0x00000800UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00000800 */
+#define TPIU_INEXTCTL_PORT_12      (0x00001000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00001000 */
+#define TPIU_INEXTCTL_PORT_13      (0x00002000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00002000 */
+#define TPIU_INEXTCTL_PORT_14      (0x00004000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00004000 */
+#define TPIU_INEXTCTL_PORT_15      (0x00008000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00008000 */
+#define TPIU_INEXTCTL_PORT_16      (0x00010000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00010000 */
+#define TPIU_INEXTCTL_PORT_17      (0x00020000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00020000 */
+#define TPIU_INEXTCTL_PORT_18      (0x00040000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00040000 */
+#define TPIU_INEXTCTL_PORT_19      (0x00080000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00080000 */
+#define TPIU_INEXTCTL_PORT_20      (0x00100000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00100000 */
+#define TPIU_INEXTCTL_PORT_21      (0x00200000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00200000 */
+#define TPIU_INEXTCTL_PORT_22      (0x00400000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00400000 */
+#define TPIU_INEXTCTL_PORT_23      (0x00800000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x00800000 */
+#define TPIU_INEXTCTL_PORT_24      (0x01000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x01000000 */
+#define TPIU_INEXTCTL_PORT_25      (0x02000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x02000000 */
+#define TPIU_INEXTCTL_PORT_26      (0x04000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x04000000 */
+#define TPIU_INEXTCTL_PORT_27      (0x08000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x08000000 */
+#define TPIU_INEXTCTL_PORT_28      (0x10000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x10000000 */
+#define TPIU_INEXTCTL_PORT_29      (0x20000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x20000000 */
+#define TPIU_INEXTCTL_PORT_30      (0x40000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x40000000 */
+#define TPIU_INEXTCTL_PORT_31      (0x80000000UL << REGISTER_FIELD_OFFSET(TPIU, INEXTCTL, PORT))  /*!< Value 0x80000000 */
+
+/*!< External control (EXTCTL) output port */
+#define TPIU_OUTEXTCTL_PORT_OFFSET  (0U)
+#define TPIU_OUTEXTCTL_PORT_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Mask  0xFFFFFFFF */
+#define TPIU_OUTEXTCTL_PORT_0       (0x00000001UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000001 */
+#define TPIU_OUTEXTCTL_PORT_1       (0x00000002UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000002 */
+#define TPIU_OUTEXTCTL_PORT_2       (0x00000004UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000004 */
+#define TPIU_OUTEXTCTL_PORT_3       (0x00000008UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000008 */
+#define TPIU_OUTEXTCTL_PORT_4       (0x00000010UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000010 */
+#define TPIU_OUTEXTCTL_PORT_5       (0x00000020UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000020 */
+#define TPIU_OUTEXTCTL_PORT_6       (0x00000040UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000040 */
+#define TPIU_OUTEXTCTL_PORT_7       (0x00000080UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000080 */
+#define TPIU_OUTEXTCTL_PORT_8       (0x00000100UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000100 */
+#define TPIU_OUTEXTCTL_PORT_9       (0x00000200UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000200 */
+#define TPIU_OUTEXTCTL_PORT_10      (0x00000400UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000400 */
+#define TPIU_OUTEXTCTL_PORT_11      (0x00000800UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00000800 */
+#define TPIU_OUTEXTCTL_PORT_12      (0x00001000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00001000 */
+#define TPIU_OUTEXTCTL_PORT_13      (0x00002000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00002000 */
+#define TPIU_OUTEXTCTL_PORT_14      (0x00004000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00004000 */
+#define TPIU_OUTEXTCTL_PORT_15      (0x00008000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00008000 */
+#define TPIU_OUTEXTCTL_PORT_16      (0x00010000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00010000 */
+#define TPIU_OUTEXTCTL_PORT_17      (0x00020000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00020000 */
+#define TPIU_OUTEXTCTL_PORT_18      (0x00040000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00040000 */
+#define TPIU_OUTEXTCTL_PORT_19      (0x00080000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00080000 */
+#define TPIU_OUTEXTCTL_PORT_20      (0x00100000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00100000 */
+#define TPIU_OUTEXTCTL_PORT_21      (0x00200000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00200000 */
+#define TPIU_OUTEXTCTL_PORT_22      (0x00400000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00400000 */
+#define TPIU_OUTEXTCTL_PORT_23      (0x00800000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x00800000 */
+#define TPIU_OUTEXTCTL_PORT_24      (0x01000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x01000000 */
+#define TPIU_OUTEXTCTL_PORT_25      (0x02000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x02000000 */
+#define TPIU_OUTEXTCTL_PORT_26      (0x04000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x04000000 */
+#define TPIU_OUTEXTCTL_PORT_27      (0x08000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x08000000 */
+#define TPIU_OUTEXTCTL_PORT_28      (0x10000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x10000000 */
+#define TPIU_OUTEXTCTL_PORT_29      (0x20000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x20000000 */
+#define TPIU_OUTEXTCTL_PORT_30      (0x40000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x40000000 */
+#define TPIU_OUTEXTCTL_PORT_31      (0x80000000UL << REGISTER_FIELD_OFFSET(TPIU, OUTEXTCTL, PORT))  /*!< Value 0x80000000 */
+
+/*!< Integration test trigger in and flush in acknowledge register */
+#define TPIU_ITTRFLINACK_FLUSHINACK_OFFSET  (1U)
+#define TPIU_ITTRFLINACK_FLUSHINACK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITTRFLINACK, FLUSHINACK))  /*!< Mask  0x00000002 */
+
+#define TPIU_ITTRFLINACK_TRIGINACK_OFFSET   (0U)
+#define TPIU_ITTRFLINACK_TRIGINACK_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITTRFLINACK, TRIGINACK))   /*!< Mask  0x00000001 */
+
+/*!< Integration test trigger in and flush in register */
+#define TPIU_ITTRFLIN_FLUSHIN_OFFSET  (1U)
+#define TPIU_ITTRFLIN_FLUSHIN_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITTRFLIN, FLUSHIN))  /*!< Mask  0x00000002 */
+
+#define TPIU_ITTRFLIN_TRIGIN_OFFSET   (0U)
+#define TPIU_ITTRFLIN_TRIGIN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITTRFLIN, TRIGIN))   /*!< Mask  0x00000001 */
+
+/*!< Integration mode control register */
+#define TPIU_ITCTRL_IME_OFFSET  (0U)
+#define TPIU_ITCTRL_IME_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITCTRL, IME))  /*!< Mask  0x00000001 */
+
+// Values of integration mode enable bit
+#define TPIU_INTEGRATIONMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_INTEGRATIONMODE_ENABLE   (0x1UL)  /*!< Value 0x0000000F */
+
+/*!< Claim tag set register */
+#define TPIU_CLAIMSET_CLAIMSET_OFFSET  (0U)
+#define TPIU_CLAIMSET_CLAIMSET_MASK    (0xFUL << REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, CLAIMSET))  /*!< Mask  0x0000000F */
+
+// Values of register bit enabling embedding of triggers in formatted trace
+#define TPIU_CLAIMSET_NONE       (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_CLAIMSET_READVALUE  (0xFUL)  /*!< Value 0x0000000F */
+
+// Values of claim tag bit
+#define TPIU_CLAIM_BIT3  (3U)
+#define TPIU_CLAIM_BIT2  (2U)
+#define TPIU_CLAIM_BIT1  (1U)
+#define TPIU_CLAIM_BIT0  (0U)
+
+// Values of claim tag set register bits
+#define TPIU_CLAIMSET_BIT3_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, CLAIMSET) + TPIU_CLAIM_BIT3)
+#define TPIU_CLAIMSET_BIT3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, BIT3))  /*!< Mask  0x00380000 */
+
+#define TPIU_CLAIMSET_BIT2_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, CLAIMSET) + TPIU_CLAIM_BIT2)
+#define TPIU_CLAIMSET_BIT2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, BIT2))  /*!< Mask  0x00040000 */
+
+#define TPIU_CLAIMSET_BIT1_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, CLAIMSET) + TPIU_CLAIM_BIT1)
+#define TPIU_CLAIMSET_BIT1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, BIT1))  /*!< Mask  0x00020000 */
+
+#define TPIU_CLAIMSET_BIT0_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, CLAIMSET) + TPIU_CLAIM_BIT0)
+#define TPIU_CLAIMSET_BIT0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMSET, BIT0))  /*!< Mask  0x00010000 */
+
+/*!< Claim tag clear register */
+#define TPIU_CLAIMCLR_CLAIMCLR_OFFSET  (0U)
+#define TPIU_CLAIMCLR_CLAIMCLR_MASK    (0xFUL << REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, CLAIMCLR))  /*!< Mask  0x0000000F */
+
+// Values of register bit enabling embedding of triggers in formatted trace
+#define TPIU_CLAIMCLR_NONE       (0x0UL)  /*!< Value 0x00000000 */
+
+// Values of claim tag clear register bits
+#define TPIU_CLAIMCLR_BIT3_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, CLAIMCLR) + TPIU_CLAIM_BIT3)
+#define TPIU_CLAIMCLR_BIT3_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, BIT3))  /*!< Mask  0x00380000 */
+
+#define TPIU_CLAIMCLR_BIT2_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, CLAIMCLR) + TPIU_CLAIM_BIT2)
+#define TPIU_CLAIMCLR_BIT2_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, BIT2))  /*!< Mask  0x00040000 */
+
+#define TPIU_CLAIMCLR_BIT1_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, CLAIMCLR) + TPIU_CLAIM_BIT1)
+#define TPIU_CLAIMCLR_BIT1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, BIT1))  /*!< Mask  0x00020000 */
+
+#define TPIU_CLAIMCLR_BIT0_OFFSET  (REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, CLAIMCLR) + TPIU_CLAIM_BIT0)
+#define TPIU_CLAIMCLR_BIT0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, CLAIMCLR, BIT0))  /*!< Mask  0x00010000 */
 
 /*!< CoreSight lock access register */
 #define TPIU_LAR_KEY_OFFSET  (0U)
@@ -651,33 +891,33 @@ typedef struct {
 #define TPIU_NONSECINVASIVEDEBUG_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
 
 /*!< Device configuration register */
-#define TPIU_DEVID_SWOUARTNRZ_OFFSET  (11U)
-#define TPIU_DEVID_SWOUARTNRZ_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, SWOUARTNRZ))  /*!< Mask  0x00000800 */
+#define TPIU_DEVID_NRZVALID_OFFSET   (11U)
+#define TPIU_DEVID_NRZVALID_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, NRZVALID))   /*!< Mask  0x00000800 */
 
-#define TPIU_DEVID_SWOMAN_OFFSET      (10U)
-#define TPIU_DEVID_SWOMAN_MASK        (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, SWOMAN))      /*!< Mask  0x00000400 */
+#define TPIU_DEVID_MANCVALID_OFFSET  (10U)
+#define TPIU_DEVID_MANCVALID_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, MANCVALID))  /*!< Mask  0x00000400 */
 
-#define TPIU_DEVID_TCLKDATA_OFFSET    (9U)
-#define TPIU_DEVID_TCLKDATA_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, TCLKDATA))    /*!< Mask  0x00000200 */
+#define TPIU_DEVID_PTINVALID_OFFSET  (9U)
+#define TPIU_DEVID_PTINVALID_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, PTINVALID))  /*!< Mask  0x00000200 */
 
-#define TPIU_DEVID_FIFOSIZE_OFFSET    (6U)
-#define TPIU_DEVID_FIFOSIZE_MASK      (0x7UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, FIFOSIZE))    /*!< Mask  0x000001C0 */
+#define TPIU_DEVID_FIFOSZ_OFFSET     (6U)
+#define TPIU_DEVID_FIFOSZ_MASK       (0x7UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, FIFOSZ))     /*!< Mask  0x000001C0 */
 
-#define TPIU_DEVID_CLKRELAT_OFFSET    (5U)
-#define TPIU_DEVID_CLKRELAT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, CLKRELAT))    /*!< Mask  0x00000020 */
+#define TPIU_DEVID_CLKRELAT_OFFSET   (5U)
+#define TPIU_DEVID_CLKRELAT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, DEVID, CLKRELAT))   /*!< Mask  0x00000020 */
 
-#define TPIU_DEVID_MUXNUM_OFFSET      (0U)
-#define TPIU_DEVID_MUXNUM_MASK        (0x1FUL << REGISTER_FIELD_OFFSET(TPIU, DEVID, MUXNUM))     /*!< Mask  0x0000001F */
+#define TPIU_DEVID_MAXNUM_OFFSET     (0U)
+#define TPIU_DEVID_MAXNUM_MASK       (0x1FUL << REGISTER_FIELD_OFFSET(TPIU, DEVID, MAXNUM))    /*!< Mask  0x0000001F */
 
-// Values of serial wire output (SWO), universal asynchronous receiver-transmitter (UART), non-return-to-zero (NRZ) support bit
+// Values of register bit stating the support of serial wire output (SWO) using universal asynchronous receiver-transmitter (UART) or non-return-to-zero (NRZ)
 #define TPIU_SWOUARTNRZ_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_SWOUARTNRZ_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of serial wire output (SWO) Manchester format support bit
+// Values of register bit stating the support of serial wire output (SWO) using Manchester format
 #define TPIU_SWOMANCHESTERFORMAT_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_SWOMANCHESTERFORMAT_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of trace clock plus datat support bit
+// Values of parallel trace port operation support bit
 #define TPIU_TRACECLKDATA_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_TRACECLKDATA_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
 
@@ -730,11 +970,11 @@ typedef struct {
 #define TPIU_NUMATBINPUTPORT_31    (0x1FUL)  /*!< Value 0x0000001F */
 
 /*!< Device type register */
-#define TPIU_TYPE_SUBTYPE_OFFSET    (4U)
-#define TPIU_TYPE_SUBTYPE_MASK      (0xFUL << REGISTER_FIELD_OFFSET(TPIU, TYPE, SUBTYPE))    /*!< Mask  0x000000F0 */
+#define TPIU_DEVTYPE_SUBTYPE_OFFSET    (4U)
+#define TPIU_DEVTYPE_SUBTYPE_MASK      (0xFUL << REGISTER_FIELD_OFFSET(TPIU, DEVTYPE, SUBTYPE))    /*!< Mask  0x000000F0 */
 
-#define TPIU_TYPE_MAJORTYPE_OFFSET  (0U)
-#define TPIU_TYPE_MAJORTYPE_MASK    (0xFUL << REGISTER_FIELD_OFFSET(TPIU, TYPE, MAJORTYPE))  /*!< Mask  0x0000000F */
+#define TPIU_DEVTYPE_MAJORTYPE_OFFSET  (0U)
+#define TPIU_DEVTYPE_MAJORTYPE_MASK    (0xFUL << REGISTER_FIELD_OFFSET(TPIU, DEVTYPE, MAJORTYPE))  /*!< Mask  0x0000000F */
 
 // Values of the sub-classification register
 #define TPIU_SUBTYPE_TRACEPORT  (0x1UL)  /*!< Value 0x00000001 */
