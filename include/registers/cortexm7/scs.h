@@ -30,8 +30,8 @@ typedef struct {
 	   uint32_t reserved1[957];  /*!< Reserved                              (Offset 0xC to 0xEFC)   */
 	WO uint32_t STIR;            /*!< Sofware trigger interrupt (STIR)      (Offset 0xF00)          */
 	   uint32_t reserved2[957];  /*!< Reserved                              (Offset 0xF04 to 0xFAC) */
-	RW uint32_t LAR;             /*!< CoreSight lock access register        (Offset 0xFB0)          */
-	RW uint32_t LSR;             /*!< CoreSight lock status register        (Offset 0xFB4)          */
+	WO uint32_t LAR;             /*!< CoreSight lock access register        (Offset 0xFB0)          */
+	RO uint32_t LSR;             /*!< CoreSight lock status register        (Offset 0xFB4)          */
 	   uint32_t reserved3[6U];   /*!< Reserved                              (Offset 0xFB8 to 0xFCC) */
 	RO uint32_t PID4;            /*!< Peripheral identification 4 register  (Offset 0xFD0)          */
 	RO uint32_t PID5;            /*!< Peripheral identification 5 register  (Offset 0xFD4)          */

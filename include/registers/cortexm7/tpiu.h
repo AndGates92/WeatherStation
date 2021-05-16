@@ -58,7 +58,7 @@ typedef struct {
 	RW uint32_t CLAIMSET;         /*!< Claim tag set register                                         (Offset 0xFA0)          */
 	RW uint32_t CLAIMCLR;         /*!< Claim tag clear register                                       (Offset 0xFA4)          */
 	   uint32_t reserved9[2U];    /*!< Reserved                                                       (Offset 0xFA8 to 0xFAC) */
-	RO uint32_t LAR;              /*!< CoreSight lock access register                                 (Offset 0xFB0)          */
+	WO uint32_t LAR;              /*!< CoreSight lock access register                                 (Offset 0xFB0)          */
 	RO uint32_t LSR;              /*!< CoreSight lock status register                                 (Offset 0xFB4)          */
 	RO uint32_t AUTHSTAT;         /*!< Authentication status register                                 (Offset 0xFB8)          */
 	   uint32_t reserved10[3U];   /*!< Reserved                                                       (Offset 0xFBC to 0xFC4) */

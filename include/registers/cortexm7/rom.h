@@ -32,7 +32,7 @@ typedef struct {
 	RO uint32_t ROMETM;           /*!< Embedded trace macrocell (ETM) register         (Offset 0x14)           */
 	RO uint32_t END;              /*!< End-of-table marker                             (Offset 0x18)           */
 	   uint32_t reserved0[997U];  /*!< Reserved                                        (Offset 0x1C to 0xFAC)  */
-	RO uint32_t LAR;              /*!< CoreSight lock access register                  (Offset 0xFB0)          */
+	WO uint32_t LAR;              /*!< CoreSight lock access register                  (Offset 0xFB0)          */
 	RO uint32_t LSR;              /*!< CoreSight lock status register                  (Offset 0xFB4)          */
 	   uint32_t reserved1[5U];    /*!< Reserved                                        (Offset 0xFB8 to 0xFC8) */
 	RO uint32_t MEMTYPE;          /*!< System memory type register                     (Offset 0xFCC)          */

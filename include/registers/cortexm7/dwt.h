@@ -49,8 +49,8 @@ typedef struct {
 	RW uint32_t FUNCTION3;        /*!< Function 3 register                          (Offset 0x58)           */
 	   uint32_t reserved3;        /*!< Reserved                                     (Offset 0x5C)           */
 	   uint32_t reserved4[980U];  /*!< Reserved                                     (Offset 0x60 to 0xFAC)  */
-	RW uint32_t LAR;              /*!< CoreSight lock access register               (Offset 0xFB0)          */
-	RW uint32_t LSR;              /*!< CoreSight lock status register               (Offset 0xFB4)          */
+	W0 uint32_t LAR;              /*!< CoreSight lock access register               (Offset 0xFB0)          */
+	RO uint32_t LSR;              /*!< CoreSight lock status register               (Offset 0xFB4)          */
 	   uint32_t reserved5[6U];    /*!< Reserved                                     (Offset 0xFB8 to 0xFCC) */
 	RO uint32_t PID4;             /*!< Peripheral identification 4 register         (Offset 0xFD0)          */
 	RO uint32_t PID5;             /*!< Peripheral identification 5 register         (Offset 0xFD4)          */

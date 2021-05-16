@@ -38,8 +38,8 @@ typedef struct {
 	   uint32_t reserved5;        /*!< Reserved                                    (Offset 0xEFC)          */
 	RW uint32_t TCTRL;            /*!< Integration mode control register           (Offset 0xF00)          */
 	   uint32_t reserved6[43U];   /*!< Reserved                                    (Offset 0xF04 to 0xFAC) */
-	RW uint32_t LAR;              /*!< CoreSight lock access register              (Offset 0xFB0)          */
-	RW uint32_t LSR;              /*!< CoreSight lock status register              (Offset 0xFB4)          */
+	WO uint32_t LAR;              /*!< CoreSight lock access register              (Offset 0xFB0)          */
+	RO uint32_t LSR;              /*!< CoreSight lock status register              (Offset 0xFB4)          */
 	   uint32_t reserved7[6U];    /*!< Reserved                                    (Offset 0xFB8 to 0xFCC) */
 	R0 uint32_t PID4;             /*!< Peripheral identification 4 register        (Offset 0xFD0)          */
 	R0 uint32_t PID5;             /*!< Peripheral identification 5 register        (Offset 0xFD4)          */
