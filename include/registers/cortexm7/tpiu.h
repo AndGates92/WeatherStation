@@ -799,7 +799,7 @@ typedef struct {
 
 // Values of integration mode enable bit
 #define TPIU_INTEGRATIONMODE_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
-#define TPIU_INTEGRATIONMODE_ENABLE   (0x1UL)  /*!< Value 0x0000000F */
+#define TPIU_INTEGRATIONMODE_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Claim tag set register */
 #define TPIU_CLAIMSET_CLAIMSET_OFFSET  (0U)
@@ -910,28 +910,21 @@ typedef struct {
 
 /*!< Authentication status register */
 #define TPIU_AUTHSTAT_SNID_OFFSET   (6U)
-#define TPIU_AUTHSTAT_SNID_MASK     (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, SNID))   /*!< Mask  0x000000C0 */
+#define TPIU_AUTHSTAT_SNID_MASK     (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, SNID))   /*!< Mask  0x000000C0 - security level for secure non-invasive debug */
 
 #define TPIU_AUTHSTAT_SID_OFFSET    (4U)
-#define TPIU_AUTHSTAT_SID_MASK      (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, SID))    /*!< Mask  0x00000030 */
+#define TPIU_AUTHSTAT_SID_MASK      (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, SID))    /*!< Mask  0x00000030 - security level for secure invasive debug */
 
 #define TPIU_AUTHSTAT_NSNID_OFFSET  (2U)
-#define TPIU_AUTHSTAT_NSNID_MASK    (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSNID))  /*!< Mask  0x0000000C */
+#define TPIU_AUTHSTAT_NSNID_MASK    (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSNID))  /*!< Mask  0x0000000C - security level for non secure non-invasive debug */
 
 #define TPIU_AUTHSTAT_NSID_OFFSET   (0U)
-#define TPIU_AUTHSTAT_NSID_MASK     (0x3FUL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSID))  /*!< Mask  0x00000003 */
+#define TPIU_AUTHSTAT_NSID_MASK     (0x3FUL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSID))  /*!< Mask  0x00000003 - security level for non secure invasive debug */
 
-// Values of security level for secure non-invasive status bit
-#define TPIU_SECNONINVASIVEDEBUG_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
-
-// Values of security level for secure invasive status bit
-#define TPIU_SECINVASIVEDEBUG_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
-
-// Values of security level for non secure non-invasive status bit
-#define TPIU_NONSECNONINVASIVEDEBUG_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
-
-// Values of security level for non secure invasive status bit
-#define TPIU_NONSECINVASIVEDEBUG_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
+// Values of authentification signal status register
+#define TPIU_AUTHSIGNAL_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
+#define TPIU_AUTHSIGNAL_DISABLED        (0x2UL)  /*!< Value 0x00000002 */
+#define TPIU_AUTHSIGNAL_ENABLED         (0x3UL)  /*!< Value 0x00000003 */
 
 /*!< Device configuration register */
 #define TPIU_DEVID_NRZVALID_OFFSET   (11U)
