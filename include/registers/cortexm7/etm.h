@@ -25,7 +25,7 @@
 
 typedef struct {
 	   uint32_t reserved0;        /*!< Reserved                                                                 (Offset 0x0)            */
-	RO uint32_t PRGCTLR;          /*!< Programming control register                                             (Offset 0x4)            */
+	RW uint32_t PRGCTLR;          /*!< Programming control register                                             (Offset 0x4)            */
 	RW uint32_t PROCSELR;         /*!< Processing element (PE) select control register                          (Offset 0x8)            */
 	RW uint32_t STATR;            /*!< Trace status register                                                    (Offset 0xC)            */
 	RW uint32_t CONFIGR;          /*!< Trace configuration register                                             (Offset 0x10)           */
@@ -317,7 +317,7 @@ typedef struct {
 	RO uint32_t LSR;              /*!< CoreSight lock status register                                           (Offset 0xFB4)          */
 	RO uint32_t AUTHSTAT;         /*!< Authentication status register                                           (Offset 0xFB8)          */
 	RO uint32_t DEVARCH;          /*!< Device architecture register                                             (Offset 0xFBC)          */
-	   uint32_t reserved33[3U];   /*!< Reserved                                                                 (Offset 0xFC0 to 0xFC4) */
+	   uint32_t reserved33[2U];   /*!< Reserved                                                                 (Offset 0xFC0 to 0xFC4) */
 	RO uint32_t DEVID;            /*!< Device ID register                                                       (Offset 0xFC8)          */
 	RO uint32_t DEVTYPE;          /*!< Device type register                                                     (Offset 0xFCC)          */
 	RO uint32_t PID4;             /*!< Peripheral identification 4 register                                     (Offset 0xFD0)          */
@@ -334,6 +334,9 @@ typedef struct {
 	RO uint32_t CID3;             /*!< Component identification 3 register                                      (Offset 0xFFC)          */
 } etm_regs;
 
+/*!< Programming control register */
+#define ETM_PRGCTLR_IME_OFFSET  (0U)
+#define ETM_PRGCTLR_IME_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, PRGCTLR, IME))  /*!< Mask  0x00000001 */
 
 /*!< Integration mode control register */
 #define ETM_ITCTRL_IME_OFFSET  (0U)
@@ -611,83 +614,40 @@ typedef struct {
 #define ETM_ARCHPARTNUM_ETMV4  (0xA13UL)  /*!< Value 0x00000A13 */
 
 /*!< Device ID register */
-#define ETM_DEVID_NRZVALID_OFFSET   (11U)
-#define ETM_DEVID_NRZVALID_MASK     (0x1UL << REGISTER_FIELD_OFFSET(ETM, DEVID, NRZVALID))   /*!< Mask  0x00000800 */
-
-#define ETM_DEVID_MANCVALID_OFFSET  (10U)
-#define ETM_DEVID_MANCVALID_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, DEVID, MANCVALID))  /*!< Mask  0x00000400 */
-
-#define ETM_DEVID_PTINVALID_OFFSET  (9U)
-#define ETM_DEVID_PTINVALID_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, DEVID, PTINVALID))  /*!< Mask  0x00000200 */
-
-#define ETM_DEVID_FIFOSZ_OFFSET     (6U)
-#define ETM_DEVID_FIFOSZ_MASK       (0x7UL << REGISTER_FIELD_OFFSET(ETM, DEVID, FIFOSZ))     /*!< Mask  0x000001C0 */
-
-#define ETM_DEVID_CLKRELAT_OFFSET   (5U)
-#define ETM_DEVID_CLKRELAT_MASK     (0x1UL << REGISTER_FIELD_OFFSET(ETM, DEVID, CLKRELAT))   /*!< Mask  0x00000020 */
-
-#define ETM_DEVID_MAXNUM_OFFSET     (0U)
-#define ETM_DEVID_MAXNUM_MASK       (0x1FUL << REGISTER_FIELD_OFFSET(ETM, DEVID, MAXNUM))    /*!< Mask  0x0000001F */
-
-// Values of register bit stating the support of serial wire output (SWO) using universal asynchronous receiver-transmitter (UART) or non-return-to-zero (NRZ)
-#define ETM_SWOUARTNRZ_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
-#define ETM_SWOUARTNRZ_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
-
-// Values of register bit stating the support of serial wire output (SWO) using Manchester format
-#define ETM_SWOMANCHESTERFORMAT_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
-#define ETM_SWOMANCHESTERFORMAT_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
-
-// Values of parallel trace port operation support bit
-#define ETM_TRACECLKDATA_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
-#define ETM_TRACECLKDATA_SUPPORTED     (0x1UL)  /*!< Value 0x00000001 */
-
-// Values of square root of the number of 4K blocks register
-#define ETM_FIFOSIZE_1    (0x0UL)  /*!< Value 0x00000000 */
-#define ETM_FIFOSIZE_2    (0x1UL)  /*!< Value 0x00000001 */
-#define ETM_FIFOSIZE_4    (0x2UL)  /*!< Value 0x00000002 */
-#define ETM_FIFOSIZE_8    (0x3UL)  /*!< Value 0x00000003 */
-#define ETM_FIFOSIZE_16   (0x4UL)  /*!< Value 0x00000004 */
-#define ETM_FIFOSIZE_32   (0x5UL)  /*!< Value 0x00000005 */
-#define ETM_FIFOSIZE_64   (0x6UL)  /*!< Value 0x00000006 */
-#define ETM_FIFOSIZE_128  (0x7UL)  /*!< Value 0x00000007 */
-
-// Values of software lock status bit
-#define ETM_ATBTRACECLKRELATIONSHIP_SYNCHRONOUS   (0x0UL)  /*!< Value 0x00000000 */
-#define ETM_ATBTRACECLKRELATIONSHIP_ASYNCHRONOUS  (0x1UL)  /*!< Value 0x00000001 */
-
-// Values of the register storing the number/type of ATB input port multiplexing
-#define ETM_NUMATBINPUTPORT_NONE  (0x00UL)  /*!< Value 0x00000000 */
-#define ETM_NUMATBINPUTPORT_1     (0x01UL)  /*!< Value 0x00000001 */
-#define ETM_NUMATBINPUTPORT_2     (0x02UL)  /*!< Value 0x00000002 */
-#define ETM_NUMATBINPUTPORT_3     (0x03UL)  /*!< Value 0x00000003 */
-#define ETM_NUMATBINPUTPORT_4     (0x04UL)  /*!< Value 0x00000004 */
-#define ETM_NUMATBINPUTPORT_5     (0x05UL)  /*!< Value 0x00000005 */
-#define ETM_NUMATBINPUTPORT_6     (0x06UL)  /*!< Value 0x00000006 */
-#define ETM_NUMATBINPUTPORT_7     (0x07UL)  /*!< Value 0x00000007 */
-#define ETM_NUMATBINPUTPORT_8     (0x08UL)  /*!< Value 0x00000008 */
-#define ETM_NUMATBINPUTPORT_9     (0x09UL)  /*!< Value 0x00000009 */
-#define ETM_NUMATBINPUTPORT_10    (0x0AUL)  /*!< Value 0x0000000A */
-#define ETM_NUMATBINPUTPORT_11    (0x0BUL)  /*!< Value 0x0000000B */
-#define ETM_NUMATBINPUTPORT_12    (0x0CUL)  /*!< Value 0x0000000C */
-#define ETM_NUMATBINPUTPORT_13    (0x0DUL)  /*!< Value 0x0000000D */
-#define ETM_NUMATBINPUTPORT_14    (0x0EUL)  /*!< Value 0x0000000E */
-#define ETM_NUMATBINPUTPORT_15    (0x0FUL)  /*!< Value 0x0000000F */
-#define ETM_NUMATBINPUTPORT_16    (0x10UL)  /*!< Value 0x00000010 */
-#define ETM_NUMATBINPUTPORT_17    (0x11UL)  /*!< Value 0x00000011 */
-#define ETM_NUMATBINPUTPORT_18    (0x12UL)  /*!< Value 0x00000012 */
-#define ETM_NUMATBINPUTPORT_19    (0x13UL)  /*!< Value 0x00000013 */
-#define ETM_NUMATBINPUTPORT_20    (0x14UL)  /*!< Value 0x00000014 */
-#define ETM_NUMATBINPUTPORT_21    (0x15UL)  /*!< Value 0x00000015 */
-#define ETM_NUMATBINPUTPORT_22    (0x16UL)  /*!< Value 0x00000016 */
-#define ETM_NUMATBINPUTPORT_23    (0x17UL)  /*!< Value 0x00000017 */
-#define ETM_NUMATBINPUTPORT_24    (0x18UL)  /*!< Value 0x00000018 */
-#define ETM_NUMATBINPUTPORT_25    (0x19UL)  /*!< Value 0x00000019 */
-#define ETM_NUMATBINPUTPORT_26    (0x1AUL)  /*!< Value 0x0000001A */
-#define ETM_NUMATBINPUTPORT_27    (0x1BUL)  /*!< Value 0x0000001B */
-#define ETM_NUMATBINPUTPORT_28    (0x1CUL)  /*!< Value 0x0000001C */
-#define ETM_NUMATBINPUTPORT_29    (0x1DUL)  /*!< Value 0x0000001D */
-#define ETM_NUMATBINPUTPORT_30    (0x1EUL)  /*!< Value 0x0000001E */
-#define ETM_NUMATBINPUTPORT_31    (0x1FUL)  /*!< Value 0x0000001F */
+#define ETM_DEVID_RSVD_OFFSET  (0U)
+#define ETM_DEVID_RSVD_MASK    (0xFFFFFFFFUL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Mask  0xFFFFFFFF */
+#define ETM_DEVID_RSVD_0       (0x00000001UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000001 */
+#define ETM_DEVID_RSVD_1       (0x00000002UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000002 */
+#define ETM_DEVID_RSVD_2       (0x00000004UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000004 */
+#define ETM_DEVID_RSVD_3       (0x00000008UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000008 */
+#define ETM_DEVID_RSVD_4       (0x00000010UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000010 */
+#define ETM_DEVID_RSVD_5       (0x00000020UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000020 */
+#define ETM_DEVID_RSVD_6       (0x00000040UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000040 */
+#define ETM_DEVID_RSVD_7       (0x00000080UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000080 */
+#define ETM_DEVID_RSVD_8       (0x00000100UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000100 */
+#define ETM_DEVID_RSVD_9       (0x00000200UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000200 */
+#define ETM_DEVID_RSVD_10      (0x00000400UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000400 */
+#define ETM_DEVID_RSVD_11      (0x00000800UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00000800 */
+#define ETM_DEVID_RSVD_12      (0x00001000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00001000 */
+#define ETM_DEVID_RSVD_13      (0x00002000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00002000 */
+#define ETM_DEVID_RSVD_14      (0x00004000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00004000 */
+#define ETM_DEVID_RSVD_15      (0x00008000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00008000 */
+#define ETM_DEVID_RSVD_16      (0x00010000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00010000 */
+#define ETM_DEVID_RSVD_17      (0x00020000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00020000 */
+#define ETM_DEVID_RSVD_18      (0x00040000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00040000 */
+#define ETM_DEVID_RSVD_19      (0x00080000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00080000 */
+#define ETM_DEVID_RSVD_20      (0x00100000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00100000 */
+#define ETM_DEVID_RSVD_21      (0x00200000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00200000 */
+#define ETM_DEVID_RSVD_22      (0x00400000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00400000 */
+#define ETM_DEVID_RSVD_23      (0x00800000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x00800000 */
+#define ETM_DEVID_RSVD_24      (0x01000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x01000000 */
+#define ETM_DEVID_RSVD_25      (0x02000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x02000000 */
+#define ETM_DEVID_RSVD_26      (0x04000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x04000000 */
+#define ETM_DEVID_RSVD_27      (0x08000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x08000000 */
+#define ETM_DEVID_RSVD_28      (0x10000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x10000000 */
+#define ETM_DEVID_RSVD_29      (0x20000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x20000000 */
+#define ETM_DEVID_RSVD_30      (0x40000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x40000000 */
+#define ETM_DEVID_RSVD_31      (0x80000000UL << REGISTER_FIELD_OFFSET(ETM, DEVID, RSVD))  /*!< Value 0x80000000 */
 
 /*!< Device type register */
 #define ETM_DEVTYPE_SUBTYPE_OFFSET    (4U)
@@ -697,10 +657,10 @@ typedef struct {
 #define ETM_DEVTYPE_MAJORTYPE_MASK    (0xFUL << REGISTER_FIELD_OFFSET(ETM, DEVTYPE, MAJORTYPE))  /*!< Mask  0x0000000F */
 
 // Values of the sub-classification register
-#define ETM_SUBTYPE_TRACEPORT  (0x1UL)  /*!< Value 0x00000001 */
+#define ETM_SUBTYPE_PETRACE  (0x1UL)  /*!< Value 0x00000001 */
 
 // Values of the major classification register
-#define ETM_MAJORTYPE_TRACESINK  (0x1UL)  /*!< Value 0x00000001 */
+#define ETM_MAJORTYPE_TRACESOURCE  (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Peripheral identitication 4 register */
 #define ETM_PID4_4KCOUNT_OFFSET    (4U)
@@ -901,7 +861,7 @@ typedef struct {
 #define ETM_PID2_JEDEC106ID_2       (0x4UL << REGISTER_FIELD_OFFSET(ETM, PID2, JEDEC106ID))  /*!< Value 0x00000004 */
 
 // Values of revision number register
-#define ETM_REVISION_VALUE  (0x5UL)  /*!< Value 0x00000005 */
+#define ETM_REVISION_R0P2  (0x1UL)  /*!< Value 0x00000001 */
 
 // Values of JEDEC assigned value select bit
 #define ETM_JEDEC_VALUE  (0x1UL)  /*!< Value 0x00000001 */
@@ -925,7 +885,7 @@ typedef struct {
 #define ETM_PID3_CMOD_3         (0x8UL << REGISTER_FIELD_OFFSET(ETM, PID3, CMOD))    /*!< Value 0x00000008 */
 
 // Values of manifacturer revision number register
-#define ETM_REVAND_VALUE  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_REVAND_NOMETALFIX  (0x0UL)  /*!< Value 0x00000000 */
 
 // Values of JEDEC JEP 106 ID code in peripheral identification 2 register
 #define ETM_CMOD_ARM  (0x0UL)  /*!< Value 0x00000000 */
