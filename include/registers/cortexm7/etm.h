@@ -1043,6 +1043,46 @@ typedef struct {
 #define ETM_VIEWINSTSTARTRESOURCE_UNSELECTED  (0x0UL)  /*!< Value 0x00000000 */
 #define ETM_VIEWINSTSTARTRESOURCE_SELECTED    (0x1UL)  /*!< Value 0x00000001 */
 
+/*!< ViewData main control register */
+#define ETM_VDCTLR_TRCEXDATA_OFFSET  (12U)
+#define ETM_VDCTLR_TRCEXDATA_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, VDCTLR, TRCEXDATA))  /*!< Mask  0x00001000 */
+
+#define ETM_VDCTLR_TBI_OFFSET        (11U)
+#define ETM_VDCTLR_TBI_MASK          (0x1UL << REGISTER_FIELD_OFFSET(ETM, VDCTLR, TBI))        /*!< Mask  0x00000800 */
+
+#define ETM_VDCTLR_PCREL_OFFSET      (10U)
+#define ETM_VDCTLR_PCREL_MASK        (0x1UL << REGISTER_FIELD_OFFSET(ETM, VDCTLR, PCREL))      /*!< Mask  0x00000400 */
+
+#define ETM_VDCTLR_SPREL_OFFSET      (9U)
+#define ETM_VDCTLR_SPREL_MASK        (0x3UL << REGISTER_FIELD_OFFSET(ETM, VDCTLR, SPREL))      /*!< Mask  0x00000300 */
+
+#define ETM_VDCTLR_EVENT_OFFSET      (0U)
+#define ETM_VDCTLR_EVENT_MASK        (0xFFUL << REGISTER_FIELD_OFFSET(ETM, VDCTLR, EVENT))     /*!< Mask  0x000000FF */
+
+// Values of exception and exception return data transfers tracing enable bit
+#define ETM_EXCEPTIONTRACINGDATA_DISABLE  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_EXCEPTIONTRACINGDATA_ENABLE   (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register controlling the information the trace unit populates in bits[63:56] if the data address
+#define ETM_TRACEUNITBIT6356_DATAADDRESSBIT55    (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_TRACEUNITBIT6356_DATAADDRESSBIT6356  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register controlling whether a trace unit traces data for transfers that are relative to the the program counter (PC)
+#define ETM_PCTRACEDATA_TRACED     (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_PCTRACEDATA_NOTTRACED  (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of register controlling whether a trace unit traces data for transfers that are relative to the the stack pointer (SP)
+#define ETM_SPTRACEDATA_TRACED            (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_SPTRACEDATA_ADDRESSNOTTRACED  (0x2UL)  /*!< Value 0x00000002 */
+#define ETM_SPTRACEDATA_NOTTRACED         (0x3UL)  /*!< Value 0x00000003 */
+
+// Values of ViewData event selector bits
+#define ETM_VIEWDATASELECTEDEVENT_RESOURCETYPE_OFFSET    (REGISTER_FIELD_OFFSET(ETM, TSCTLR, EVENT) + ETM_EVENTRESOURCETYPE)
+#define ETM_VIEWDATASELECTEDEVENT_RESOURCETYPE_MASK      (0x1UL << REGISTER_FIELD_OFFSET(ETM, VIEWDATASELECTEDEVENT, RESOURCETYPE))     /*!< Mask  0x00000080 */
+
+#define ETM_VIEWDATASELECTEDEVENT_RESOURCENUMBER_OFFSET  (REGISTER_FIELD_OFFSET(ETM, TSCTLR, EVENT) + ETM_EVENTRESOURCENUMBER)
+#define ETM_VIEWDATASELECTEDEVENT_RESOURCENUMBER_MASK    (0x1FUL << REGISTER_FIELD_OFFSET(ETM, VIEWDATASELECTEDEVENT, RESOURCENUMBER))  /*!< Mask  0x0000001F */
+
 
 /*!< Single-shot processing element (PE) comparator input control register (macros vaid for registers SSPCICR0, SSPCICR1, SSPCICR2, SSPCICR3, SSPCICR4, SSPCICR5, SSPCICR6, SSPCICR7) */
 #define ETM_SSPCICR_PC_OFFSET  (0U)
