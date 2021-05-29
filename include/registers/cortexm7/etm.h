@@ -2362,6 +2362,63 @@ typedef struct {
 #define ETM_P0LOADSTORETRACING_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
 #define ETM_P0LOADSTORETRACING_IMPLEMENTED     (0x1UL)  /*!< Value 0x00000001 */
 
+/*!< ID 1 register */
+#define ETM_IDR1_DESIGNER_OFFSET    (24U)
+#define ETM_IDR1_DESIGNER_MASK      (0xFFUL << REGISTER_FIELD_OFFSET(ETM, IDR1, DESIGNER))   /*!< Mask  0xFF000000 */
+
+#define ETM_IDR1_TRCARCHMAJ_OFFSET  (8U)
+#define ETM_IDR1_TRCARCHMAJ_MASK    (0xFUL << REGISTER_FIELD_OFFSET(ETM, IDR1, TRCARCHMAJ))  /*!< Mask  0x00000F00 */
+
+#define ETM_IDR1_TRCARCHMIN_OFFSET  (4U)
+#define ETM_IDR1_TRCARCHMIN_MASK    (0xFUL << REGISTER_FIELD_OFFSET(ETM, IDR1, TRCARCHMIN))  /*!< Mask  0x000000F0 */
+
+#define ETM_IDR1_REVISION_OFFSET    (0U)
+#define ETM_IDR1_REVISION_MASK      (0xFUL << REGISTER_FIELD_OFFSET(ETM, IDR1, REVISION))    /*!< Mask  0x0000000F */
+
+// Values of register storing which company designed the trace unit
+#define ETM_DESIGNER_ARM                   (0x41UL)  /*!< Value 0x00000041 - Arm Limited */
+#define ETM_DESIGNER_BROADCOM              (0x42UL)  /*!< Value 0x00000042 - Broadcom corporation */
+#define ETM_DESIGNER_CAVIUM                (0x43UL)  /*!< Value 0x00000043 - Cavium Inc. */
+#define ETM_DESIGNER_DIGITALEQUIPMENT      (0x44UL)  /*!< Value 0x00000044 - Digital equipment corporation */
+#define ETM_DESIGNER_INFINEON              (0x49UL)  /*!< Value 0x00000049 - Infineon technologies AG */
+#define ETM_DESIGNER_MOTOROLAFREESCALE     (0x4DUL)  /*!< Value 0x0000004D - Motorola or Freescale semiconductor Inc. */
+#define ETM_DESIGNER_NVIDIA                (0x4EUL)  /*!< Value 0x0000004E - NVIDIA corporation */
+#define ETM_DESIGNER_APPLIEDMICROCIRCUITS  (0x50UL)  /*!< Value 0x00000050 - Applied micro circuits corporation */
+#define ETM_DESIGNER_QUALCOMM              (0x51UL)  /*!< Value 0x00000051 - Qualcomm Inc. */
+#define ETM_DESIGNER_MARVELL               (0x56UL)  /*!< Value 0x00000056 - Marvell internation Inc. */
+#define ETM_DESIGNER_INTEL                 (0x69UL)  /*!< Value 0x00000069 - Intel corporation */
+
+// Values of major architecture version register
+#define ETM_MAJORARCHVERSION_V4  (0x4UL)  /*!< Value 0x00000004 - ETMv4 */
+
+// Values of minor architecture version register
+#define ETM_MINORARCHVERSION_ETMV40  (0x0UL)  /*!< Value 0x00000000 - ETMv4.0 */
+#define ETM_MINORARCHVERSION_ETMV41  (0x1UL)  /*!< Value 0x00000000 - ETMv4.1 */
+#define ETM_MINORARCHVERSION_ETMV42  (0x2UL)  /*!< Value 0x00000000 - ETMv4.2 */
+#define ETM_MINORARCHVERSION_ETMV43  (0x3UL)  /*!< Value 0x00000000 - ETMv4.3 */
+#define ETM_MINORARCHVERSION_ETMV44  (0x4UL)  /*!< Value 0x00000000 - ETMv4.4 */
+#define ETM_MINORARCHVERSION_ETMV45  (0x5UL)  /*!< Value 0x00000000 - ETMv4.5 */
+#define ETM_MINORARCHVERSION_ETMV46  (0x6UL)  /*!< Value 0x00000000 - ETMv4.6 */
+
+// Values of ETM revision register
+#define ETM_TRACEUNITREVISION_0   (0x00UL)  /*!< Value 0x00000000 */
+#define ETM_TRACEUNITREVISION_1   (0x01UL)  /*!< Value 0x00000001 */
+#define ETM_TRACEUNITREVISION_2   (0x02UL)  /*!< Value 0x00000002 */
+#define ETM_TRACEUNITREVISION_3   (0x03UL)  /*!< Value 0x00000003 */
+#define ETM_TRACEUNITREVISION_4   (0x04UL)  /*!< Value 0x00000004 */
+#define ETM_TRACEUNITREVISION_5   (0x05UL)  /*!< Value 0x00000005 */
+#define ETM_TRACEUNITREVISION_6   (0x06UL)  /*!< Value 0x00000006 */
+#define ETM_TRACEUNITREVISION_7   (0x07UL)  /*!< Value 0x00000007 */
+#define ETM_TRACEUNITREVISION_8   (0x08UL)  /*!< Value 0x00000008 */
+#define ETM_TRACEUNITREVISION_9   (0x09UL)  /*!< Value 0x00000009 */
+#define ETM_TRACEUNITREVISION_10  (0x0AUL)  /*!< Value 0x0000000A */
+#define ETM_TRACEUNITREVISION_11  (0x0BUL)  /*!< Value 0x0000000B */
+#define ETM_TRACEUNITREVISION_12  (0x0CUL)  /*!< Value 0x0000000C */
+#define ETM_TRACEUNITREVISION_13  (0x0DUL)  /*!< Value 0x0000000D */
+#define ETM_TRACEUNITREVISION_14  (0x0EUL)  /*!< Value 0x0000000E */
+#define ETM_TRACEUNITREVISION_15  (0x0FUL)  /*!< Value 0x0000000F */
+
+
 /*!< Single-shot processing element (PE) comparator input control register (macros vaid for registers SSPCICR0, SSPCICR1, SSPCICR2, SSPCICR3, SSPCICR4, SSPCICR5, SSPCICR6, SSPCICR7) */
 #define ETM_SSPCICR_PC_OFFSET  (0U)
 #define ETM_SSPCICR_PC_MASK    (0xFFUL << REGISTER_FIELD_OFFSET(ETM, SSPCICR, PC))  /*!< Mask  0x000000FF */
@@ -2663,12 +2720,12 @@ typedef struct {
 
 // Values of revision register
 #define ETM_REVISION_ETMV40  (0x0UL)  /*!< Value 0x00000000 - ETMv4.0 */
-#define ETM_REVISION_ETMV41  (0x1UL)  /*!< Value 0x00000000 - ETMv4.1 */
-#define ETM_REVISION_ETMV42  (0x2UL)  /*!< Value 0x00000000 - ETMv4.2 */
-#define ETM_REVISION_ETMV43  (0x3UL)  /*!< Value 0x00000000 - ETMv4.3 */
-#define ETM_REVISION_ETMV44  (0x4UL)  /*!< Value 0x00000000 - ETMv4.4 */
-#define ETM_REVISION_ETMV45  (0x5UL)  /*!< Value 0x00000000 - ETMv4.5 */
-#define ETM_REVISION_ETMV46  (0x6UL)  /*!< Value 0x00000000 - ETMv4.6 */
+#define ETM_REVISION_ETMV41  (0x1UL)  /*!< Value 0x00000001 - ETMv4.1 */
+#define ETM_REVISION_ETMV42  (0x2UL)  /*!< Value 0x00000002 - ETMv4.2 */
+#define ETM_REVISION_ETMV43  (0x3UL)  /*!< Value 0x00000003 - ETMv4.3 */
+#define ETM_REVISION_ETMV44  (0x4UL)  /*!< Value 0x00000004 - ETMv4.4 */
+#define ETM_REVISION_ETMV45  (0x5UL)  /*!< Value 0x00000005 - ETMv4.5 */
+#define ETM_REVISION_ETMV46  (0x6UL)  /*!< Value 0x00000006 - ETMv4.6 */
 
 // Values of architecture version register
 #define ETM_ARCHVERSION_V4  (0x4UL)  /*!< Value 0x00000004 - ETMv4 */
