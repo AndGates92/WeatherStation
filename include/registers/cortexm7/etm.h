@@ -2418,6 +2418,74 @@ typedef struct {
 #define ETM_TRACEUNITREVISION_14  (0x0EUL)  /*!< Value 0x0000000E */
 #define ETM_TRACEUNITREVISION_15  (0x0FUL)  /*!< Value 0x0000000F */
 
+/*!< ID 2 register */
+#define ETM_IDR2_WFXMODE_OFFSET   (31U)
+#define ETM_IDR2_WFXMODE_MASK     (0x1UL << REGISTER_FIELD_OFFSET(ETM, IDR2, WFXMODE))    /*!< Mask  0x80000000 */
+
+#define ETM_IDR2_VMIDOPT_OFFSET   (29U)
+#define ETM_IDR2_VMIDOPT_MASK     (0x3UL << REGISTER_FIELD_OFFSET(ETM, IDR2, VMIDOPT))    /*!< Mask  0x60000000 */
+
+#define ETM_IDR2_CCSIZE_OFFSET    (25U)
+#define ETM_IDR2_CCSIZE_MASK      (0x1FUL << REGISTER_FIELD_OFFSET(ETM, IDR2, CCSIZE))    /*!< Mask  0x1E000000 */
+
+#define ETM_IDR2_DVSIZE_OFFSET    (20U)
+#define ETM_IDR2_DVSIZE_MASK      (0x1FUL << REGISTER_FIELD_OFFSET(ETM, IDR2, DVSIZE))    /*!< Mask  0x01F00000 */
+
+#define ETM_IDR2_DASIZE_OFFSET    (15U)
+#define ETM_IDR2_DASIZE_MASK      (0x1FUL << REGISTER_FIELD_OFFSET(ETM, IDR2, DASIZE))    /*!< Mask  0x000F8000 */
+
+#define ETM_IDR2_VMIDSIZE_OFFSET  (10U)
+#define ETM_IDR2_VMIDSIZE_MASK    (0x1FUL << REGISTER_FIELD_OFFSET(ETM, IDR2, VMIDSIZE))  /*!< Mask  0x00007C00 */
+
+#define ETM_IDR2_CIDSIZE_OFFSET   (5U)
+#define ETM_IDR2_CIDSIZE_MASK     (0x1FUL << REGISTER_FIELD_OFFSET(ETM, IDR2, CIDSIZE))   /*!< Mask  0x000003E0 */
+
+#define ETM_IDR2_IASIZE_OFFSET    (0U)
+#define ETM_IDR2_IASIZE_MASK      (0x1FUL << REGISTER_FIELD_OFFSET(ETM, IDR2, IASIZE))    /*!< Mask  0x0000001F */
+
+// Values of register storing whether WFI and WFE instructions are classified as branch instruction
+#define ETM_WFIWFEINSTR_NOTBRANCHINSTR  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_WFIWFEINSTR_BRANCHINSTR     (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of virtual context identifier selection (VMID) option select register
+#define ETM_VMID_TRCCONFIGR_VMIDOPT_0  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_VMID_SUPPORTED             (0x1UL)  /*!< Value 0x00000001 */
+#define ETM_VMID_TRCCONFIGR_VMIDOPT_1  (0x2UL)  /*!< Value 0x00000002 */
+
+// Values of cycle counter size register
+#define ETM_CYCLECOUNTER_12  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_CYCLECOUNTER_13  (0x1UL)  /*!< Value 0x00000001 */
+#define ETM_CYCLECOUNTER_14  (0x2UL)  /*!< Value 0x00000002 */
+#define ETM_CYCLECOUNTER_15  (0x3UL)  /*!< Value 0x00000003 */
+#define ETM_CYCLECOUNTER_16  (0x4UL)  /*!< Value 0x00000004 */
+#define ETM_CYCLECOUNTER_17  (0x5UL)  /*!< Value 0x00000005 */
+#define ETM_CYCLECOUNTER_18  (0x6UL)  /*!< Value 0x00000006 */
+#define ETM_CYCLECOUNTER_19  (0x7UL)  /*!< Value 0x00000007 */
+#define ETM_CYCLECOUNTER_20  (0x8UL)  /*!< Value 0x00000008 */
+
+// Values of data value size register
+#define ETM_DATAVALUESIZE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_DATAVALUESIZE_MAX4BYTES     (0x4UL)  /*!< Value 0x00000004 */
+#define ETM_DATAVALUESIZE_MAX8BYTES     (0x8UL)  /*!< Value 0x00000008 */
+
+// Values of address value size register
+#define ETM_ADDRESSVALUESIZE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_ADDRESSVALUESIZE_MAX4BYTES     (0x4UL)  /*!< Value 0x00000004 */
+#define ETM_ADDRESSVALUESIZE_MAX8BYTES     (0x8UL)  /*!< Value 0x00000008 */
+
+// Values of virtual context identifier (VMID) size
+#define ETM_VMIDSIZE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_VMIDSIZE_1BYTE         (0x1UL)  /*!< Value 0x00000001 */
+#define ETM_VMIDSIZE_2BYTES        (0x2UL)  /*!< Value 0x00000002 */
+#define ETM_VMIDSIZE_4BYTES        (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of context ID size register
+#define ETM_CONTEXTIDSIZE_NOTSUPPORTED  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_CONTEXTIDSIZE_MAX4BYTES     (0x4UL)  /*!< Value 0x00000004 */
+
+// Values of instruction address size register
+#define ETM_INSTRADDRESSSIZE_MAX4BYTES     (0x4UL)  /*!< Value 0x00000004 */
+#define ETM_INSTRADDRESSSIZE_MAX8BYTES     (0x8UL)  /*!< Value 0x00000008 */
 
 /*!< Single-shot processing element (PE) comparator input control register (macros vaid for registers SSPCICR0, SSPCICR1, SSPCICR2, SSPCICR3, SSPCICR4, SSPCICR5, SSPCICR6, SSPCICR7) */
 #define ETM_SSPCICR_PC_OFFSET  (0U)
