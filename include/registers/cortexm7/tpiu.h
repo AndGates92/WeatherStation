@@ -48,10 +48,10 @@ typedef struct {
 	   uint32_t reserved6[694U];  /*!< Reserved                                                       (Offset 0x40C to 0xEE0) */
 	WO uint32_t ITTRFLINACK;      /*!< Integration test trigger in and flush in acknowledge register  (Offset 0xEE4)          */
 	RO uint32_t ITTRFLIN;         /*!< Integration test trigger in and flush in register              (Offset 0xEE8)          */
-	RO uint32_t ITATBDATA0;       /*!< Integration test ATB data 0 register                           (Offset 0xEEC)          */
-	WO uint32_t ITATBCTR2;        /*!< Integration test ATB control 2 register                        (Offset 0xEF0)          */
-	RO uint32_t ITATBCTR1;        /*!< Integration test ATB control 1 register                        (Offset 0xEF4)          */
-	RO uint32_t ITATBCTR0;        /*!< Integration test ATB control 0 register                        (Offset 0xEF8)          */
+	RO uint32_t ITATBDATA0;       /*!< Integration test AMBA Trace Bus (ATB) data 0 register          (Offset 0xEEC)          */
+	WO uint32_t ITATBCTR2;        /*!< Integration test AMBA Trace Bus (ATB) control 2 register       (Offset 0xEF0)          */
+	RO uint32_t ITATBCTR1;        /*!< Integration test AMBA Trace Bus (ATB) control 1 register       (Offset 0xEF4)          */
+	RO uint32_t ITATBCTR0;        /*!< Integration test AMBA Trace Bus (ATB) control 0 register       (Offset 0xEF8)          */
 	   uint32_t reserved7;        /*!< Reserved                                                       (Offset 0xEFC)          */
 	RW uint32_t ITCTRL;           /*!< Integration mode control register                              (Offset 0xF00)          */
 	   uint32_t reserved8[39U];   /*!< Reserved                                                       (Offset 0xF04 to 0xF9C) */
@@ -750,7 +750,7 @@ typedef struct {
 #define TPIU_ITTRFLIN_TRIGIN_OFFSET   (0U)
 #define TPIU_ITTRFLIN_TRIGIN_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITTRFLIN, TRIGIN))   /*!< Mask  0x00000001 */
 
-/*!< Integration test ATB data 0 register */
+/*!< Integration test AMBA Trace Bus (ATB) data 0 register */
 #define TPIU_ITATBDATA0_ATDATA31_OFFSET  (4U)
 #define TPIU_ITATBDATA0_ATDATA31_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITATBDATA0, ATDATA31))  /*!< Mask  0x00000010 */
 
@@ -766,14 +766,14 @@ typedef struct {
 #define TPIU_ITATBDATA0_ATDATA0_OFFSET   (0U)
 #define TPIU_ITATBDATA0_ATDATA0_MASK     (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITATBDATA0, ATDATA0))   /*!< Mask  0x00000001 */
 
-/*!< Integration test ATB control 2 register */
+/*!< Integration test AMBA Trace Bus (ATB) control 2 register */
 #define TPIU_ITATBCTR2_AFVALIDS_OFFSET  (1U)
 #define TPIU_ITATBCTR2_AFVALIDS_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR2, AFVALIDS))  /*!< Mask  0x00000002 */
 
 #define TPIU_ITATBCTR2_ATREADYS_OFFSET  (0U)
 #define TPIU_ITATBCTR2_ATREADYS_MASK    (0x1UL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR2, ATREADYS))  /*!< Mask  0x00000001 */
 
-/*!< Integration test ATB control 1 register */
+/*!< Integration test AMBA Trace Bus (ATB) control 1 register */
 #define TPIU_ITATBCTR1_ATIDS_OFFSET  (0U)
 #define TPIU_ITATBCTR1_ATIDS_MASK    (0x3FUL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR1, ATIDS))  /*!< Mask  0x0000003F */
 #define TPIU_ITATBCTR1_ATIDS_0       (0x01UL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR1, ATIDS))  /*!< Value 0x00000001 */
@@ -783,7 +783,7 @@ typedef struct {
 #define TPIU_ITATBCTR1_ATIDS_4       (0x10UL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR1, ATIDS))  /*!< Value 0x00000010 */
 #define TPIU_ITATBCTR1_ATIDS_5       (0x20UL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR1, ATIDS))  /*!< Value 0x00000020 */
 
-/*!< Integration test ATB control 0 register */
+/*!< Integration test AMBA Trace Bus (ATB) control 0 register */
 #define TPIU_ITATBCTR0_ATBYTESS_OFFSET  (8U)
 #define TPIU_ITATBCTR0_ATBYTESS_MASK    (0x3UL << REGISTER_FIELD_OFFSET(TPIU, ITATBCTR0, ATBYTESS))  /*!< Mask  0x00000300 */
 
@@ -971,7 +971,7 @@ typedef struct {
 #define TPIU_ATBTRACECLKRELATIONSHIP_SYNCHRONOUS   (0x0UL)  /*!< Value 0x00000000 */
 #define TPIU_ATBTRACECLKRELATIONSHIP_ASYNCHRONOUS  (0x1UL)  /*!< Value 0x00000001 */
 
-// Values of the register storing the number/type of ATB input port multiplexing
+// Values of the register storing the number/type of AMBA Trace Bus (ATB) input port multiplexing
 #define TPIU_NUMATBINPUTPORT_NONE  (0x00UL)  /*!< Value 0x00000000 */
 #define TPIU_NUMATBINPUTPORT_1     (0x01UL)  /*!< Value 0x00000001 */
 #define TPIU_NUMATBINPUTPORT_2     (0x02UL)  /*!< Value 0x00000002 */

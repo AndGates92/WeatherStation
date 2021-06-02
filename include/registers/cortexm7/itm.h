@@ -24,35 +24,35 @@
  */
 
 typedef struct {
-	RW uint32_t STIM[32U];        /*!< Stimulus port register                      (Offset 0x0 to 0x7C)    */
-	   uint32_t reserved0[864U];  /*!< Reserved                                    (Offset 0x80 to 0xDFC)  */
-	WO uint32_t TER;              /*!< Trace enable register                       (Offset 0xE00)          */
-	   uint32_t reserved1[15U];   /*!< Reserved                                    (Offset 0xE04 to 0xE3C) */
-	RW uint32_t TPR;              /*!< Trace privilege register                    (Offset 0xE40)          */
-	   uint32_t reserved2[15U];   /*!< Reserved                                    (Offset 0xE44 to 0xE7C) */
-	RW uint32_t TCR;              /*!< Trace control register                      (Offset 0xE80)          */
-	   uint32_t reserved3[27U];   /*!< Reserved                                    (Offset 0xE84 to 0xEEC) */
-	RO uint32_t ITATRDY;          /*!< Integration mode: Read ATB ready register   (Offset 0xEF0)          */
-	   uint32_t reserved4;        /*!< Reserved                                    (Offset 0xEF4)          */
-	WO uint32_t ITATVAL;          /*!< Integration mode: Write ATB valid register  (Offset 0xEF8)          */
-	   uint32_t reserved5;        /*!< Reserved                                    (Offset 0xEFC)          */
-	RW uint32_t TCTRL;            /*!< Integration mode control register           (Offset 0xF00)          */
-	   uint32_t reserved6[43U];   /*!< Reserved                                    (Offset 0xF04 to 0xFAC) */
-	WO uint32_t LAR;              /*!< CoreSight lock access register              (Offset 0xFB0)          */
-	RO uint32_t LSR;              /*!< CoreSight lock status register              (Offset 0xFB4)          */
-	   uint32_t reserved7[6U];    /*!< Reserved                                    (Offset 0xFB8 to 0xFCC) */
-	R0 uint32_t PIDR4;            /*!< Peripheral identification 4 register        (Offset 0xFD0)          */
-	R0 uint32_t PIDR5;            /*!< Peripheral identification 5 register        (Offset 0xFD4)          */
-	R0 uint32_t PIDR6;            /*!< Peripheral identification 6 register        (Offset 0xFD8)          */
-	R0 uint32_t PIDR7;            /*!< Peripheral identification 7 register        (Offset 0xFDC)          */
-	R0 uint32_t PIDR0;            /*!< Peripheral identification 0 register        (Offset 0xFE0)          */
-	R0 uint32_t PIDR1;            /*!< Peripheral identification 1 register        (Offset 0xFE4)          */
-	R0 uint32_t PIDR2;            /*!< Peripheral identification 2 register        (Offset 0xFE8)          */
-	R0 uint32_t PIDR3;            /*!< Peripheral identification 3 register        (Offset 0xFEC)          */
-	R0 uint32_t CIDR0;            /*!< Component identification 0 register         (Offset 0xFF0)          */
-	R0 uint32_t CIDR1;            /*!< Component identification 1 register         (Offset 0xFF4)          */
-	R0 uint32_t CIDR2;            /*!< Component identification 2 register         (Offset 0xFF8)          */
-	R0 uint32_t CIDR3;            /*!< Component identification 3 register         (Offset 0xFFC)          */
+	RW uint32_t STIM[32U];        /*!< Stimulus port register                                       (Offset 0x0 to 0x7C)    */
+	   uint32_t reserved0[864U];  /*!< Reserved                                                     (Offset 0x80 to 0xDFC)  */
+	WO uint32_t TER;              /*!< Trace enable register                                        (Offset 0xE00)          */
+	   uint32_t reserved1[15U];   /*!< Reserved                                                     (Offset 0xE04 to 0xE3C) */
+	RW uint32_t TPR;              /*!< Trace privilege register                                     (Offset 0xE40)          */
+	   uint32_t reserved2[15U];   /*!< Reserved                                                     (Offset 0xE44 to 0xE7C) */
+	RW uint32_t TCR;              /*!< Trace control register                                       (Offset 0xE80)          */
+	   uint32_t reserved3[27U];   /*!< Reserved                                                     (Offset 0xE84 to 0xEEC) */
+	RO uint32_t ITATRDY;          /*!< Integration mode: Read AMBA Trace Bus (ATB) ready register   (Offset 0xEF0)          */
+	   uint32_t reserved4;        /*!< Reserved                                                     (Offset 0xEF4)          */
+	WO uint32_t ITATVAL;          /*!< Integration mode: Write AMBA Trace Bus (ATB) valid register  (Offset 0xEF8)          */
+	   uint32_t reserved5;        /*!< Reserved                                                     (Offset 0xEFC)          */
+	RW uint32_t TCTRL;            /*!< Integration mode control register                            (Offset 0xF00)          */
+	   uint32_t reserved6[43U];   /*!< Reserved                                                     (Offset 0xF04 to 0xFAC) */
+	WO uint32_t LAR;              /*!< CoreSight lock access register                               (Offset 0xFB0)          */
+	RO uint32_t LSR;              /*!< CoreSight lock status register                               (Offset 0xFB4)          */
+	   uint32_t reserved7[6U];    /*!< Reserved                                                     (Offset 0xFB8 to 0xFCC) */
+	R0 uint32_t PIDR4;            /*!< Peripheral identification 4 register                         (Offset 0xFD0)          */
+	R0 uint32_t PIDR5;            /*!< Peripheral identification 5 register                         (Offset 0xFD4)          */
+	R0 uint32_t PIDR6;            /*!< Peripheral identification 6 register                         (Offset 0xFD8)          */
+	R0 uint32_t PIDR7;            /*!< Peripheral identification 7 register                         (Offset 0xFDC)          */
+	R0 uint32_t PIDR0;            /*!< Peripheral identification 0 register                         (Offset 0xFE0)          */
+	R0 uint32_t PIDR1;            /*!< Peripheral identification 1 register                         (Offset 0xFE4)          */
+	R0 uint32_t PIDR2;            /*!< Peripheral identification 2 register                         (Offset 0xFE8)          */
+	R0 uint32_t PIDR3;            /*!< Peripheral identification 3 register                         (Offset 0xFEC)          */
+	R0 uint32_t CIDR0;            /*!< Component identification 0 register                          (Offset 0xFF0)          */
+	R0 uint32_t CIDR1;            /*!< Component identification 1 register                          (Offset 0xFF4)          */
+	R0 uint32_t CIDR2;            /*!< Component identification 2 register                          (Offset 0xFF8)          */
+	R0 uint32_t CIDR3;            /*!< Component identification 3 register                          (Offset 0xFFC)          */
 } ppb_itm_regs;
 
 /*!< Instrumentation trace macrocell (ITM) registers in private peripheral bus (PPB) registers */
@@ -259,14 +259,14 @@ typedef struct {
 #define ITM_DISABLED  (0x0UL)  /*!< Value 0x00000000 */
 #define ITM_ENABLED   (0x1UL)  /*!< Value 0x00000001 */
 
-/*!< Integration mode: Read ATB ready register */
+/*!< Integration mode: Read AMBA Trace Bus (ATB) ready register */
 #define ITM_ITATRDY_AFVALIDM_OFFSET  (1U)
 #define ITM_ITATRDY_AFVALIDM_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ITM, ITATRDY, AFVALIDM))  /*!< Mask  0x00000002 */
 
 #define ITM_ITATRDY_ATREADYM_OFFSET  (0U)
 #define ITM_ITATRDY_ATREADYM_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ITM, ITATRDY, ATREADYM))  /*!< Mask  0x00000001 */
 
-/*!< Integration mode: Write ATB valid register */
+/*!< Integration mode: Write AMBA Trace Bus (ATB) valid register */
 #define ITM_ITATVAL_ATBYTES_OFFSET  (8U)
 #define ITM_ITATVAL_ATBYTES_MASK    (0x7UL << REGISTER_FIELD_OFFSET(ITM, ITATVAL, ATBYTES))  /*!< Mask  0x00000700 */
 
