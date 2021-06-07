@@ -3399,6 +3399,37 @@ typedef struct {
 #define ETM_SINGLESHOTPE_UNSELECTED  (0x0UL)  /*!< Value 0x00000000 */
 #define ETM_SINGLESHOTPE_SELECTED    (0x1UL)  /*!< Value 0x00000001 */
 
+/*!< OS lock access register */
+#define ETM_OSLAR_OSLK_OFFSET  (0U)
+#define ETM_OSLAR_OSLK_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, OSLAR, OSLK))  /*!< Mask  0x00000001 */
+
+// Values of OS lock control bit
+#define ETM_OSLOCK_UNLOCK  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_OSLOCK_LOCK    (0x1UL)  /*!< Value 0x00000001 */
+
+/*!< OS lock status register */
+#define ETM_OSLSR_OSLM1_OFFSET  (3U)
+#define ETM_OSLSR_OSLM1_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, OSLSR, OSLM1))  /*!< Mask  0x00000008 */
+
+#define ETM_OSLSR_NTT_OFFSET    (2U)
+#define ETM_OSLSR_NTT_MASK      (0x1UL << REGISTER_FIELD_OFFSET(ETM, OSLSR, NTT))    /*!< Mask  0x00000004 */
+
+#define ETM_OSLSR_OSLK_OFFSET   (1U)
+#define ETM_OSLSR_OSLK_MASK     (0x1UL << REGISTER_FIELD_OFFSET(ETM, OSLSR, OSLK))   /*!< Mask  0x00000002 */
+
+#define ETM_OSLSR_OSLM0_OFFSET  (0U)
+#define ETM_OSLSR_OSLM0_MASK    (0x1UL << REGISTER_FIELD_OFFSET(ETM, OSLSR, OSLM0))  /*!< Mask  0x00000001 */
+
+// Values of lock key size select bit
+#define ETM_OSLOCKREGISTERSIZE_32BIT  (0x0UL)  /*!< Value 0x00000000 */
+
+// Values of OS lock status bit
+#define ETM_OSLOCK_UNLOCKED  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_OSLOCK_LOCKED    (0x1UL)  /*!< Value 0x00000001 */
+
+// Values of OS lock model bit
+#define ETM_OSLOCK_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
+#define ETM_OSLOCK_IMPLEMENTED     (0x1UL)  /*!< Value 0x00000001 */
 
 /*!< Integration mode control register */
 #define ETM_ITCTRL_IME_OFFSET  (0U)
