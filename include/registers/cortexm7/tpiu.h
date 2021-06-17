@@ -919,7 +919,7 @@ typedef struct {
 #define TPIU_AUTHSTAT_NSNID_MASK    (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSNID))  /*!< Mask  0x0000000C - security level for non secure non-invasive debug */
 
 #define TPIU_AUTHSTAT_NSID_OFFSET   (0U)
-#define TPIU_AUTHSTAT_NSID_MASK     (0x3FUL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSID))  /*!< Mask  0x00000003 - security level for non secure invasive debug */
+#define TPIU_AUTHSTAT_NSID_MASK     (0x3UL << REGISTER_FIELD_OFFSET(TPIU, AUTHSTAT, NSID))   /*!< Mask  0x00000003 - security level for non secure invasive debug */
 
 // Values of authentification signal status register
 #define TPIU_AUTHSIGNAL_NOTIMPLEMENTED  (0x0UL)  /*!< Value 0x00000000 */
