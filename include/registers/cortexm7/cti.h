@@ -24,7 +24,36 @@
  */
 
 typedef struct {
-
+	RW uint32_t CTICONTROL;          /*!< Cross trigger interface (CTI) control register                                                         (Offset 0x000)          */
+	   uint32_t reserved32[39U];  /*!< Reserved                                                                 (Offset 0x004 to 0x00C) */
+	WO uint32_t CTIINTACK;          /*!< Cross trigger interface (CTI) interrupt acknowledge register                                                         (Offset 0x010)          */
+	RW uint32_t CTIAPPSET;          /*!< Cross trigger interface (CTI) application trigger set register                                                         (Offset 0x014)          */
+	WO uint32_t CTIAPPCLEAR;          /*!< Cross trigger interface (CTI) application trigger clear register                                                         (Offset 0x018)          */
+	WO uint32_t CTIAPPPULSE;          /*!< Cross trigger interface (CTI) application pulse register                                                         (Offset 0x01C)          */
+	RW uint32_t CTIINEN0;          /*!< Cross trigger interface (CTI) trigger to channel 0 enable register                                                         (Offset 0x020)          */
+	RW uint32_t CTIINEN1;          /*!< Cross trigger interface (CTI) trigger to channel 1 enable register                                                         (Offset 0x024)          */
+	RW uint32_t CTIINEN2;          /*!< Cross trigger interface (CTI) trigger to channel 2 enable register                                                         (Offset 0x028)          */
+	RW uint32_t CTIINEN3;          /*!< Cross trigger interface (CTI) trigger to channel 3 enable register                                                         (Offset 0x02C)          */
+	RW uint32_t CTIINEN4;          /*!< Cross trigger interface (CTI) trigger to channel 4 enable register                                                         (Offset 0x030)          */
+	RW uint32_t CTIINEN5;          /*!< Cross trigger interface (CTI) trigger to channel 5 enable register                                                         (Offset 0x034)          */
+	RW uint32_t CTIINEN6;          /*!< Cross trigger interface (CTI) trigger to channel 6 enable register                                                         (Offset 0x038)          */
+	RW uint32_t CTIINEN7;          /*!< Cross trigger interface (CTI) trigger to channel 7 enable register                                                         (Offset 0x03C)          */
+	   uint32_t reserved32[39U];  /*!< Reserved                                                                 (Offset 0x040 to 0x09C) */
+	RW uint32_t CTIOUTEN0;          /*!< Cross trigger interface (CTI) channel 0 to trigger enable register                                                         (Offset 0x0A0)          */
+	RW uint32_t CTIOUTEN1;          /*!< Cross trigger interface (CTI) channel 1 to trigger enable register                                                         (Offset 0x0A4)          */
+	RW uint32_t CTIOUTEN2;          /*!< Cross trigger interface (CTI) channel 2 to trigger enable register                                                         (Offset 0x0A8)          */
+	RW uint32_t CTIOUTEN3;          /*!< Cross trigger interface (CTI) channel 3 to trigger enable register                                                         (Offset 0x0AC)          */
+	RW uint32_t CTIOUTEN4;          /*!< Cross trigger interface (CTI) channel 4 to trigger enable register                                                         (Offset 0x0B0)          */
+	RW uint32_t CTIOUTEN5;          /*!< Cross trigger interface (CTI) channel 5 to trigger enable register                                                         (Offset 0x0B4)          */
+	RW uint32_t CTIOUTEN6;          /*!< Cross trigger interface (CTI) channel 6 to trigger enable register                                                         (Offset 0x0B8)          */
+	RW uint32_t CTIOUTEN7;          /*!< Cross trigger interface (CTI) channel 7 to trigger enable register                                                         (Offset 0x0BC)          */
+	   uint32_t reserved32[39U];  /*!< Reserved                                                                 (Offset 0x0C0 to 0x12C) */
+	RO uint32_t CTITRIGINSTATUS;          /*!< Cross trigger interface (CTI) trigger in status register                                                         (Offset 0x130)          */
+	RO uint32_t CTITRIGOUTSTATUS;          /*!< Cross trigger interface (CTI) trigger out status register                                                         (Offset 0x134)          */
+	RO uint32_t CTICHINSTATUS;          /*!< Cross trigger interface (CTI) channel in status register                                                         (Offset 0x138)          */
+	RO uint32_t CTICHOUTSTATUS;          /*!< Cross trigger interface (CTI) channel out status register                                                         (Offset 0x13C)          */
+	RW uint32_t CTIGATE;           /*!< Cross trigger interface (CTI) channel gate register                                        (Offset 0x140)          */
+	RW uint32_t ASICCTL;           /*!< External multiplexor control register                                        (Offset 0x144)          */
 	RW uint32_t ITCTRL;           /*!< Integration mode control register                                        (Offset 0xF00)          */
 	   uint32_t reserved32[39U];  /*!< Reserved                                                                 (Offset 0xF04 to 0xF9C) */
 	RW uint32_t CLAIMSET;         /*!< Claim tag set register                                                   (Offset 0xFA0)          */
@@ -673,7 +702,7 @@ typedef struct {
 #define CTI_PIDR0_PARTNUM_7       (0x80UL << REGISTER_FIELD_OFFSET(CTI, PIDR0, PARTNUM))  /*!< Value 0x00000080 */
 
 // Values of part number register
-#define CTI_PIDR0PARTNUM_ST   (0x12UL)  /*!< Value 0x00000012 */
+#define CTI_PIDR0PARTNUM_ST   (0x06UL)  /*!< Value 0x00000006 */
 #define CTI_PIDR0PARTNUM_ARM  (0x75UL)  /*!< Value 0x00000075 */
 
 /*!< Peripheral identitication 1 register */
@@ -691,11 +720,11 @@ typedef struct {
 #define CTI_PIDR1_PARTNUM_2        (0x4UL << REGISTER_FIELD_OFFSET(CTI, PIDR1, PARTNUM))   /*!< Value 0x00000004 */
 #define CTI_PIDR1_PARTNUM_3        (0x8UL << REGISTER_FIELD_OFFSET(CTI, PIDR1, PARTNUM))   /*!< Value 0x00000008 */
 
-// Values of part number register
-#define CTI_PIDR1PARTNUM_ARM  (0x9UL)  /*!< Value 0x00000009 */
-
 // Values of JEDEC JEP 106 ID code in peripheral identification 1 register
 #define CTI_PIDR1JEP106ID_VALUE  (0xBUL)  /*!< Value 0x0000000B */
+
+// Values of part number register
+#define CTI_PIDR1PARTNUM_ARM  (0x9UL)  /*!< Value 0x00000009 */
 
 /*!< Peripheral identitication 2 register */
 #define CTI_PIDR2_REVISION_OFFSET    (4U)
@@ -715,7 +744,7 @@ typedef struct {
 #define CTI_PIDR2_JEDEC106ID_2       (0x4UL << REGISTER_FIELD_OFFSET(CTI, PIDR2, JEDEC106ID))  /*!< Value 0x00000004 */
 
 // Values of revision number register
-#define CTI_REVISION_R0P2  (0x1UL)  /*!< Value 0x00000001 */
+#define CTI_REVISION_R1P0  (0x5UL)  /*!< Value 0x00000005 */
 
 // Values of JEDEC assigned value select bit
 #define CTI_JEDEC_VALUE  (0x1UL)  /*!< Value 0x00000001 */
